@@ -18,7 +18,7 @@ Projeto desenvolvido por causa da Copa do Mundo 2026 <br/>
 <br>
 
 <p align="center">
-<<<<<<< HEAD
+
   <img alt="projeto GTAV" src="layout.png" width="100%">
 </p>
 
