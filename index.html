@@ -1,0 +1,76 @@
+
+  <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="worldcup_favicon.png" type="image/x-icon">
+  <title>Copa do Mundo 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1 style="display: flex; align-items: center; gap: 10px;">
+    <img src="worldcup_favicon.png" alt="Taça da Copa do Mundo" width="32" height="32">
+    Copa do Mundo 2026
+    <span class="header-bandeiras">
+      <img src="https://flagcdn.com/w40/us.png" alt="EUA">
+      <img src="https://flagcdn.com/w40/mx.png" alt="México">
+      <img src="https://flagcdn.com/w40/ca.png" alt="Canadá">
+    </span>
+  </h1>
+  <div class="nav">
+    <button onclick="showTab('classificacao')">Classificação</button>
+    <button onclick="window.location.href='agenda.html'">Agenda</button>
+    <button onclick="showTab('jogosTab')">Jogos</button>
+    <button onclick="showTab('mata')">Mata-mata</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= CLASSIFICAÇÃO ================= -->
+  <section id="classificacao" class="aba">
+    <div id="grupos"></div>
+  </section>
+
+  <!-- ================= JOGOS ================= -->
+  <section id="jogosTab" class="aba hidden">
+    <div id="abasGrupos" class="abas"></div>
+    <div id="jogos"></div>
+    <!-- Botões no final da aba -->
+    <div id="jogosBotoes" class="filtro">
+      <button onclick="resetarPlacares()">Zerar Placares</button>
+      <button onclick="salvarPlacares()">Salvar Placares</button>
+    </div>
+  </section>
+
+  <!-- ================= MATA MATA ================= -->
+  <section id="mata" class="aba hidden">
+    <h2 style="display: flex; align-items: center; gap: 10px;">
+      <img src="worldcup_favicon.png" alt="Taça da Copa do Mundo" width="32" height="32">
+       Mata-mata</h2>
+  <p>
+    Segunda fase - de 28 de junho a 3 de julho de 2026; <br>
+    Oitavas de final - de 4 a 7 de julho de 2026; <br>
+    Quartas de final - de 9 a 11 de julho; <br>
+    Semifinais - 14 e 15 de julho; <br>
+    Disputa do terceiro lugar - 18 de julho, no Estádio Hard Rock (Miami); <br>
+    Final - 19 de julho de 2026, no Estádio MetLife (New Jersey/Nova York). <br>
+  </p>
+    <p>Em breve...</p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+<script>
+function showTab(tabId){
+  document.querySelectorAll(".aba").forEach(sec => sec.classList.add("hidden"));
+  document.getElementById(tabId).classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
