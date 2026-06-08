@@ -32,7 +32,7 @@ const grupos = {
   "Grupo C": ["Brasil","Marrocos","Haiti","Escócia"],
   "Grupo D": ["EUA","Paraguai","Austrália","Turquia"],
   "Grupo E": ["Alemanha","Curaçau","Costa do Marfim","Equador"],
-  "Grupo F": ["Holanda","Japão","Tunísia","Suécia."],
+  "Grupo F": ["Holanda","Japão","Tunísia","Suécia"],
   "Grupo G": ["Bélgica","Egito","Irã","Nova Zelândia"],
   "Grupo H": ["Espanha","Cabo Verde","Arábia Saudita","Uruguai"],
   "Grupo I": ["França","Senegal","Noruega","Iraque"],
@@ -117,15 +117,15 @@ const jogosDetalhados = [
   // Grupo F
   { grupo:"Grupo F", rodada:"1ª Rodada", data:"14/06",  jogos:[
     {casa:"Holanda", fora:"Japão", estadio:"Dallas", hora:"17:00"},
-    {casa:"Bósnia e Herz.", fora:"Tunísia", estadio:"Monterrey", hora:"23:00"}
+    {casa:"Suécia", fora:"Tunísia", estadio:"Monterrey", hora:"23:00"}
   ]},
   { grupo:"Grupo F", rodada:"2ª Rodada", data:"21/06", jogos:[
-    {casa:"Holanda", fora:"Bósnia e Herz.", estadio:"Houston", hora:"14:00"},
+    {casa:"Holanda", fora:"Suécia", estadio:"Houston", hora:"14:00"},
     {casa:"Tunísia", fora:"Japão", estadio:"Cidade do México", hora:"01:00"}
   ]},
   { grupo:"Grupo F", rodada:"3ª Rodada", data:"26/06", jogos:[
     {casa:"Tunísia", fora:"Holanda", estadio:"Kansas City", hora:"20:00"},
-    {casa:"Japão", fora:"Bósnia e Herz.", estadio:"Dallas",  hora:"20:00"}
+    {casa:"Japão", fora:"Suécia", estadio:"Dallas",  hora:"20:00"}
   ]},
 
   // Grupo G
