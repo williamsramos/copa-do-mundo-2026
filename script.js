@@ -214,8 +214,8 @@ const jogosDetalhados = [
 ];
 
 /* ================= VARIÁVEIS ================= */
-let tabela = {};
-let grupoSelecionado = null;
+//let tabela = {};
+//let grupoSelecionado = null;
 
 /* ================= FUNÇÕES PRINCIPAIS ================= */
 
