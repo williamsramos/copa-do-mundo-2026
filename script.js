@@ -27,12 +27,12 @@ function getBandeira(time){
 }
 /* ================= GRUPOS ================= */
 const grupos = {
-  "Grupo A": ["México","África do Sul","Coreia do Sul","Suécia"],
-  "Grupo B": ["Canadá","Catar","Suíça","Turquia"],
+  "Grupo A": ["México","África do Sul","Coreia do Sul","República Tcheca"],
+  "Grupo B": ["Canadá","Catar","Suíça","Bósnia e Hern"],
   "Grupo C": ["Brasil","Marrocos","Haiti","Escócia"],
-  "Grupo D": ["EUA","Paraguai","Austrália","República Tcheca"],
+  "Grupo D": ["EUA","Paraguai","Austrália","Turquia"],
   "Grupo E": ["Alemanha","Curaçau","Costa do Marfim","Equador"],
-  "Grupo F": ["Holanda","Japão","Tunísia","Bósnia e Herz."],
+  "Grupo F": ["Holanda","Japão","Tunísia","Suécia."],
   "Grupo G": ["Bélgica","Egito","Irã","Nova Zelândia"],
   "Grupo H": ["Espanha","Cabo Verde","Arábia Saudita","Uruguai"],
   "Grupo I": ["França","Senegal","Noruega","Iraque"],
@@ -46,29 +46,29 @@ const jogosDetalhados = [
   // Grupo A
 { grupo:"Grupo A", rodada:"1ª Rodada", data:"11/06", jogos:[
   {casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora: "16:00"},
-  {casa:"Coreia do Sul", fora:"Suécia", estadio:"Guadalajara", hora:"23:00"}
+  {casa:"Coreia do Sul", fora:"República Tcheca", estadio:"Guadalajara", hora:"23:00"}
 ]},
 { grupo:"Grupo A", rodada:"2ª Rodada", data:"17/06", jogos:[
   {casa:"México", fora:"Coreia do Sul", estadio:"Guadalajara", hora:"22:00"},
-  {casa:"África do Sul", fora:"Suécia", estadio:"Atlanta", hora:"13:00"}
+  {casa:"África do Sul", fora:"República Tcheca", estadio:"Atlanta", hora:"13:00"}
 ]},
 { grupo:"Grupo A", rodada:"3ª Rodada", data:"24/06", jogos:[
-  {casa:"México", fora:"Suécia", estadio:"Cidade do México", hora:"22:00"},
+  {casa:"México", fora:"República Tcheca", estadio:"Cidade do México", hora:"22:00"},
   {casa:"África do Sul", fora:"Coreia do Sul", estadio:"El Gigante de Acero", hora:"22:00"}
 ]},
 
 // Grupo B
 { grupo:"Grupo B", rodada:"1ª Rodada", data:"12/06", jogos:[
-  {casa:"Canadá", fora:"Turquia", estadio:"Toronto", hora:"16:00"},
+  {casa:"Canadá", fora:"Bósnia e Hern", estadio:"Toronto", hora:"16:00"},
   {casa:"Catar", fora:"Suíça", estadio:"Santa Clara", hora:"16:00"}
 ]},
 { grupo:"Grupo B", rodada:"2ª Rodada", data:"18/06", jogos:[
   {casa:"Canadá", fora:"Catar", estadio:"Vancouver", hora:"19:00"},
-  {casa:"Suíça", fora:"Turquia", estadio:"Los Angeles", hora:"16:00"}
+  {casa:"Suíça", fora:"Bósnia e Hern", estadio:"Los Angeles", hora:"16:00"}
 ]},
 { grupo:"Grupo B", rodada:"3ª Rodada", data:"24/06", jogos:[
   {casa:"Suíça", fora:"Canadá", estadio:"Vancouver", hora:"16:00"},
-  {casa:"Turquia", fora:"Catar", estadio:"Seattle", hora:"16:00"}
+  {casa:"Bósnia e Hern", fora:"Catar", estadio:"Seattle", hora:"16:00"}
 ]},
 
   // Grupo C
@@ -88,15 +88,15 @@ const jogosDetalhados = [
   // Grupo D
   { grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
     {casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00"},
-    {casa:"Austrália", fora:"República Tcheca", estadio:"Vancouver", hora:"01:00"}
+    {casa:"Austrália", fora:"Turquia", estadio:"Vancouver", hora:"01:00"}
   ]},
   { grupo:"Grupo D", rodada:"2ª Rodada", data:"19/06", jogos:[
-    {casa:"República Tcheca", fora:"Paraguai", estadio:"Santa Clara ", hora:"01:00"},
+    {casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara ", hora:"01:00"},
     {casa:"EUA", fora:"Austrália", estadio:"Seattle Field", hora:"16:00"}
 
   ]},
   { grupo:"Grupo D", rodada:"3ª Rodada", data:"25/06", hora:"23:00", jogos:[
-    {casa:"República Tcheca", fora:"EUA", estadio:"Los Angeles", hora:"23:00"},
+    {casa:"Turquia", fora:"EUA", estadio:"Los Angeles", hora:"23:00"},
     {casa:"Paraguai", fora:"Austrália", estadio:"Santa Clara", hora:"23:00"}
   ]},
 
