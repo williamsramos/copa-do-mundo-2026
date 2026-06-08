@@ -7,6 +7,7 @@ body {
   font-family: Arial, sans-serif;
   background: #0f172a;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -132,13 +133,21 @@ input {
 }
 
 .abas button {
-  padding: 8px 12px;
+  padding: 6px 8px;
+  min-width: 70px;
   border: none;
   background: #1e293b;
   color: #fff;
   cursor: pointer;
   border-radius: 6px;
   font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+#abasGrupos {
+  width: 100%;
+  justify-content: center;
 }
 
 .abas button:hover {
@@ -220,7 +229,7 @@ input {
   }
 
   .abas button {
-    min-width: 40px;
+    min-width: 90px;
   }
 
   /* jogos mais compactos */
