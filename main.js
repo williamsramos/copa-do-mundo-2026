@@ -83,7 +83,7 @@ document.querySelector("#cards").innerHTML =
   ) +
 
   createCard('12/06', 'sexta',
-    createGame("Canadá", "x", "Bósnia e Herz") +
+    createGame("Canadá", "x", "Bósnia e Herz.") +
     createGame("Catar", "x", "Suiça") +
     createGame("EUA", "x", "Paraguai") 
   ) +
@@ -124,7 +124,7 @@ document.querySelector("#cards").innerHTML =
 
   createCard('18/06', 'quinta',
     createGame("República Tcheca", "x", "África do Sul") +
-    createGame("Suiça", "x", "Bósnia e Herz") +
+    createGame("Suiça", "x", "Bósnia e Herz.") +
     createGame("Canadá", "x", "Catar") + 
     createGame("México", "x", "Coreia do Sul") 
   ) +
@@ -165,7 +165,7 @@ document.querySelector("#cards").innerHTML =
 
   createCard('24/06', 'quarta',
     createGame("Suiça", "x", "Canadá") +
-    createGame("Bosnia e Herz.", "x", "Catar") +
+    createGame("Bósnia e Herz.", "x", "Catar") +
     createGame("Escócia", "x", "Brasil") +
     createGame("Marrocos", "x", "Haiti") +
     createGame("México", "x", "Suécia") +
