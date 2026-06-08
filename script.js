@@ -28,7 +28,7 @@ function getBandeira(time){
 /* ================= GRUPOS ================= */
 const grupos = {
   "Grupo A": ["México","África do Sul","Coreia do Sul","República Tcheca"],
-  "Grupo B": ["Canadá","Catar","Suíça","Bósnia e Herz"],
+  "Grupo B": ["Canadá","Catar","Suíça","Bósnia e Herz."],
   "Grupo C": ["Brasil","Marrocos","Haiti","Escócia"],
   "Grupo D": ["EUA","Paraguai","Austrália","Turquia"],
   "Grupo E": ["Alemanha","Curaçau","Costa do Marfim","Equador"],
@@ -59,16 +59,16 @@ const jogosDetalhados = [
 
 // Grupo B
 { grupo:"Grupo B", rodada:"1ª Rodada", data:"12/06", jogos:[
-  {casa:"Canadá", fora:"Bósnia e Herz", estadio:"Toronto", hora:"16:00"},
+  {casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00"},
   {casa:"Catar", fora:"Suíça", estadio:"Santa Clara", hora:"16:00"}
 ]},
 { grupo:"Grupo B", rodada:"2ª Rodada", data:"18/06", jogos:[
   {casa:"Canadá", fora:"Catar", estadio:"Vancouver", hora:"19:00"},
-  {casa:"Suíça", fora:"Bósnia e Herz", estadio:"Los Angeles", hora:"16:00"}
+  {casa:"Suíça", fora:"Bósnia e Herz.", estadio:"Los Angeles", hora:"16:00"}
 ]},
 { grupo:"Grupo B", rodada:"3ª Rodada", data:"24/06", jogos:[
   {casa:"Suíça", fora:"Canadá", estadio:"Vancouver", hora:"16:00"},
-  {casa:"Bósnia e Herz", fora:"Catar", estadio:"Seattle", hora:"16:00"}
+  {casa:"Bósnia e Herz.", fora:"Catar", estadio:"Seattle", hora:"16:00"}
 ]},
 
   // Grupo C
