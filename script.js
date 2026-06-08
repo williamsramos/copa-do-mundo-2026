@@ -241,7 +241,7 @@ function criarAbas(){
 }
 
 function selecionarGrupo(grupo){
-  grupoSelecionado = grupo === "todos" ? null : grupo;
+  grupoSelecionado = grupo === "todos" ? null : group;
   renderJogos();
   renderTabela();
   destacarAba();
@@ -268,7 +268,6 @@ function renderJogos(){
       const g1 = localStorage.getItem(`placar-${id}-casa`) || "";
       const g2 = localStorage.getItem(`placar-${id}-fora`) || "";
 
-      // Cada jogo pode ter hora diferente, mas mesma data do bloco
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}`;
 
       div.innerHTML += `<div style="margin-bottom:6px;">
@@ -301,8 +300,6 @@ function renderJogos(){
   });
 }
 
-
-
 function atualizar(){
   // limpa tabela
   for(let g in tabela){
@@ -318,8 +315,16 @@ function atualizar(){
     bloco.jogos.forEach((j, ji)=>{
       const id = `${bi}-${ji}`;
 
-      let g1 = parseInt(localStorage.getItem(`placar-${id}-casa`)) || 0;
-      let g2 = parseInt(localStorage.getItem(`placar-${id}-fora`)) || 0;
+      const s1 = localStorage.getItem(`placar-${id}-casa`);
+      const s2 = localStorage.getItem(`placar-${id}-fora`);
+
+      // Impede que campos vazios entrem na conta como se fossem jogos de 0x0 terminados
+      if (s1 === null || s2 === null || s1 === "" || s2 === "") {
+        return;
+      }
+
+      let g1 = parseInt(s1) || 0;
+      let g2 = parseInt(s2) || 0;
 
       g1 = Math.max(0, g1);
       g2 = Math.max(0, g2);
@@ -351,7 +356,6 @@ function atualizar(){
   renderTabela();
 }
 
-
 function renderTabela(){
   const div = document.getElementById("grupos");
   div.innerHTML = "";
@@ -360,18 +364,28 @@ function renderTabela(){
     let times = Object.entries(tabela[g]);
     times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp-b[1].gc)-(a[1].gp-a[1].gc)) || (a[1].pos-b[1].pos));
 
+    // NOVA ALTERAÇÃO: Verifica se TODOS os times desse grupo completaram a 3ª rodada (3 jogos disputados)
+    const terceiraRodadaCompleta = times.every(([nome, d]) => {
+      const totalJogosDoTime = d.v + d.e + d.d;
+      return totalJogosDoTime === 3;
+    });
+
     let html = `<div class="card"><h3>${g} - Classificação</h3>
       <table>
         <tr><th>Pos</th><th>Time</th><th>P</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th></tr>`;
     
     times.forEach(([nome,d],i)=>{
       const jogosTotal = d.v+d.e+d.d;
-      let bg = "";
-      if(i===0 || i===1) bg="green";      // 1ª e 2ª posição verde
-      else if(i===2) bg="orange";          // 3ª laranja
-      else if(i===3) bg="red";             // 4ª vermelho
+      
+      let classeCSS = "";
+      // Só libera o fundo colorido se a rodada 3 estiver concluída para todos os times deste grupo
+      if (terceiraRodadaCompleta) {
+        if(i===0 || i===1) classeCSS = "qualificado"; 
+        else if(i===2) classeCSS = "terceiro";
+        // Caso queira pintar o 4º colocado, adicione mais um else if aqui para uma classe vermelha
+      }
 
-      html += `<tr style="background-color:${bg}; color:white;">
+      html += `<tr class="${classeCSS}">
         <td>${i+1}</td>
         <td>${getBandeira(nome)} ${nome}</td>
         <td>${d.pts}</td>
@@ -389,6 +403,7 @@ function renderTabela(){
     div.innerHTML += html;
   }
 }
+
 
 
 
