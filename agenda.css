@@ -210,6 +210,24 @@
   .card {
     animation: appaer .2s forwards;
   }
+  
+  #cards li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+#cards ul{
+  padding-left: 0;
+}
+
+.team{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
   
   @keyframes appear{
