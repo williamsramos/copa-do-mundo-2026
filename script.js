@@ -218,13 +218,8 @@ let tabela = {};
 let grupoSelecionado = null;
 
 /* ================= FUNÇÕES PRINCIPAIS ================= */
-// Variáveis globais de controle de estado
-let abaPrincipalAtiva = 'jogos'; // Pode ser 'jogos' ou 'classificacao'
-let grupoSelecionado = null;     // null significa "todos"
 
-// Variáveis globais de controle de estado
-let abaPrincipalAtiva = 'jogos'; // Pode ser 'jogos' ou 'classificacao'
-let grupoSelecionado = null;     // null significa "todos"
+let grupoSelecionado = null; // null significa "todos"
 
 function init(){
   tabela = {};
@@ -235,27 +230,8 @@ function init(){
     });
   }
   criarAbas();
-  
-  // Inicializa o app respeitando a aba padrão configurada
-  alternarAbaPrincipal(abaPrincipalAtiva); 
-}
-
-// CONTROLADOR CENTRAL: Alterna a visibilidade das seções estruturais do app
-function alternarAbaPrincipal(aba) {
-  abaPrincipalAtiva = aba;
-  
-  const divJogos = document.getElementById("jogos");
-  const divGrupos = document.getElementById("grupos"); // Container onde renderiza as tabelas
-
-  if (aba === 'jogos') {
-    if(divJogos) divJogos.style.display = "block";
-    if(divGrupos) divGrupos.style.display = "none";
-    renderJogos();
-  } else if (aba === 'classificacao') {
-    if(divJogos) divJogos.style.display = "none";
-    if(divGrupos) divGrupos.style.display = "block";
-    renderTabela();
-  }
+  renderJogos();
+  renderTabela();
 }
 
 function criarAbas(){
@@ -268,17 +244,10 @@ function criarAbas(){
   }
 }
 
-// FILTRO DE GRUPOS: Filtra de acordo com a aba de conteúdo ativa
 function selecionarGrupo(grupo){
-  // CORRIGIDO: Agora usa "grupo" corretamente para não quebrar o script!
-  grupoSelecionado = grupo === "todos" ? null : grupo; 
-  
-  if (abaPrincipalAtiva === 'jogos') {
-    renderJogos();
-  } else if (abaPrincipalAtiva === 'classificacao') {
-    renderTabela();
-  }
-  
+  grupoSelecionado = grupo === "todos" ? null : grupo;
+  renderJogos();
+  renderTabela();
   destacarAba();
 }
 
@@ -306,6 +275,7 @@ function renderJogos(){
 
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}`;
 
+      // Corrigido com oninput: Salva no localStorage e atualiza a tabela na hora que digita
       div.innerHTML += `<div style="margin-bottom:6px;">
         ${getBandeira(j.casa)} ${j.casa} 
          <input type="number"
@@ -337,6 +307,110 @@ function renderJogos(){
     div.innerHTML += `</div>`;
   });
 }
+
+function atualizar(){
+  // limpa tabela
+  for(let g in tabela){
+    for(let t in tabela[g]){
+      tabela[g][t] = {
+        pts:0, v:0, e:0, d:0, gp:0, gc:0,
+        pos:tabela[g][t].pos
+      };
+    }
+  }
+
+  jogosDetalhados.forEach((bloco, bi)=>{
+    bloco.jogos.forEach((j, ji)=>{
+      const id = `${bi}-${ji}`;
+
+      const s1 = localStorage.getItem(`placar-${id}-casa`);
+      const s2 = localStorage.getItem(`placar-${id}-fora`);
+
+      // Se o campo estiver em branco, ignora (não computa como 0x0 antes do tempo)
+      if (s1 === null || s2 === null || s1 === "" || s2 === "") {
+        return;
+      }
+
+      let g1 = parseInt(s1) || 0;
+      let g2 = parseInt(s2) || 0;
+
+      g1 = Math.max(0, g1);
+      g2 = Math.max(0, g2);
+
+      tabela[bloco.grupo][j.casa].gp += g1;
+      tabela[bloco.grupo][j.casa].gc += g2;
+      tabela[bloco.grupo][j.fora].gp += g2;
+      tabela[bloco.grupo][j.fora].gc += g1;
+
+      if(g1 > g2){
+        tabela[bloco.grupo][j.casa].pts += 3;
+        tabela[bloco.grupo][j.casa].v++;
+        tabela[bloco.grupo][j.fora].d++;
+      } 
+      else if(g2 > g1){
+        tabela[bloco.grupo][j.fora].pts += 3;
+        tabela[bloco.grupo][j.fora].v++;
+        tabela[bloco.grupo][j.casa].d++;
+      } 
+      else {
+        tabela[bloco.grupo][j.casa].pts++;
+        tabela[bloco.grupo][j.casa].e++;
+        tabela[bloco.grupo][j.fora].pts++;
+        tabela[bloco.grupo][j.fora].e++;
+      }
+    });
+  });
+
+  renderTabela();
+}
+
+function renderTabela(){
+  const div = document.getElementById("grupos");
+  if (!div) return;
+  div.innerHTML = "";
+  for(let g in tabela){
+    if(grupoSelecionado && g!==grupoSelecionado) continue;
+    let times = Object.entries(tabela[g]);
+    times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp-b[1].gc)-(a[1].gp-a[1].gc)) || (a[1].pos-b[1].pos));
+
+    // Verifica se todos os times do grupo jogaram as 3 partidas da rodada
+    const terceiraRodadaCompleta = times.every(([nome, d]) => {
+      const totalJogosDoTime = d.v + d.e + d.d;
+      return totalJogosDoTime === 3;
+    });
+
+    let html = `<div class="card"><h3>${g} - Classificação</h3>
+      <table>
+        <tr><th>Pos</th><th>Time</th><th>P</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th></tr>`;
+    
+    times.forEach(([nome,d],i)=>{
+      const jogosTotal = d.v+d.e+d.d;
+      
+      let classeCSS = "";
+      if (terceiraRodadaCompleta) {
+        if(i===0 || i===1) classeCSS = "qualificado"; 
+        else if(i===2) classeCSS = "terceiro";
+      }
+
+      html += `<tr class="${classeCSS}">
+        <td>${i+1}</td>
+        <td>${getBandeira(nome)} ${nome}</td>
+        <td>${d.pts}</td>
+        <td>${jogosTotal}</td>
+        <td>${d.v}</td>
+        <td>${d.e}</td>
+        <td>${d.d}</td>
+        <td>${d.gp}</td>
+        <td>${d.gc}</td>
+        <td>${d.gp-d.gc}</td>
+      </tr>`;
+    });
+
+    html += `</table></div>`;
+    div.innerHTML += html;
+  }
+}
+
 
 function atualizar(){
   // Limpa os dados estruturais da tabela
