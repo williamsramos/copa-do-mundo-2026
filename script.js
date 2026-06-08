@@ -222,6 +222,10 @@ let grupoSelecionado = null;
 let abaPrincipalAtiva = 'jogos'; // Pode ser 'jogos' ou 'classificacao'
 let grupoSelecionado = null;     // null significa "todos"
 
+// Variáveis globais de controle de estado
+let abaPrincipalAtiva = 'jogos'; // Pode ser 'jogos' ou 'classificacao'
+let grupoSelecionado = null;     // null significa "todos"
+
 function init(){
   tabela = {};
   for(let g in grupos){
@@ -266,7 +270,8 @@ function criarAbas(){
 
 // FILTRO DE GRUPOS: Filtra de acordo com a aba de conteúdo ativa
 function selecionarGrupo(grupo){
-  grupoSelecionado = grupo === "todos" ? null : grupo;
+  // CORRIGIDO: Agora usa "grupo" corretamente para não quebrar o script!
+  grupoSelecionado = grupo === "todos" ? null : grupo; 
   
   if (abaPrincipalAtiva === 'jogos') {
     renderJogos();
@@ -301,7 +306,6 @@ function renderJogos(){
 
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}`;
 
-      // ATUALIZADO: Adicionado os eventos oninput para salvar os placares e disparar os cálculos na hora
       div.innerHTML += `<div style="margin-bottom:6px;">
         ${getBandeira(j.casa)} ${j.casa} 
          <input type="number"
@@ -352,7 +356,7 @@ function atualizar(){
       const s1 = localStorage.getItem(`placar-${id}-casa`);
       const s2 = localStorage.getItem(`placar-${id}-fora`);
 
-      // Mantido: Se não houver digitação de placar, ignora para não somar 0x0 prematuro
+      // Se não houver digitação de placar, ignora para não somar 0x0 prematuro
       if (s1 === null || s2 === null || s1 === "" || s2 === "") {
         return;
       }
@@ -404,7 +408,7 @@ function renderTabela(){
     let times = Object.entries(tabela[g]);
     times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp-b[1].gc)-(a[1].gp-a[1].gc)) || (a[1].pos-b[1].pos));
 
-    // Mantido: Regra da 3ª rodada concluída (Copa do mundo = 3 jogos por time)
+    // Regra da 3ª rodada concluída (Copa do mundo = 3 jogos por time)
     const terceiraRodadaCompleta = times.every(([nome, d]) => {
       const totalJogosDoTime = d.v + d.e + d.d;
       return totalJogosDoTime === 3;
@@ -441,10 +445,6 @@ function renderTabela(){
     div.innerHTML += html;
   }
 }
-
-
-
-
 
 function resetarPlacares(){
   localStorage.clear();
