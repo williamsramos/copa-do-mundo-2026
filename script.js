@@ -218,6 +218,10 @@ let tabela = {};
 let grupoSelecionado = null;
 
 /* ================= FUNÇÕES PRINCIPAIS ================= */
+// Variáveis globais de controle de estado
+let abaPrincipalAtiva = 'jogos'; // Pode ser 'jogos' ou 'classificacao'
+let grupoSelecionado = null;     // null significa "todos"
+
 function init(){
   tabela = {};
   for(let g in grupos){
@@ -227,12 +231,32 @@ function init(){
     });
   }
   criarAbas();
-  renderJogos();
-  renderTabela();
+  
+  // Inicializa o app respeitando a aba padrão configurada
+  alternarAbaPrincipal(abaPrincipalAtiva); 
+}
+
+// CONTROLADOR CENTRAL: Alterna a visibilidade das seções estruturais do app
+function alternarAbaPrincipal(aba) {
+  abaPrincipalAtiva = aba;
+  
+  const divJogos = document.getElementById("jogos");
+  const divGrupos = document.getElementById("grupos"); // Container onde renderiza as tabelas
+
+  if (aba === 'jogos') {
+    if(divJogos) divJogos.style.display = "block";
+    if(divGrupos) divGrupos.style.display = "none";
+    renderJogos();
+  } else if (aba === 'classificacao') {
+    if(divJogos) divJogos.style.display = "none";
+    if(divGrupos) divGrupos.style.display = "block";
+    renderTabela();
+  }
 }
 
 function criarAbas(){
   const div = document.getElementById("abasGrupos");
+  if(!div) return;
   div.innerHTML = "";
   div.innerHTML += `<button onclick="selecionarGrupo('todos')" id="aba-todos">Todos</button>`;
   for(let g in grupos){
@@ -240,10 +264,16 @@ function criarAbas(){
   }
 }
 
+// FILTRO DE GRUPOS: Filtra de acordo com a aba de conteúdo ativa
 function selecionarGrupo(grupo){
-  grupoSelecionado = grupo === "todos" ? null : group;
-  renderJogos();
-  renderTabela();
+  grupoSelecionado = grupo === "todos" ? null : grupo;
+  
+  if (abaPrincipalAtiva === 'jogos') {
+    renderJogos();
+  } else if (abaPrincipalAtiva === 'classificacao') {
+    renderTabela();
+  }
+  
   destacarAba();
 }
 
@@ -258,6 +288,7 @@ function destacarAba(){
 
 function renderJogos(){
   const div = document.getElementById("jogos");
+  if (!div) return;
   div.innerHTML = "";
   jogosDetalhados.forEach((bloco, idx)=>{
     if(grupoSelecionado && bloco.grupo!==grupoSelecionado) return;
@@ -270,6 +301,7 @@ function renderJogos(){
 
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}`;
 
+      // ATUALIZADO: Adicionado os eventos oninput para salvar os placares e disparar os cálculos na hora
       div.innerHTML += `<div style="margin-bottom:6px;">
         ${getBandeira(j.casa)} ${j.casa} 
          <input type="number"
@@ -279,6 +311,7 @@ function renderJogos(){
     onwheel="this.blur()"
     inputmode="numeric"
     onkeydown="if(event.key==='ArrowUp'||event.key==='ArrowDown') event.preventDefault()"
+    oninput="localStorage.setItem('placar-${id}-casa', this.value); atualizar();"
   />
 
   x
@@ -290,6 +323,7 @@ function renderJogos(){
     onwheel="this.blur()"
     inputmode="numeric"
     onkeydown="if(event.key==='ArrowUp'||event.key==='ArrowDown') event.preventDefault()"
+    oninput="localStorage.setItem('placar-${id}-fora', this.value); atualizar();"
   />
         ${getBandeira(j.fora)} ${j.fora}
         <br><small>${infoEstadio}</small>
@@ -301,7 +335,7 @@ function renderJogos(){
 }
 
 function atualizar(){
-  // limpa tabela
+  // Limpa os dados estruturais da tabela
   for(let g in tabela){
     for(let t in tabela[g]){
       tabela[g][t] = {
@@ -318,7 +352,7 @@ function atualizar(){
       const s1 = localStorage.getItem(`placar-${id}-casa`);
       const s2 = localStorage.getItem(`placar-${id}-fora`);
 
-      // Impede que campos vazios entrem na conta como se fossem jogos de 0x0 terminados
+      // Mantido: Se não houver digitação de placar, ignora para não somar 0x0 prematuro
       if (s1 === null || s2 === null || s1 === "" || s2 === "") {
         return;
       }
@@ -353,18 +387,24 @@ function atualizar(){
     });
   });
 
-  renderTabela();
+  // Re-renderiza em tela estritamente a janela ativa pós atualização de dados
+  if (abaPrincipalAtiva === 'jogos') {
+    renderJogos();
+  } else if (abaPrincipalAtiva === 'classificacao') {
+    renderTabela();
+  }
 }
 
 function renderTabela(){
   const div = document.getElementById("grupos");
+  if (!div) return;
   div.innerHTML = "";
   for(let g in tabela){
     if(grupoSelecionado && g!==grupoSelecionado) continue;
     let times = Object.entries(tabela[g]);
     times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp-b[1].gc)-(a[1].gp-a[1].gc)) || (a[1].pos-b[1].pos));
 
-    // NOVA ALTERAÇÃO: Verifica se TODOS os times desse grupo completaram a 3ª rodada (3 jogos disputados)
+    // Mantido: Regra da 3ª rodada concluída (Copa do mundo = 3 jogos por time)
     const terceiraRodadaCompleta = times.every(([nome, d]) => {
       const totalJogosDoTime = d.v + d.e + d.d;
       return totalJogosDoTime === 3;
@@ -378,11 +418,9 @@ function renderTabela(){
       const jogosTotal = d.v+d.e+d.d;
       
       let classeCSS = "";
-      // Só libera o fundo colorido se a rodada 3 estiver concluída para todos os times deste grupo
       if (terceiraRodadaCompleta) {
         if(i===0 || i===1) classeCSS = "qualificado"; 
         else if(i===2) classeCSS = "terceiro";
-        // Caso queira pintar o 4º colocado, adicione mais um else if aqui para uma classe vermelha
       }
 
       html += `<tr class="${classeCSS}">
@@ -403,6 +441,7 @@ function renderTabela(){
     div.innerHTML += html;
   }
 }
+
 
 
 
