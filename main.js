@@ -85,7 +85,7 @@ document.querySelector("#cards").innerHTML =
   createCard('12/06', 'sexta',
     createGame("Canadá", "x", "Bósnia e Herz") +
     createGame("Catar", "x", "Suiça") +
-    createGame("EUA", "x", "Paraguai") +
+    createGame("EUA", "x", "Paraguai") 
   ) +
 
   createCard('13/06', 'sábado',
@@ -126,7 +126,7 @@ document.querySelector("#cards").innerHTML =
     createGame("República Tcheca", "x", "África do Sul") +
     createGame("Suiça", "x", "Bósnia e Herz") +
     createGame("Canadá", "x", "Catar") + 
-    createGame("México", "x", "Coreia do Sul") + 
+    createGame("México", "x", "Coreia do Sul") 
   ) +
 
   createCard('19/06', 'sexta',
@@ -165,7 +165,7 @@ document.querySelector("#cards").innerHTML =
 
   createCard('24/06', 'quarta',
     createGame("Suiça", "x", "Canadá") +
-    createGame("Bosnia e Herz", "x", "Catar") +
+    createGame("Bosnia e Herz.", "x", "Catar") +
     createGame("Escócia", "x", "Brasil") +
     createGame("Marrocos", "x", "Haiti") +
     createGame("México", "x", "Suécia") +
@@ -178,7 +178,7 @@ document.querySelector("#cards").innerHTML =
     createGame("Japão", "x",   "Suécia") +
     createGame("Tunisia", "x", "Holanda") +
     createGame("Turquia", "x", "EUA") +
-    createGame("Paraguai", "x", "Austrália") +
+    createGame("Paraguai", "x", "Austrália") 
   ) +
 
   createCard('26/06', 'sexta',
