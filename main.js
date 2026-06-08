@@ -79,14 +79,14 @@ function createCard(date, day, games) {
 document.querySelector("#cards").innerHTML =
   createCard('11/06', 'sábado',
     createGame("México", "x", "África do Sul") +
-    createGame("Coreia do Sul", "x", "Suécia")
+    createGame("Coreia do Sul", "x", "República Tcheca")
   ) +
 
   createCard('12/06', 'sexta',
-    createGame("Canadá", "x", "Turquia") +
+    createGame("Canadá", "x", "Bósnia e Hern") +
     createGame("Catar", "x", "Suiça") +
     createGame("EUA", "x", "Paraguai") +
-    createGame("Austrália", "x", "República Tcheca")
+    createGame("Austrália", "x", "Turquia")
   ) +
 
   createCard('13/06', 'sábado',
@@ -121,12 +121,12 @@ document.querySelector("#cards").innerHTML =
     createGame("Inglaterra", "x", "Croácia") +
     createGame("Gana", "x", "Panamá") + 
     createGame("México", "x", "Coreia do Sul") +
-    createGame("Àfrica do Sul", "x", "Suécia")
+    createGame("Àfrica do Sul", "x", "República Tcheca")
   ) +
 
   createCard('18/06', 'quinta',
     createGame("Canadá", "x", "Catar") +
-    createGame("Turquia", "x", "Suiça")
+    createGame("Bósnia e Hern", "x", "Suiça")
   ) +
 
   createCard('19/06', 'sexta',
