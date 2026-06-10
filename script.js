@@ -520,26 +520,6 @@ function renderTabela(){
   }
 }
 
-function resetarPlacares(){
-  localStorage.clear();
-  atualizar();
-}
-
-function salvarPlacares(){
-  jogosDetalhados.forEach((bloco, bi)=>{
-    bloco.jogos.forEach((j, ji)=>{
-      const id = `${bi}-${ji}`;
-
-      localStorage.setItem(`placar-${id}-casa`, document.getElementById(`g1-${id}`).value || 0);
-      localStorage.setItem(`placar-${id}-fora`, document.getElementById(`g2-${id}`).value || 0);
-    });
-  });
-
-  alert("Salvo!");
-}
-
-
-
 function showTab(tabId) {
   document.querySelectorAll('.tab').forEach(tab => {
     tab.style.display = 'none';
