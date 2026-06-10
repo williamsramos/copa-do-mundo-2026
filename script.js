@@ -903,6 +903,17 @@ function renderTabela(){
   }
 }
 
+function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
+
+  if(lado === "casa"){
+    jogosDetalhados[blocoIndex].jogos[jogoIndex].placarCasa = valor;
+  } else {
+    jogosDetalhados[blocoIndex].jogos[jogoIndex].placarFora = valor;
+  }
+
+  atualizar();
+  renderJogos();
+}
 
 function atualizar(){
   // Limpa os dados estruturais da tabela
@@ -1035,32 +1046,17 @@ function showTab(tabId) {
 }
 
 window.onload = function () {
+
   init();
 
-  // 🔥 detectar aba pela URL (ex: index.html#jogosTab)
   const hash = window.location.hash.replace('#', '');
 
   if (hash) {
     showTab(hash);
   } else {
-    showTab('classificacao'); // padrão
+    showTab('classificacao');
   }
+
+  atualizar();
 };
-
-
-let timeoutAtualizacao;
-
-function ativarAtualizacaoTempoReal(){
-  document.addEventListener("input", (e)=>{
-    if(e.target.type !== "number") return;
-
-    clearTimeout(timeoutAtualizacao);
-
-    timeoutAtualizacao = setTimeout(()=>{
-      atualizar();
-    }, 500); // espera 0.5s após parar de digitar
-  });
-}
-
-ativarAtualizacaoTempoReal();
 
