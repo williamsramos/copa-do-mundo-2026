@@ -724,136 +724,130 @@ let grupoSelecionado = null; // null significa "todos"
 
 function init(){
   tabela = {};
+
   for(let g in grupos){
     tabela[g] = {};
-    grupos[g].forEach((t,i)=>{
-      tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:i+1 };
+
+    grupos[g].forEach((t, i) => {
+      tabela[g][t] = {
+        pts: 0,
+        v: 0,
+        e: 0,
+        d: 0,
+        gp: 0,
+        gc: 0,
+        pos: i + 1
+      };
     });
   }
+
   criarAbas();
+  destacarAba(); // deixa "Todos" ativo ao carregar
+
   renderJogos();
   renderTabela();
 }
 
 function criarAbas(){
   const div = document.getElementById("abasGrupos");
+
   if(!div) return;
+
   div.innerHTML = "";
-  div.innerHTML += `<button onclick="selecionarGrupo('todos')" id="aba-todos">Todos</button>`;
+
+  div.innerHTML += `
+    <button onclick="selecionarGrupo('todos')" id="aba-todos">
+      Todos
+    </button>
+  `;
+
   for(let g in grupos){
-    div.innerHTML += `<button onclick="selecionarGrupo('${g}')" id="aba-${g}">${g}</button>`;
+    div.innerHTML += `
+      <button onclick="selecionarGrupo('${g}')" id="aba-${g}">
+        ${g}
+      </button>
+    `;
   }
 }
 
 function selecionarGrupo(grupo){
   grupoSelecionado = grupo === "todos" ? null : grupo;
+
   renderJogos();
   renderTabela();
   destacarAba();
 }
 
 function destacarAba(){
-  Object.keys(grupos).concat(["todos"]).forEach(g=>{
-    const btn = document.getElementById(`aba-${g}`);
-    if(!btn) return;
-    btn.classList.remove("ativo");
-    if((g==="todos" && !grupoSelecionado) || g===grupoSelecionado) btn.classList.add("ativo");
-  });
-}
+  Object.keys(grupos)
+    .concat(["todos"])
+    .forEach(g => {
 
+      const btn = document.getElementById(`aba-${g}`);
+
+      if(!btn) return;
+
+      btn.classList.remove("ativo");
+
+      if(
+        (g === "todos" && !grupoSelecionado) ||
+        g === grupoSelecionado
+      ){
+        btn.classList.add("ativo");
+      }
+    });
+}
 function renderJogos(){
   const div = document.getElementById("jogos");
   if (!div) return;
+
   div.innerHTML = "";
-  jogosDetalhados.forEach((bloco, idx)=>{
-    if(grupoSelecionado && bloco.grupo!==grupoSelecionado) return;
-    div.innerHTML += `<div class="card"><h3>${bloco.grupo} - ${bloco.rodada}</h3>`;
 
-    bloco.jogos.forEach((j,i)=>{
-      const id = `${idx}-${i}`;
-      const g1 = localStorage.getItem(`placar-${id}-casa`) || "";
-      const g2 = localStorage.getItem(`placar-${id}-fora`) || "";
+  jogosDetalhados.forEach((bloco, blocoIndex) => {
+    if(grupoSelecionado && bloco.grupo !== grupoSelecionado) return;
 
-      const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}`;
+div.innerHTML += `
+  <div class="card">
+    <h3>${bloco.grupo} - ${bloco.rodada}</h3>
+`;
 
-      // Corrigido com oninput: Salva no localStorage e atualiza a tabela na hora que digita
-      div.innerHTML += `<div style="margin-bottom:6px;">
-        ${getBandeira(j.casa)} ${j.casa} 
-         <input type="number"
-    id="g1-${id}"
-    value="${g1}"
-    style="width:40px;margin:0 4px;"
-    onwheel="this.blur()"
-    inputmode="numeric"
-    onkeydown="if(event.key==='ArrowUp'||event.key==='ArrowDown') event.preventDefault()"
-    oninput="localStorage.setItem('placar-${id}-casa', this.value); atualizar();"
-  />
+bloco.jogos.forEach((j, jogoIndex) => {
 
-  x
+  const g1 = j.placarCasa ?? "";
+  const g2 = j.placarFora ?? "";
 
-  <input type="number"
-    id="g2-${id}"
-    value="${g2}"
-    style="width:40px;margin:0 4px;"
-    onwheel="this.blur()"
-    inputmode="numeric"
-    onkeydown="if(event.key==='ArrowUp'||event.key==='ArrowDown') event.preventDefault()"
-    oninput="localStorage.setItem('placar-${id}-fora', this.value); atualizar();"
-  />
-        ${getBandeira(j.fora)} ${j.fora}
-        <br><small>${infoEstadio}</small>
-      </div><hr/>`;
-    });
+  const infoEstadio =
+    `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}`;
 
-    div.innerHTML += `</div>`;
-  });
-}
+  div.innerHTML += `
+    <div style="margin-bottom:6px;">
+      ${getBandeira(j.casa)} ${j.casa}
+  <input
+  type="number"
+  min="0"
+  value="${g1}"
+  style="width:55px;"
+  onchange="salvarPlacar(${blocoIndex},${jogoIndex},'casa',this.value)"
+>
 
+<strong>x</strong>
 
+<input
+  type="number"
+  min="0"
+  value="${g2}"
+  style="width:55px;"
+  onchange="salvarPlacar(${blocoIndex},${jogoIndex},'fora',this.value)"
+>
+      ${getBandeira(j.fora)} ${j.fora}
+      <br>
+      <small>${infoEstadio}</small>
+    </div>
+    <hr>
+  `;
+});
 
-  jogosDetalhados.forEach((bloco, bi)=>{
-    bloco.jogos.forEach((j, ji)=>{
-      const id = `${bi}-${ji}`;
-
-      const s1 = localStorage.getItem(`placar-${id}-casa`);
-      const s2 = localStorage.getItem(`placar-${id}-fora`);
-
-      // Se o campo estiver em branco, ignora (não computa como 0x0 antes do tempo)
-      if (s1 === null || s2 === null || s1 === "" || s2 === "") {
-        return;
-      }
-
-      let g1 = parseInt(s1) || 0;
-      let g2 = parseInt(s2) || 0;
-
-      g1 = Math.max(0, g1);
-      g2 = Math.max(0, g2);
-
-      tabela[bloco.grupo][j.casa].gp += g1;
-      tabela[bloco.grupo][j.casa].gc += g2;
-      tabela[bloco.grupo][j.fora].gp += g2;
-      tabela[bloco.grupo][j.fora].gc += g1;
-
-      if(g1 > g2){
-        tabela[bloco.grupo][j.casa].pts += 3;
-        tabela[bloco.grupo][j.casa].v++;
-        tabela[bloco.grupo][j.fora].d++;
-      } 
-      else if(g2 > g1){
-        tabela[bloco.grupo][j.fora].pts += 3;
-        tabela[bloco.grupo][j.fora].v++;
-        tabela[bloco.grupo][j.casa].d++;
-      } 
-      else {
-        tabela[bloco.grupo][j.casa].pts++;
-        tabela[bloco.grupo][j.casa].e++;
-        tabela[bloco.grupo][j.fora].pts++;
-        tabela[bloco.grupo][j.fora].e++;
-      }
-    });
-  });
-
-  renderTabela();
+div.innerHTML += `</div>`;
 }
 
 function renderTabela(){
@@ -916,112 +910,227 @@ function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
 }
 
 function atualizar(){
-  // Limpa os dados estruturais da tabela
+
   for(let g in tabela){
+
     for(let t in tabela[g]){
+
       tabela[g][t] = {
-        pts:0, v:0, e:0, d:0, gp:0, gc:0,
+
+        pts:0,
+
+        v:0,
+
+        e:0,
+
+        d:0,
+
+        gp:0,
+
+        gc:0,
+
         pos:tabela[g][t].pos
+
       };
+
     }
+
   }
 
-  jogosDetalhados.forEach((bloco, bi)=>{
-    bloco.jogos.forEach((j, ji)=>{
-      const id = `${bi}-${ji}`;
+  jogosDetalhados.forEach(bloco => {
 
-      const s1 = localStorage.getItem(`placar-${id}-casa`);
-      const s2 = localStorage.getItem(`placar-${id}-fora`);
+    bloco.jogos.forEach(jogo => {
 
-      // Se não houver digitação de placar, ignora para não somar 0x0 prematuro
-      if (s1 === null || s2 === null || s1 === "" || s2 === "") {
-        return;
-      }
+      const g1 = Number(jogo.placarCasa);
 
-      let g1 = parseInt(s1) || 0;
-      let g2 = parseInt(s2) || 0;
+      const g2 = Number(jogo.placarFora);
 
-      g1 = Math.max(0, g1);
-      g2 = Math.max(0, g2);
+      if(isNaN(g1) || isNaN(g2)) return;
 
-      tabela[bloco.grupo][j.casa].gp += g1;
-      tabela[bloco.grupo][j.casa].gc += g2;
-      tabela[bloco.grupo][j.fora].gp += g2;
-      tabela[bloco.grupo][j.fora].gc += g1;
+      const grupo = bloco.grupo;
+
+      const casa = tabela[grupo][jogo.casa];
+
+      const fora = tabela[grupo][jogo.fora];
+
+      if(!casa || !fora) return;
+
+      casa.gp += g1;
+
+      casa.gc += g2;
+
+      fora.gp += g2;
+
+      fora.gc += g1;
 
       if(g1 > g2){
-        tabela[bloco.grupo][j.casa].pts += 3;
-        tabela[bloco.grupo][j.casa].v++;
-        tabela[bloco.grupo][j.fora].d++;
-      } 
-      else if(g2 > g1){
-        tabela[bloco.grupo][j.fora].pts += 3;
-        tabela[bloco.grupo][j.fora].v++;
-        tabela[bloco.grupo][j.casa].d++;
-      } 
-      else {
-        tabela[bloco.grupo][j.casa].pts++;
-        tabela[bloco.grupo][j.casa].e++;
-        tabela[bloco.grupo][j.fora].pts++;
-        tabela[bloco.grupo][j.fora].e++;
+
+        casa.v++;
+
+        casa.pts += 3;
+
+        fora.d++;
+
+      } else if(g2 > g1){
+
+        fora.v++;
+
+        fora.pts += 3;
+
+        casa.d++;
+
+      } else {
+
+        casa.e++;
+
+        fora.e++;
+
+        casa.pts++;
+
+        fora.pts++;
+
       }
+
     });
+
   });
 
-  // Re-renderiza em tela estritamente a janela ativa pós atualização de dados
-  if (abaPrincipalAtiva === 'jogos') {
-    renderJogos();
-  } else if (abaPrincipalAtiva === 'classificacao') {
-    renderTabela();
-  }
+  renderTabela();
 }
 
 function renderTabela(){
-  const div = document.getElementById("grupos");
-  if (!div) return;
-  div.innerHTML = "";
-  for(let g in tabela){
-    if(grupoSelecionado && g!==grupoSelecionado) continue;
-    let times = Object.entries(tabela[g]);
-    times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp-b[1].gc)-(a[1].gp-a[1].gc)) || (a[1].pos-b[1].pos));
 
-    // Regra da 3ª rodada concluída (Copa do mundo = 3 jogos por time)
-    const terceiraRodadaCompleta = times.every(([nome, d]) => {
+  const div = document.getElementById("grupos");
+
+  if(!div) return;
+
+  div.innerHTML = "";
+
+  for(let g in tabela){
+
+    if(grupoSelecionado && g !== grupoSelecionado) continue;
+
+    let times = Object.entries(tabela[g]);
+
+    times.sort((a,b)=>
+
+      (b[1].pts - a[1].pts) ||
+
+      ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) ||
+
+      (a[1].pos - b[1].pos)
+
+    );
+
+    const terceiraRodadaCompleta = times.every(([nome,d])=>{
+
       const totalJogosDoTime = d.v + d.e + d.d;
+
       return totalJogosDoTime === 3;
+
     });
 
-    let html = `<div class="card"><h3>${g} - Classificação</h3>
-      <table>
-        <tr><th>Pos</th><th>Time</th><th>P</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th></tr>`;
-    
+    let html = `
+
+      <div class="card">
+
+        <h3>${g} - Classificação</h3>
+
+        <table>
+
+          <tr>
+
+            <th>Pos</th>
+
+            <th>Time</th>
+
+            <th>P</th>
+
+            <th>J</th>
+
+            <th>V</th>
+
+            <th>E</th>
+
+            <th>D</th>
+
+            <th>GP</th>
+
+            <th>GC</th>
+
+            <th>SG</th>
+
+          </tr>
+
+    `;
+
     times.forEach(([nome,d],i)=>{
-      const jogosTotal = d.v+d.e+d.d;
-      
+
+      const jogosTotal = d.v + d.e + d.d;
+
       let classeCSS = "";
-      if (terceiraRodadaCompleta) {
-        if(i===0 || i===1) classeCSS = "qualificado"; 
-        else if(i===2) classeCSS = "terceiro";
+
+      if(terceiraRodadaCompleta){
+
+        if(i === 0 || i === 1){
+
+          classeCSS = "qualificado";
+
+        }
+
+        else if(i === 2){
+
+          classeCSS = "terceiro";
+
+        }
+
       }
 
-      html += `<tr class="${classeCSS}">
-        <td>${i+1}</td>
-        <td>${getBandeira(nome)} ${nome}</td>
-        <td>${d.pts}</td>
-        <td>${jogosTotal}</td>
-        <td>${d.v}</td>
-        <td>${d.e}</td>
-        <td>${d.d}</td>
-        <td>${d.gp}</td>
-        <td>${d.gc}</td>
-        <td>${d.gp-d.gc}</td>
-      </tr>`;
+      html += `
+
+        <tr class="${classeCSS}">
+
+          <td>${i + 1}</td>
+
+          <td>${getBandeira(nome)} ${nome}</td>
+
+          <td>${d.pts}</td>
+
+          <td>${jogosTotal}</td>
+
+          <td>${d.v}</td>
+
+          <td>${d.e}</td>
+
+          <td>${d.d}</td>
+
+          <td>${d.gp}</td>
+
+          <td>${d.gc}</td>
+
+          <td>${d.gp - d.gc}</td>
+
+        </tr>
+
+      `;
+
     });
 
-    html += `</table></div>`;
+    html += `
+
+        </table>
+
+      </div>
+
+    `;
+
     div.innerHTML += html;
+
   }
+
 }
+
+
 
 function showTab(tabId) {
   document.querySelectorAll('.tab').forEach(tab => {
@@ -1029,24 +1138,13 @@ function showTab(tabId) {
   });
 
   const aba = document.getElementById(tabId);
-  if (aba) {
-    aba.style.display = 'block';
-  }
-}
 
-function showTab(tabId) {
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.style.display = 'none';
-  });
-
-  const aba = document.getElementById(tabId);
   if (aba) {
     aba.style.display = 'block';
   }
 }
 
 window.onload = function () {
-
   init();
 
   const hash = window.location.hash.replace('#', '');
@@ -1059,4 +1157,3 @@ window.onload = function () {
 
   atualizar();
 };
-
