@@ -101,10 +101,14 @@ th {
 /* CORES CLASSIFICAÇÃO */
 .qualificado {
   background: #166534;
+  color: white;
+  font-weight: bold;
 }
 
 .terceiro {
   background: #92400e;
+  color: white;
+  font-weight: bold;
 }
 
 /* INPUT */
