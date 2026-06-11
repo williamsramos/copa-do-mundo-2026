@@ -225,7 +225,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { id: 92, casa:"Vencedor 79", fora:"Vencedor 80", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 93, casa:"Vencedor 82", fora:"Vencedor 81", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 94, casa:"Vencedor 84", fora:"Vencedor 83", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 95, casa:"Vencedor 85", fora:"Vencedor 88", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 95, casa:"Vencedor 85", fora:"Vencedor 88", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"","penaisCasa":"","penaisFora":"" },
   { id: 96, casa:"Vencedor 86", fora:"Vencedor 87", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
@@ -259,7 +259,7 @@ function init(){
   }
   criarAbas();
   destacarAba();
-  atualizar(false); // Executa o cálculo inicial sem forçar re-renderização infinita
+  atualizar(false);
   renderJogos();
   renderTabela();
 }
@@ -275,13 +275,10 @@ function criarAbas(){
 }
 
 function selecionarGrupo(grupo){
-  grupoSelecionado = grupo === "todos" ? null : group; // ❌ Erro aqui!
-  if(grupo === "todos") grupoSelecionado = null;
+  grupoSelecionado = grupo === "todos" ? null : grupo;
   renderJogos();
-  renderTabela();
   destacarAba();
 }
-
 
 function destacarAba(){
   const chavesValidas = Object.keys(grupos).concat(["todos", "Mata-mata"]);
@@ -301,8 +298,7 @@ function renderJogos(){
   div.innerHTML = "";
 
   jogosDetalhados.forEach((bloco, blocoIndex) => {
-    // 🔍 CORREÇÃO AQUI: Se um grupo estiver selecionado e não for o deste bloco, pula para o próximo!
-    if (grupoSelecionado !== null && bloco.grupo !== grupoSelecionado) return;
+    if(grupoSelecionado !== null && bloco.grupo !== grupoSelecionado) return;
 
     let blocoHtml = `<div class="card"><h3>${bloco.grupo} - ${bloco.rodada}</h3>`;
 
@@ -345,7 +341,6 @@ function renderJogos(){
   });
 }
 
-
 function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
   if(lado === "casa"){
     jogosDetalhados[blocoIndex].jogos[jogoIndex].placarCasa = valor;
@@ -367,7 +362,6 @@ function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
 function atualizar(deveRenderizar = true){
   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
 
-  // Proteção para não quebrar se a tabela ainda não tiver sido estruturada no init
   if(!tabela || Object.keys(tabela).length === 0) return;
 
   for(let g in tabela){
@@ -419,7 +413,6 @@ function renderTabela(){
   div.innerHTML = "";
 
   for(let g in tabela){
-    if(grupoSelecionado && g !== grupoSelecionado) continue;
     let times = Object.entries(tabela[g]);
     times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) || (a[1].pos - b[1].pos));
 
@@ -476,15 +469,13 @@ function showTab(tabId) {
   }
 }
 
-/* ================= INICIALIZADOR ÚNICO ================= */
 window.onload = function () {
-  // O init centraliza a criação e chama o atualizar de forma segura internamente
   init();
 
   const hash = window.location.hash.replace('#', '');
   if (hash) {
-  showTab(hash);
-} else {
-  showTab('classificacao'); // Abre a classificação por padrão
-}
+    showTab(hash);
+  } else {
+    showTab('classificacao');
+  }
 };
