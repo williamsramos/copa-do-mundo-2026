@@ -344,6 +344,7 @@ function renderJogos(){
   });
 }
 
+
 function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
   if(lado === "casa"){
     jogosDetalhados[blocoIndex].jogos[jogoIndex].placarCasa = valor;
