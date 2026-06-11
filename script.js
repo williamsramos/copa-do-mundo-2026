@@ -275,12 +275,13 @@ function criarAbas(){
 }
 
 function selecionarGrupo(grupo){
-  grupoSelecionado = grupo === "todos" ? null : group; // Ajuste simples de segurança
+  grupoSelecionado = grupo === "todos" ? null : group; // ❌ Erro aqui!
   if(grupo === "todos") grupoSelecionado = null;
   renderJogos();
   renderTabela();
   destacarAba();
 }
+
 
 function destacarAba(){
   const chavesValidas = Object.keys(grupos).concat(["todos", "Mata-mata"]);
