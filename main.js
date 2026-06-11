@@ -234,7 +234,7 @@ document.querySelector("#cards").innerHTML =
     createGame("Vencedor 95", "x", "Vencedor 96")
   ) +
 
-  createCard('14/07 a 15/07', 'SEMIFINAL',
+    createCard('14/07 a 15/07', 'SEMIFINAL',
     createGame("Vencedor 97", "x", "Vencedor 98") +
     createGame("Vencedor 99", "x", "Vencedor 100")
   ) +
@@ -242,4 +242,36 @@ document.querySelector("#cards").innerHTML =
   createCard('18/07 e 19/07', 'FINAIS',
     createGame("Perdedor 101", "3º LUGAR", "Perdedor 102") +
     createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102")
-  ) */ ;
+  ) +
+
+  // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
+  `
+    <div class="card card-podio" style="animation-delay: 2.4s;">
+      <h2>🏆 PÓDIO DA COPA</h2>
+      
+      <div class="taca-container">
+        <img src="worldcup_favicon.png" alt="Taça da Copa">
+        <h3>Campeão</h3>
+      </div>
+
+      <ul class="podio-lista">
+        <li>
+          <span style="color: #f7dd43;">🥇 1º lugar</span>
+          <strong>Vencedor 104</strong>
+        </li>
+        <li>
+          <span style="color: #d1d1d1;">🥈 2º lugar</span>
+          <strong>Perdedor 104</strong>
+        </li>
+        <li>
+          <span style="color: #e5a93b;">🥉 3º lugar</span>
+          <strong>Vencedor 103</strong>
+        </li>
+        <li>
+          <span style="color: #a1a1a1;">🏅 4º lugar</span>
+          <strong>Perdedor 103</strong>
+        </li>
+      </ul>
+    </div>
+  `
+  */ ;
