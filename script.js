@@ -450,7 +450,7 @@ function renderTabela(){
 
 function showTab(tabId) {
   const abas = document.querySelectorAll('.tab');
-  if (abas.length === 0) return;
+  if (abas.length === 0) return; // Se não estiver no index, ignora com segurança
 
   abas.forEach(tab => {
     tab.style.display = 'none';
@@ -463,12 +463,12 @@ function showTab(tabId) {
 }
 
 window.onload = function () {
-  // Inicializa o simulador se a função init existir
+  // Executa o init se a função real existir na página
   if (typeof init === "function") {
-    init();
+    try { init(); } catch(e) { console.log("Modo Agenda ativo"); }
   }
 
-  // Verifica se veio alguma âncora na URL (ex: #jogosTab)
+  // Captura a hashtag da URL para saber qual aba abrir
   const hash = window.location.hash.replace('#', '');
 
   if (hash) {
@@ -477,7 +477,8 @@ window.onload = function () {
     showTab('classificacao');
   }
 
+  // Executa o atualizar se a função real existir na página
   if (typeof atualizar === "function") {
-    atualizar();
+    try { atualizar(); } catch(e) { }
   }
 };
