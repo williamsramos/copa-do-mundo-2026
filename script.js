@@ -225,7 +225,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { id: 92, casa:"Vencedor 79", fora:"Vencedor 80", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 93, casa:"Vencedor 82", fora:"Vencedor 81", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 94, casa:"Vencedor 84", fora:"Vencedor 83", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 95, casa:"Vencedor 85", fora:"Vencedor 88", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"","penaisCasa":"","penaisFora":"" },
+  { id: 95, casa:"Vencedor 85", fora:"Vencedor 88", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 96, casa:"Vencedor 86", fora:"Vencedor 87", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
@@ -240,7 +240,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 ]},
 { grupo:"Mata-mata", rodada:"Finais", data:"18/07 e 19/07", jogos:[
   { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", East Rutherford, New Jersey", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]}
 ];
 
@@ -274,9 +274,11 @@ function criarAbas(){
   div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
 }
 
+// 🔀 FILTRO DUPLO CORRIGIDO: renderiza e filtra jogos e classificação juntos ao clicar na aba
 function selecionarGrupo(grupo){
   grupoSelecionado = grupo === "todos" ? null : grupo;
   renderJogos();
+  renderTabela();
   destacarAba();
 }
 
@@ -413,6 +415,9 @@ function renderTabela(){
   div.innerHTML = "";
 
   for(let g in tabela){
+    // 🎯 RECONECTANDO O FILTRO NA CLASSIFICAÇÃO: Se houver grupo selecionado e não for este, pula!
+    if(grupoSelecionado !== null && g !== grupoSelecionado) continue;
+
     let times = Object.entries(tabela[g]);
     times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) || (a[1].pos - b[1].pos));
 
@@ -479,3 +484,4 @@ window.onload = function () {
     showTab('classificacao');
   }
 };
+
