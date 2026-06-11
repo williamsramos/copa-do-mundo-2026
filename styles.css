@@ -196,6 +196,22 @@ input {
   gap: 8px;
 }
 
+/* Estilização do Rodapé */
+.main-footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #727278;
+  font-size: 14px;
+  width: 100%;
+  clear: both;
+}
+
+.main-footer p {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+
 /* MOBILE */
 @media (max-width: 600px) {
 
@@ -240,5 +256,10 @@ input {
   .card div {
     flex-direction: column;
     align-items: center;
+  }
+  
+  main-footer {
+    font-size: 12px;
+    padding: 30px 12px;
   }
 }
