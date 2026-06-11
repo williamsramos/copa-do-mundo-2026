@@ -366,6 +366,9 @@ function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
 }
 
 function atualizar(){
+  // 🔥 ADICIONE ESTA LINHA AQUI NO INÍCIO:
+  localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
+
   for(let g in tabela){
     for(let t in tabela[g]){
       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
@@ -403,6 +406,7 @@ function atualizar(){
   });
   renderTabela();
 }
+
 
 function renderTabela(){
   const div = document.getElementById("grupos");
