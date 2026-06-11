@@ -44,7 +44,7 @@ const grupos = {
 const jogosDetalhados = [
 // Grupo A
 { grupo:"Grupo A", rodada:"1ª Rodada", data:"11/06", jogos:[
-  { casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora:"16:00", placarCasa:"", placarFora:"" },
+  { casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora:"16:00", placarCasa:"2", placarFora:"0" },
   { casa:"Coreia do Sul", fora:"República Tcheca", estadio:"Guadalajara", hora:"23:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo A", rodada:"2ª Rodada", data:"17/06", jogos:[
