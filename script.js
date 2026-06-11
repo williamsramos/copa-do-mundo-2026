@@ -273,7 +273,7 @@ function criarAbas(){
   for(let g in grupos){
     div.innerHTML += `<button onclick="selecionarGrupo('${g}')" id="aba-${g}">${g}</button>`;
   }
-  div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
+//  div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
 }
 
 function selecionarGrupo(grupo){
@@ -288,7 +288,7 @@ function selecionarGrupo(grupo){
 }
 
 function destacarAba(){
-  const chavesValidas = Object.keys(grupos).concat(["todos", "Mata-mata"]);
+ // const chavesValidas = Object.keys(grupos).concat(["todos", "Mata-mata"]);
   chavesValidas.forEach(g => {
     const btn = document.getElementById(`aba-${g}`);
     if(!btn) return;
