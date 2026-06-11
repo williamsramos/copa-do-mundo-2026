@@ -298,14 +298,15 @@ function renderJogos(){
   if (!div) return;
   div.innerHTML = "";
 
-  jogosDetalhados.forEach((bloco, blocoIndex) => {
-    if(grupoSelecionado && bloco.grupo !== grupoSelecionado) return;
+  // Impede que o código quebre caso a variável grupoSelecionado não tenha sido criada
+  const filtroGrupo = typeof grupoSelecionado !== 'undefined' ? grupoSelecionado : null;
 
-    // Criamos uma variável acumuladora para o HTML do bloco de jogos
+  jogosDetalhados.forEach((bloco, blocoIndex) => {
+    if(filtroGrupo && bloco.grupo !== filtroGrupo) return;
+
     let blocoHtml = `<div class="card"><h3>${bloco.grupo} - ${bloco.rodada}</h3>`;
 
     bloco.jogos.forEach((j, jogoIndex) => {
-      // Ajustado de ?? para || para ler strings vazias salvas corretamente
       const g1 = j.placarCasa || "";
       const g2 = j.placarFora || "";
       
@@ -345,6 +346,7 @@ function renderJogos(){
 }
 
 
+
 function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
   if(lado === "casa"){
     jogosDetalhados[blocoIndex].jogos[jogoIndex].placarCasa = valor;
@@ -366,7 +368,7 @@ function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
 }
 
 function atualizar(){
-  // 🔥 ADICIONE ESTA LINHA AQUI NO INÍCIO:
+  // Salva permanentemente no navegador para carregar ao dar F5 e atualizar a agenda
   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
 
   for(let g in tabela){
@@ -404,8 +406,13 @@ function atualizar(){
       }
     });
   });
-  renderTabela();
+  
+  // Executa com segurança se a função renderTabela existir
+  if(typeof renderTabela === "function") {
+    renderTabela();
+  }
 }
+
 
 
 function renderTabela(){
