@@ -230,6 +230,68 @@
   gap: 5px;
 }
 
+
+/* Estilos do Cartão do Pódio */
+.card-podio {
+  width: 100%;
+  max-width: 270px;
+  margin-inline: auto;
+}
+
+.taca-container {
+  margin: 15px 0;
+}
+
+.taca-container img {
+  width: 55px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.taca-container img:hover {
+  transform: scale(1.1);
+}
+
+.taca-container h3 {
+  color: var(--card-color-primary);
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.podio-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.podio-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #323238;
+  padding-bottom: 5px;
+}
+
+.podio-lista li:last-child {
+  border-bottom: none;
+}
+
+.podio-lista span {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.podio-lista strong {
+  font-size: 14px;
+  color: #E1E1E6;
+}
+
   
   @keyframes appear{
     0% {
@@ -248,4 +310,16 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
+
+  #cards {
+    max-width: 670px;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+
+  /* Adicione isso aqui dentro para dar destaque ao pódio no PC: */
+  .card-podio {
+    max-width: 100%; /* No PC ele ganha largura total na linha */
+    flex-basis: 100%; /* Força ele a ocupar uma linha inteira sozinho no final */
+  }
+}
