@@ -196,10 +196,12 @@ input {
   gap: 8px;
 }
 
-/* Estilização do Rodapé */
+/* ==========================================================================
+   📱 ESTILIZAÇÃO DO RODAPÉ (FOOTER) RESPONSIVO
+   ========================================================================== */
 .main-footer {
   text-align: center;
-  padding: 40px 0;
+  padding: 40px 16px; /* Evita que o texto cole na borda do celular */
   color: #727278;
   font-size: 14px;
   width: 100%;
@@ -209,7 +211,10 @@ input {
 .main-footer p {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  line-height: 150%; /* Espaçamento caso o texto quebre linha no celular */
 }
+
+
 
 
 /* MOBILE */
