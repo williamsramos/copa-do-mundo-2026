@@ -1,41 +1,44 @@
-Percebi sim! Você tinha deixado o espaço perfeito lá no final do main.js, logo depois do dia 27/06, bem ali:
-```javascript
-  //Fase de Mata Mata 
+// 🌍 DICIONÁRIO DE BANDEIRAS INTEGRADO DIRETO NO MAIN.JS
+const bandeirasCopa = {
+  "México": "mx", "África do Sul": "za", "Coreia do Sul": "kr", "República Tcheca": "cz",
+  "Canadá": "ca", "Bósnia e Herz.": "ba", "Catar": "qa", "Suíça": "ch",
+  "EUA": "us", "Paraguai": "py", "Brasil": "br", "Marrocos": "ma",
+  "Haiti": "ht", "Escócia": "gb-sct", "Austrália": "au", "Turquia": "tr",
+  "Alemanha": "de", "Curaçau": "cw", "Costa do Marfim": "ci", "Equador": "ec",
+  "Holanda": "nl", "Japão": "jp", "Suécia": "se", "Tunísia": "tn",
+  "Espanha": "es", "Cabo Verde": "cv", "Bélgica": "be", "Egito": "eg",
+  "Arábia Saudita": "sa", "Uruguai": "uy", "Irã": "ir", "Nova Zelândia": "nz",
+  "França": "fr", "Senegal": "sn", "Iraque": "iq", "Noruega": "no",
+  "Argentina": "ar", "Argélia": "dz", "Áustria": "at", "Jordânia": "jo",
+  "Portugal": "pt", "RD_Congo": "cd", "Inglaterra": "gb-eng", "Croácia": "hr",
+  "Gana": "gh", "Panamá": "pa", "Uzbequistão": "uz", "Colômbia": "co"
+};
 
-//   createCard('28/06', 'domingo',
-//     createGame("2A", "x", "2B") 
-//   ) +
-// ...
-
-```
-Podemos usar exatamente essa estrutura manual que você começou, encaixando todos os 5 blocos do Mata-mata diretamente dentro do grande bloco do document.querySelector("#cards").innerHTML.
-Dessa forma, o código fica exatamente no formato original do seu projeto NLW, sem precisar de loops automáticos ou arrays separados!
-Aqui está como fica o seu **main.js completo**, com os jogos do Mata-mata inseridos exatamente naquele espaço e com os nomes ajustados para não quebrar as bandeiras:
-```javascript
-// 🔥 NORMALIZAR NOMES (aceita brasil, Brasil, BRAZIL, etc)
+// 🔥 NORMALIZAR NOMES (para bater certinho com as chaves do objeto)
 function normalizar(nome) {
   if (!nome) return "";
   return nome
     .toLowerCase()
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .replace(/\s+/g, "_");
 }
 
-// 🔥 PEGAR BANDEIRA DO script.js
+// 🔥 PEGAR BANDEIRA CORRIGIDA
 function getBandeira(time){
-  if (typeof bandeiras === "undefined" || !time) return "";
+  if (!time) return "";
   
-  const chave = Object.keys(bandeiras).find(
+  // Busca a chave correta ignorando maiúsculas/minúsculas e acentos
+  const chave = Object.keys(bandeirasCopa).find(
     k => normalizar(k) === normalizar(time)
   );
 
-  if(!chave) return "";
+  if(!chave) return ""; // Se for nome do mata-mata (ex: "2º Grupo A"), não põe bandeira e não quebra
 
-  const code = bandeiras[chave];
+  const code = bandeirasCopa[chave];
   return `<img src="https://flagcdn.com/w40/${code}.png" style="width:20px; margin-right:6px; vertical-align:middle;">`;
 }
 
-// 🔥 CRIAR JOGO
+// 🔥 CRIAR ESTRUTURA DO JOGO
 function createGame(player1, hour, player2) {
   return `
     <li>
@@ -52,16 +55,11 @@ function createGame(player1, hour, player2) {
   `;
 }
 
-// 🔥 ANIMAÇÃO DOS CARDS
+// 🔥 ANIMAÇÃO E CONTAGEM DOS CARDS
 let delay = -0.4;
-
 function createCard(date, day, games) {
   delay = delay + 0.4;
-
-  // conta quantos jogos existem
   const jogosCount = (games.match(/<li>/g) || []).length;
-
-  // adiciona classe se tiver 2 ou mais jogos
   const classeCard = jogosCount >= 2 ? "card multiplo" : "card";
 
   return `
@@ -74,7 +72,7 @@ function createCard(date, day, games) {
   `;
 }
 
-// 🔥 RENDERIZAR NA TELA
+// 🔥 RENDERIZAR JOGOS NA TELA
 document.querySelector("#cards").innerHTML =
   createCard('11/06', 'sábado',
     createGame("México", "x", "África do Sul") +
@@ -196,16 +194,6 @@ document.querySelector("#cards").innerHTML =
     createGame("RD_Congo", "x", "Uzbequistão") +
     createGame("Jordânia", "x", "Argentina") +
     createGame("Argélia", "x", "Áustria")     
-  )   
-  createCard('27/06', 'sábado',
-    createGame("Egito", "x", "Irã") +
-    createGame("Nova Zelândia", "x", "Bélgica") +
-    createGame("Panamá", "x", "Inglaterra") +
-    createGame("Croácia", "x", "Gana") +
-    createGame("Colômbia", "x", "Portugal") +
-    createGame("RD_Congo", "x", "Uzbequistão") +
-    createGame("Jordânia", "x", "Argentina") +
-    createGame("Argélia", "x", "Áustria")     
   ) /* +
 
   // 🔥 O SEU ESPAÇO DO MATA-MATA COMENTADO E ARQUIVADO AQUI:
@@ -255,5 +243,3 @@ document.querySelector("#cards").innerHTML =
     createGame("Perdedor 101", "3º LUGAR", "Perdedor 102") +
     createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102")
   ) */ ;
-
-
