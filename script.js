@@ -197,11 +197,10 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 { grupo:"Grupo L", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Panamá", fora:"Inglaterra", estadio:"Nova Jersey", hora:"18:00", placarCasa:"", placarFora:"" },
   { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"", placarFora:"" }
-]};
-];
+]}
 
 // ================= MATA-MATA =================
-/*{ grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
+/* { grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
   { id: 73, casa:"2º Grupo A", fora:"2º Grupo B", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 74, casa:"1º Grupo E", fora:"3º A/B/C/D/F", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 75, casa:"1º Grupo F", fora:"2º Grupo C", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
@@ -243,7 +242,9 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]}
-];*\
+*/
+
+];
 
 /* ================= VARIÁVEIS ================= */
 let tabela = {};
