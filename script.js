@@ -41,7 +41,8 @@ const grupos = {
 };
 
 /* ================= JOGOS DETALHADOS ================= */
-const jogosDetalhados = [
+// 🔥 SISTEMA INTELIGENTE: Carrega o que o usuário digitou na página web ou usa a lista padrão se for a primeira vez
+let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 // Grupo A
 { grupo:"Grupo A", rodada:"1ª Rodada", data:"11/06", jogos:[
   { casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora:"16:00", placarCasa:"2", placarFora:"0" },
@@ -270,7 +271,6 @@ function criarAbas(){
   for(let g in grupos){
     div.innerHTML += `<button onclick="selecionarGrupo('${g}')" id="aba-${g}">${g}</button>`;
   }
-  // Insere dinamicamente o botão do Mata-mata na lista de abas
   div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
 }
 
@@ -298,7 +298,6 @@ function renderJogos(){
   if (!div) return;
   div.innerHTML = "";
 
-  // Impede que o código quebre caso a variável grupoSelecionado não tenha sido criada
   const filtroGrupo = typeof grupoSelecionado !== 'undefined' ? grupoSelecionado : null;
 
   jogosDetalhados.forEach((bloco, blocoIndex) => {
@@ -344,8 +343,6 @@ function renderJogos(){
     div.innerHTML += blocoHtml;
   });
 }
-
-
 
 function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
   if(lado === "casa"){
@@ -407,13 +404,10 @@ function atualizar(){
     });
   });
   
-  // Executa com segurança se a função renderTabela existir
   if(typeof renderTabela === "function") {
     renderTabela();
   }
 }
-
-
 
 function renderTabela(){
   const div = document.getElementById("grupos");
@@ -465,9 +459,8 @@ function renderTabela(){
 }
 
 function showTab(tabId) {
-  // Seleciona as abas do index.html
   const abas = document.querySelectorAll('.tab');
-  if (abas.length === 0) return; // Segurança para não quebrar em outras páginas
+  if (abas.length === 0) return;
 
   abas.forEach(tab => {
     tab.style.display = 'none';
@@ -480,22 +473,19 @@ function showTab(tabId) {
 }
 
 window.onload = function () {
-  // Inicializa o simulador se a função existir
+  // Roda o cálculo e resgata o que foi salvo ANTES de renderizar as funções de tela
+  if (typeof atualizar === "function") {
+    atualizar();
+  }
+
   if (typeof init === "function") {
     init();
   }
 
-  // Verifica se veio alguma hashtag na URL (ex: #jogosTab)
   const hash = window.location.hash.replace('#', '');
-
   if (hash) {
     showTab(hash);
   } else {
-    showTab('classificacao'); // Abre classificação por padrão
-  }
-
-  // Atualiza os dados da tabela se a função existir
-  if (typeof atualizar === "function") {
-    atualizar();
+    showTab('classificacao');
   }
 };
