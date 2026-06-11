@@ -35,12 +35,15 @@
             </header>
             <main id="cards"></main>
         </div>
-        <script src="main.js"></script>
-        <script>
-function showTab(tabId){
-  document.querySelectorAll(".aba").forEach(sec => sec.classList.add("hidden"));
-  document.getElementById(tabId).classList.remove("hidden");
-}
+      <!-- Deixe os dois scripts nessa ordem exata no final do agenda.html -->
+<script src="script.js"></script>
+<script src="main.js"></script>
+<script>
+  // Esse pequeno bloco avisa o script.js para não tentar desenhar os grupos na tela da agenda
+  function init() { return; }
+  function atualizar() { return; }
+  function renderJogos() { return; }
+  function renderTabela() { return; }
 </script>
-    </body>
+</body>
 </html>
