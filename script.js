@@ -275,9 +275,13 @@ function criarAbas(){
 }
 
 function selecionarGrupo(grupo){
-  grupoSelecionado = group === "todos" ? null : grupo;
+  grupoSelecionado = grupo === "todos" ? null : grupo;
+  
+  // 🚀 TRUQUE SEGURO: Quando o usuário clicar em uma sub-aba de grupo,
+  // nós forçamos o site a abrir a aba de JOGOS para mostrar o filtro certinho!
+  showTab('jogosTab'); 
+  
   renderJogos();
-  renderTabela();
   destacarAba();
 }
 
@@ -408,14 +412,13 @@ function atualizar(deveRenderizar = true){
   }
 }
 
+// 🛡️ FIX DAS TABELAS: Sempre renderiza todos os grupos de forma linda na classificação
 function renderTabela(){
   const div = document.getElementById("grupos");
   if(!div) return;
   div.innerHTML = "";
 
   for(let g in tabela){
-    if(grupoSelecionado !== null && g !== grupoSelecionado) continue;
-
     let times = Object.entries(tabela[g]);
     times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) || (a[1].pos - b[1].pos));
 
