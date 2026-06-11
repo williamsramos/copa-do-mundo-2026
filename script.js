@@ -197,6 +197,59 @@ const jogosDetalhados = [
 { grupo:"Grupo L", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Panamá", fora:"Inglaterra", estadio:"Nova Jersey", hora:"18:00", placarCasa:"", placarFora:"" },
   { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"", placarFora:"" }
+],
+// ================= MATA-MATA (FASE ELIMINATÓRIA) =================
+
+// 16 avos de Final (Round of 32)
+{ grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
+  { id: 73, casa:"2º Grupo A", fora:"2º Grupo B", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 74, casa:"1º Grupo E", fora:"3º A/B/C/D/F", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 75, casa:"1º Grupo F", fora:"2º Grupo C", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 76, casa:"1º Grupo C", fora:"2º Grupo F", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 77, casa:"1º Grupo I", fora:"3º C/D/F/G/H", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 78, casa:"2º Grupo E", fora:"2º Grupo I", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 79, casa:"1º Grupo A", fora:"3º C/E/F/H/I", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 80, casa:"1º Grupo L", fora:"3º E/H/I/J/K", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 81, casa:"1º Grupo D", fora:"3º B/E/F/I/J", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 82, casa:"1º Grupo G", fora:"3º A/E/H/I/J", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 83, casa:"2º Grupo K", fora:"2º Grupo L", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 84, casa:"1º Grupo H", fora:"2º Grupo J", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 85, casa:"1º Grupo B", fora:"3º E/F/G/I/J", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 86, casa:"1º Grupo J", fora:"2º Grupo H", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 87, casa:"1º Grupo K", fora:"3º D/E/I/J/L", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 88, casa:"2º Grupo D", fora:"2º Grupo G", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+]},
+
+// Oitavas de Final
+{ grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
+  { id: 89, casa:"Vencedor 74", fora:"Vencedor 75", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 90, casa:"Vencedor 73", fora:"Vencedor 76", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 91, casa:"Vencedor 78", fora:"Vencedor 77", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 92, casa:"Vencedor 79", fora:"Vencedor 80", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 93, casa:"Vencedor 82", fora:"Vencedor 81", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 94, casa:"Vencedor 84", fora:"Vencedor 83", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 95, casa:"Vencedor 85", fora:"Vencedor 88", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 96, casa:"Vencedor 86", fora:"Vencedor 87", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+]},
+
+// Quartas de Final
+{ grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
+  { id: 97, casa:"Vencedor 90", fora:"Vencedor 89", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 98, casa:"Vencedor 91", fora:"Vencedor 92", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 99, casa:"Vencedor 93", fora:"Vencedor 94", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 100, casa:"Vencedor 95", fora:"Vencedor 96", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+]},
+
+// Semifinais
+{ grupo:"Mata-mata", rodada:"Semifinal", data:"14/07 a 15/07", jogos:[
+  { id: 101, casa:"Vencedor 97 (QF V1)", fora:"Vencedor 98 (QF V2)", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 102, casa:"Vencedor 99 (QF V3)", fora:"Vencedor 100 (QF V4)", estadio:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+]},
+
+// Finais (Disputa de 3º lugar e Grande Final)
+{ grupo:"Mata-mata", rodada:"Finais", data:"18/07 e 19/07", jogos:[
+  { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]}
 ];
 
@@ -259,14 +312,30 @@ function renderJogos(){
     bloco.jogos.forEach((j, jogoIndex) => {
       const g1 = j.placarCasa ?? "";
       const g2 = j.placarFora ?? "";
-      const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}`;
+      
+      // Se for mata-mata e houver empate, exibe campos para pênaltis
+      const ehMataMata = bloco.grupo === "Mata-mata";
+      const deuEmpate = g1 !== "" && g2 !== "" && Number(g1) === Number(g2);
+      
+      const p1 = j.penaisCasa ?? "";
+      const p2 = j.penaisFora ?? "";
+
+      const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
 
       div.innerHTML += `
         <div style="margin-bottom:6px;">
           ${getBandeira(j.casa)} ${j.casa}
+          
           <input type="number" min="0" value="${g1}" style="width:55px;" onchange="salvarPlacar(${blocoIndex},${jogoIndex},'casa',this.value)">
+          
+          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p1}" style="width:40px; background:#ffebeb;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'casa',this.value)">` : ""}
+          
           <strong>x</strong>
+          
+          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p2}" style="width:40px; background:#ffebeb;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'fora',this.value)">` : ""}
+          
           <input type="number" min="0" value="${g2}" style="width:55px;" onchange="salvarPlacar(${blocoIndex},${jogoIndex},'fora',this.value)">
+          
           ${getBandeira(j.fora)} ${j.fora}
           <br>
           <small>${infoEstadio}</small>
@@ -275,8 +344,20 @@ function renderJogos(){
       `;
     });
     div.innerHTML += `</div>`;
-  }); // <-- Chave corrigida aqui!
+  });
 }
+
+// Nova função complementar para salvar os pênaltis
+function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
+  if(lado === "casa"){
+    jogosDetalhados[blocoIndex].jogos[jogoIndex].penaisCasa = valor;
+  } else {
+    jogosDetalhados[blocoIndex].jogos[jogoIndex].penaisFora = valor;
+  }
+  atualizar();
+  renderJogos();
+}
+
 
 function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
   if(lado === "casa"){
