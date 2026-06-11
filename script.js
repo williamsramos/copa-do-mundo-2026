@@ -240,7 +240,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 ]},
 { grupo:"Mata-mata", rodada:"Finais", data:"18/07 e 19/07", jogos:[
   { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", East Rutherford, New Jersey", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]}
 ];
 
@@ -274,9 +274,8 @@ function criarAbas(){
   div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
 }
 
-// 🔀 FILTRO DUPLO CORRIGIDO: renderiza e filtra jogos e classificação juntos ao clicar na aba
 function selecionarGrupo(grupo){
-  grupoSelecionado = grupo === "todos" ? null : grupo;
+  grupoSelecionado = group === "todos" ? null : grupo;
   renderJogos();
   renderTabela();
   destacarAba();
@@ -415,7 +414,6 @@ function renderTabela(){
   div.innerHTML = "";
 
   for(let g in tabela){
-    // 🎯 RECONECTANDO O FILTRO NA CLASSIFICAÇÃO: Se houver grupo selecionado e não for este, pula!
     if(grupoSelecionado !== null && g !== grupoSelecionado) continue;
 
     let times = Object.entries(tabela[g]);
