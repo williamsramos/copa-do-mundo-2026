@@ -301,21 +301,23 @@ function renderJogos(){
   jogosDetalhados.forEach((bloco, blocoIndex) => {
     if(grupoSelecionado && bloco.grupo !== grupoSelecionado) return;
 
-    div.innerHTML += `<div class="card"><h3>${bloco.grupo} - ${bloco.rodada}</h3>`;
+    // Criamos uma variável acumuladora para o HTML do bloco de jogos
+    let blocoHtml = `<div class="card"><h3>${bloco.grupo} - ${bloco.rodada}</h3>`;
 
     bloco.jogos.forEach((j, jogoIndex) => {
-      const g1 = j.placarCasa ?? "";
-      const g2 = j.placarFora ?? "";
+      // Ajustado de ?? para || para ler strings vazias salvas corretamente
+      const g1 = j.placarCasa || "";
+      const g2 = j.placarFora || "";
       
       const ehMataMata = bloco.grupo === "Mata-mata";
       const deuEmpate = g1 !== "" && g2 !== "" && Number(g1) === Number(g2);
       
-      const p1 = j.penaisCasa ?? "";
-      const p2 = j.penaisFora ?? "";
+      const p1 = j.penaisCasa || "";
+      const p2 = j.penaisFora || "";
 
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
 
-      div.innerHTML += `
+      blocoHtml += `
         <div style="margin-bottom:6px;">
           ${getBandeira(j.casa)} ${j.casa}
           
@@ -336,7 +338,9 @@ function renderJogos(){
         <hr>
       `;
     });
-    div.innerHTML += `</div>`;
+    
+    blocoHtml += `</div>`;
+    div.innerHTML += blocoHtml;
   });
 }
 
