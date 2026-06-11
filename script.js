@@ -463,22 +463,26 @@ function showTab(tabId) {
 }
 
 window.onload = function () {
-  // Executa o init se a função real existir na página
-  if (typeof init === "function") {
-    try { init(); } catch(e) { console.log("Modo Agenda ativo"); }
+  // Se NÃO existir o container de cards do simulador ou da tabela, 
+  // significa que estamos na página da agenda.html.
+  // Então, paramos o script por aqui com segurança para não quebrar a agenda.
+  if (!document.getElementById("cards") && !document.querySelector(".tab")) {
+    console.log("Agenda detectada: Simulador desativado nesta página.");
+    return; 
   }
 
-  // Captura a hashtag da URL para saber qual aba abrir
+  // Se passou do teste acima, estamos no index.html (Simulador roda normal)
+  if (typeof init === "function") init();
+
   const hash = window.location.hash.replace('#', '');
 
   if (hash) {
-    showTab(hash);
+    if (typeof showTab === "function") showTab(hash);
   } else {
-    showTab('classificacao');
+    if (typeof showTab === "function") showTab('classificacao');
   }
 
-  // Executa o atualizar se a função real existir na página
-  if (typeof atualizar === "function") {
-    try { atualizar(); } catch(e) { }
-  }
+  if (typeof atualizar === "function") atualizar();
+};
+
 };
