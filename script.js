@@ -198,6 +198,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { casa:"Panamá", fora:"Inglaterra", estadio:"Nova Jersey", hora:"18:00", placarCasa:"", placarFora:"" },
   { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"", placarFora:"" }
 ]};
+];
 
 // ================= MATA-MATA =================
 /*{ grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
