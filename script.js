@@ -449,8 +449,9 @@ function renderTabela(){
 }
 
 function showTab(tabId) {
+  // Seleciona as abas do index.html
   const abas = document.querySelectorAll('.tab');
-  if (abas.length === 0) return; // Se não estiver no index, ignora com segurança
+  if (abas.length === 0) return; // Segurança para não quebrar em outras páginas
 
   abas.forEach(tab => {
     tab.style.display = 'none';
@@ -463,26 +464,22 @@ function showTab(tabId) {
 }
 
 window.onload = function () {
-  // Se NÃO existir o container de cards do simulador ou da tabela, 
-  // significa que estamos na página da agenda.html.
-  // Então, paramos o script por aqui com segurança para não quebrar a agenda.
-  if (!document.getElementById("cards") && !document.querySelector(".tab")) {
-    console.log("Agenda detectada: Simulador desativado nesta página.");
-    return; 
+  // Inicializa o simulador se a função existir
+  if (typeof init === "function") {
+    init();
   }
 
-  // Se passou do teste acima, estamos no index.html (Simulador roda normal)
-  if (typeof init === "function") init();
-
+  // Verifica se veio alguma hashtag na URL (ex: #jogosTab)
   const hash = window.location.hash.replace('#', '');
 
   if (hash) {
-    if (typeof showTab === "function") showTab(hash);
+    showTab(hash);
   } else {
-    if (typeof showTab === "function") showTab('classificacao');
+    showTab('classificacao'); // Abre classificação por padrão
   }
 
-  if (typeof atualizar === "function") atualizar();
-};
-
+  // Atualiza os dados da tabela se a função existir
+  if (typeof atualizar === "function") {
+    atualizar();
+  }
 };
