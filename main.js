@@ -75,7 +75,7 @@ function createCard(date, day, games) {
 // 🔥 RENDERIZAR JOGOS NA TELA
 document.querySelector("#cards").innerHTML =
   createCard('11/06', 'quinta',
-    createGame("México", 2 "x" 0, "África do Sul") +
+    createGame("México", "x" , "África do Sul") +
     createGame("Coreia do Sul", "x", "República Tcheca")
   ) +
 
