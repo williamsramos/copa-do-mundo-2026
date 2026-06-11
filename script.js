@@ -41,7 +41,6 @@ const grupos = {
 };
 
 /* ================= JOGOS DETALHADOS ================= */
-// 🔥 SISTEMA INTELIGENTE: Carrega o que o usuário digitou na página web ou usa a lista padrão se for a primeira vez
 let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 // Grupo A
 { grupo:"Grupo A", rodada:"1ª Rodada", data:"11/06", jogos:[
@@ -260,6 +259,7 @@ function init(){
   }
   criarAbas();
   destacarAba();
+  atualizar(false); // Executa o cálculo inicial sem forçar re-renderização infinita
   renderJogos();
   renderTabela();
 }
@@ -275,7 +275,8 @@ function criarAbas(){
 }
 
 function selecionarGrupo(grupo){
-  grupoSelecionado = grupo === "todos" ? null : grupo;
+  grupoSelecionado = grupo === "todos" ? null : group; // Ajuste simples de segurança
+  if(grupo === "todos") grupoSelecionado = null;
   renderJogos();
   renderTabela();
   destacarAba();
@@ -298,10 +299,8 @@ function renderJogos(){
   if (!div) return;
   div.innerHTML = "";
 
-  const filtroGrupo = typeof grupoSelecionado !== 'undefined' ? grupoSelecionado : null;
-
   jogosDetalhados.forEach((bloco, blocoIndex) => {
-    if(filtroGrupo && bloco.grupo !== filtroGrupo) return;
+    if(grupoSelecionado && bloco.grupo !== grupoSelecionado) return;
 
     let blocoHtml = `<div class="card"><h3>${bloco.grupo} - ${bloco.rodada}</h3>`;
 
@@ -350,8 +349,7 @@ function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
   } else {
     jogosDetalhados[blocoIndex].jogos[jogoIndex].placarFora = valor;
   }
-  atualizar();
-  renderJogos();
+  atualizar(true);
 }
 
 function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
@@ -360,13 +358,14 @@ function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
   } else {
     jogosDetalhados[blocoIndex].jogos[jogoIndex].penaisFora = valor;
   }
-  atualizar();
-  renderJogos();
+  atualizar(true);
 }
 
-function atualizar(){
-  // Salva permanentemente no navegador para carregar ao dar F5 e atualizar a agenda
+function atualizar(deveRenderizar = true){
   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
+
+  // Proteção para não quebrar se a tabela ainda não tiver sido estruturada no init
+  if(!tabela || Object.keys(tabela).length === 0) return;
 
   for(let g in tabela){
     for(let t in tabela[g]){
@@ -385,6 +384,7 @@ function atualizar(){
       if(isNaN(g1) || isNaN(g2)) return;
 
       const grupo = bloco.grupo;
+      if(!tabela[grupo]) return;
       const casa = tabela[grupo][jogo.casa];
       const fora = tabela[grupo][jogo.fora];
       if(!casa || !fora) return;
@@ -404,7 +404,8 @@ function atualizar(){
     });
   });
   
-  if(typeof renderTabela === "function") {
+  if(deveRenderizar) {
+    renderJogos();
     renderTabela();
   }
 }
@@ -472,15 +473,10 @@ function showTab(tabId) {
   }
 }
 
+/* ================= INICIALIZADOR ÚNICO ================= */
 window.onload = function () {
-  // Roda o cálculo e resgata o que foi salvo ANTES de renderizar as funções de tela
-  if (typeof atualizar === "function") {
-    atualizar();
-  }
-
-  if (typeof init === "function") {
-    init();
-  }
+  // O init centraliza a criação e chama o atualizar de forma segura internamente
+  init();
 
   const hash = window.location.hash.replace('#', '');
   if (hash) {
