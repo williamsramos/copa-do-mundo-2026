@@ -300,7 +300,8 @@ function renderJogos(){
   div.innerHTML = "";
 
   jogosDetalhados.forEach((bloco, blocoIndex) => {
-    if(grupoSelecionado && bloco.grupo !== grupoSelecionado) return;
+    // 🔍 CORREÇÃO AQUI: Se um grupo estiver selecionado e não for o deste bloco, pula para o próximo!
+    if (grupoSelecionado !== null && bloco.grupo !== grupoSelecionado) return;
 
     let blocoHtml = `<div class="card"><h3>${bloco.grupo} - ${bloco.rodada}</h3>`;
 
@@ -342,6 +343,7 @@ function renderJogos(){
     div.innerHTML += blocoHtml;
   });
 }
+
 
 function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
   if(lado === "casa"){
