@@ -197,7 +197,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 { grupo:"Grupo L", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Panamá", fora:"Inglaterra", estadio:"Nova Jersey", hora:"18:00", placarCasa:"", placarFora:"" },
   { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"", placarFora:"" }
-]},
+]};
 
 // ================= MATA-MATA =================
 /*{ grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
@@ -241,8 +241,8 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 { grupo:"Mata-mata", rodada:"Finais", data:"18/07 e 19/07", jogos:[
   { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
-]}*\
-];
+]}
+];*\
 
 /* ================= VARIÁVEIS ================= */
 let tabela = {};
