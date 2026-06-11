@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -24,39 +23,23 @@
     <button onclick="showTab('classificacao')">Classificação</button>
     <button onclick="window.location.href='agenda.html'">Agenda</button>
     <button onclick="showTab('jogosTab')">Jogos</button>
-    <button onclick="showTab('mata')">Mata-mata</button>
   </div>
 </header>
 
 <main>
 
-  <!-- ================= CLASSIFICAÇÃO ================= -->
-  <section id="classificacao" class="aba">
+  <section id="classificacao" class="tab">
     <div id="grupos"></div>
   </section>
 
-  <!-- ================= JOGOS ================= -->
-  <section id="jogosTab" class="aba hidden">
+  <section id="jogosTab" class="tab" style="display:none;">
     <div id="abasGrupos" class="abas"></div>
     <div id="jogos"></div>
-  </section>
-
-  <!-- ================= MATA MATA ================= -->
-  <section id="mata" class="aba hidden">
-    <h2 style="display: flex; align-items: center; gap: 10px;">
-      <img src="worldcup_favicon.png" alt="Taça da Copa do Mundo" width="32" height="32">
-       Mata-mata</h2>
   </section>
 
 </main>
 
 <script src="script.js"></script>
-<script>
-function showTab(tabId){
-  document.querySelectorAll(".aba").forEach(sec => sec.classList.add("hidden"));
-  document.getElementById(tabId).classList.remove("hidden");
-}
-</script>
 
 </body>
 </html>
