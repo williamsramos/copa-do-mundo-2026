@@ -449,9 +449,14 @@ function renderTabela(){
 }
 
 function showTab(tabId) {
-  document.querySelectorAll('.tab').forEach(tab => {
+  // Seleciona todas as abas presentes na página atual
+  const abas = document.querySelectorAll('.tab');
+  if (abas.length === 0) return; // Se não houver abas (como na agenda), não faz nada
+
+  abas.forEach(tab => {
     tab.style.display = 'none';
   });
+
   const aba = document.getElementById(tabId);
   if (aba) {
     aba.style.display = 'block';
@@ -460,7 +465,18 @@ function showTab(tabId) {
 
 window.onload = function () {
   init();
-  showTab('classificacao');
+
+  // Verifica se a URL contém uma hashtag (ex: #jogosTab ou #classificacao)
+  const hash = window.location.hash.replace('#', '');
+
+  if (hash) {
+    // Se veio uma hashtag na URL, tenta abrir a aba correspondente
+    showTab(hash);
+  } else {
+    // Se não veio nada na URL, abre a classificação por padrão (caso exista na página)
+    showTab('classificacao');
+  }
+
   atualizar();
 };
 
