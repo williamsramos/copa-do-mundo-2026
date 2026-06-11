@@ -480,8 +480,8 @@ window.onload = function () {
 
   const hash = window.location.hash.replace('#', '');
   if (hash) {
-    showTab(hash);
-  } else {
-    showTab('classificacao');
-  }
+  showTab(hash);
+} else {
+  showTab('classificacao'); // Abre a classificação por padrão
+}
 };
