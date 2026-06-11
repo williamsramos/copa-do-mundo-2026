@@ -270,7 +270,7 @@ function criarAbas(){
   for(let g in grupos){
     div.innerHTML += `<button onclick="selecionarGrupo('${g}')" id="aba-${g}">${g}</button>`;
   }
-  // Cria aba separada para filtrar só o Mata-mata nos botões de cima
+  // Insere dinamicamente o botão do Mata-mata na lista de abas
   div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
 }
 
@@ -282,7 +282,8 @@ function selecionarGrupo(grupo){
 }
 
 function destacarAba(){
-  Object.keys(grupos).concat(["todos", "Mata-mata"]).forEach(g => {
+  const chavesValidas = Object.keys(grupos).concat(["todos", "Mata-mata"]);
+  chavesValidas.forEach(g => {
     const btn = document.getElementById(`aba-${g}`);
     if(!btn) return;
     btn.classList.remove("ativo");
@@ -367,7 +368,7 @@ function atualizar(){
   }
 
   jogosDetalhados.forEach(bloco => {
-    if(bloco.grupo === "Mata-mata") return; // Ignora classificação para jogos eliminatórios
+    if(bloco.grupo === "Mata-mata") return; 
 
     bloco.jogos.forEach(jogo => {
       if(jogo.placarCasa === "" || jogo.placarFora === "") return;
@@ -459,11 +460,7 @@ function showTab(tabId) {
 
 window.onload = function () {
   init();
-  const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    showTab(hash);
-  } else {
-    showTab('classificacao');
-  }
+  showTab('classificacao');
   atualizar();
 };
+
