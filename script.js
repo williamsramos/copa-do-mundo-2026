@@ -493,6 +493,17 @@ function preencherMataMata() {
     });
   });
 }
+function idxTerceiro(texto) {
+  if (texto.includes("A/B/C/D/F")) return 0;
+  if (texto.includes("C/D/F/G/H")) return 1;
+  if (texto.includes("C/E/F/H/I")) return 2;
+  if (texto.includes("E/H/I/J/K")) return 3;
+  if (texto.includes("A/E/H/I/J")) return 4;
+  if (texto.includes("B/E/F/I/J")) return 5;
+  if (texto.includes("E/F/G/I/J")) return 6;
+  if (texto.includes("D/E/I/J/L")) return 7;
+  return 0;
+} // <--- E esta chave fecha apenas a idxTerceiro
 
 /* ================= FUNÇÃO ATUALIZAR (MODIFICADA) ================= */
 function atualizar(deveRenderizar = true){
