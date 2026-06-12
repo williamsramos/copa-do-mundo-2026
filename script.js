@@ -315,6 +315,8 @@ function renderJogos(){
       
       const p1 = j.penaisCasa || "";
       const p2 = j.penaisFora || "";
+      
+      const dataJogo = j.data ? j.data : bloco.data;
 
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
 
