@@ -207,7 +207,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { "id": 76, "casa": "1º Grupo C", "fora": "2º Grupo F", "estadio": "Houston", "data": "29/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 77, "casa": "1º Grupo I", "fora": "3º C/D/F/G/H", "estadio": "East Rutherford", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 78, "casa": "2º Grupo E", "fora": "2º Grupo I", "estadio": "Arlington", "data": "30/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 79, "casa": "1º Grupo A", "fora": "3º C/E/F/H/I", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
+  { "id": 79, "casa": "1º Grupo A", "fora": "3º C/E/F/H/I", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 80, casa:"1º Grupo L", fora:"3º E/H/I/J/K", estadio:"Atlanta", data:"01/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { "id": 82, casa:"1º Grupo G", fora:"3º A/E/H/I/J", estadio:"Seattle", data:"01/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { "id": 81, casa:"1º Grupo D", fora:"3º B/E/F/I/J", estadio:"Santa Clara", data:"01/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
