@@ -41,7 +41,7 @@ const grupos = {
 
 /* ================= JOGOS DETALHADOS ================= */
 // CORRIGIDO: Inclusão do operador "=" para atribuição correta
-let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [ 
+let jogosDetalhados = [ //JSON.parse(localStorage.getItem("jogosSimulador")) || [ 
 // Grupo A
 { grupo:"Grupo A", rodada:"1ª Rodada", data:"11/06", jogos:[
   { casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora:"16:00", placarCasa:"2", placarFora:"0" },
