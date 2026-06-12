@@ -1,3 +1,4 @@
+alert("O script.js foi carregado com sucesso!");
 /* ================= BANDEIRAS ================= */
 const bandeiras = {
   "Brasil":"br","Argentina":"ar","França":"fr","Alemanha":"de",
