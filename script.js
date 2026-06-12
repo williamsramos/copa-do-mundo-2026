@@ -201,15 +201,15 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 
 // ================= MATA-MATA - AJUSTE NAS FINAIS =================
 { grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
-  { id: 73, casa:"2º Grupo A", fora:"2º Grupo B", estadio:"Inglewood", data:"28/06", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 74, casa:"1º Grupo E", fora:"3º A/B/C/D/F", estadio:"Foxborough", data:"29/06", hora:"17:30", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 75, casa:"1º Grupo F", fora:"2º Grupo C", estadio:"Monterrey", data:"29/06", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 76, casa:"1º Grupo C", fora:"2º Grupo F", estadio:"Houston", data:"29/06", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 77, casa:"1º Grupo I", fora:"3º C/D/F/G/H", estadio:"East Rutherfood", data:"30/06", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 78, casa:"2º Grupo E", fora:"2º Grupo I", estadio:"Arlington", data:"30/06", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 79, casa:"1º Grupo A", fora:"3º C/E/F/H/I", estadio:"Cidade do México", data:"30/06", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 80, casa:"1º Grupo L", fora:"3º E/H/I/J/K", estadio:"Atlanta", data:"01/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 81, casa:"1º Grupo D", fora:"3º B/E/F/I/J", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 73, "casa": "2º Grupo A", "fora": "2º Grupo B", "estadio": "Inglewood", "data": "28/06", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 74, "casa": "1º Grupo E", "fora": "3º A/B/C/D/F", "estadio": "Foxborough", "data": "29/06", "hora": "17:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 75, "casa": "1º Grupo F", "fora": "2º Grupo C", "estadio": "Monterrey", "data": "29/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 76, "casa": "1º Grupo C", "fora": "2º Grupo F", "estadio": "Houston", "data": "29/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 77, "casa": "1º Grupo I", "fora": "3º C/D/F/G/H", "estadio": "East Rutherford", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 78, "casa": "2º Grupo E", "fora": "2º Grupo I", "estadio": "Arlington", "data": "30/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 79, "casa": "1º Grupo A", "fora": "3º C/E/F/H/I", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
+  { id: 80, casa:"1º Grupo L", fora:"3º E/H/I/J/K", estadio: "Atlanta", data: "01/07", hora: "13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 81, casa:"1º Grupo D", fora:"3º B/E/F/I/J", estadio: "", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 82, casa:"1º Grupo G", fora:"3º A/E/H/I/J", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 83, casa:"2º Grupo K", fora:"2º Grupo L", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 84, casa:"1º Grupo H", fora:"2º Grupo J", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
