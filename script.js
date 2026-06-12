@@ -282,8 +282,8 @@ function selecionarGrupo(grupo){
   // 🚀 TRUQUE SEGURO: Quando o usuário clicar em uma sub-aba de grupo,
   // nós forçamos o site a abrir a aba de JOGOS para mostrar o filtro certinho!
   showTab('jogosTab'); 
-  
   renderJogos();
+  renderTabela();
   destacarAba();
 }
 
