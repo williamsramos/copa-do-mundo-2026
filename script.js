@@ -1,4 +1,3 @@
-alert("O script.js foi carregado com sucesso!");
 /* ================= BANDEIRAS ================= */
 const bandeiras = {
   "Brasil":"br","Argentina":"ar","França":"fr","Alemanha":"de",
@@ -219,30 +218,31 @@ const jogosPadrao = [
   { "id": 87, "casa": "1º Grupo K", "fora": "3º D/E/I/J/L", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
 ]},
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
-  { id: 89, casa:"Vencedor 74", fora:"Vencedor 75", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 90, casa:"Vencedor 73", fora:"Vencedor 76", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 91, casa:"Vencedor 78", fora:"Vencedor 77", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 92, casa:"Vencedor 79", fora:"Vencedor 80", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 93, casa:"Vencedor 82", fora:"Vencedor 81", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 94, casa:"Vencedor 84", fora:"Vencedor 83", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 95, casa:"Vencedor 85", fora:"Vencedor 88", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 96, casa:"Vencedor 86", fora:"Vencedor 87", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 89, casa:"Vencedor 74", fora:"Vencedor 75", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 90, casa:"Vencedor 73", fora:"Vencedor 76", estadio:"Houston", data:"04/07", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 91, casa:"Vencedor 78", fora:"Vencedor 77", estadio:"East Rutherford", data:"05/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 92, casa:"Vencedor 79", fora:"Vencedor 80", estadio:"Cidade do México", data:"05/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 93, casa:"Vencedor 82", fora:"Vencedor 81", estadio:"Arlington", data:"06/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 94, casa:"Vencedor 84", fora:"Vencedor 83", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 95, casa:"Vencedor 85", fora:"Vencedor 88", estadio:"Atlanta", data:"07/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 96, casa:"Vencedor 86", fora:"Vencedor 87", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
-  { id: 97, casa:"Vencedor 90", fora:"Vencedor 89", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 98, casa:"Vencedor 91", fora:"Vencedor 92", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 99, casa:"Vencedor 93", fora:"Vencedor 94", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 100, casa:"Vencedor 95", fora:"Vencedor 96", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 97, casa:"Vencedor 90", fora:"Vencedor 89", estadio:"Foxborough", data:"09/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 98, casa:"Vencedor 91", fora:"Vencedor 92", estadio:"Inglewood", data:"10/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 99, casa:"Vencedor 93", fora:"Vencedor 94", estadio:"Miami", data:"11/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 100, casa:"Vencedor 95", fora:"Vencedor 96", estadio:"Vancouver", data:"11/07", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Semifinal", data:"14/07 a 15/07", jogos:[
-  { id: 101, casa:"Vencedor 97 (QF V1)", fora:"Vencedor 98 (QF V2)", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 102, casa:"Vencedor 99 (QF V3)", fora:"Vencedor 100 (QF V4)", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 101, casa:"Vencedor 97 (QF V1)", fora:"Vencedor 98 (QF V2)", estadio:"Arlington", data:"14/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 102, casa:"Vencedor 99 (QF V3)", fora:"Vencedor 100 (QF V4)", estadio:"Atlanta", data:"15/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Finais", data:"18/07 e 19/07", jogos:[
   { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", data:"18/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", data:"19/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]}
 ];
+
 
 let jogosDetalhados = [];
 let tabela = {};
@@ -282,7 +282,7 @@ function criarAbas(){
 }
 
 function selecionarGrupo(grupo){
-  grupoSelecionado = group === "todos" ? null : grupo;
+  grupoSelecionado = grupo === "todos" ? null : group;
   showTab('jogosTab'); 
   renderJogos();
   destacarAba();
@@ -368,125 +368,6 @@ function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
   atualizar(true);
 }
 
-/* ================= PREENCHIMENTO AUTOMÁTICO DO MATA-MATA COMPLETO ================= */
-function preencherMataMata() {
-  let classificados = {};
-  let todosTerceiros = [];
-
-  for (let g in tabela) {
-    let times = Object.entries(tabela[g]);
-    times.sort((a, b) => 
-      (b[1].pts - a[1].pts) || 
-      ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) || 
-      (b[1].gp - a[1].gp) || 
-      (a[1].pos - b[1].pos)
-    );
-
-    classificados[`1º ${g}`] = times[0][0];
-    classificados[`2º ${g}`] = times[1][0];
-
-    todosTerceiros.push({
-      nome: times[2][0],
-      pts: times[2][1].pts,
-      sg: times[2][1].gp - times[2][1].gc,
-      gp: times[2][1].gp
-    });
-  }
-
-  todosTerceiros.sort((a, b) => (b.pts - a.pts) || (b.sg - a.sg) || (b.gp - a.gp));
-
-  let fase16 = jogosDetalhados.find(b => b.rodada === "16 avos de Final");
-  if (fase16) {
-    fase16.jogos.forEach(jogo => {
-      if (classificados[jogo.casa]) jogo.casa = classificados[jogo.casa];
-      if (classificados[jogo.fora]) jogo.fora = classificados[jogo.fora];
-
-      if (jogo.casa.includes("3º")) {
-        let index = idxTerceiro(jogo.casa);
-        if (todosTerceiros[index]) jogo.casa = todosTerceiros[index].nome;
-      }
-      if (jogo.fora.includes("3º")) {
-        let index = idxTerceiro(jogo.fora);
-        if (todosTerceiros[index]) jogo.fora = todosTerceiros[index].nome;
-      }
-    });
-  }
-
-  let resultadosPorId = {};
-
-  jogosDetalhados.forEach(bloco => {
-    if (bloco.grupo !== "Mata-mata") return;
-
-    bloco.jogos.forEach(jogo => {
-      if (jogo.id) {
-        let vencedor = "";
-        let perdedor = "";
-        
-        const c = jogo.placarCasa;
-        const f = jogo.placarFora;
-
-        if (c !== "" && f !== "") {
-          const g1 = Number(c);
-          const g2 = Number(f);
-
-          if (g1 > g2) {
-            vencedor = jogo.casa;
-            perdedor = jogo.fora;
-          } else if (g2 > g1) {
-            vencedor = jogo.fora;
-            perdedor = jogo.casa;
-          } else {
-            const p1 = Number(jogo.penaisCasa || 0);
-            const p2 = Number(jogo.penaisFora || 0);
-            if (p1 > p2) {
-              vencedor = jogo.casa;
-              perdedor = jogo.fora;
-            } else if (p2 > p1) {
-              vencedor = jogo.fora;
-              perdedor = jogo.casa;
-            }
-          }
-        }
-        resultadosPorId[jogo.id] = { vencedor, perdedor };
-      }
-
-      if (jogo.casa.includes("Vencedor") || jogo.casa.includes("Perdedor")) {
-        let idBusca = jogo.casa.replace(/\D/g, ""); 
-        if (resultadosPorId[idBusca]) {
-          if (jogo.casa.includes("Vencedor") && resultadosPorId[idBusca].vencedor) {
-            jogo.casa = resultadosPorId[idBusca].vencedor;
-          } else if (jogo.casa.includes("Perdedor") && resultadosPorId[idBusca].perdedor) {
-            jogo.casa = resultadosPorId[idBusca].perdedor;
-          }
-        }
-      }
-
-      if (jogo.fora.includes("Vencedor") || jogo.fora.includes("Perdedor")) {
-        let idBusca = jogo.fora.replace(/\D/g, "");
-        if (resultadosPorId[idBusca]) {
-          if (jogo.fora.includes("Vencedor") && resultadosPorId[idBusca].vencedor) {
-            jogo.fora = resultadosPorId[idBusca].vencedor;
-          } else if (jogo.fora.includes("Perdedor") && resultadosPorId[idBusca].perdedor) {
-            jogo.fora = resultadosPorId[idBusca].perdedor;
-          }
-        }
-      }
-    });
-  });
-}
-
-function idxTerceiro(texto) {
-  if (texto.includes("A/B/C/D/F")) return 0;
-  if (texto.includes("C/D/F/G/H")) return 1;
-  if (texto.includes("C/E/F/H/I")) return 2;
-  if (texto.includes("E/H/I/J/K")) return 3;
-  if (texto.includes("A/E/H/I/J")) return 4;
-  if (texto.includes("B/E/F/I/J")) return 5;
-  if (texto.includes("E/F/G/I/J")) return 6;
-  if (texto.includes("D/E/I/J/L")) return 7;
-  return 0;
-}
-
 /* ================= FUNÇÃO ATUALIZAR ================= */
 function atualizar(deveRenderizar = true){
   if(!tabela || Object.keys(tabela).length === 0) return;
@@ -527,8 +408,6 @@ function atualizar(deveRenderizar = true){
       }
     });
   }); 
-
-  preencherMataMata();
 
   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
   
@@ -592,3 +471,8 @@ function showTab(tabId) {
   const abaAtiva = document.getElementById(tabId);
   if(abaAtiva) abaAtiva.style.display = 'block';
 }
+
+/* Inicialização moderna */
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+});
