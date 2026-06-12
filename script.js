@@ -41,7 +41,7 @@ const grupos = {
 
 /* ================= JOGOS DETALHADOS ================= */
 // CORRIGIDO: Inclusão do operador "=" para atribuição correta
-let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [ 
+const jogosPadrao = [ 
 // Grupo A
 { grupo:"Grupo A", rodada:"1ª Rodada", data:"11/06", jogos:[
   { casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora:"16:00", placarCasa:"2", placarFora:"0" },
@@ -245,12 +245,23 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 ]}
 ];
 
+// 2. Criamos a variável vazia que vai controlar o estado ativo do app
+let jogosDetalhados = [];
+
 /* ================= VARIÁVEIS ================= */
 let tabela = {};
 let grupoSelecionado = null;
 
 /* ================= FUNÇÕES PRINCIPAIS ================= */
 function init(){
+  // CORREÇÃO AQUI: Tenta buscar os dados salvos do navegador. Se não achar nada, usa a tabela vazia original.
+  const salvos = localStorage.getItem("jogosSimulador");
+  if (salvos) {
+    jogosDetalhados = JSON.parse(salvos);
+  } else {
+    jogosDetalhados = jogosPadrao;
+  }
+
   tabela = {};
   for(let g in grupos){
     tabela[g] = {};
