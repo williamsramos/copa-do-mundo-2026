@@ -246,21 +246,18 @@ const jogosPadrao = [
 ];
 
 
-// 2. Criamos a variável vazia que vai controlar o estado ativo do app
-let jogosDetalhados = [];
 
 /* ================= VARIÁVEIS ================= */
+let jogosDetalhados = [];
 let tabela = {};
 let grupoSelecionado = null;
 
 /* ================= FUNÇÕES PRINCIPAIS ================= */
 function init(){
-  // Tenta buscar os dados salvos do navegador. Se não achar nada, usa a tabela vazia original.
   const salvos = localStorage.getItem("jogosSimulador");
   if (salvos) {
     jogosDetalhados = JSON.parse(salvos);
   } else {
-    // Caso não tenha nada salvo, ele usa a lista padrão (jogosPadrao)
     jogosDetalhados = JSON.parse(JSON.stringify(jogosPadrao)); 
   }
 
@@ -273,7 +270,7 @@ function init(){
   }
   criarAbas();
   destacarAba();
-  atualizar(false); // Roda o primeiro cálculo sem renderizar duas vezes
+  atualizar(false); 
   renderJogos();
   renderTabela();
 }
@@ -289,7 +286,6 @@ function criarAbas(){
 }
 
 function selecionarGrupo(grupo){
-  // CORRIGIDO: Alterado de 'group' (inexistente) para 'grupo'
   grupoSelecionado = grupo === "todos" ? null : grupo;
   showTab('jogosTab'); 
   renderJogos();
@@ -378,7 +374,6 @@ function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
 
 /* ================= PREENCHIMENTO AUTOMÁTICO DO MATA-MATA COMPLETO ================= */
 function preencherMataMata() {
-  // --- FASE 1: PEGAR OS CLASSIFICADOS DOS GRUPOS (Igual antes) ---
   let classificados = {};
   let todosTerceiros = [];
 
@@ -404,7 +399,6 @@ function preencherMataMata() {
 
   todosTerceiros.sort((a, b) => (b.pts - a.pts) || (b.sg - a.sg) || (b.gp - a.gp));
 
-  // --- FASE 2: PREENCHER OS 16 AVOS DE FINAL ---
   let fase16 = jogosDetalhados.find(b => b.rodada === "16 avos de Final");
   if (fase16) {
     fase16.jogos.forEach(jogo => {
@@ -413,7 +407,7 @@ function preencherMataMata() {
 
       if (jogo.casa.includes("3º")) {
         let index = idxTerceiro(jogo.casa);
-        if (todosTerceiros[index]) jogo.casa = todosTerceiros[index].nome;
+        if (todosTerceiros[index]) j.casa = todosTerceiros[index].nome;
       }
       if (jogo.fora.includes("3º")) {
         let index = idxTerceiro(jogo.fora);
@@ -422,15 +416,12 @@ function preencherMataMata() {
     });
   }
 
-  // Mapeador para guardar quem ganhou (Vencedor) e quem perdeu (Perdedor) cada ID de jogo
   let resultadosPorId = {};
 
-  // --- FASE 3: MAPEAR RESULTADOS E AVANÇAR DE FASE (Oitavas até a Final) ---
   jogosDetalhados.forEach(bloco => {
     if (bloco.grupo !== "Mata-mata") return;
 
     bloco.jogos.forEach(jogo => {
-      // Se o jogo tem ID, precisamos calcular o vencedor dele para as próximas fases
       if (jogo.id) {
         let vencedor = "";
         let perdedor = "";
@@ -438,7 +429,6 @@ function preencherMataMata() {
         const c = jogo.placarCasa;
         const f = jogo.placarFora;
 
-        // Só calcula se o placar foi preenchido
         if (c !== "" && f !== "") {
           const g1 = Number(c);
           const g2 = Number(f);
@@ -450,7 +440,6 @@ function preencherMataMata() {
             vencedor = jogo.fora;
             perdedor = jogo.casa;
           } else {
-            // Em caso de empate, olha os pênaltis (PK)
             const p1 = Number(jogo.penaisCasa || 0);
             const p2 = Number(jogo.penaisFora || 0);
             if (p1 > p2) {
@@ -462,15 +451,11 @@ function preencherMataMata() {
             }
           }
         }
-
-        // Guarda os resultados deste ID
         resultadosPorId[jogo.id] = { vencedor, perdedor };
       }
 
-      // Agora, substitui os textos "Vencedor XX" ou "Perdedor XX" pelos países reais
-      // Verifica o time da Casa
       if (jogo.casa.includes("Vencedor") || jogo.casa.includes("Perdedor")) {
-        let idBusca = jogo.casa.replace(/\D/g, ""); // Extrai o número do ID (ex: "97")
+        let idBusca = jogo.casa.replace(/\D/g, ""); 
         if (resultadosPorId[idBusca]) {
           if (jogo.casa.includes("Vencedor") && resultadosPorId[idBusca].vencedor) {
             jogo.casa = resultadosPorId[idBusca].vencedor;
@@ -480,7 +465,6 @@ function preencherMataMata() {
         }
       }
 
-      // Verifica o time de Fora
       if (jogo.fora.includes("Vencedor") || jogo.fora.includes("Perdedor")) {
         let idBusca = jogo.fora.replace(/\D/g, "");
         if (resultadosPorId[idBusca]) {
@@ -494,6 +478,7 @@ function preencherMataMata() {
     });
   });
 }
+
 function idxTerceiro(texto) {
   if (texto.includes("A/B/C/D/F")) return 0;
   if (texto.includes("C/D/F/G/H")) return 1;
@@ -504,22 +489,20 @@ function idxTerceiro(texto) {
   if (texto.includes("E/F/G/I/J")) return 6;
   if (texto.includes("D/E/I/J/L")) return 7;
   return 0;
-} // <--- E esta chave fecha apenas a idxTerceiro
+}
 
-/* ================= FUNÇÃO ATUALIZAR (MODIFICADA) ================= */
+/* ================= FUNÇÃO ATUALIZAR (REVISADA) ================= */
 function atualizar(deveRenderizar = true){
   if(!tabela || Object.keys(tabela).length === 0) return;
 
-  // 1. Limpa as pontuações para recalcular do zero
   for(let g in tabela){
     for(let t in tabela[g]){
       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
     }
   }
 
-  // 2. Calcula a fase de grupos baseada nos placares digitados
   jogosDetalhados.forEach(bloco => {
-    if(bloco.grupo === "Mata-mata") return; // Ignora o mata-mata nesta etapa
+    if(bloco.grupo === "Mata-mata") return; 
 
     bloco.jogos.forEach(jogo => {
       if(jogo.placarCasa === "" || jogo.placarFora === "") return;
@@ -547,68 +530,17 @@ function atualizar(deveRenderizar = true){
         casa.e++; fora.e++; casa.pts++; fora.pts++;
       }
     });
-  }
+  }); // CORRIGIDO: Fechamento correto dos laços de repetição aqui!
 
-  // 3. Roda a lógica de passar os times para o Mata-mata
   preencherMataMata();
 
-  // 4. Salva o estado atualizado no localStorage do navegador
   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
   
-  // 5. Atualiza a tela visualmente se necessário
   if(deveRenderizar) {
     renderJogos();
     renderTabela();
   }
 }
-
-// function atualizar(deveRenderizar = true){
-//   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
-
-//   if(!tabela || Object.keys(tabela).length === 0) return;
-
-//   for(let g in tabela){
-//     for(let t in tabela[g]){
-//       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
-//     }
-//   }
-
-//   jogosDetalhados.forEach(bloco => {
-//     if(bloco.grupo === "Mata-mata") return; 
-
-//     bloco.jogos.forEach(jogo => {
-//       if(jogo.placarCasa === "" || jogo.placarFora === "") return;
-
-//       const g1 = Number(jogo.placarCasa);
-//       const g2 = Number(jogo.placarFora);
-//       if(isNaN(g1) || isNaN(g2)) return;
-
-//       const grupo = bloco.grupo;
-//       if(!tabela[grupo]) return;
-//       const casa = tabela[grupo][jogo.casa];
-//       const fora = tabela[grupo][jogo.fora];
-//       if(!casa || !fora) return;
-
-//       casa.gp += g1;
-//       casa.gc += g2;
-//       fora.gp += g2;
-//       fora.gc += g1;
-
-//       if(g1 > g2){
-//         casa.v++; casa.pts += 3; fora.d++;
-//       } else if(g2 > g1){
-//         fora.v++; fora.pts += 3; casa.d++;
-//       } else {
-//         casa.e++; fora.e++; casa.pts++; fora.pts++;
-//       }
-//     });
-//   });
-  
-//   if(deveRenderizar) {
-//     renderJogos();
-//     renderTabela();
-//   }
-// }
 
 function renderTabela(){
   const div = document.getElementById("grupos");
@@ -659,26 +591,315 @@ function renderTabela(){
 }
 
 function showTab(tabId) {
-  const abas = document.querySelectorAll('.tab');
-  if (abas.length === 0) return;
-
-  abas.forEach(tab => {
-    tab.style.display = 'none';
-  });
-
-  const aba = document.getElementById(tabId);
-  if (aba) {
-    aba.style.display = 'block';
-  }
+  const abas = document.querySelectorAll('.tab'); 
+  abas.forEach(aba => aba.style.display = 'none');
+  const abaAtiva = document.getElementById(tabId);
+  if(abaAtiva) abaAtiva.style.display = 'block';
 }
 
-window.onload = function () {
-  init();
+// /* ================= PREENCHIMENTO AUTOMÁTICO DO MATA-MATA COMPLETO ================= */
+// function preencherMataMata() {
+//   // --- FASE 1: PEGAR OS CLASSIFICADOS DOS GRUPOS (Igual antes) ---
+//   let classificados = {};
+//   let todosTerceiros = [];
 
-  const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    showTab(hash);
-  } else {
-    showTab('classificacao');
-  }
-};
+//   for (let g in tabela) {
+//     let times = Object.entries(tabela[g]);
+//     times.sort((a, b) => 
+//       (b[1].pts - a[1].pts) || 
+//       ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) || 
+//       (b[1].gp - a[1].gp) || 
+//       (a[1].pos - b[1].pos)
+//     );
+
+//     classificados[`1º ${g}`] = times[0][0];
+//     classificados[`2º ${g}`] = times[1][0];
+
+//     todosTerceiros.push({
+//       nome: times[2][0],
+//       pts: times[2][1].pts,
+//       sg: times[2][1].gp - times[2][1].gc,
+//       gp: times[2][1].gp
+//     });
+//   }
+
+//   todosTerceiros.sort((a, b) => (b.pts - a.pts) || (b.sg - a.sg) || (b.gp - a.gp));
+
+//   // --- FASE 2: PREENCHER OS 16 AVOS DE FINAL ---
+//   let fase16 = jogosDetalhados.find(b => b.rodada === "16 avos de Final");
+//   if (fase16) {
+//     fase16.jogos.forEach(jogo => {
+//       if (classificados[jogo.casa]) jogo.casa = classificados[jogo.casa];
+//       if (classificados[jogo.fora]) jogo.fora = classificados[jogo.fora];
+
+//       if (jogo.casa.includes("3º")) {
+//         let index = idxTerceiro(jogo.casa);
+//         if (todosTerceiros[index]) jogo.casa = todosTerceiros[index].nome;
+//       }
+//       if (jogo.fora.includes("3º")) {
+//         let index = idxTerceiro(jogo.fora);
+//         if (todosTerceiros[index]) jogo.fora = todosTerceiros[index].nome;
+//       }
+//     });
+//   }
+
+//   // Mapeador para guardar quem ganhou (Vencedor) e quem perdeu (Perdedor) cada ID de jogo
+//   let resultadosPorId = {};
+
+//   // --- FASE 3: MAPEAR RESULTADOS E AVANÇAR DE FASE (Oitavas até a Final) ---
+//   jogosDetalhados.forEach(bloco => {
+//     if (bloco.grupo !== "Mata-mata") return;
+
+//     bloco.jogos.forEach(jogo => {
+//       // Se o jogo tem ID, precisamos calcular o vencedor dele para as próximas fases
+//       if (jogo.id) {
+//         let vencedor = "";
+//         let perdedor = "";
+        
+//         const c = jogo.placarCasa;
+//         const f = jogo.placarFora;
+
+//         // Só calcula se o placar foi preenchido
+//         if (c !== "" && f !== "") {
+//           const g1 = Number(c);
+//           const g2 = Number(f);
+
+//           if (g1 > g2) {
+//             vencedor = jogo.casa;
+//             perdedor = jogo.fora;
+//           } else if (g2 > g1) {
+//             vencedor = jogo.fora;
+//             perdedor = jogo.casa;
+//           } else {
+//             // Em caso de empate, olha os pênaltis (PK)
+//             const p1 = Number(jogo.penaisCasa || 0);
+//             const p2 = Number(jogo.penaisFora || 0);
+//             if (p1 > p2) {
+//               vencedor = jogo.casa;
+//               perdedor = jogo.fora;
+//             } else if (p2 > p1) {
+//               vencedor = jogo.fora;
+//               perdedor = jogo.casa;
+//             }
+//           }
+//         }
+
+//         // Guarda os resultados deste ID
+//         resultadosPorId[jogo.id] = { vencedor, perdedor };
+//       }
+
+//       // Agora, substitui os textos "Vencedor XX" ou "Perdedor XX" pelos países reais
+//       // Verifica o time da Casa
+//       if (jogo.casa.includes("Vencedor") || jogo.casa.includes("Perdedor")) {
+//         let idBusca = jogo.casa.replace(/\D/g, ""); // Extrai o número do ID (ex: "97")
+//         if (resultadosPorId[idBusca]) {
+//           if (jogo.casa.includes("Vencedor") && resultadosPorId[idBusca].vencedor) {
+//             jogo.casa = resultadosPorId[idBusca].vencedor;
+//           } else if (jogo.casa.includes("Perdedor") && resultadosPorId[idBusca].perdedor) {
+//             jogo.casa = resultadosPorId[idBusca].perdedor;
+//           }
+//         }
+//       }
+
+//       // Verifica o time de Fora
+//       if (jogo.fora.includes("Vencedor") || jogo.fora.includes("Perdedor")) {
+//         let idBusca = jogo.fora.replace(/\D/g, "");
+//         if (resultadosPorId[idBusca]) {
+//           if (jogo.fora.includes("Vencedor") && resultadosPorId[idBusca].vencedor) {
+//             jogo.fora = resultadosPorId[idBusca].vencedor;
+//           } else if (jogo.fora.includes("Perdedor") && resultadosPorId[idBusca].perdedor) {
+//             jogo.fora = resultadosPorId[idBusca].perdedor;
+//           }
+//         }
+//       }
+//     });
+//   });
+// }
+// function idxTerceiro(texto) {
+//   if (texto.includes("A/B/C/D/F")) return 0;
+//   if (texto.includes("C/D/F/G/H")) return 1;
+//   if (texto.includes("C/E/F/H/I")) return 2;
+//   if (texto.includes("E/H/I/J/K")) return 3;
+//   if (texto.includes("A/E/H/I/J")) return 4;
+//   if (texto.includes("B/E/F/I/J")) return 5;
+//   if (texto.includes("E/F/G/I/J")) return 6;
+//   if (texto.includes("D/E/I/J/L")) return 7;
+//   return 0;
+// } // <--- E esta chave fecha apenas a idxTerceiro
+
+// /* ================= FUNÇÃO ATUALIZAR (MODIFICADA) ================= */
+// function atualizar(deveRenderizar = true){
+//   if(!tabela || Object.keys(tabela).length === 0) return;
+
+//   // 1. Limpa as pontuações para recalcular do zero
+//   for(let g in tabela){
+//     for(let t in tabela[g]){
+//       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
+//     }
+//   }
+
+//   // 2. Calcula a fase de grupos baseada nos placares digitados
+//   jogosDetalhados.forEach(bloco => {
+//     if(bloco.grupo === "Mata-mata") return; // Ignora o mata-mata nesta etapa
+
+//     bloco.jogos.forEach(jogo => {
+//       if(jogo.placarCasa === "" || jogo.placarFora === "") return;
+
+//       const g1 = Number(jogo.placarCasa);
+//       const g2 = Number(jogo.placarFora);
+//       if(isNaN(g1) || isNaN(g2)) return;
+
+//       const grupo = bloco.grupo;
+//       if(!tabela[grupo]) return;
+//       const casa = tabela[grupo][jogo.casa];
+//       const fora = tabela[grupo][jogo.fora];
+//       if(!casa || !fora) return;
+
+//       casa.gp += g1;
+//       casa.gc += g2;
+//       fora.gp += g2;
+//       fora.gc += g1;
+
+//       if(g1 > g2){
+//         casa.v++; casa.pts += 3; fora.d++;
+//       } else if(g2 > g1){
+//         fora.v++; fora.pts += 3; casa.d++;
+//       } else {
+//         casa.e++; fora.e++; casa.pts++; fora.pts++;
+//       }
+//     });
+//   }
+
+//   // 3. Roda a lógica de passar os times para o Mata-mata
+//   preencherMataMata();
+
+//   // 4. Salva o estado atualizado no localStorage do navegador
+//   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
+  
+//   // 5. Atualiza a tela visualmente se necessário
+//   if(deveRenderizar) {
+//     renderJogos();
+//     renderTabela();
+//   }
+// }
+
+// // function atualizar(deveRenderizar = true){
+// //   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
+
+// //   if(!tabela || Object.keys(tabela).length === 0) return;
+
+// //   for(let g in tabela){
+// //     for(let t in tabela[g]){
+// //       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
+// //     }
+// //   }
+
+// //   jogosDetalhados.forEach(bloco => {
+// //     if(bloco.grupo === "Mata-mata") return; 
+
+// //     bloco.jogos.forEach(jogo => {
+// //       if(jogo.placarCasa === "" || jogo.placarFora === "") return;
+
+// //       const g1 = Number(jogo.placarCasa);
+// //       const g2 = Number(jogo.placarFora);
+// //       if(isNaN(g1) || isNaN(g2)) return;
+
+// //       const grupo = bloco.grupo;
+// //       if(!tabela[grupo]) return;
+// //       const casa = tabela[grupo][jogo.casa];
+// //       const fora = tabela[grupo][jogo.fora];
+// //       if(!casa || !fora) return;
+
+// //       casa.gp += g1;
+// //       casa.gc += g2;
+// //       fora.gp += g2;
+// //       fora.gc += g1;
+
+// //       if(g1 > g2){
+// //         casa.v++; casa.pts += 3; fora.d++;
+// //       } else if(g2 > g1){
+// //         fora.v++; fora.pts += 3; casa.d++;
+// //       } else {
+// //         casa.e++; fora.e++; casa.pts++; fora.pts++;
+// //       }
+// //     });
+// //   });
+  
+// //   if(deveRenderizar) {
+// //     renderJogos();
+// //     renderTabela();
+// //   }
+// // }
+
+// function renderTabela(){
+//   const div = document.getElementById("grupos");
+//   if(!div) return;
+//   div.innerHTML = "";
+
+//   for(let g in tabela){
+//     let times = Object.entries(tabela[g]);
+//     times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) || (a[1].pos - b[1].pos));
+
+//     const terceiraRodadaCompleta = times.every(([nome,d])=>{
+//       return (d.v + d.e + d.d) === 3;
+//     });
+
+//     let html = `
+//       <div class="card">
+//         <h3>${g} - Classificação</h3>
+//         <table>
+//           <tr><th>Pos</th><th>Time</th><th>P</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th></tr>
+//     `;
+
+//     times.forEach(([nome,d],i)=>{
+//       const jogosTotal = d.v + d.e + d.d;
+//       let classeCSS = "";
+//       if(terceiraRodadaCompleta){
+//         if(i === 0 || i === 1) classeCSS = "qualificado";
+//         else if(i === 2) classeCSS = "terceiro";
+//       }
+
+//       html += `
+//         <tr class="${classeCSS}">
+//           <td>${i + 1}</td>
+//           <td>${getBandeira(nome)} ${nome}</td>
+//           <td>${d.pts}</td>
+//           <td>${jogosTotal}</td>
+//           <td>${d.v}</td>
+//           <td>${d.e}</td>
+//           <td>${d.d}</td>
+//           <td>${d.gp}</td>
+//           <td>${d.gc}</td>
+//           <td>${d.gp - d.gc}</td>
+//         </tr>
+//       `;
+//     });
+//     html += `</table></div>`;
+//     div.innerHTML += html;
+//   }
+// }
+
+// function showTab(tabId) {
+//   const abas = document.querySelectorAll('.tab');
+//   if (abas.length === 0) return;
+
+//   abas.forEach(tab => {
+//     tab.style.display = 'none';
+//   });
+
+//   const aba = document.getElementById(tabId);
+//   if (aba) {
+//     aba.style.display = 'block';
+//   }
+// }
+
+// window.onload = function () {
+//   init();
+
+//   const hash = window.location.hash.replace('#', '');
+//   if (hash) {
+//     showTab(hash);
+//   } else {
+//     showTab('classificacao');
+//   }
+// };
