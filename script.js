@@ -57,8 +57,8 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 ]},
 // Grupo B
 { grupo:"Grupo B", rodada:"1ª Rodada", data:"12/06", jogos:[
-  { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa:"", placarFora:"" },
-  { casa:"Catar", fora:"Suíça", estadio:"Santa Clara", data: "13/06" ,hora:"16:00", placarCasa:"", placarFora:"" }
+  { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa:"", placarFora:"" }, // Segue hoje, 12/06
+  { casa:"Catar", fora:"Suíça", estadio:"Santa Clara", data:"13/06", hora:"16:00", placarCasa:"", placarFora:"" } // Alterado para amanhã, 13/06!
 ]},
 { grupo:"Grupo B", rodada:"2ª Rodada", data:"18/06", jogos:[
   { casa:"Canadá", fora:"Catar", estadio:"Vancouver", hora:"19:00", placarCasa:"", placarFora:"" },
@@ -83,8 +83,8 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 ]},
  // Grupo D
 { grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
-  { casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00", placarCasa:"", placarFora:"" },
-  { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", hora:"01:00", placarCasa:"", placarFora:"" }
+  { casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00", placarCasa:"", placarFora:"" }, // Não tem data própria, então joga no dia 12/06
+  { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"13/06", hora:"01:00", placarCasa:"", placarFora:"" } // Esse joga no dia 13/06!
 ]},
 { grupo:"Grupo D", rodada:"2ª Rodada", data:"19/06", jogos:[
   { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", hora:"01:00", placarCasa:"", placarFora:"" },
