@@ -254,12 +254,13 @@ let grupoSelecionado = null;
 
 /* ================= FUNÇÕES PRINCIPAIS ================= */
 function init(){
-  // CORREÇÃO AQUI: Tenta buscar os dados salvos do navegador. Se não achar nada, usa a tabela vazia original.
+  // Tenta buscar os dados salvos do navegador. Se não achar nada, usa a tabela vazia original.
   const salvos = localStorage.getItem("jogosSimulador");
   if (salvos) {
     jogosDetalhados = JSON.parse(salvos);
   } else {
-    jogosDetalhados = jogosPadrao;
+    // Caso não tenha nada salvo, ele usa a lista padrão (jogosPadrao)
+    jogosDetalhados = JSON.parse(JSON.stringify(jogosPadrao)); 
   }
 
   tabela = {};
@@ -271,7 +272,7 @@ function init(){
   }
   criarAbas();
   destacarAba();
-  atualizar(false);
+  atualizar(false); // Roda o primeiro cálculo sem renderizar duas vezes
   renderJogos();
   renderTabela();
 }
@@ -495,21 +496,18 @@ function preencherMataMata() {
 
 /* ================= FUNÇÃO ATUALIZAR (MODIFICADA) ================= */
 function atualizar(deveRenderizar = true){
-  // Salva o estado atual no navegador
-  localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
-
   if(!tabela || Object.keys(tabela).length === 0) return;
 
-  // Limpa as pontuações para recalcular do zero
+  // 1. Limpa as pontuações para recalcular do zero
   for(let g in tabela){
     for(let t in tabela[g]){
       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
     }
   }
 
-  // Calcula a fase de grupos
+  // 2. Calcula a fase de grupos baseada nos placares digitados
   jogosDetalhados.forEach(bloco => {
-    if(bloco.grupo === "Mata-mata") return; 
+    if(bloco.grupo === "Mata-mata") return; // Ignora o mata-mata nesta etapa
 
     bloco.jogos.forEach(jogo => {
       if(jogo.placarCasa === "" || jogo.placarFora === "") return;
@@ -537,11 +535,15 @@ function atualizar(deveRenderizar = true){
         casa.e++; fora.e++; casa.pts++; fora.pts++;
       }
     });
-  });
+  }
 
-  // 🔥 CRUCIAL: Roda a lógica do mata-mata logo após calcular a tabela do grupo!
+  // 3. Roda a lógica de passar os times para o Mata-mata
   preencherMataMata();
+
+  // 4. Salva o estado atualizado no localStorage do navegador
+  localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
   
+  // 5. Atualiza a tela visualmente se necessário
   if(deveRenderizar) {
     renderJogos();
     renderTabela();
