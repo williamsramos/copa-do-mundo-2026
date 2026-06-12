@@ -47,7 +47,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora:"16:00", placarCasa:"2", placarFora:"0" },
   { casa:"Coreia do Sul", fora:"República Tcheca", estadio:"Guadalajara", hora:"23:00", placarCasa:"", placarFora:"" }
 ]},
-{ grupo:"Grupo A", rodada:"2ª Rodada", data:"17/06", jogos:[
+{ grupo:"Grupo A", rodada:"2ª Rodada", data:"18/06", jogos:[
   { casa:"México", fora:"Coreia do Sul", estadio:"Guadalajara", hora:"22:00", placarCasa:"", placarFora:"" },
   { casa:"África do Sul", fora:"República Tcheca", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" }
 ]},
@@ -87,7 +87,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"13/06", hora:"01:00", placarCasa:"", placarFora:"" } // Esse joga no dia 13/06!
 ]},
 { grupo:"Grupo D", rodada:"2ª Rodada", data:"19/06", jogos:[
-  { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", hora:"01:00", placarCasa:"", placarFora:"" },
+  { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", data:"20/06" , hora:"00:00", placarCasa:"", placarFora:"" },
   { casa:"EUA", fora:"Austrália", estadio:"Seattle Field", hora:"16:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo D", rodada:"3ª Rodada", data:"25/06", jogos:[
@@ -112,9 +112,9 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { casa:"Holanda", fora:"Japão", estadio:"Dallas", hora:"17:00", placarCasa:"", placarFora:"" },
   { casa:"Suécia", fora:"Tunísia", estadio:"Monterrey", hora:"23:00", placarCasa:"", placarFora:"" }
 ]},
-{ grupo:"Grupo F", rodada:"2ª Rodada", data:"21/06", jogos:[
+{ grupo:"Grupo F", rodada:"2ª Rodada", data:"20/06", jogos:[
   { casa:"Holanda", fora:"Suécia", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
-  { casa:"Tunísia", fora:"Japão", estadio:"Cidade do México", hora:"01:00", placarCasa:"", placarFora:"" }
+  { casa:"Tunísia", fora:"Japão", estadio:"Cidade do México", data:"21/06" , hora:"01:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo F", rodada:"3ª Rodada", data:"26/06", jogos:[
   { casa:"Tunísia", fora:"Holanda", estadio:"Kansas City", hora:"20:00", placarCasa:"", placarFora:"" },
@@ -129,7 +129,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { casa:"Bélgica", fora:"Irã", estadio:"Los Angeles", hora:"16:00", placarCasa:"", placarFora:"" },
   { casa:"Nova Zelândia", fora:"Egito", estadio:"Vancouver Place", hora:"22:00", placarCasa:"", placarFora:"" }
 ]},
-{ grupo:"Grupo G", rodada:"3ª Rodada", data:"26/06", jogos:[
+{ grupo:"Grupo G", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Nova Zelândia", fora:"Bélgica", estadio:"Seattle Field", hora:"00:00", placarCasa:"", placarFora:"" },
   { casa:"Egito", fora:"Irã", estadio:"Vancouver Place", hora:"00:00", placarCasa:"", placarFora:"" }
 ]},
@@ -138,7 +138,7 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { casa:"Espanha", fora:"Cabo Verde", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" },
   { casa:"Arábia Saudita", fora:"Uruguai", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" }
 ]},
-{ grupo:"Grupo H", rodada:"2ª Rodada", data:"22/06", jogos:[
+{ grupo:"Grupo H", rodada:"2ª Rodada", data:"21/06", jogos:[
   { casa:"Espanha", fora:"Arábia Saudita", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" },
   { casa:"Uruguai", fora:"Cabo Verde", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" }
 ]},
@@ -162,15 +162,15 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
 // Grupo J
 { grupo:"Grupo J", rodada:"1ª Rodada", data:"16/06", jogos:[
   { casa:"Argentina", fora:"Argélia", estadio:"Kansas City", hora:"22:00", placarCasa:"", placarFora:"" },
-  { casa:"Áustria", fora:"Jordânia", estadio:"Santa Clara", hora:"01:00", placarCasa:"", placarFora:"" }
+  { casa:"Áustria", fora:"Jordânia", estadio:"Santa Clara", data: "17/06" , hora:"01:00", placarCasa:"", placarFora:"" }
 ]},
-{ grupo:"Grupo J", rodada:"2ª Rodada", data:"23/06", jogos:[
+{ grupo:"Grupo J", rodada:"2ª Rodada", data:"22/06", jogos:[
   { casa:"Argentina", fora:"Áustria", estadio:"Dallas", hora:"14:00", placarCasa:"", placarFora:"" },
   { casa:"Jordânia", fora:"Argélia", estadio:"Santa Clara", hora:"00:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo J", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Jordânia", fora:"Argentina", estadio:"Dallas", hora:"23:00", placarCasa:"", placarFora:"" },
-  { casa:"Argélia", fora:"Áustria", estadio:"Kansas City", hora:"23:00", placarCasa:"", placarFora:"" }
+  { casa:"Argélia", fora:"Áustria", estadio:"Kansas City", data:"23/06" , hora:"23:00", placarCasa:"", placarFora:"" }
 ]},
 // Grupo K
 { grupo:"Grupo K", rodada:"1ª Rodada", data:"17/06", jogos:[
