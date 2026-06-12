@@ -208,15 +208,15 @@ let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
   { "id": 77, "casa": "1º Grupo I", "fora": "3º C/D/F/G/H", "estadio": "East Rutherford", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 78, "casa": "2º Grupo E", "fora": "2º Grupo I", "estadio": "Arlington", "data": "30/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 79, "casa": "1º Grupo A", "fora": "3º C/E/F/H/I", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
-  { id: 80, casa:"1º Grupo L", fora:"3º E/H/I/J/K", estadio: "Atlanta", data: "01/07", hora: "13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 81, casa:"1º Grupo D", fora:"3º B/E/F/I/J", estadio: "", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 82, casa:"1º Grupo G", fora:"3º A/E/H/I/J", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 83, casa:"2º Grupo K", fora:"2º Grupo L", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 84, casa:"1º Grupo H", fora:"2º Grupo J", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 85, casa:"1º Grupo B", fora:"3º E/F/G/I/J", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 86, casa:"1º Grupo J", fora:"2º Grupo H", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 87, casa:"1º Grupo K", fora:"3º D/E/I/J/L", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 88, casa:"2º Grupo D", fora:"2º Grupo G", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { "id": 80, casa:"1º Grupo L", fora:"3º E/H/I/J/K", estadio:"Atlanta", data:"01/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 82, casa:"1º Grupo G", fora:"3º A/E/H/I/J", estadio:"Seattle", data:"01/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 81, casa:"1º Grupo D", fora:"3º B/E/F/I/J", estadio:"Santa Clara", data:"01/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 84, casa:"1º Grupo H", fora:"2º Grupo J", estadio:"Inglewood", data:"02/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 83, casa:"2º Grupo K", fora:"2º Grupo L", estadio:"Toronto", data:"02/07", hora:"20:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 85, casa:"1º Grupo B", fora:"3º E/F/G/I/J", estadio:"Vancouver", data:"03/07", hora:"00:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 88, casa:"2º Grupo D", fora:"2º Grupo G", estadio:"Arlington", data:"03/07", hora:"15:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 86, casa:"1º Grupo J", fora:"2º Grupo H", estadio:"Miami", data:"03/07", hora:"19:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { "id": 87, casa:"1º Grupo K", fora:"3º D/E/I/J/L", estadio:"Kansas City", data:"03/07", hora:"22:30", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
   { id: 89, casa:"Vencedor 74", fora:"Vencedor 75", estadio:"A definir", data:"A definir", hora:"--:--", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
