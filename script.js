@@ -374,17 +374,140 @@ function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
   atualizar(true);
 }
 
+/* ================= PREENCHIMENTO AUTOMÁTICO DO MATA-MATA COMPLETO ================= */
+function preencherMataMata() {
+  // --- FASE 1: PEGAR OS CLASSIFICADOS DOS GRUPOS (Igual antes) ---
+  let classificados = {};
+  let todosTerceiros = [];
+
+  for (let g in tabela) {
+    let times = Object.entries(tabela[g]);
+    times.sort((a, b) => 
+      (b[1].pts - a[1].pts) || 
+      ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) || 
+      (b[1].gp - a[1].gp) || 
+      (a[1].pos - b[1].pos)
+    );
+
+    classificados[`1º ${g}`] = times[0][0];
+    classificados[`2º ${g}`] = times[1][0];
+
+    todosTerceiros.push({
+      nome: times[2][0],
+      pts: times[2][1].pts,
+      sg: times[2][1].gp - times[2][1].gc,
+      gp: times[2][1].gp
+    });
+  }
+
+  todosTerceiros.sort((a, b) => (b.pts - a.pts) || (b.sg - a.sg) || (b.gp - a.gp));
+
+  // --- FASE 2: PREENCHER OS 16 AVOS DE FINAL ---
+  let fase16 = jogosDetalhados.find(b => b.rodada === "16 avos de Final");
+  if (fase16) {
+    fase16.jogos.forEach(jogo => {
+      if (classificados[jogo.casa]) jogo.casa = classificados[jogo.casa];
+      if (classificados[jogo.fora]) jogo.fora = classificados[jogo.fora];
+
+      if (jogo.casa.includes("3º")) {
+        let index = idxTerceiro(jogo.casa);
+        if (todosTerceiros[index]) jogo.casa = todosTerceiros[index].nome;
+      }
+      if (jogo.fora.includes("3º")) {
+        let index = idxTerceiro(jogo.fora);
+        if (todosTerceiros[index]) jogo.fora = todosTerceiros[index].nome;
+      }
+    });
+  }
+
+  // Mapeador para guardar quem ganhou (Vencedor) e quem perdeu (Perdedor) cada ID de jogo
+  let resultadosPorId = {};
+
+  // --- FASE 3: MAPEAR RESULTADOS E AVANÇAR DE FASE (Oitavas até a Final) ---
+  jogosDetalhados.forEach(bloco => {
+    if (bloco.grupo !== "Mata-mata") return;
+
+    bloco.jogos.forEach(jogo => {
+      // Se o jogo tem ID, precisamos calcular o vencedor dele para as próximas fases
+      if (jogo.id) {
+        let vencedor = "";
+        let perdedor = "";
+        
+        const c = jogo.placarCasa;
+        const f = jogo.placarFora;
+
+        // Só calcula se o placar foi preenchido
+        if (c !== "" && f !== "") {
+          const g1 = Number(c);
+          const g2 = Number(f);
+
+          if (g1 > g2) {
+            vencedor = jogo.casa;
+            perdedor = jogo.fora;
+          } else if (g2 > g1) {
+            vencedor = jogo.fora;
+            perdedor = jogo.casa;
+          } else {
+            // Em caso de empate, olha os pênaltis (PK)
+            const p1 = Number(jogo.penaisCasa || 0);
+            const p2 = Number(jogo.penaisFora || 0);
+            if (p1 > p2) {
+              vencedor = jogo.casa;
+              perdedor = jogo.fora;
+            } else if (p2 > p1) {
+              vencedor = jogo.fora;
+              perdedor = jogo.casa;
+            }
+          }
+        }
+
+        // Guarda os resultados deste ID
+        resultadosPorId[jogo.id] = { vencedor, perdedor };
+      }
+
+      // Agora, substitui os textos "Vencedor XX" ou "Perdedor XX" pelos países reais
+      // Verifica o time da Casa
+      if (jogo.casa.includes("Vencedor") || jogo.casa.includes("Perdedor")) {
+        let idBusca = jogo.casa.replace(/\D/g, ""); // Extrai o número do ID (ex: "97")
+        if (resultadosPorId[idBusca]) {
+          if (jogo.casa.includes("Vencedor") && resultadosPorId[idBusca].vencedor) {
+            jogo.casa = resultadosPorId[idBusca].vencedor;
+          } else if (jogo.casa.includes("Perdedor") && resultadosPorId[idBusca].perdedor) {
+            jogo.casa = resultadosPorId[idBusca].perdedor;
+          }
+        }
+      }
+
+      // Verifica o time de Fora
+      if (jogo.fora.includes("Vencedor") || jogo.fora.includes("Perdedor")) {
+        let idBusca = jogo.fora.replace(/\D/g, "");
+        if (resultadosPorId[idBusca]) {
+          if (jogo.fora.includes("Vencedor") && resultadosPorId[idBusca].vencedor) {
+            jogo.fora = resultadosPorId[idBusca].vencedor;
+          } else if (jogo.fora.includes("Perdedor") && resultadosPorId[idBusca].perdedor) {
+            jogo.fora = resultadosPorId[idBusca].perdedor;
+          }
+        }
+      }
+    });
+  });
+}
+
+/* ================= FUNÇÃO ATUALIZAR (MODIFICADA) ================= */
 function atualizar(deveRenderizar = true){
+  // Salva o estado atual no navegador
   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
 
   if(!tabela || Object.keys(tabela).length === 0) return;
 
+  // Limpa as pontuações para recalcular do zero
   for(let g in tabela){
     for(let t in tabela[g]){
       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
     }
   }
 
+  // Calcula a fase de grupos
   jogosDetalhados.forEach(bloco => {
     if(bloco.grupo === "Mata-mata") return; 
 
@@ -415,12 +538,63 @@ function atualizar(deveRenderizar = true){
       }
     });
   });
+
+  // 🔥 CRUCIAL: Roda a lógica do mata-mata logo após calcular a tabela do grupo!
+  preencherMataMata();
   
   if(deveRenderizar) {
     renderJogos();
     renderTabela();
   }
 }
+
+// function atualizar(deveRenderizar = true){
+//   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
+
+//   if(!tabela || Object.keys(tabela).length === 0) return;
+
+//   for(let g in tabela){
+//     for(let t in tabela[g]){
+//       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
+//     }
+//   }
+
+//   jogosDetalhados.forEach(bloco => {
+//     if(bloco.grupo === "Mata-mata") return; 
+
+//     bloco.jogos.forEach(jogo => {
+//       if(jogo.placarCasa === "" || jogo.placarFora === "") return;
+
+//       const g1 = Number(jogo.placarCasa);
+//       const g2 = Number(jogo.placarFora);
+//       if(isNaN(g1) || isNaN(g2)) return;
+
+//       const grupo = bloco.grupo;
+//       if(!tabela[grupo]) return;
+//       const casa = tabela[grupo][jogo.casa];
+//       const fora = tabela[grupo][jogo.fora];
+//       if(!casa || !fora) return;
+
+//       casa.gp += g1;
+//       casa.gc += g2;
+//       fora.gp += g2;
+//       fora.gc += g1;
+
+//       if(g1 > g2){
+//         casa.v++; casa.pts += 3; fora.d++;
+//       } else if(g2 > g1){
+//         fora.v++; fora.pts += 3; casa.d++;
+//       } else {
+//         casa.e++; fora.e++; casa.pts++; fora.pts++;
+//       }
+//     });
+//   });
+  
+//   if(deveRenderizar) {
+//     renderJogos();
+//     renderTabela();
+//   }
+// }
 
 function renderTabela(){
   const div = document.getElementById("grupos");
