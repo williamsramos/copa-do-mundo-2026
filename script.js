@@ -41,11 +41,11 @@ const grupos = {
 
 /* ================= JOGOS DETALHADOS ================= */
 // CORRIGIDO: Inclusão do operador "=" para atribuição correta
-let jogosDetalhados = [ //JSON.parse(localStorage.getItem("jogosSimulador")) || [ 
+let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [ 
 // Grupo A
 { grupo:"Grupo A", rodada:"1ª Rodada", data:"11/06", jogos:[
   { casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora:"16:00", placarCasa:"2", placarFora:"0" },
-  { casa:"Coreia do Sul", fora:"República Tcheca", estadio:"Guadalajara", hora:"23:00", placarCasa:"", placarFora:"" }
+  { casa:"Coreia do Sul", fora:"República Tcheca", estadio:"Guadalajara", hora:"23:00", placarCasa:"2", placarFora:"1" }
 ]},
 { grupo:"Grupo A", rodada:"2ª Rodada", data:"18/06", jogos:[
   { casa:"México", fora:"Coreia do Sul", estadio:"Guadalajara", hora:"22:00", placarCasa:"", placarFora:"" },
