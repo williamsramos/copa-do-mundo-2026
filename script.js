@@ -198,7 +198,7 @@ const jogosPadrao = [
   { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"", placarFora:"" }
 ]},
 
-// ================= MATA-MATA =================
+// ================= MATA-MATA (ATUALIZADO) =================
 { grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
   { "id": 73, "casa": "2º Grupo A", "fora": "2º Grupo B", "estadio": "Inglewood", "data": "28/06", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 74, "casa": "1º Grupo E", "fora": "3º A/B/C/D/F", "estadio": "Foxborough", "data": "29/06", "hora": "17:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
@@ -243,7 +243,6 @@ const jogosPadrao = [
 ]}
 ];
 
-
 let jogosDetalhados = [];
 let tabela = {};
 let grupoSelecionado = null;
@@ -282,7 +281,7 @@ function criarAbas(){
 }
 
 function selecionarGrupo(grupo){
-  grupoSelecionado = grupo === "todos" ? null : group;
+  grupoSelecionado = grupo === "todos" ? null : grupo;
   showTab('jogosTab'); 
   renderJogos();
   destacarAba();
