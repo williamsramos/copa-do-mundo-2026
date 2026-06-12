@@ -24,7 +24,7 @@ header h1 {
   gap: 12px; /* espaçamento entre o título e bandeiras */
 }
 
-.header-bandeiras img {
+.header-bandeiras, .footer-bandeiras img {
   margin-left: 10px;
   vertical-align: middle;
 }
