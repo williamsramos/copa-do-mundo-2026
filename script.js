@@ -41,7 +41,7 @@ const grupos = {
 };
 
 /* ================= JOGOS DETALHADOS ================= */
-let jogosDetalhados = JSON.parse(localStorage.getItem("jogosSimulador")) || [
+let jogosDetalhados [ //= JSON.parse(localStorage.getItem("jogosSimulador")) ||
 // Grupo A
 { grupo:"Grupo A", rodada:"1ª Rodada", data:"11/06", jogos:[
   { casa:"México", fora:"África do Sul", estadio:"Cidade do México", hora:"16:00", placarCasa:"2", placarFora:"0" },
@@ -488,6 +488,6 @@ window.onload = function () {
   }
 };
 
-localStorage.clear(); // Coloque isso no fim do script.js, abra o site e depois pode apagar essa linha do código.
+
 
 
