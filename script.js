@@ -316,9 +316,9 @@ function renderJogos(){
       const p1 = j.penaisCasa || "";
       const p2 = j.penaisFora || "";
       
-      const dataJogo = j.data ? j.data : bloco.data;
-
-      const infoEstadio = `🏟️ ${j.estadio} | 📅 ${bloco.data}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
+      // Dentro da função renderJogos, na parte onde monta o texto do estádio:
+      const dataDoJogo = j.data ? j.data : bloco.data;
+      const infoEstadio = `🏟️ ${j.estadio} | 📅 ${dataDoJogo}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
 
       blocoHtml += `
         <div style="margin-bottom:6px;">
@@ -486,4 +486,7 @@ window.onload = function () {
     showTab('classificacao');
   }
 };
+
+localStorage.clear(); // Coloque isso no fim do script.js, abra o site e depois pode apagar essa linha do código.
+
 
