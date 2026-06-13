@@ -56,7 +56,7 @@ const jogosPadrao = [
 ]},
 // Grupo B
 { grupo:"Grupo B", rodada:"1ª Rodada", data:"12/06", jogos:[
-  { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa:"1", placarFora:"1" }, 
+  { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa:"", placarFora:"" }, 
   { casa:"Catar", fora:"Suíça", estadio:"Santa Clara", data:"13/06", hora:"16:00", placarCasa:"", placarFora:"" } 
   
 ]},
