@@ -15,12 +15,10 @@ const bandeiras = {
 };
 
 function getBandeira(time){
+  if(!time || time.includes("º") || time.includes("Vencedor") || time.includes("Perdedor")) return "";
   const code = bandeiras[time];
   if(!code) return "";
-  if(code.startsWith("http")){
-    return `<img src="${code}" style="width:20px;margin-right:6px;">`;
-  }
-  return `<img src="https://flagcdn.com/w40/${code}.png" style="width:20px;margin-right:6px;">`;
+  return `<img src="https://flagcdn.com/w40/${code}.png" style="width:20px;margin-right:6px;vertical-align:middle;">`;
 }
 
 /* ================= GRUPOS ================= */
@@ -80,7 +78,7 @@ const jogosPadrao = [
   { casa:"Escócia", fora:"Brasil", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" },
   { casa:"Marrocos", fora:"Haiti", estadio:"Atlanta", hora:"19:00", placarCasa:"", placarFora:"" }
 ]},
- // Grupo D (DATA CORRIGIDA PARA 14/06)
+ // Grupo D
 { grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
   { casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00", placarCasa:"", placarFora:"" }, 
   { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"14/06", hora:"01:00", placarCasa:"", placarFora:"" } 
@@ -201,41 +199,41 @@ const jogosPadrao = [
 // ================= MATA-MATA =================
 { grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
   { "id": 73, "casa": "2º Grupo A", "fora": "2º Grupo B", "estadio": "Inglewood", "data": "28/06", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 74, "casa": "1º Grupo E", "fora": "3º A/B/C/D/F", "estadio": "Foxborough", "data": "29/06", "hora": "17:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 74, "casa": "1º Grupo E", "fora": "3º Melhor 1", "estadio": "Foxborough", "data": "29/06", "hora": "17:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 75, "casa": "1º Grupo F", "fora": "2º Grupo C", "estadio": "Monterrey", "data": "29/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 76, "casa": "1º Grupo C", "fora": "2º Grupo F", "estadio": "Houston", "data": "29/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 77, "casa": "1º Grupo I", "fora": "3º C/D/F/G/H", "estadio": "East Rutherford", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 77, "casa": "1º Grupo I", "fora": "3º Melhor 2", "estadio": "East Rutherford", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 78, "casa": "2º Grupo E", "fora": "2º Grupo I", "estadio": "Arlington", "data": "30/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 79, "casa": "1º Grupo A", "fora": "3º C/E/F/H/I", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 80, "casa": "1º Grupo L", "fora": "3º E/H/I/J/K", "estadio": "Atlanta", "data": "01/07", "hora": "13:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 82, "casa": "1º Grupo G", "fora": "3º A/E/H/I/J", "estadio": "Seattle", "data": "01/07", "hora": "17:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 81, "casa": "1º Grupo D", "fora": "3º B/E/F/I/J", "estadio": "Santa Clara", "data": "01/07", "hora": "21:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 79, "casa": "1º Grupo A", "fora": "3º Melhor 3", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 80, "casa": "1º Grupo L", "fora": "3º Melhor 4", "estadio": "Atlanta", "data": "01/07", "hora": "13:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 82, "casa": "1º Grupo G", "fora": "3º Melhor 5", "estadio": "Seattle", "data": "01/07", "hora": "17:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 81, "casa": "1º Grupo D", "fora": "3º Melhor 6", "estadio": "Santa Clara", "data": "01/07", "hora": "21:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 84, "casa": "1º Grupo H", "fora": "2º Grupo J", "estadio": "Inglewood", "data": "02/07", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 83, "casa": "2º Grupo K", "fora": "2º Grupo L", "estadio": "Toronto", "data": "02/07", "hora": "20:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 85, "casa": "1º Grupo B", "fora": "3º E/F/G/I/J", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Arlington", "data": "03/07", "timestamp": "15:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 85, "casa": "1º Grupo B", "fora": "3º Melhor 7", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Arlington", "data": "03/07", "hora": "15:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 86, "casa": "1º Grupo J", "fora": "2º Grupo H", "estadio": "Miami", "data": "03/07", "hora": "19:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 87, "casa": "1º Grupo K", "fora": "3º D/E/I/J/L", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
+  { "id": 87, "casa": "1º Grupo K", "fora": "3º Melhor 8", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
 ]},
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
-  { id: 89, casa:"Vencedor 74", fora:"Vencedor 75", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 90, casa:"Vencedor 73", fora:"Vencedor 76", estadio:"Houston", data:"04/07", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 91, casa:"Vencedor 78", fora:"Vencedor 77", estadio:"East Rutherford", data:"05/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 92, casa:"Vencedor 79", fora:"Vencedor 80", estadio:"Cidade do México", data:"05/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 93, casa:"Vencedor 82", fora:"Vencedor 81", estadio:"Arlington", data:"06/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 94, casa:"Vencedor 84", fora:"Vencedor 83", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 95, casa:"Vencedor 85", fora:"Vencedor 88", estadio:"Atlanta", data:"07/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 96, casa:"Vencedor 86", fora:"Vencedor 87", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 89, casa:"Jogo 74", fora:"Jogo 75", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 90, casa:"Jogo 73", fora:"Jogo 76", estadio:"Houston", data:"04/07", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 91, casa:"Jogo 78", fora:"Jogo 77", estadio:"East Rutherford", data:"05/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 92, casa:"Jogo 79", fora:"Jogo 80", estadio:"Cidade do México", data:"05/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 93, casa:"Jogo 82", fora:"Jogo 81", estadio:"Arlington", data:"06/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 94, casa:"Jogo 84", fora:"Jogo 83", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 95, casa:"Jogo 85", fora:"Jogo 88", estadio:"Atlanta", data:"07/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 96, casa:"Jogo 86", fora:"Jogo 87", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
-  { id: 97, casa:"Vencedor 90", fora:"Vencedor 89", estadio:"Foxborough", data:"09/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 98, casa:"Vencedor 91", fora:"Vencedor 92", estadio:"Inglewood", data:"10/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 99, casa:"Vencedor 93", fora:"Vencedor 94", estadio:"Miami", data:"11/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 100, casa:"Vencedor 95", fora:"Vencedor 96", estadio:"Vancouver", data:"11/07", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 97, casa:"Jogo 90", fora:"Jogo 89", estadio:"Foxborough", data:"09/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 98, casa:"Jogo 91", fora:"Jogo 92", estadio:"Inglewood", data:"10/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 99, casa:"Jogo 93", fora:"Jogo 94", estadio:"Miami", data:"11/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 100, casa:"Jogo 95", fora:"Jogo 96", estadio:"Vancouver", data:"11/07", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Semifinal", data:"14/07 a 15/07", jogos:[
-  { id: 101, casa:"Vencedor 97 (QF V1)", fora:"Vencedor 98 (QF V2)", estadio:"Arlington", data:"14/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 102, casa:"Vencedor 99 (QF V3)", fora:"Vencedor 100 (QF V4)", estadio:"Atlanta", data:"15/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 101, casa:"Jogo 97", fora:"Jogo 98", estadio:"Arlington", data:"14/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 102, casa:"Jogo 99", fora:"Jogo 100", estadio:"Atlanta", data:"15/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Finais", data:"18/07 e 19/07", jogos:[
   { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", data:"18/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
@@ -278,8 +276,6 @@ function criarAbas(){
     div.innerHTML += `<button onclick="selecionarGrupo('${g}')" id="aba-${g}">${g}</button>`;
   }
   div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
-  
-  // NOVO BOTÃO DE RESET PARA CELULARES
   div.innerHTML += `<button onclick="limparSimulador()" style="background-color: #d9534f; color: white; margin-left: 15px; font-weight: bold;">🔄 Resetar</button>`;
 }
 
@@ -326,10 +322,10 @@ function renderJogos(){
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${dataDoJogo}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
 
       blocoHtml += `
-        <div style="margin-bottom:6px;">
-          ${getBandeira(j.casa)} ${j.casa}
+        <div style="margin-bottom:6px; display: flex; align-items: center; justify-content: flex-start; gap: 8px; flex-wrap: wrap;">
+          <span style="min-width: 140px; text-align: right;">${getBandeira(j.casa)} ${j.casa}</span>
           
-          <input type="number" min="0" value="${g1}" style="width:55px;" onchange="salvarPlacar(${blocoIndex},${jogoIndex},'casa',this.value)">
+          <input type="number" min="0" value="${g1}" style="width:50px; text-align: center;" onchange="salvarPlacar(${blocoIndex},${jogoIndex},'casa',this.value)">
           
           ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p1}" style="width:40px; background:#ffebeb; border:1px solid red; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'casa',this.value)">` : ""}
           
@@ -337,13 +333,13 @@ function renderJogos(){
           
           ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p2}" style="width:40px; background:#ffebeb; border:1px solid red; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'fora',this.value)">` : ""}
           
-          <input type="number" min="0" value="${g2}" style="width:55px;" onchange="salvarPlacar(${blocoIndex},${jogoIndex},'fora',this.value)">
+          <input type="number" min="0" value="${g2}" style="width:50px; text-align: center;" onchange="salvarPlacar(${blocoIndex},${jogoIndex},'fora',this.value)">
           
-          ${getBandeira(j.fora)} ${j.fora}
+          <span style="min-width: 140px; text-align: left;">${getBandeira(j.fora)} ${j.fora}</span>
           <br>
-          <small>${infoEstadio}</small>
+          <small style="width: 100%; color: gray; margin-left: 5px;">${infoEstadio}</small>
         </div>
-        <hr>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 8px 0;">
       `;
     });
     
@@ -370,36 +366,39 @@ function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
   atualizar(true);
 }
 
-/* ================= FUNÇÃO ATUALIZAR ================= */
+/* ================= ENGINE AUTOMÁTICA DE ATUALIZAÇÃO ================= */
 function atualizar(deveRenderizar = true){
   if(!tabela || Object.keys(tabela).length === 0) return;
 
+  // 1. Resetar pontuações da tabela antes de recalcular tudo
   for(let g in tabela){
     for(let t in tabela[g]){
       tabela[g][t] = { pts:0, v:0, e:0, d:0, gp:0, gc:0, pos:tabela[g][t].pos };
     }
   }
 
+  // 2. Calcular a tabela com base em jogos da fase de grupos completos
+  let totalJogosGrupos = 0;
+  let jogosGruposPreenchidos = 0;
+
   jogosDetalhados.forEach(bloco => {
     if(bloco.grupo === "Mata-mata") return; 
 
     bloco.jogos.forEach(jogo => {
+      totalJogosGrupos++;
       if(jogo.placarCasa === "" || jogo.placarFora === "") return;
+      jogosGruposPreenchidos++;
 
       const g1 = Number(jogo.placarCasa);
       const g2 = Number(jogo.placarFora);
       if(isNaN(g1) || isNaN(g2)) return;
 
       const grupo = bloco.grupo;
-      if(!tabela[grupo]) return;
       const casa = tabela[grupo][jogo.casa];
       const fora = tabela[grupo][jogo.fora];
-      if(!casa || !fora) return;
 
-      casa.gp += g1;
-      casa.gc += g2;
-      fora.gp += g2;
-      fora.gc += g1;
+      casa.gp += g1; casa.gc += g2;
+      fora.gp += g2; fora.gc += g1;
 
       if(g1 > g2){
         casa.v++; casa.pts += 3; fora.d++;
@@ -411,12 +410,129 @@ function atualizar(deveRenderizar = true){
     });
   }); 
 
+  // 3. Se TODOS os jogos de grupos acabaram, alimenta automaticamente os 16 avos do Mata-mata
+  if(jogosGruposPreenchidos === totalJogosGrupos) {
+    calcularChaveamentoMataMata();
+  }
+
+  // 4. Calcular os vencedores que sobem degrau por degrau no mata-mata
+  calcularVencedoresMataMata();
+
   localStorage.setItem("jogosSimulador", JSON.stringify(jogosDetalhados));
   
   if(deveRenderizar) {
     renderJogos();
     renderTabela();
   }
+}
+
+/* ================= ENGINE COMPLEXA DO CHAVEAMENTO E DOS MELHORES 3ºs ================= */
+function calcularChaveamentoMataMata(){
+  let classificados = {}; // Armazenará { "Grupo A": [1º, 2º, 3º], ... }
+  let todosTerceiros = [];
+
+  for(let g in tabela){
+    let times = Object.entries(tabela[g]);
+    // Critérios de Desempate: Pts -> Saldo -> Gols Pró -> Posição Inicial
+    times.sort((a,b)=> (b[1].pts - a[1].pts) || ((b[1].gp - b[1].gc) - (a[1].gp - a[1].gc)) || (b[1].gp - a[1].gp) || (a[1].pos - b[1].pos));
+    
+    classificados[g] = [times[0][0], times[1][0], times[2][0]];
+    todosTerceiros.push({ time: times[2][0], grupo: g, pts: times[2][1].pts, sg: times[2][1].gp - times[2][1].gc, gp: times[2][1].gp });
+  }
+
+  // Descobrir os 8 melhores terceiros (Em torneios de 12 grupos, passam os 8 melhores 3ºs)
+  todosTerceiros.sort((a,b) => (b.pts - a.pts) || (b.sg - a.sg) || (b.gp - a.gp));
+  let melhoresTerceiros = todosTerceiros.slice(0, 8).map(t => t.time);
+
+  // Encontrar o bloco de jogos de 16 avos de final no array
+  let bloco16avos = jogosDetalhados.find(b => b.grupo === "Mata-mata" && b.rodada === "16 avos de Final");
+  if(!bloco16avos) return;
+
+  // Mapeamento dinâmico baseado na estrutura original de chaves do seu arquivo:
+  bloco16avos.jogos.forEach(j => {
+    if(j.id === 73) { j.casa = classificados["Grupo A"][1]; j.fora = classificados["Grupo B"][1]; }
+    if(j.id === 74) { j.casa = classificados["Grupo E"][0]; j.fora = melhoresTerceiros[0] || "3º Melhor 1"; }
+    if(j.id === 75) { j.casa = classificados["Grupo F"][0]; j.fora = classificados["Grupo C"][1]; }
+    if(j.id === 76) { j.casa = classificados["Grupo C"][0]; j.fora = classificados["Grupo F"][1]; }
+    if(j.id === 77) { j.casa = classificados["Grupo I"][0]; j.fora = melhoresTerceiros[1] || "3º Melhor 2"; }
+    if(j.id === 78) { j.casa = classificados["Grupo E"][1]; j.fora = classificados["Grupo I"][1]; }
+    if(j.id === 79) { j.casa = classificados["Grupo A"][0]; j.fora = melhoresTerceiros[2] || "3º Melhor 3"; }
+    if(j.id === 80) { j.casa = classificados["Grupo L"][0]; j.fora = melhoresTerceiros[3] || "3º Melhor 4"; }
+    if(j.id === 82) { j.casa = classificados["Grupo G"][0]; j.fora = melhoresTerceiros[4] || "3º Melhor 5"; }
+    if(j.id === 81) { j.casa = classificados["Grupo D"][0]; j.fora = melhoresTerceiros[5] || "3º Melhor 6"; }
+    if(j.id === 84) { j.casa = classificados["Grupo H"][0]; j.fora = classificados["Grupo J"][1]; }
+    if(j.id === 83) { j.casa = classificados["Grupo K"][1]; j.fora = classificados["Grupo L"][1]; }
+    if(j.id === 85) { j.casa = classificados["Grupo B"][0]; j.fora = melhoresTerceiros[6] || "3º Melhor 7"; }
+    if(j.id === 88) { j.casa = classificados["Grupo D"][1]; j.fora = classificados["Grupo G"][1]; }
+    if(j.id === 86) { j.casa = classificados["Grupo J"][0]; j.fora = classificados["Grupo H"][1]; }
+    if(j.id === 87) { j.casa = classificados["Grupo K"][0]; j.fora = melhoresTerceiros[7] || "3º Melhor 8"; }
+  });
+}
+
+/* ================= CALCULAR PROGRESÃO DOS VENCEDORES ================= */
+function obterVencedorEPerdedor(jogo) {
+  if(jogo.placarCasa === "" || juego.placarFora === "") return { vencedor: null, perdedor: null };
+  const c = Number(jogo.placarCasa);
+  const f = Number(jogo.placarFora);
+  if(c > f) return { vencedor: jogo.casa, perdedor: jogo.fora };
+  if(f > c) return { vencedor: jogo.fora, perdedor: jogo.casa };
+  
+  // Se houver empate, decide nos pênaltis (PK)
+  const pC = Number(jogo.penaisCasa || 0);
+  const pF = Number(jogo.penaisFora || 0);
+  if(pC > pF) return { vencedor: jogo.casa, perdedor: jogo.fora };
+  if(pF > pC) return { vencedor: jogo.fora, perdedor: jogo.casa };
+  return { vencedor: null, perdedor: null }; 
+}
+
+function calcularVencedoresMataMata(){
+  let resultados = {}; // Guardará { 73: "Brasil", 74: "Argentina", ... }
+  let perdedores = {}; 
+
+  // Mapear rodada por rodada em ordem cronológica
+  const rodadasMataMata = ["16 avos de Final", "Oitavas de Final", "Quartas de Final", "Semifinal", "Finais"];
+  
+  rodadasMataMata.forEach(rodadaNome => {
+    let bloco = jogosDetalhados.find(b => b.grupo === "Mata-mata" && b.rodada === rodadaNome);
+    if(!bloco) return;
+
+    bloco.jogos.forEach(j => {
+      // Primeiro, se o jogo depende de um jogo anterior, atualiza os nomes dos times em campo
+      if(rodadaNome !== "16 avos de Final"){
+        if(j.casa.startsWith("Jogo ")) {
+          const idAnt = j.casa.replace("Jogo ", "");
+          j.casa = resultados[idAnt] || j.casa;
+        }
+        if(j.fora.startsWith("Jogo ")) {
+          const idAnt = j.fora.replace("Jogo ", "");
+          j.fora = resultados[idAnt] || j.fora;
+        }
+        if(j.casa.startsWith("Vencedor ")) {
+          const idAnt = j.casa.replace("Vencedor ", "").split(" ")[0];
+          j.casa = resultados[idAnt] || j.casa;
+        }
+        if(j.fora.startsWith("Vencedor ")) {
+          const idAnt = j.fora.replace("Vencedor ", "").split(" ")[0];
+          j.fora = resultados[idAnt] || j.fora;
+        }
+        if(j.casa.startsWith("Perdedor ")) {
+          const idAnt = j.casa.replace("Perdedor ", "");
+          j.casa = perdedores[idAnt] || j.casa;
+        }
+        if(j.fora.startsWith("Perdedor ")) {
+          const idAnt = j.fora.replace("Perdedor ", "");
+          j.fora = perdedores[idAnt] || j.fora;
+        }
+      }
+
+      // Agora calcula quem ganhou este jogo atual
+      const { vencedor, perdedor } = obterVencedorEPerdedor(j);
+      if(vencedor) {
+        resultados[j.id] = vencedor;
+        perdedores[j.id] = perdedor;
+      }
+    });
+  });
 }
 
 function renderTabela(){
@@ -474,7 +590,6 @@ function showTab(tabId) {
   if(abaAtiva) abaAtiva.style.display = 'block';
 }
 
-// NOVA FUNÇÃO DO BOTÃO RESET (FUNCIONA PERFEITAMENTE EM SMARTPHONES)
 function limparSimulador() {
   if (confirm("Deseja realmente apagar todos os palpites salvos e recomeçar o simulador?")) {
     localStorage.clear();
@@ -482,7 +597,7 @@ function limparSimulador() {
   }
 }
 
-/* Inicialização moderna */
+/* Inicialização */
 document.addEventListener("DOMContentLoaded", () => {
   init();
 });
