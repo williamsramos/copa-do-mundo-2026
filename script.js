@@ -84,7 +84,7 @@ const jogosPadrao = [
  // Grupo D
 { grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
   { casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00", placarCasa:"", placarFora:"" }, 
-  { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"13/06", hora:"01:00", placarCasa:"", placarFora:"" } 
+  { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"14/06", hora:"01:00", placarCasa:"", placarFora:"" } 
 ]},
 { grupo:"Grupo D", rodada:"2ª Rodada", data:"19/06", jogos:[
   { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", data:"20/06" , hora:"00:00", placarCasa:"", placarFora:"" },
