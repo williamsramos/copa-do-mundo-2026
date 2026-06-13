@@ -56,7 +56,7 @@ const jogosPadrao = [
 ]},
 // Grupo B
 { grupo:"Grupo B", rodada:"1ª Rodada", data:"12/06", jogos:[
-  { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa:"", placarFora:"" }, 
+  { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa:"1", placarFora:"1" }, 
   { casa:"Catar", fora:"Suíça", estadio:"Santa Clara", data:"13/06", hora:"16:00", placarCasa:"", placarFora:"" } 
 ]},
 { grupo:"Grupo B", rodada:"2ª Rodada", data:"18/06", jogos:[
@@ -82,7 +82,7 @@ const jogosPadrao = [
 ]},
  // Grupo D (DATA CORRIGIDA PARA 14/06)
 { grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
-  { casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00", placarCasa:"", placarFora:"" }, 
+  { casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00", placarCasa:"4", placarFora:"1" }, 
   { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"14/06", hora:"01:00", placarCasa:"", placarFora:"" } 
 ]},
 { grupo:"Grupo D", rodada:"2ª Rodada", data:"19/06", jogos:[
