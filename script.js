@@ -56,9 +56,8 @@ const jogosPadrao = [
 ]},
 // Grupo B
 { grupo:"Grupo B", rodada:"1ª Rodada", data:"12/06", jogos:[
-  { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa: "1", placarFora: "1" }, 
+  { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa:"", placarFora:"" }, 
   { casa:"Catar", fora:"Suíça", estadio:"Santa Clara", data:"13/06", hora:"16:00", placarCasa:"", placarFora:"" } 
-  
 ]},
 { grupo:"Grupo B", rodada:"2ª Rodada", data:"18/06", jogos:[
   { casa:"Canadá", fora:"Catar", estadio:"Vancouver", hora:"19:00", placarCasa:"", placarFora:"" },
@@ -81,8 +80,8 @@ const jogosPadrao = [
   { casa:"Escócia", fora:"Brasil", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" },
   { casa:"Marrocos", fora:"Haiti", estadio:"Atlanta", hora:"19:00", placarCasa:"", placarFora:"" }
 ]},
- // Grupo D
-{grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
+ // Grupo D (DATA CORRIGIDA PARA 14/06)
+{ grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
   { casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00", placarCasa:"", placarFora:"" }, 
   { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"14/06", hora:"01:00", placarCasa:"", placarFora:"" } 
 ]},
@@ -199,7 +198,7 @@ const jogosPadrao = [
   { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"", placarFora:"" }
 ]},
 
-// ================= MATA-MATA (ATUALIZADO) =================
+// ================= MATA-MATA =================
 { grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
   { "id": 73, "casa": "2º Grupo A", "fora": "2º Grupo B", "estadio": "Inglewood", "data": "28/06", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 74, "casa": "1º Grupo E", "fora": "3º A/B/C/D/F", "estadio": "Foxborough", "data": "29/06", "hora": "17:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
@@ -214,7 +213,7 @@ const jogosPadrao = [
   { "id": 84, "casa": "1º Grupo H", "fora": "2º Grupo J", "estadio": "Inglewood", "data": "02/07", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 83, "casa": "2º Grupo K", "fora": "2º Grupo L", "estadio": "Toronto", "data": "02/07", "hora": "20:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 85, "casa": "1º Grupo B", "fora": "3º E/F/G/I/J", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Arlington", "data": "03/07", "hora": "15:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Arlington", "data": "03/07", "timestamp": "15:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 86, "casa": "1º Grupo J", "fora": "2º Grupo H", "estadio": "Miami", "data": "03/07", "hora": "19:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 87, "casa": "1º Grupo K", "fora": "3º D/E/I/J/L", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
 ]},
@@ -279,6 +278,9 @@ function criarAbas(){
     div.innerHTML += `<button onclick="selecionarGrupo('${g}')" id="aba-${g}">${g}</button>`;
   }
   div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
+  
+  // NOVO BOTÃO DE RESET PARA CELULARES
+  div.innerHTML += `<button onclick="limparSimulador()" style="background-color: #d9534f; color: white; margin-left: 15px; font-weight: bold;">🔄 Resetar</button>`;
 }
 
 function selecionarGrupo(grupo){
@@ -470,6 +472,14 @@ function showTab(tabId) {
   abas.forEach(aba => aba.style.display = 'none');
   const abaAtiva = document.getElementById(tabId);
   if(abaAtiva) abaAtiva.style.display = 'block';
+}
+
+// NOVA FUNÇÃO DO BOTÃO RESET (FUNCIONA PERFEITAMENTE EM SMARTPHONES)
+function limparSimulador() {
+  if (confirm("Deseja realmente apagar todos os palpites salvos e recomeçar o simulador?")) {
+    localStorage.clear();
+    location.reload();
+  }
 }
 
 /* Inicialização moderna */
