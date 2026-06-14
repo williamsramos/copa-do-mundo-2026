@@ -95,16 +95,16 @@ const jogosPadrao = [
 ]},
 // Grupo E
 { grupo:"Grupo E", rodada:"1ª Rodada", data:"14/06", jogos:[
-  { casa:"Alemanha", fora:"Curaçao", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
+  { casa:"Alemanha", fora:"Curaçau", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
   { casa:"Costa do Marfim", fora:"Equador", estadio:"Filadélfia", hora:"20:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo E", rodada:"2ª Rodada", data:"20/06", jogos:[
   { casa:"Alemanha", fora:"Costa do Marfim", estadio:"Toronto", hora:"17:00", placarCasa:"", placarFora:"" },
-  { casa:"Equador", fora:"Curaçao", estadio:"Kansas City", hora:"21:00", placarCasa:"", placarFora:"" }
+  { casa:"Equador", fora:"Curaçau", estadio:"Kansas City", hora:"21:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo E", rodada:"3ª Rodada", data:"25/06", jogos:[
   { casa:"Equador", fora:"Alemanha", estadio:"Nova Jersey", hora:"17:00", placarCasa:"", placarFora:"" },
-  { casa:"Curaçao", fora:"Costa do Marfim", estadio:"Filadélfia", hora:"17:00", placarCasa:"", placarFora:"" }
+  { casa:"Curaçau", fora:"Costa do Marfim", estadio:"Filadélfia", hora:"17:00", placarCasa:"", placarFora:"" }
 ]},
 // Grupo F
 { grupo:"Grupo F", rodada:"1ª Rodada", data:"14/06", jogos:[
