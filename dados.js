@@ -29,7 +29,7 @@ const grupos = {
   "Grupo B": ["Canadá","Catar","Suíça","Bósnia e Herz."],
   "Grupo C": ["Brasil","Marrocos","Haiti","Escócia"],
   "Grupo D": ["EUA","Paraguai","Austrália","Turquia"],
-  "Grupo E": ["Alemanha","Curaçao","Costa do Marfim","Equador"],
+  "Grupo E": ["Alemanha","Curaçau","Costa do Marfim","Equador"],
   "Grupo F": ["Holanda","Japão","Tunísia","Suécia"],
   "Grupo G": ["Bélgica","Egito","Irã","Nova Zelândia"],
   "Grupo H": ["Espanha","Cabo Verde","Arábia Saudita","Uruguai"],
