@@ -9,7 +9,7 @@ const bandeiras = {
   "Colômbia":"co","Equador":"ec","Paraguai":"py","Noruega":"no",
   "Áustria":"at","Argélia":"dz","Tunísia":"tn","Coreia do Sul":"kr",
   "África do Sul":"za","Catar":"qa","Cabo Verde":"cv","Nova Zelândia":"nz",
-  "Haiti":"ht","Costa do Marfim":"ci","Curaçau":"cw","Arábia Saudita":"sa",
+  "Haiti":"ht","Costa do Marfim":"ci","Curaçao":"cw","Arábia Saudita":"sa",
   "Uzbequistão":"uz","Jordânia":"jo","Escócia":"gb-sct",  "Turquia":"tr",
   "Bósnia e Herz.":"ba","República Tcheca":"cz", "Suécia":"se","RD_Congo": "cd","Iraque":"iq"
 };
@@ -29,7 +29,7 @@ const grupos = {
   "Grupo B": ["Canadá","Catar","Suíça","Bósnia e Herz."],
   "Grupo C": ["Brasil","Marrocos","Haiti","Escócia"],
   "Grupo D": ["EUA","Paraguai","Austrália","Turquia"],
-  "Grupo E": ["Alemanha","Curaçau","Costa do Marfim","Equador"],
+  "Grupo E": ["Alemanha","Curaçao","Costa do Marfim","Equador"],
   "Grupo F": ["Holanda","Japão","Tunísia","Suécia"],
   "Grupo G": ["Bélgica","Egito","Irã","Nova Zelândia"],
   "Grupo H": ["Espanha","Cabo Verde","Arábia Saudita","Uruguai"],
@@ -95,16 +95,16 @@ const jogosPadrao = [
 ]},
 // Grupo E
 { grupo:"Grupo E", rodada:"1ª Rodada", data:"14/06", jogos:[
-  { casa:"Alemanha", fora:"Curaçau", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
+  { casa:"Alemanha", fora:"Curaçao", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
   { casa:"Costa do Marfim", fora:"Equador", estadio:"Filadélfia", hora:"20:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo E", rodada:"2ª Rodada", data:"20/06", jogos:[
   { casa:"Alemanha", fora:"Costa do Marfim", estadio:"Toronto", hora:"17:00", placarCasa:"", placarFora:"" },
-  { casa:"Equador", fora:"Curaçau", estadio:"Kansas City", hora:"21:00", placarCasa:"", placarFora:"" }
+  { casa:"Equador", fora:"Curaçao", estadio:"Kansas City", hora:"21:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo E", rodada:"3ª Rodada", data:"25/06", jogos:[
   { casa:"Equador", fora:"Alemanha", estadio:"Nova Jersey", hora:"17:00", placarCasa:"", placarFora:"" },
-  { casa:"Curaçau", fora:"Costa do Marfim", estadio:"Filadélfia", hora:"17:00", placarCasa:"", placarFora:"" }
+  { casa:"Curaçao", fora:"Costa do Marfim", estadio:"Filadélfia", hora:"17:00", placarCasa:"", placarFora:"" }
 ]},
 // Grupo F
 { grupo:"Grupo F", rodada:"1ª Rodada", data:"14/06", jogos:[
