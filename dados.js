@@ -9,7 +9,7 @@ const bandeiras = {
   "Colômbia":"co","Equador":"ec","Paraguai":"py","Noruega":"no",
   "Áustria":"at","Argélia":"dz","Tunísia":"tn","Coreia do Sul":"kr",
   "África do Sul":"za","Catar":"qa","Cabo Verde":"cv","Nova Zelândia":"nz",
-  "Haiti":"ht","Costa do Marfim":"ci","Curaçao":"cw","Arábia Saudita":"sa",
+  "Haiti":"ht","Costa do Marfim":"ci","Curaçau":"cw","Arábia Saudita":"sa",
   "Uzbequistão":"uz","Jordânia":"jo","Escócia":"gb-sct",  "Turquia":"tr",
   "Bósnia e Herz.":"ba","República Tcheca":"cz", "Suécia":"se","RD_Congo": "cd","Iraque":"iq"
 };
