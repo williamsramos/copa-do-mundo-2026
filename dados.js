@@ -27,7 +27,7 @@ function getBandeira(time){
 const grupos = {
   "Grupo A": ["México","África do Sul","Coreia do Sul","República Tcheca"],
   "Grupo B": ["Canadá","Catar","Suíça","Bósnia e Herz."],
-  "Grupo C": ["Brasil","Marrocos","Haiti","Escócia"],
+  "Grupo C": ["Escócia", "Marrocos", "Brasil", "Haiti"],
   "Grupo D": ["EUA","Paraguai","Austrália","Turquia"],
   "Grupo E": ["Alemanha","Curaçau","Costa do Marfim","Equador"],
   "Grupo F": ["Holanda","Japão","Tunísia","Suécia"],
