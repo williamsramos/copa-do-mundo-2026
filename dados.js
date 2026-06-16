@@ -57,7 +57,7 @@ const jogosPadrao = [
 // Grupo B
 { grupo:"Grupo B", rodada:"1ª Rodada", data:"12/06", jogos:[
   { casa:"Canadá", fora:"Bósnia e Herz.", estadio:"Toronto", hora:"16:00", placarCasa:"1", placarFora:"1" }, 
-  { casa:"Catar", fora:"Suíça", estadio:"Santa Clara", data:"13/06", hora:"16:00", placarCasa:"", placarFora:"" } 
+  { casa:"Catar", fora:"Suíça", estadio:"Santa Clara", data:"13/06", hora:"16:00", placarCasa:"1", placarFora:"1" } 
 ]},
 { grupo:"Grupo B", rodada:"2ª Rodada", data:"18/06", jogos:[
   { casa:"Canadá", fora:"Catar", estadio:"Vancouver", hora:"19:00", placarCasa:"", placarFora:"" },
@@ -69,8 +69,8 @@ const jogosPadrao = [
 ]},
 // Grupo C
 { grupo:"Grupo C", rodada:"1ª Rodada", data:"13/06", jogos:[
-  { casa:"Brasil", fora:"Marrocos", estadio:"Nova Jersey", hora:"19:00", placarCasa:"", placarFora:"" },
-  { casa:"Haiti", fora:"Escócia", estadio:"Boston", hora:"22:00", placarCasa:"", placarFora:"" }
+  { casa:"Brasil", fora:"Marrocos", estadio:"Nova Jersey", hora:"19:00", placarCasa:"1", placarFora:"1" },
+  { casa:"Haiti", fora:"Escócia", estadio:"Boston", hora:"22:00", placarCasa:"0", placarFora:"1" }
 ]},
 { grupo:"Grupo C", rodada:"2ª Rodada", data:"19/06", jogos:[
   { casa:"Escócia", fora:"Marrocos", estadio:"Boston", hora:"19:00", placarCasa:"", placarFora:"" },
@@ -83,7 +83,7 @@ const jogosPadrao = [
 // Grupo D
 { grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
   { casa:"EUA", fora:"Paraguai", estadio:"Los Angeles", hora:"22:00", placarCasa:"4", placarFora:"1" }, 
-  { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"14/06", hora:"01:00", placarCasa:"", placarFora:"" } 
+  { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"14/06", hora:"01:00", placarCasa:"2", placarFora:"0" } 
 ]},
 { grupo:"Grupo D", rodada:"2ª Rodada", data:"19/06", jogos:[
   { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", data:"20/06" , hora:"00:00", placarCasa:"", placarFora:"" },
@@ -95,8 +95,8 @@ const jogosPadrao = [
 ]},
 // Grupo E
 { grupo:"Grupo E", rodada:"1ª Rodada", data:"14/06", jogos:[
-  { casa:"Alemanha", fora:"Curaçau", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
-  { casa:"Costa do Marfim", fora:"Equador", estadio:"Filadélfia", hora:"20:00", placarCasa:"", placarFora:"" }
+  { casa:"Alemanha", fora:"Curaçau", estadio:"Houston", hora:"14:00", placarCasa:"7", placarFora:"1" },
+  { casa:"Costa do Marfim", fora:"Equador", estadio:"Filadélfia", hora:"20:00", placarCasa:"1", placarFora:"0" }
 ]},
 { grupo:"Grupo E", rodada:"2ª Rodada", data:"20/06", jogos:[
   { casa:"Alemanha", fora:"Costa do Marfim", estadio:"Toronto", hora:"17:00", placarCasa:"", placarFora:"" },
@@ -108,8 +108,8 @@ const jogosPadrao = [
 ]},
 // Grupo F
 { grupo:"Grupo F", rodada:"1ª Rodada", data:"14/06", jogos:[
-  { casa:"Holanda", fora:"Japão", estadio:"Dallas", hora:"17:00", placarCasa:"", placarFora:"" },
-  { casa:"Suécia", fora:"Tunísia", estadio:"Monterrey", hora:"23:00", placarCasa:"", placarFora:"" }
+  { casa:"Holanda", fora:"Japão", estadio:"Dallas", hora:"17:00", placarCasa:"2", placarFora:"2" },
+  { casa:"Suécia", fora:"Tunísia", estadio:"Monterrey", hora:"23:00", placarCasa:"5", placarFora:"1" }
 ]},
 { grupo:"Grupo F", rodada:"2ª Rodada", data:"20/06", jogos:[
   { casa:"Holanda", fora:"Suécia", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
@@ -121,8 +121,8 @@ const jogosPadrao = [
 ]},
 // Grupo G
 { grupo:"Grupo G", rodada:"1ª Rodada", data:"15/06", jogos:[
-  { casa:"Bélgica", fora:"Egito", estadio:"Seattle Field", hora:"16:00", placarCasa:"", placarFora:"" },
-  { casa:"Irã", fora:"Nova Zelândia", estadio:"Los Angeles", hora:"22:00", placarCasa:"", placarFora:"" }
+  { casa:"Bélgica", fora:"Egito", estadio:"Seattle Field", hora:"16:00", placarCasa:"1", placarFora:"1" },
+  { casa:"Irã", fora:"Nova Zelândia", estadio:"Los Angeles", hora:"22:00", placarCasa:"2", placarFora:"2" }
 ]},
 { grupo:"Grupo G", rodada:"2ª Rodada", data:"21/06", jogos:[
   { casa:"Bélgica", fora:"Irã", estadio:"Los Angeles", hora:"16:00", placarCasa:"", placarFora:"" },
@@ -134,8 +134,8 @@ const jogosPadrao = [
 ]},
 // Grupo H
 { grupo:"Grupo H", rodada:"1ª Rodada", data:"15/06", jogos:[
-  { casa:"Espanha", fora:"Cabo Verde", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" },
-  { casa:"Arábia Saudita", fora:"Uruguai", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" }
+  { casa:"Espanha", fora:"Cabo Verde", estadio:"Atlanta", hora:"13:00", placarCasa:"0", placarFora:"0" },
+  { casa:"Arábia Saudita", fora:"Uruguai", estadio:"Miami", hora:"19:00", placarCasa:"1", placarFora:"1" }
 ]},
 { grupo:"Grupo H", rodada:"2ª Rodada", data:"21/06", jogos:[
   { casa:"Espanha", fora:"Arábia Saudita", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" },
