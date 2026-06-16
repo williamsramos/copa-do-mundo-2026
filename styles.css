@@ -13,6 +13,7 @@ background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-color: #0a1423;
 }
 
 /* HEADER */
@@ -223,7 +224,13 @@ input {
 
 
 /* MOBILE */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+  body {
+    /* Mudamos para scroll para o celular conseguir renderizar a foto sem bugar */
+    background-attachment: scroll; 
+    background-position: center top; /* Garante que a logo/taça apareça logo no topo da tela do celular */
+  }
 
   header h1 {
     font-size: 18px;
