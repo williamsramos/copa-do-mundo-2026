@@ -160,8 +160,8 @@ const jogosPadrao = [
 ]},
 // Grupo J
 { grupo:"Grupo J", rodada:"1ª Rodada", data:"16/06", jogos:[
-  { casa:"Argentina", fora:"Argélia", estadio:"Kansas City", hora:"22:00", placarCasa:"", placarFora:"" },
-  { casa:"Áustria", fora:"Jordânia", estadio:"Santa Clara", data: "17/06" , hora:"01:00", placarCasa:"", placarFora:"" }
+  { casa:"Argentina", fora:"Argélia", estadio:"Kansas City", hora:"22:00", placarCasa:"3", placarFora:"0" },
+  { casa:"Áustria", fora:"Jordânia", estadio:"Santa Clara", data: "17/06" , hora:"01:00", placarCasa:"3", placarFora:"1" }
 ]},
 { grupo:"Grupo J", rodada:"2ª Rodada", data:"22/06", jogos:[
   { casa:"Argentina", fora:"Áustria", estadio:"Dallas", hora:"14:00", placarCasa:"", placarFora:"" },
