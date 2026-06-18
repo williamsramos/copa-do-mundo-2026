@@ -11,7 +11,7 @@ const bandeiras = {
   "África do Sul":"za","Catar":"qa","Cabo Verde":"cv","Nova Zelândia":"nz",
   "Haiti":"ht","Costa do Marfim":"ci","Curaçau":"cw","Arábia Saudita":"sa",
   "Uzbequistão":"uz","Jordânia":"jo","Escócia":"gb-sct",  "Turquia":"tr",
-  "Bósnia e Herz.":"ba","República Tcheca":"cz", "Suécia":"se","RD_Congo": "cd","Iraque":"iq"
+  "Bósnia e Herz.":"ba","República Tcheca":"cz", "Suécia":"se","Congo": "cd","Iraque":"iq"
 };
 
 function getBandeira(time){
@@ -20,8 +20,10 @@ function getBandeira(time){
   if(code.startsWith("http")){
     return `<img src="${code}" style="width:20px;margin-right:6px;">`;
   }
-  return `<img src="https://flagcdn.com/w40/${code}.png" style="width:20px;margin-right:6px;">`;
+  // Adicionamos o .toLowerCase() aqui para garantir que "CD" vire "cd"
+  return `<img src="https://flagcdn.com/w40/${code.toLowerCase()}.png" style="width:20px;margin-right:6px;">`;
 }
+
 
 /* ================= CONFIGURAÇÃO DOS GRUPOS ================= */
 const grupos = {
@@ -35,7 +37,7 @@ const grupos = {
   "Grupo H": ["Espanha","Cabo Verde","Arábia Saudita","Uruguai"],
   "Grupo I": ["França","Senegal","Noruega","Iraque"],
   "Grupo J": ["Argentina","Argélia","Áustria","Jordânia"],
-  "Grupo K": ["Portugal","Uzbequistão","Colômbia","RD_Congo"],
+  "Grupo K": ["Portugal","Uzbequistão","Colômbia","Congo"],
   "Grupo L": ["Inglaterra","Croácia","Gana","Panamá"]
 };
 
@@ -48,7 +50,7 @@ const jogosPadrao = [
 ]},
 { grupo:"Grupo A", rodada:"2ª Rodada", data:"18/06", jogos:[
   { casa:"México", fora:"Coreia do Sul", estadio:"Guadalajara", hora:"22:00", placarCasa:"", placarFora:"" },
-  { casa:"África do Sul", fora:"República Tcheca", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" }
+  { casa:"República Tcheca", fora:"África do Sul", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo A", rodada:"3ª Rodada", data:"24/06", jogos:[
   { casa:"México", fora:"República Tcheca", estadio:"Cidade do México", hora:"22:00", placarCasa:"", placarFora:"" },
@@ -173,21 +175,21 @@ const jogosPadrao = [
 ]},
 // Grupo K
 { grupo:"Grupo K", rodada:"1ª Rodada", data:"17/06", jogos:[
-  { casa:"Portugal", fora:"RD_Congo", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
-  { casa:"Uzbequistão", fora:"Colômbia", estadio:"Azteca", hora:"23:00", placarCasa:"", placarFora:"" }
+  { casa:"Portugal", fora:"Congo", estadio:"Houston", hora:"14:00", placarCasa:"1", placarFora:"1" },
+  { casa:"Uzbequistão", fora:"Colômbia", estadio:"Azteca", hora:"23:00", placarCasa:"1", placarFora:"3" }
 ]},
 { grupo:"Grupo K", rodada:"2ª Rodada", data:"23/06", jogos:[
   { casa:"Portugal", fora:"Uzbequistão", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
-  { casa:"Colômbia", fora:"RD_Congo", estadio:"Akron", hora:"23:00", placarCasa:"", placarFora:"" }
+  { casa:"Colômbia", fora:"Congo", estadio:"Akron", hora:"23:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo K", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Colômbia", fora:"Portugal", estadio:"Miami", hora:"20:30", placarCasa:"", placarFora:"" },
-  { casa:"RD_Congo", fora:"Uzbequistão", estadio:"Atlanta", hora:"20:30", placarCasa:"", placarFora:"" }
+  { casa:"Congo", fora:"Uzbequistão", estadio:"Atlanta", hora:"20:30", placarCasa:"", placarFora:"" }
 ]},
 // Grupo L
 { grupo:"Grupo L", rodada:"1ª Rodada", data:"17/06", jogos:[
-  { casa:"Inglaterra", fora:"Croácia", estadio:"Dallas", hora:"17:00", placarCasa:"", placarFora:"" },
-  { casa:"Gana", fora:"Panamá", estadio:"Toronto Field", hora:"20:00", placarCasa:"", placarFora:"" }
+  { casa:"Inglaterra", fora:"Croácia", estadio:"Dallas", hora:"17:00", placarCasa:"4", placarFora:"2" },
+  { casa:"Gana", fora:"Panamá", estadio:"Toronto Field", hora:"20:00", placarCasa:"1", placarFora:"0" }
 ]},
 { grupo:"Grupo L", rodada:"2ª Rodada", data:"23/06", jogos:[
   { casa:"Inglaterra", fora:"Gana", estadio:"Boston", hora:"17:00", placarCasa:"", placarFora:"" },
