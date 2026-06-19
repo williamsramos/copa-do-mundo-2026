@@ -76,7 +76,7 @@ const jogosPadrao = [
 ]},
 { grupo:"Grupo C", rodada:"2ª Rodada", data:"19/06", jogos:[
   { casa:"Escócia", fora:"Marrocos", estadio:"Boston", hora:"19:00", placarCasa:"", placarFora:"" },
-  { casa:"Brasil", fora:"Haiti", estadio:"Filadélfia", hora:"21:00", placarCasa:"", placarFora:"" }
+  { casa:"Brasil", fora:"Haiti", estadio:"Filadélfia", hora:"21:30", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo C", rodada:"3ª Rodada", data:"24/06", jogos:[
   { casa:"Escócia", fora:"Brasil", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" },
