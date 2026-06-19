@@ -49,8 +49,8 @@ const jogosPadrao = [
   { casa:"Coreia do Sul", fora:"República Tcheca", estadio:"Guadalajara", hora:"23:00", placarCasa:"2", placarFora:"1" }
 ]},
 { grupo:"Grupo A", rodada:"2ª Rodada", data:"18/06", jogos:[
-  { casa:"México", fora:"Coreia do Sul", estadio:"Guadalajara", hora:"22:00", placarCasa:"", placarFora:"" },
-  { casa:"República Tcheca", fora:"África do Sul", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" }
+  { casa:"México", fora:"Coreia do Sul", estadio:"Guadalajara", hora:"22:00", placarCasa:"1", placarFora:"0" },
+  { casa:"República Tcheca", fora:"África do Sul", estadio:"Atlanta", hora:"13:00", placarCasa:"1", placarFora:"1" }
 ]},
 { grupo:"Grupo A", rodada:"3ª Rodada", data:"24/06", jogos:[
   { casa:"México", fora:"República Tcheca", estadio:"Cidade do México", hora:"22:00", placarCasa:"", placarFora:"" },
@@ -62,8 +62,8 @@ const jogosPadrao = [
   { casa:"Catar", fora:"Suíça", estadio:"Santa Clara", data:"13/06", hora:"16:00", placarCasa:"1", placarFora:"1" } 
 ]},
 { grupo:"Grupo B", rodada:"2ª Rodada", data:"18/06", jogos:[
-  { casa:"Canadá", fora:"Catar", estadio:"Vancouver", hora:"19:00", placarCasa:"", placarFora:"" },
-  { casa:"Suíça", fora:"Bósnia e Herz.", estadio:"Los Angeles", hora:"16:00", placarCasa:"", placarFora:"" }
+  { casa:"Canadá", fora:"Catar", estadio:"Vancouver", hora:"19:00", placarCasa:"6", placarFora:"0" },
+  { casa:"Suíça", fora:"Bósnia e Herz.", estadio:"Los Angeles", hora:"16:00", placarCasa:"4", placarFora:"1" }
 ]},
 { grupo:"Grupo B", rodada:"3ª Rodada", data:"24/06", jogos:[
   { casa:"Suíça", fora:"Canadá", estadio:"Vancouver", hora:"16:00", placarCasa:"", placarFora:"" },
@@ -88,8 +88,8 @@ const jogosPadrao = [
   { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"14/06", hora:"01:00", placarCasa:"2", placarFora:"0" } 
 ]},
 { grupo:"Grupo D", rodada:"2ª Rodada", data:"19/06", jogos:[
-  { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", data:"20/06" , hora:"00:00", placarCasa:"", placarFora:"" },
-  { casa:"EUA", fora:"Austrália", estadio:"Seattle Field", hora:"16:00", placarCasa:"", placarFora:"" }
+  { casa:"EUA", fora:"Austrália", estadio:"Seattle Field", hora:"16:00", placarCasa:"", placarFora:"" },
+  { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", data:"20/06" , hora:"00:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo D", rodada:"3ª Rodada", data:"25/06", jogos:[
   { casa:"Turquia", fora:"EUA", estadio:"Los Angeles", hora:"23:00", placarCasa:"", placarFora:"" },
