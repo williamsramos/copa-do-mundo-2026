@@ -75,8 +75,8 @@ const jogosPadrao = [
   { casa:"Haiti", fora:"Escócia", estadio:"Boston", hora:"22:00", placarCasa:"0", placarFora:"1" }
 ]},
 { grupo:"Grupo C", rodada:"2ª Rodada", data:"19/06", jogos:[
-  { casa:"Escócia", fora:"Marrocos", estadio:"Boston", hora:"19:00", placarCasa:"", placarFora:"" },
-  { casa:"Brasil", fora:"Haiti", estadio:"Filadélfia", hora:"21:30", placarCasa:"", placarFora:"" }
+  { casa:"Escócia", fora:"Marrocos", estadio:"Boston", hora:"19:00", placarCasa:"0", placarFora:"1" },
+  { casa:"Brasil", fora:"Haiti", estadio:"Filadélfia", hora:"21:30", placarCasa:"3", placarFora:"0" }
 ]},
 { grupo:"Grupo C", rodada:"3ª Rodada", data:"24/06", jogos:[
   { casa:"Escócia", fora:"Brasil", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" },
@@ -88,8 +88,8 @@ const jogosPadrao = [
   { casa:"Austrália", fora:"Turquia", estadio:"Vancouver", data:"14/06", hora:"01:00", placarCasa:"2", placarFora:"0" } 
 ]},
 { grupo:"Grupo D", rodada:"2ª Rodada", data:"19/06", jogos:[
-  { casa:"EUA", fora:"Austrália", estadio:"Seattle Field", hora:"16:00", placarCasa:"", placarFora:"" },
-  { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", data:"20/06" , hora:"00:00", placarCasa:"", placarFora:"" }
+  { casa:"EUA", fora:"Austrália", estadio:"Seattle Field", hora:"16:00", placarCasa:"2", placarFora:"0" },
+  { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", data:"20/06" , hora:"00:00", placarCasa:"0", placarFora:"1" }
 ]},
 { grupo:"Grupo D", rodada:"3ª Rodada", data:"25/06", jogos:[
   { casa:"Turquia", fora:"EUA", estadio:"Los Angeles", hora:"23:00", placarCasa:"", placarFora:"" },

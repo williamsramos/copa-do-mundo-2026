@@ -75,13 +75,10 @@
     gap: 10px;
     align-items: center;
   }
-
- .header-bandeiras img {
-    height: 20px;
-    width: auto;
-    margin-left: 10px;
-    vertical-align: middle;
-  }
+.header-bandeiras, .footer-bandeiras img {
+  margin-left: 10px;
+  vertical-align: middle;
+}
 
 .nav {
   display: flex;
@@ -300,6 +297,25 @@
   animation: medalha-brilho 2s infinite ease-in-out;
 }
 
+/* ==========================================================================
+   📱 ESTILIZAÇÃO DO RODAPÉ (FOOTER) RESPONSIVO
+   ========================================================================== */
+.main-footer {
+  text-align: center;
+  padding: 40px 16px; /* Evita que o texto cole na borda do celular */
+  color: #fefeff;
+  font-size: 14px;
+  width: 100%;
+  clear: both;
+}
+
+.main-footer p {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  line-height: 150%; /* Espaçamento caso o texto quebre linha no celular */
+}
+
+
 @keyframes medalha-brilho {
   0%, 100% {
     opacity: 0.7;
@@ -313,23 +329,6 @@
   }
 }
 
-/* ==========================================================================
-   📱 ESTILIZAÇÃO DO RODAPÉ (FOOTER) RESPONSIVO
-   ========================================================================== */
-.main-footer {
-  text-align: center;
-  padding: 40px 16px; /* Evita que o texto cole na borda do celular */
-  color: #727278;
-  font-size: 14px;
-  width: 100%;
-  clear: both;
-}
-
-.main-footer p {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  line-height: 150%; /* Espaçamento caso o texto quebre linha no celular */
-}
    
   @keyframes appear{
     0% {
@@ -363,6 +362,6 @@
   
   .main-footer {
     font-size: 12px;
-    pading: 30px 12px;
+    padding: 30px 12px;
   }
 }

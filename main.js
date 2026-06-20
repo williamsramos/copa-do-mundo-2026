@@ -10,7 +10,7 @@ const bandeirasCopa = {
   "Arábia Saudita": "sa", "Uruguai": "uy", "Irã": "ir", "Nova Zelândia": "nz",
   "França": "fr", "Senegal": "sn", "Iraque": "iq", "Noruega": "no",
   "Argentina": "ar", "Argélia": "dz", "Áustria": "at", "Jordânia": "jo",
-  "Portugal": "pt", "RD_Congo": "cd", "Inglaterra": "gb-eng", "Croácia": "hr",
+  "Portugal": "pt", "Congo": "cd", "Inglaterra": "gb-eng", "Croácia": "hr",
   "Gana": "gh", "Panamá": "pa", "Uzbequistão": "uz", "Colômbia": "co"
 };
 
@@ -74,63 +74,63 @@ function createCard(date, day, games) {
 
 // 🔥 RENDERIZAR JOGOS NA TELA
 document.querySelector("#cards").innerHTML =
-  createCard('11/06', 'quinta',
-    createGame("México", "x" , "África do Sul") +
-    createGame("Coreia do Sul", "x", "República Tcheca")
-  ) +
+//  createCard('11/06', 'quinta',
+//     createGame("México", "x" , "África do Sul") +
+//     createGame("Coreia do Sul", "x", "República Tcheca")
+//   ) +
 
-  createCard('12/06', 'sexta',
-    createGame("Canadá", "x", "Bósnia e Herz.") +
-    createGame("EUA", "x", "Paraguai") 
-  ) +
+//   createCard('12/06', 'sexta',
+//     createGame("Canadá", "x", "Bósnia e Herz.") +
+//     createGame("EUA", "x", "Paraguai") 
+//   ) +
 
-  createCard('13/06', 'sábado',
-    createGame("Catar", "x", "Suíça") +
-    createGame("Brasil", "x", "Marrocos") +
-    createGame("Haiti", "x", "Escócia") 
-  ) +
+//   createCard('13/06', 'sábado',
+//     createGame("Catar", "x", "Suíça") +
+//     createGame("Brasil", "x", "Marrocos") +
+//     createGame("Haiti", "x", "Escócia") 
+//   ) +
 
-  createCard('14/06', 'domingo',
-    createGame("Austrália", "x", "Turquia") +
-    createGame("Alemanha", "x", "Curaçau") +
-    createGame("Costa do Marfim", "x", "Equador") +
-    createGame("Holanda", "x", "Japão") +
-    createGame("Suécia", "x", "Tunísia")  
-  ) +
+//   createCard('14/06', 'domingo',
+//     createGame("Austrália", "x", "Turquia") +
+//     createGame("Alemanha", "x", "Curaçau") +
+//     createGame("Costa do Marfim", "x", "Equador") +
+//     createGame("Holanda", "x", "Japão") +
+//     createGame("Suécia", "x", "Tunísia")  
+//   ) +
 
-  createCard('15/06', 'segunda',
-    createGame("Espanha", "x", "Cabo Verde") +
-    createGame("Bélgica", "x", "Egito") +
-    createGame("Arábia Saudita", "x", "Uruguai") +
-    createGame("Irã", "x", "Nova Zelândia")
-  ) +
+//   createCard('15/06', 'segunda',
+//     createGame("Espanha", "x", "Cabo Verde") +
+//     createGame("Bélgica", "x", "Egito") +
+//     createGame("Arábia Saudita", "x", "Uruguai") +
+//     createGame("Irã", "x", "Nova Zelândia")
+//   ) +
 
-  createCard('16/06', 'terça',
-    createGame("França", "x", "Senegal") +
-    createGame("Iraque", "x", "Noruega") +   
-    createGame("Argentina", "x", "Argélia") +
-    createGame("Áustria", "x", "Jordânia")
-  ) +
+//   createCard('16/06', 'terça',
+//     createGame("França", "x", "Senegal") +
+//     createGame("Iraque", "x", "Noruega") +   
+//     createGame("Argentina", "x", "Argélia") +
+//     createGame("Áustria", "x", "Jordânia")
+//   ) +
 
-  createCard('17/06', 'quarta',
-    createGame("Portugal", "x", "RD_Congo") +
-    createGame("Inglaterra", "x", "Croácia") +
-    createGame("Gana", "x", "Panamá") + 
-    createGame("Uzbequistão", "x", "Colômbia")  
-  ) +
+//   createCard('17/06', 'quarta',
+//     createGame("Portugal", "x", "Congo") +
+//     createGame("Inglaterra", "x", "Croácia") +
+//     createGame("Gana", "x", "Panamá") + 
+//     createGame("Uzbequistão", "x", "Colômbia")  
+//   ) +
 
-  createCard('18/06', 'quinta',
-    createGame("República Tcheca", "x", "África do Sul") +
-    createGame("Suíça", "x", "Bósnia e Herz.") +
-    createGame("Canadá", "x", "Catar") + 
-    createGame("México", "x", "Coreia do Sul") 
-  ) +
+  // createCard('18/06', 'quinta',
+  //   // createGame("República Tcheca", "x", "África do Sul") +
+  //   // createGame("Suíça", "x", "Bósnia e Herz.") +
+  //   createGame("Canadá", "x", "Catar") + 
+  //   createGame("México", "x", "Coreia do Sul") 
+  // ) +
 
-  createCard('19/06', 'sexta',
-    createGame("EUA", "x", "Austrália") +
-    createGame("Escócia", "x", "Marrocos") +
-    createGame("Brasil", "x", "Haiti")      
-  ) +
+  // createCard('19/06', 'sexta',
+  //   createGame("EUA", "x", "Austrália") +
+  //   createGame("Escócia", "x", "Marrocos") +
+  //   createGame("Brasil", "x", "Haiti")      
+  // ) +
 
   createCard('20/06', 'sábado',
     createGame("Holanda", "x", "Suécia") +
@@ -157,7 +157,7 @@ document.querySelector("#cards").innerHTML =
     createGame("Portugal", "x", "Uzbequistão") +
     createGame("Inglaterra", "x", "Gana") +
     createGame("Panamá", "x", "Croácia") + 
-    createGame("Colômbia", "x", "RD_Congo") 
+    createGame("Colômbia", "x", "Congo") 
   ) +
 
   createCard('24/06', 'quarta',
@@ -191,7 +191,7 @@ document.querySelector("#cards").innerHTML =
     createGame("Panamá", "x", "Inglaterra") +
     createGame("Croácia", "x", "Gana") +
     createGame("Colômbia", "x", "Portugal") +
-    createGame("RD_Congo", "x", "Uzbequistão") +
+    createGame("Congo", "x", "Uzbequistão") +
     createGame("Jordânia", "x", "Argentina") +
     createGame("Argélia", "x", "Áustria")     
   ) /* +
