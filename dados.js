@@ -101,8 +101,8 @@ const jogosPadrao = [
   { casa:"Costa do Marfim", fora:"Equador", estadio:"Filadélfia", hora:"20:00", placarCasa:"1", placarFora:"0" }
 ]},
 { grupo:"Grupo E", rodada:"2ª Rodada", data:"20/06", jogos:[
-  { casa:"Alemanha", fora:"Costa do Marfim", estadio:"Toronto", hora:"17:00", placarCasa:"", placarFora:"" },
-  { casa:"Equador", fora:"Curaçau", estadio:"Kansas City", hora:"21:00", placarCasa:"", placarFora:"" }
+  { casa:"Alemanha", fora:"Costa do Marfim", estadio:"Toronto", hora:"17:00", placarCasa:"2", placarFora:"1" },
+  { casa:"Equador", fora:"Curaçau", estadio:"Kansas City", hora:"21:00", placarCasa:"0", placarFora:"0" }
 ]},
 { grupo:"Grupo E", rodada:"3ª Rodada", data:"25/06", jogos:[
   { casa:"Equador", fora:"Alemanha", estadio:"Nova Jersey", hora:"17:00", placarCasa:"", placarFora:"" },
@@ -114,8 +114,8 @@ const jogosPadrao = [
   { casa:"Suécia", fora:"Tunísia", estadio:"Monterrey", hora:"23:00", placarCasa:"5", placarFora:"1" }
 ]},
 { grupo:"Grupo F", rodada:"2ª Rodada", data:"20/06", jogos:[
-  { casa:"Holanda", fora:"Suécia", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
-  { casa:"Tunísia", fora:"Japão", estadio:"Cidade do México", data:"21/06" , hora:"01:00", placarCasa:"", placarFora:"" }
+  { casa:"Holanda", fora:"Suécia", estadio:"Houston", hora:"14:00", placarCasa:"5", placarFora:"1" },
+  { casa:"Tunísia", fora:"Japão", estadio:"Cidade do México", data:"21/06" , hora:"01:00", placarCasa:"0", placarFora:"4" }
 ]},
 { grupo:"Grupo F", rodada:"3ª Rodada", data:"26/06", jogos:[
   { casa:"Tunísia", fora:"Holanda", estadio:"Kansas City", hora:"20:00", placarCasa:"", placarFora:"" },
