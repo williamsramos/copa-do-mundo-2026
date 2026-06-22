@@ -127,8 +127,8 @@ const jogosPadrao = [
   { casa:"Irã", fora:"Nova Zelândia", estadio:"Los Angeles", hora:"22:00", placarCasa:"2", placarFora:"2" }
 ]},
 { grupo:"Grupo G", rodada:"2ª Rodada", data:"21/06", jogos:[
-  { casa:"Bélgica", fora:"Irã", estadio:"Los Angeles", hora:"16:00", placarCasa:"", placarFora:"" },
-  { casa:"Nova Zelândia", fora:"Egito", estadio:"Vancouver Place", hora:"22:00", placarCasa:"", placarFora:"" }
+  { casa:"Bélgica", fora:"Irã", estadio:"Los Angeles", hora:"16:00", placarCasa:"0", placarFora:"0" },
+  { casa:"Nova Zelândia", fora:"Egito", estadio:"Vancouver Place", hora:"22:00", placarCasa:"1", placarFora:"3" }
 ]},
 { grupo:"Grupo G", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Nova Zelândia", fora:"Bélgica", estadio:"Seattle Field", hora:"00:00", placarCasa:"", placarFora:"" },
@@ -140,8 +140,8 @@ const jogosPadrao = [
   { casa:"Arábia Saudita", fora:"Uruguai", estadio:"Miami", hora:"19:00", placarCasa:"1", placarFora:"1" }
 ]},
 { grupo:"Grupo H", rodada:"2ª Rodada", data:"21/06", jogos:[
-  { casa:"Espanha", fora:"Arábia Saudita", estadio:"Atlanta", hora:"13:00", placarCasa:"", placarFora:"" },
-  { casa:"Uruguai", fora:"Cabo Verde", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" }
+  { casa:"Espanha", fora:"Arábia Saudita", estadio:"Atlanta", hora:"13:00", placarCasa:"4", placarFora:"0" },
+  { casa:"Uruguai", fora:"Cabo Verde", estadio:"Miami", hora:"19:00", placarCasa:"1", placarFora:"3" }
 ]},
 { grupo:"Grupo H", rodada:"3ª Rodada", data:"26/06", jogos:[
   { casa:"Uruguai", fora:"Espanha", estadio:"Houston", hora:"21:00", placarCasa:"", placarFora:"" },
@@ -167,7 +167,7 @@ const jogosPadrao = [
 ]},
 { grupo:"Grupo J", rodada:"2ª Rodada", data:"22/06", jogos:[
   { casa:"Argentina", fora:"Áustria", estadio:"Dallas", hora:"14:00", placarCasa:"", placarFora:"" },
-  { casa:"Jordânia", fora:"Argélia", estadio:"Santa Clara", hora:"00:00", placarCasa:"", placarFora:"" }
+  { casa:"Jordânia", fora:"Argélia", estadio:"Santa Clara", data: "23/06", hora:"00:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo J", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Jordânia", fora:"Argentina", estadio:"Dallas", hora:"23:00", placarCasa:"", placarFora:"" },
