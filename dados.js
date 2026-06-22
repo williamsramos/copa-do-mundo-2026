@@ -150,7 +150,7 @@ const jogosPadrao = [
 // Grupo I
 { grupo:"Grupo I", rodada:"1ª Rodada", data:"16/06", jogos:[
   { casa:"França", fora:"Senegal", estadio:"Nova Jersey", hora:"16:00", placarCasa:"3", placarFora:"1" },
-  { casa:"Iraque", fora:"Noruega", estadio:"Boston", hora:"19:00", placarCasa:"4", placarFora:"1" }
+  { casa:"Iraque", fora:"Noruega", estadio:"Boston", hora:"19:00", placarCasa:"1", placarFora:"4" }
 ]},
 { grupo:"Grupo I", rodada:"2ª Rodada", data:"22/06", jogos:[
   { casa:"França", fora:"Iraque", estadio:"Filadélfia", hora:"18:00", placarCasa:"", placarFora:"" },
@@ -166,7 +166,7 @@ const jogosPadrao = [
   { casa:"Áustria", fora:"Jordânia", estadio:"Santa Clara", data: "17/06" , hora:"01:00", placarCasa:"3", placarFora:"1" }
 ]},
 { grupo:"Grupo J", rodada:"2ª Rodada", data:"22/06", jogos:[
-  { casa:"Argentina", fora:"Áustria", estadio:"Dallas", hora:"14:00", placarCasa:"", placarFora:"" },
+  { casa:"Argentina", fora:"Áustria", estadio:"Dallas", hora:"14:00", placarCasa:"2", placarFora:"0" },
   { casa:"Jordânia", fora:"Argélia", estadio:"Santa Clara", data: "23/06", hora:"00:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo J", rodada:"3ª Rodada", data:"27/06", jogos:[
@@ -248,3 +248,16 @@ const jogosPadrao = [
 let jogosDetalhados = [];
 let tabela = {};
 let grupoSelecionado = null;
+
+const artilheirosHistoricos = [
+  { nome: "Lionel Messi", gols: 18, selecao: "Argentina", flag: "ar" },
+  { nome: "Miroslav Klose", gols: 16, selecao: "Alemanha", flag: "de" },
+  { nome: "Ronaldo Nazário", gols: 15, selecao: "Brasil", flag: "br" },
+  { nome: "Gerd Müller", gols: 14, selecao: "Alemanha", flag: "de" },
+  { nome: "Kylian Mbappé", gols: 14, selecao: "França", flag: "fr" },
+  { nome: "Just Fontaine", gols: 13, selecao: "França", flag: "fr" },
+  { nome: "Pelé", gols: 12, selecao: "Brasil", flag: "br" },
+  { nome: "Sándor Kocsis", gols: 11, selecao: "Hungria", flag: "hu" },
+  { nome: "Jürgen Klinsmann", gols: 11, selecao: "Alemanha", flag: "de" },
+  { nome: "Helmut Rahn", gols: 10, selecao: "Alemanha", flag: "de" }
+];

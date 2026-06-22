@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maiores Artilheiros da História - Simulador Copa 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 🌍 BARRA DE NAVEGAÇÃO -->
+  <div class="nav">
+    <button onclick="window.location.href='index.html'">Simulador</button>
+    <button onclick="window.location.href='agenda.html'">Agenda</button>
+    <button class="ativo">⚽ Artilheiros</button>
+  </div>
+
+  <!-- 🏆 CONTEÚDO CENTRAL -->
+  <div class="container-artilheiros">
+    <div class="card card-artilheiros">
+      <h2 class="titulo-artilheiros">
+        🏆 Maiores Artilheiros da História das Copas
+      </h2>
+      
+      <ul id="lista-artilheiros-historicos" class="lista-artilheiros">
+        <!-- Injetado dinamicamente via JavaScript -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCRIPTS (Dados primeiro, lógica depois) -->
+  <script src="dados.js"></script>
+  <script src="artilheiros.js"></script>
+</body>
+</html>
