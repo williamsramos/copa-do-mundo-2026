@@ -111,6 +111,13 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    align-items: center;    /* Centraliza os cards horizontalmente na página */
+  justify-content: center;
+  margin: 0 auto;         /* Garante que o container fique centralizado caso tenha largura máxima */
+  width: 100%;
+  max-width: 600px;       /* Ajuste esse valor para a largura máxima que deseja para seus cards */
+  padding: 20px;          /* Evita que os cards colem nas bordas em telas de celular */
+  box-sizing: border-box;
   }
 
   .card {
@@ -173,12 +180,12 @@
     margin: 0 auto;
   }
   
-  .card ul li  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-  }
+.card ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o bloco inteiro do jogo dentro do card */
+  padding: 12px 0; /* Deixa um espaçamento vertical gostoso entre um jogo e outro */
+}
   
   .card ul li + li {
   

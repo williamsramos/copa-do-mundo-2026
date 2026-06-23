@@ -1,3 +1,5 @@
+
+
 // 🌍 DICIONÁRIO DE BANDEIRAS INTEGRADO DIRETO NO MAIN.JS
 const bandeirasCopa = {
   "México": "mx", "África do Sul": "za", "Coreia do Sul": "kr", "República Tcheca": "cz",
@@ -11,7 +13,7 @@ const bandeirasCopa = {
   "França": "fr", "Senegal": "sn", "Iraque": "iq", "Noruega": "no",
   "Argentina": "ar", "Argélia": "dz", "Áustria": "at", "Jordânia": "jo",
   "Portugal": "pt", "Congo": "cd", "Inglaterra": "gb-eng", "Croácia": "hr",
-  "Gana": "gh", "Panamá": "pa", "Uzbequistão": "uz", "Colômbia": "co"
+  "Gana": "gh", "Panamá": "pa", "Uzbeq.": "uz", "Colômbia": "co"
 };
 
 // 🔥 NORMALIZAR NOMES (para bater certinho com as chaves do objeto)
@@ -42,13 +44,13 @@ function getBandeira(time){
 function createGame(player1, hour, player2) {
   return `
     <li>
-      <div class="team" style="display:flex; align-items:center; gap:6px; justify-content:flex-end; width:40%;">
+      <div class="team" style="display: flex; align-items: center; gap: 8px; justify-content: flex-end; width: 42%;">
         ${getBandeira(player1)} <span>${player1}</span>
       </div>
 
-      <strong style="width:20%; text-align:center;">${hour}</strong>
+      <strong style="width: 16%; text-align: center; display: inline-block;">${hour}</strong>
 
-      <div class="team" style="display:flex; align-items:center; gap:6px; justify-content:flex-start; width:40%;">
+      <div class="team" style="display: flex; align-items: center; gap: 8px; justify-content: flex-start; width: 42%;">
         <span>${player2}</span> ${getBandeira(player2)}
       </div>
     </li>
@@ -74,6 +76,7 @@ function createCard(date, day, games) {
 
 // 🔥 RENDERIZAR JOGOS NA TELA
 document.querySelector("#cards").innerHTML =
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #08ed49; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Fase de Grupos 🔥</div>` +
 //  createCard('11/06', 'quinta',
 //     createGame("México", "x" , "África do Sul") +
 //     createGame("Coreia do Sul", "x", "República Tcheca")
@@ -132,117 +135,138 @@ document.querySelector("#cards").innerHTML =
   //   createGame("Brasil", "x", "Haiti")      
   // ) +
 
-  createCard('20/06', 'sábado',
-    createGame("Holanda", "x", "Suécia") +
-    createGame("Alemanha", "x", "Costa do Marfim") +
-    createGame("Equador", "x", "Curaçau") 
-  ) +
+  // createCard('20/06', 'sábado',
+  //   createGame("Holanda", "x", "Suécia") +
+  //   createGame("Alemanha", "x", "Costa do Marfim") +
+  //   createGame("Equador", "x", "Curaçau") 
+  // ) +
 
-  createCard('21/06', 'domingo',
-    createGame("Tunísia", "x", "Japão") +
-    createGame("Espanha", "x", "Arábia Saudita") +
-    createGame("Bélgica", "x", "Irã") +
-    createGame("Uruguai", "x", "Cabo Verde") +
-    createGame("Nova Zelândia", "x", "Egito") 
-  ) +
+  // createCard('21/06', 'domingo',
+  //   createGame("Tunísia", "x", "Japão") +
+  //   createGame("Espanha", "x", "Arábia Saudita") +
+  //   createGame("Bélgica", "x", "Irã") +
+  //   createGame("Uruguai", "x", "Cabo Verde") +
+  //   createGame("Nova Zelândia", "x", "Egito") 
+  // ) +
 
-  createCard('22/06', 'segunda',  
-    createGame("Argentina", "x", "Áustria") +
-    createGame("França", "x", "Iraque") +    
-    createGame("Noruega", "x", "Senegal") 
-  ) +
+  // createCard('22/06', 'segunda',  
+  //   createGame("Argentina", "x", "Áustria") +
+  //   createGame("França", "x", "Iraque") +    
+  //   createGame("Noruega", "x", "Senegal") 
+  // ) +
 
-  createCard('23/06', 'terça',
-    createGame("Jordânia", "x", "Argélia") +
-    createGame("Portugal", "x", "Uzbequistão") +
-    createGame("Inglaterra", "x", "Gana") +
-    createGame("Panamá", "x", "Croácia") + 
-    createGame("Colômbia", "x", "Congo") 
-  ) +
+createCard('23/06', 'terça',
+  // createGame("Jordânia", "x", "Argélia") +
+  createGame("Portugal", "x", "Uzbeq.") +
+  createGame("Inglaterra", "x", "Gana") +
+  createGame("Panamá", "x", "Croácia") + 
+  createGame("Colômbia", "x", "Congo") 
+) +
 
-  createCard('24/06', 'quarta',
-    createGame("Suíça", "x", "Canadá") +
-    createGame("Bósnia e Herz.", "x", "Catar") +
-    createGame("Escócia", "x", "Brasil") +
-    createGame("Marrocos", "x", "Haiti") +
-    createGame("México", "x", "Suécia") +
-    createGame("África do Sul", "x", "Coreia do Sul") 
-  ) +
+createCard('24/06', 'quarta',
+  createGame("Suíça", "x", "Canadá") +
+  createGame("Bósnia e Herz.", "x", "Catar") +
+  createGame("Escócia", "x", "Brasil") +
+  createGame("Marrocos", "x", "Haiti") +
+  createGame("México", "x", "Suécia") +
+  createGame("África do Sul", "x", "Coreia do Sul") 
+) +
 
-  createCard('25/06', 'quinta',
-    createGame("Equador", "x", "Alemanha") +
-    createGame("Curaçau", "x", "Costa do Marfim") +
-    createGame("Japão", "x",   "Suécia") +
-    createGame("Tunísia", "x", "Holanda") +
-    createGame("Turquia", "x", "EUA") +
-    createGame("Paraguai", "x", "Austrália") 
-  ) +
+createCard('25/06', 'quinta',
+  createGame("Equador", "x", "Alemanha") +
+  createGame("Curaçau", "x", "Costa do Marfim") +
+  createGame("Japão", "x", "Suécia") +
+  createGame("Tunísia", "x", "Holanda") +
+  createGame("Turquia", "x", "EUA") +
+  createGame("Paraguai", "x", "Austrália") 
+) +
 
-  createCard('26/06', 'sexta',
-    createGame("Senegal", "x", "Iraque") +
-    createGame("Noruega", "x", "França") +
-    createGame("Uruguai", "x", "Espanha") +
-    createGame("Cabo Verde", "x", "Arábia Saudita") 
-  ) +
+createCard('26/06', 'sexta',
+  createGame("Senegal", "x", "Iraque") +
+  createGame("Noruega", "x", "França") +
+  createGame("Uruguai", "x", "Espanha") +
+  createGame("Cabo Verde", "x", "Arábia Saudita") 
+) +
 
-  createCard('27/06', 'sábado',
-    createGame("Egito", "x", "Irã") +
-    createGame("Nova Zelândia", "x", "Bélgica") +
-    createGame("Panamá", "x", "Inglaterra") +
-    createGame("Croácia", "x", "Gana") +
-    createGame("Colômbia", "x", "Portugal") +
-    createGame("Congo", "x", "Uzbequistão") +
-    createGame("Jordânia", "x", "Argentina") +
-    createGame("Argélia", "x", "Áustria")     
-  ) /* +
+createCard('27/06', 'sábado',
+  createGame("Egito", "x", "Irã") +
+  createGame("Nova Zelândia", "x", "Bélgica") +
+  createGame("Panamá", "x", "Inglaterra") +
+  createGame("Croácia", "x", "Gana") +
+  createGame("Colômbia", "x", "Portugal") +
+  createGame("Congo", "x", "Uzbeq.") +
+  createGame("Jordânia", "x", "Argentina") +
+  createGame("Argélia", "x", "Áustria")    
+)  /*+
 
-  // 🔥 O SEU ESPAÇO DO MATA-MATA COMENTADO E ARQUIVADO AQUI:
-  createCard('28/06 a 03/07', '16 AVOS DE FINAL',
-    createGame("2º Grupo A", "x", "2º Grupo B") +
-    createGame("1º Grupo E", "x", "3º A/B/C/D/F") +
-    createGame("1º Grupo F", "x", "2º Grupo C") +
-    createGame("1º Grupo C", "x", "2º Grupo F") +
-    createGame("1º Grupo I", "x", "3º C/D/F/G/H") +
-    createGame("2º Grupo E", "x", "2º Grupo I") +
-    createGame("1º Grupo A", "x", "3º C/E/F/H/I") +
-    createGame("1º Grupo L", "x", "3º E/H/I/J/K") +
-    createGame("1º Grupo D", "x", "3º B/E/F/I/J") +
-    createGame("1º Grupo G", "x", "3º A/E/H/I/J") +
-    createGame("2º Grupo K", "x", "2º Grupo L") +
-    createGame("1º Grupo H", "x", "2º Grupo J") +
-    createGame("1º Grupo B", "x", "3º E/F/G/I/J") +
-    createGame("1º Grupo J", "x", "2º Grupo H") +
-    createGame("1º Grupo K", "x", "3º D/E/I/J/L") +
-    createGame("2º Grupo D", "x", "2º Grupo G")
-  ) +
+// 👑 DIVISOR: 16 AVOS DE FINAL
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
 
-  createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
-    createGame("Vencedor 74", "x", "Vencedor 75") +
-    createGame("Vencedor 73", "x", "Vencedor 76") +
-    createGame("Vencedor 78", "x", "Vencedor 77") +
-    createGame("Vencedor 79", "x", "Vencedor 80") +
-    createGame("Vencedor 82", "x", "Vencedor 81") +
-    createGame("Vencedor 84", "x", "Vencedor 83") +
-    createGame("Vencedor 85", "x", "Vencedor 88") +
-    createGame("Vencedor 86", "x", "Vencedor 87")
-  ) +
+createCard('28/06 a 29/06', 'domingo e segunda', 
+  createGame("2º Grupo A", "x", "2º Grupo B") +
+  createGame("1º Grupo C", "x", "2º Grupo F") +
+  createGame("Alemanha", "x", "3º A/B/C/D/F") +
+  createGame("1º Grupo F", "x", "2º Grupo C")   
+) +
 
-  createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
-    createGame("Vencedor 90", "x", "Vencedor 89") +
-    createGame("Vencedor 91", "x", "Vencedor 92") +
-    createGame("Vencedor 93", "x", "Vencedor 94") +
-    createGame("Vencedor 95", "x", "Vencedor 96")
-  ) +
+createCard('30/06 a 01/07', 'terça e quarta',
+  createGame("2º Grupo E", "x", "2º Grupo I(França ou Noruega)") +
+  createGame("1º Grupo I(França ou Noruega)", "x", "3º C/D/F/G/H") +
+  createGame("México", "x", "3º C/E/F/H/I") +
+  createGame("1º Grupo L", "x", "3º E/H/I/J/K") +  
+  createGame("1º Grupo G", "x", "3º A/E/H/I/J") + 
+  createGame("EUA", "x", "3º B/E/F/I/J") 
+) + 
 
-    createCard('14/07 a 15/07', 'SEMIFINAL',
-    createGame("Vencedor 97", "x", "Vencedor 98") +
-    createGame("Vencedor 99", "x", "Vencedor 100")
-  ) +
+createCard('02/07 a 03/07', 'quinta e sexta',
+  createGame("1º Grupo H", "x", "2º Grupo J") +
+  createGame("2º Grupo K", "x", "2º Grupo L") +
+  createGame("1º Grupo B", "x", "3º E/F/G/I/J") +
+  createGame("2º Grupo D", "x", "2º Grupo G") +  
+  createGame("1º Grupo G", "x", "3º A/E/H/I/J") + 
+  createGame("Argentina", "x", "2º Grupo H") +
+  createGame("1º Grupo K", "x", "3º D/E/I/J/L")  
+) +
 
-  createCard('18/07 e 19/07', 'FINAIS',
-    createGame("Perdedor 101", "3º LUGAR", "Perdedor 102") +
-    createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102")
-  ) +
+// 👑 DIVISOR: OITAVAS DE FINAL
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
+
+createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
+  createGame("Vencedor 74", "x", "Vencedor 75") +
+  createGame("Vencedor 73", "x", "Vencedor 76") +
+  createGame("Vencedor 78", "x", "Vencedor 77") +
+  createGame("Vencedor 79", "x", "Vencedor 80") +
+  createGame("Vencedor 82", "x", "Vencedor 81") +
+  createGame("Vencedor 84", "x", "Vencedor 83") +
+  createGame("Vencedor 85", "x", "Vencedor 88") +
+  createGame("Vencedor 86", "x", "Vencedor 87")
+) +
+
+// 👑 DIVISOR: QUARTAS DE FINAL
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">💪 Quartas de Final 💪</div>` +
+
+createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
+  createGame("Vencedor 90", "x", "Vencedor 89") +
+  createGame("Vencedor 91", "x", "Vencedor 92") +
+  createGame("Vencedor 93", "x", "Vencedor 94") +
+  createGame("Vencedor 95", "x", "Vencedor 96")
+) +
+
+// 👑 DIVISOR: SEMIFINAIS
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🏁 Semifinais 🏁</div>` +
+
+createCard('14/07 a 15/07', 'SEMIFINAL',
+  createGame("Vencedor 97", "x", "Vencedor 98") +
+  createGame("Vencedor 99", "x", "Vencedor 100")
+) +
+
+// 👑 DIVISOR: DECISÕES FINAIS
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">✨ Finais ✨</div>` +
+
+createCard('18/07 e 19/07', 'FINAIS',
+  createGame("Perdedor 101", "3º LUGAR", "Perdedor 102") +
+  createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102")
+) +
 
   // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
   `
