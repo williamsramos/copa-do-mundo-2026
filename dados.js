@@ -2,7 +2,7 @@
 const bandeiras = {
   "Brasil":"br","Argentina":"ar","França":"fr","Alemanha":"de",
   "México":"mx","EUA":"us","Canadá":"ca",
-  "Espanha":"es","Portugal":"pt","Inglaterra":"gb","Croácia":"hr",
+  "Espanha":"es","Portugal":"pt","Inglaterra":"gb-eng","Croácia":"hr",
   "Japão":"jp","Austrália":"au","Marrocos":"ma","Senegal":"sn",
   "Uruguai":"uy","Bélgica":"be","Holanda":"nl","Suíça":"ch",
   "Irã":"ir","Egito":"eg","Gana":"gh","Panamá":"pa",
@@ -179,7 +179,7 @@ const jogosPadrao = [
   { casa:"Uzbequistão", fora:"Colômbia", estadio:"Azteca", hora:"23:00", placarCasa:"1", placarFora:"3" }
 ]},
 { grupo:"Grupo K", rodada:"2ª Rodada", data:"23/06", jogos:[
-  { casa:"Portugal", fora:"Uzbequistão", estadio:"Houston", hora:"14:00", placarCasa:"", placarFora:"" },
+  { casa:"Portugal", fora:"Uzbequistão", estadio:"Houston", hora:"14:00", placarCasa:"5", placarFora:"0" },
   { casa:"Colômbia", fora:"Congo", estadio:"Akron", hora:"23:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo K", rodada:"3ª Rodada", data:"27/06", jogos:[
@@ -192,7 +192,7 @@ const jogosPadrao = [
   { casa:"Gana", fora:"Panamá", estadio:"Toronto Field", hora:"20:00", placarCasa:"1", placarFora:"0" }
 ]},
 { grupo:"Grupo L", rodada:"2ª Rodada", data:"23/06", jogos:[
-  { casa:"Inglaterra", fora:"Gana", estadio:"Boston", hora:"17:00", placarCasa:"", placarFora:"" },
+  { casa:"Inglaterra", fora:"Gana", estadio:"Boston", hora:"17:00", placarCasa:"0", placarFora:"0" },
   { casa:"Panamá", fora:"Croácia", estadio:"Toronto Field", hora:"20:00", placarCasa:"", placarFora:"" }
 ]},
 { grupo:"Grupo L", rodada:"3ª Rodada", data:"27/06", jogos:[
@@ -259,5 +259,6 @@ const artilheirosHistoricos = [
   { nome: "Pelé", gols: 12, selecao: "Brasil", flag: "br" },
   { nome: "Sándor Kocsis", gols: 11, selecao: "Hungria", flag: "hu" },
   { nome: "Jürgen Klinsmann", gols: 11, selecao: "Alemanha", flag: "de" },
-  { nome: "Helmut Rahn", gols: 10, selecao: "Alemanha", flag: "de" }
+  { nome: "Cristiano  Ronaldo", gols: 10, selecao: "Portugal", flag: "pt" },
+  { nome: "Helmut Rahn", gols: 10, selecao: "Alemanha", flag: "de" },
 ];
