@@ -1,7 +1,7 @@
 // 1. NOVA FUNÇÃO: Salva o estado atual dos jogos como o seu "Novo Padrão"
 function salvarPalpitesDefinitivos() {
   localStorage.setItem("gabaritoSimulador", JSON.stringify(jogosDetalhados));
-  alert("💾 Seus palpites foram salvos como oficiais! Mesmo se você resetar a tela, o simulador voltará para este ponto.");
+  alert("💾 Seus placares foram salvos como oficiais! Mesmo se você resetar a tela, o simulador voltará para este ponto.");
 }
 
 // 2. ADAPTADA: O resetar agora volta para o seu último salvamento oficial
@@ -68,7 +68,7 @@ function criarAbas(){
   div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
   
   // BOTÃO DE RESET EM DESTAQUE
-  div.innerHTML += `<button onclick="salvarPalpitesDefinitivos()" style="background-color: #28a745; color: white; margin-left: 15px; font-weight: bold; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: max-content; white-space: nowrap;">💾 Salvar Palpite</button> <button onclick="limparSimulador()" style="background-color: #d9534f; color: white; margin-left: 15px; font-weight: bold;">🔄 Resetar</button>`;
+  div.innerHTML += `<button onclick="salvarPalpitesDefinitivos()" style="background-color: #28a745; color: white; margin-left: 15px; font-weight: bold; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: max-content; white-space: nowrap;">💾 Salvar Placar</button> <button onclick="limparSimulador()" style="background-color: #d9534f; color: white; margin-left: 15px; font-weight: bold;">🔄 Resetar</button>`;
 }
 
 function selecionarGrupo(grupo){
@@ -238,6 +238,8 @@ function showTab(tabId) {
   if(abaAtiva) abaAtiva.style.display = 'block';
 }
 
+
+
 function limparSimulador() {
   if (confirm("Deseja realmente apagar todos os palpites salvos e recomeçar o simulador?")) {
     localStorage.clear();
@@ -249,3 +251,6 @@ function limparSimulador() {
 document.addEventListener("DOMContentLoaded", () => {
   init();
 });
+
+
+

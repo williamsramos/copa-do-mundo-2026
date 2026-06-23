@@ -157,8 +157,8 @@ document.querySelector("#cards").innerHTML =
 
 createCard('23/06', 'terça',
   // createGame("Jordânia", "x", "Argélia") +
-  createGame("Portugal", "x", "Uzbeq.") +
-  createGame("Inglaterra", "x", "Gana") +
+  // createGame("Portugal", "x", "Uzbeq.") +
+  // createGame("Inglaterra", "x", "Gana") +
   createGame("Panamá", "x", "Croácia") + 
   createGame("Colômbia", "x", "Congo") 
 ) +
