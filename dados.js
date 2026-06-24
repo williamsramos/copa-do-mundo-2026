@@ -66,8 +66,8 @@ const jogosPadrao = [
   { casa:"Suíça", fora:"Bósnia e Herz.", estadio:"Los Angeles", hora:"16:00", placarCasa:"4", placarFora:"1" }
 ]},
 { grupo:"Grupo B", rodada:"3ª Rodada", data:"24/06", jogos:[
-  { casa:"Suíça", fora:"Canadá", estadio:"Vancouver", hora:"16:00", placarCasa:"", placarFora:"" },
-  { casa:"Bósnia e Herz.", fora:"Catar", estadio:"Seattle", hora:"16:00", placarCasa:"", placarFora:"" }
+  { casa:"Suíça", fora:"Canadá", estadio:"Vancouver", hora:"16:00", placarCasa:"2", placarFora:"1" },
+  { casa:"Bósnia e Herz.", fora:"Catar", estadio:"Seattle", hora:"16:00", placarCasa:"3", placarFora:"1" }
 ]},
 // Grupo C
 { grupo:"Grupo C", rodada:"1ª Rodada", data:"13/06", jogos:[

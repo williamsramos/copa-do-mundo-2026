@@ -155,17 +155,17 @@ document.querySelector("#cards").innerHTML =
   //   createGame("Noruega", "x", "Senegal") 
   // ) +
 
-createCard('23/06', 'terça',
-  // createGame("Jordânia", "x", "Argélia") +
-  // createGame("Portugal", "x", "Uzbeq.") +
-  // createGame("Inglaterra", "x", "Gana") +
-  createGame("Panamá", "x", "Croácia") + 
-  createGame("Colômbia", "x", "Congo") 
-) +
+// createCard('23/06', 'terça',
+//   // createGame("Jordânia", "x", "Argélia") +
+//   // createGame("Portugal", "x", "Uzbeq.") +
+//   // createGame("Inglaterra", "x", "Gana") +
+//   createGame("Panamá", "x", "Croácia") + 
+//   createGame("Colômbia", "x", "Congo") 
+// ) +
 
 createCard('24/06', 'quarta',
-  createGame("Suíça", "x", "Canadá") +
-  createGame("Bósnia e Herz.", "x", "Catar") +
+  // createGame("Suíça", "x", "Canadá") +
+  // createGame("Bósnia e Herz.", "x", "Catar") +
   createGame("Escócia", "x", "Brasil") +
   createGame("Marrocos", "x", "Haiti") +
   createGame("México", "x", "Suécia") +
