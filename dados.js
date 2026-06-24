@@ -180,7 +180,7 @@ const jogosPadrao = [
 ]},
 { grupo:"Grupo K", rodada:"2ª Rodada", data:"23/06", jogos:[
   { casa:"Portugal", fora:"Uzbequistão", estadio:"Houston", hora:"14:00", placarCasa:"5", placarFora:"0" },
-  { casa:"Colômbia", fora:"Congo", estadio:"Akron", hora:"23:00", placarCasa:"", placarFora:"" }
+  { casa:"Colômbia", fora:"Congo", estadio:"Akron", hora:"23:00", placarCasa:"1", placarFora:"0" }
 ]},
 { grupo:"Grupo K", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Colômbia", fora:"Portugal", estadio:"Miami", hora:"20:30", placarCasa:"", placarFora:"" },
@@ -193,7 +193,7 @@ const jogosPadrao = [
 ]},
 { grupo:"Grupo L", rodada:"2ª Rodada", data:"23/06", jogos:[
   { casa:"Inglaterra", fora:"Gana", estadio:"Boston", hora:"17:00", placarCasa:"0", placarFora:"0" },
-  { casa:"Panamá", fora:"Croácia", estadio:"Toronto Field", hora:"20:00", placarCasa:"", placarFora:"" }
+  { casa:"Panamá", fora:"Croácia", estadio:"Toronto Field", hora:"20:00", placarCasa:"0", placarFora:"1" }
 ]},
 { grupo:"Grupo L", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Panamá", fora:"Inglaterra", estadio:"Nova Jersey", hora:"18:00", placarCasa:"", placarFora:"" },
