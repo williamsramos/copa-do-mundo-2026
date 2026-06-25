@@ -53,8 +53,8 @@ const jogosPadrao = [
   { casa:"República Tcheca", fora:"África do Sul", estadio:"Atlanta", hora:"13:00", placarCasa:"1", placarFora:"1" }
 ]},
 { grupo:"Grupo A", rodada:"3ª Rodada", data:"24/06", jogos:[
-  { casa:"República Tcheca", fora:"México", estadio:"Cidade do México", hora:"22:00", placarCasa:"", placarFora:"" },
-  { casa:"África do Sul", fora:"Coreia do Sul", estadio:"El Gigante de Acero", hora:"22:00", placarCasa:"", placarFora:"" }
+  { casa:"República Tcheca", fora:"México", estadio:"Cidade do México", hora:"22:00", placarCasa:"0", placarFora:"3" },
+  { casa:"África do Sul", fora:"Coreia do Sul", estadio:"El Gigante de Acero", hora:"22:00", placarCasa:"1", placarFora:"0" }
 ]},
 // Grupo B
 { grupo:"Grupo B", rodada:"1ª Rodada", data:"12/06", jogos:[
@@ -79,8 +79,8 @@ const jogosPadrao = [
   { casa:"Brasil", fora:"Haiti", estadio:"Filadélfia", hora:"21:30", placarCasa:"3", placarFora:"0" }
 ]},
 { grupo:"Grupo C", rodada:"3ª Rodada", data:"24/06", jogos:[
-  { casa:"Escócia", fora:"Brasil", estadio:"Miami", hora:"19:00", placarCasa:"", placarFora:"" },
-  { casa:"Marrocos", fora:"Haiti", estadio:"Atlanta", hora:"19:00", placarCasa:"", placarFora:"" }
+  { casa:"Escócia", fora:"Brasil", estadio:"Miami", hora:"19:00", placarCasa:"0", placarFora:"3" },
+  { casa:"Marrocos", fora:"Haiti", estadio:"Atlanta", hora:"19:00", placarCasa:"4", placarFora:"2" }
 ]},
 // Grupo D
 { grupo:"Grupo D", rodada:"1ª Rodada", data:"12/06", jogos:[
