@@ -173,8 +173,8 @@ document.querySelector("#cards").innerHTML =
 // ) +
 
 createCard('25/06', 'quinta',
-  createGame("Equador", "x", "Alemanha") +
-  createGame("Curaçau", "x", "Costa do Marfim") +
+  // createGame("Equador", "x", "Alemanha") +
+  // createGame("Curaçau", "x", "Costa do Marfim") +
   createGame("Japão", "x", "Suécia") +
   createGame("Tunísia", "x", "Holanda") +
   createGame("Turquia", "x", "EUA") +
@@ -203,10 +203,10 @@ createCard('27/06', 'sábado',
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
 
 createCard('28/06 a 29/06', 'domingo e segunda', 
-  createGame("2º Grupo A", "x", "2º Grupo B") +
-  createGame("1º Grupo C", "x", "2º Grupo F") +
+  createGame("África do Sul", "x", "canadá") +
+  createGame("Brasil", "x", "2º Grupo F") +
   createGame("Alemanha", "x", "3º A/B/C/D/F") +
-  createGame("1º Grupo F", "x", "2º Grupo C")   
+  createGame("1º Grupo F", "x", "Marrocos")   
 ) +
 
 createCard('30/06 a 01/07', 'terça e quarta',
