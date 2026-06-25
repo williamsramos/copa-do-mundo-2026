@@ -105,8 +105,8 @@ const jogosPadrao = [
   { casa:"Equador", fora:"Curaçau", estadio:"Kansas City", hora:"21:00", placarCasa:"0", placarFora:"0" }
 ]},
 { grupo:"Grupo E", rodada:"3ª Rodada", data:"25/06", jogos:[
-  { casa:"Equador", fora:"Alemanha", estadio:"Nova Jersey", hora:"17:00", placarCasa:"", placarFora:"" },
-  { casa:"Curaçau", fora:"Costa do Marfim", estadio:"Filadélfia", hora:"17:00", placarCasa:"", placarFora:"" }
+  { casa:"Equador", fora:"Alemanha", estadio:"Nova Jersey", hora:"17:00", placarCasa:"2", placarFora:"1" },
+  { casa:"Curaçau", fora:"Costa do Marfim", estadio:"Filadélfia", hora:"17:00", placarCasa:"0", placarFora:"2" }
 ]},
 // Grupo F
 { grupo:"Grupo F", rodada:"1ª Rodada", data:"14/06", jogos:[
