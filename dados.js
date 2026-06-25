@@ -53,7 +53,7 @@ const jogosPadrao = [
   { casa:"República Tcheca", fora:"África do Sul", estadio:"Atlanta", hora:"13:00", placarCasa:"1", placarFora:"1" }
 ]},
 { grupo:"Grupo A", rodada:"3ª Rodada", data:"24/06", jogos:[
-  { casa:"México", fora:"República Tcheca", estadio:"Cidade do México", hora:"22:00", placarCasa:"", placarFora:"" },
+  { casa:"República Tcheca", fora:"México", estadio:"Cidade do México", hora:"22:00", placarCasa:"", placarFora:"" },
   { casa:"África do Sul", fora:"Coreia do Sul", estadio:"El Gigante de Acero", hora:"22:00", placarCasa:"", placarFora:"" }
 ]},
 // Grupo B
