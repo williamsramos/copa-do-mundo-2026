@@ -107,17 +107,21 @@ th {
 }
 
 /* CORES CLASSIFICAÇÃO */
-.qualificado {
-  background: #166534;
-  color: white;
-  font-weight: bold;
+/* Linhas dos 1º e 2º colocados (Verde) */
+tr.status-classificado {
+  background-color: #e2f0d9 !important;
 }
 
-.terceiro {
-  background: #92400e;
-  color: white;
-  font-weight: bold;
+/* Linha do 3º colocado (Azul Claro) */
+tr.status-terceiro-azul {
+  background-color: #e6f2ff !important;
 }
+
+/* Linha do 4º colocado (Vermelho) */
+tr.status-eliminado {
+  background-color: #fce8e6 !important;
+}
+
 
 /* INPUT */
 input {
