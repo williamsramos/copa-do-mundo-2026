@@ -158,8 +158,8 @@ const jogosPadrao = [
   { casa:"Noruega", fora:"Senegal", estadio:"Nova Jersey", hora:"21:00", placarCasa:"3", placarFora:"2" }
 ]},
 { grupo:"Grupo I", rodada:"3ª Rodada", data:"27/06", jogos:[
-  { casa:"Noruega", fora:"França", estadio:"Boston", hora:"16:00", placarCasa:"", placarFora:"" },
-  { casa:"Senegal", fora:"Iraque", estadio:"Toronto Field", hora:"16:00", placarCasa:"", placarFora:"" }
+  { casa:"Noruega", fora:"França", estadio:"Boston", hora:"16:00", placarCasa:"1", placarFora:"4" },
+  { casa:"Senegal", fora:"Iraque", estadio:"Toronto Field", hora:"16:00", placarCasa:"5", placarFora:"0" }
 ]},
 // Grupo J
 { grupo:"Grupo J", rodada:"1ª Rodada", data:"16/06", jogos:[
@@ -222,8 +222,8 @@ const jogosPadrao = [
 ]},
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
     { id: 90, casa:"Jogo 73(RSAxCAN)", fora:"Jogo 75(NEDxMAR)", estadio:"Houston", data:"04/07", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 89, casa:"Jogo 74(Alex3ABCDF)", fora:"Jogo 77(França ou Noruegax3CDFGH)", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 91, casa:"Jogo 76(BRAxJPN)", fora:"Jogo 78(CIVxFrança ou Noruega)", estadio:"East Rutherford", data:"05/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 89, casa:"Jogo 74(Alex3ABCDF)", fora:"Jogo 77(Françax3CDFGH)", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 91, casa:"Jogo 76(BRAxJPN)", fora:"Jogo 78(CIVxNoruega)", estadio:"East Rutherford", data:"05/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 92, casa:"Jogo 79(MEXx3CEFHI)", fora:"Jogo 80(1Lx3EHIJK)", estadio:"Cidade do México", data:"05/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
    { id: 94, casa:"Jogo 83(2Kx2L)", fora:"Jogo 84(1Hx2J)", estadio:"Dallas", data:"06/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 93, casa:"Jogo 81(USAxBIH)", fora:"Jogo 82(1Gx3AEHIJ)", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },

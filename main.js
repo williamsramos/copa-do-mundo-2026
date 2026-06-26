@@ -182,8 +182,8 @@ document.querySelector("#cards").innerHTML =
 // ) +
 
 createCard('26/06', 'sexta',
-  createGame("Senegal", "x", "Iraque") +
-  createGame("Noruega", "x", "França") +
+  // createGame("Senegal", "x", "Iraque") +
+  // createGame("Noruega", "x", "França") +
   createGame("Uruguai", "x", "Espanha") +
   createGame("Cabo Verde", "x", "Arábia Saudita") 
 ) +
@@ -205,28 +205,27 @@ createCard('27/06', 'sábado',
 createCard('28/06 a 29/06', 'domingo e segunda', 
   createGame("África do Sul", "x", "canadá") +
   createGame("Brasil", "x", "Japão") +
-  // createGame("Alemanha", "x", "3º A/B/C/D/F") +
+  createGame("Alemanha", "x", "3º A/B/C/D/F") +
   createGame("Holanda", "x", "Marrocos")   
-)/* +
+) +
 
 createCard('30/06 a 01/07', 'terça e quarta',
-  createGame("Costa do Marfim", "x", "2º Grupo I(França ou Noruega)") +
-  createGame("1º Grupo I(França ou Noruega)", "x", "3º C/D/F/G/H") +
+  createGame("Costa do Marfim", "x", "Noruega") +
+  createGame("França", "x", "3º C/D/F/G/H") +
   createGame("México", "x", "3º C/E/F/H/I") +
-  createGame("1º Grupo L", "x", "3º E/H/I/J/K") +  
-  createGame("1º Grupo G", "x", "3º A/E/H/I/J") + 
+  createGame("1º Grupo L(Inglaterra ou Gana)", "x", "3º E/H/I/J/K") +  
+   createGame("1º Grupo G(Egito ou Irã ou Bélgica)", "x", "3º A/E/H/I/J") + 
   createGame("EUA", "x", "Bósnia e Herz.") 
 ) + 
 
 createCard('02/07 a 03/07', 'quinta e sexta',
-  createGame("1º Grupo H", "x", "2º Grupo J") +
-  createGame("2º Grupo K", "x", "2º Grupo L") +
+  createGame("1º Grupo H(Espanha ou Uruguai)", "x", "2º Grupo J(Argelia ou Austria)") +
+  createGame("2º Grupo K(Colômbia ou Portugal)", "x", "2º Grupo L(Inglaterra ou Gana)") +
   createGame("Suiça", "x", "3º E/F/G/I/J") +
-  createGame("2º Grupo D", "x", "2º Grupo G") +  
-  createGame("1º Grupo G", "x", "3º A/E/H/I/J") + 
-  createGame("Argentina", "x", "2º Grupo H") +
-  createGame("1º Grupo K", "x", "3º D/E/I/J/L")  
-) +
+  createGame("Austrália", "x", "2º Grupo G(Egito ou Irã ou Bélgica)") +  
+  createGame("Argentina", "x", "2º Grupo H(Uruguai ou CBV ou Arabia)") +
+  createGame("1º Grupo K(Colômbia ou Portugal)", "x", "3º D/E/I/J/L")  
+) /*+
 
 // 👑 DIVISOR: OITAVAS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
