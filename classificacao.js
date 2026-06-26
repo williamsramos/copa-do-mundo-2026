@@ -20,43 +20,35 @@ function renderTabela(){
       }
       
       if (b[1].gp !== a[1].gp) {
-        return b[1].gp - a[1].gp; // 3º Critério: Gols Pró / Marcados
+        return b[1].gp - a[1].gp; // 3º Critério: Gols Pró / Marcados (O que faltava!)
       }
       
       return a[1].pos - b[1].pos; // 4º Critério: Posição original de sorteio
     });
 
-    // Cabeçalho atualizado com a coluna "Status" no final
+    const terceiraRodadaCompleta = times.every(([nome,d])=>{
+      return (d.v + d.e + d.d) === 3;
+    });
+
     let html = `
       <div class="card">
         <h3>${g} - Classificação</h3>
         <table>
-          <tr><th>Pos</th><th>Time</th><th>P</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th><th>Status</th></tr>
+          <tr><th>Pos</th><th>Time</th><th>P</th><th>J</th><th>V</th><th>E</th><th>D</th><th>GP</th><th>GC</th><th>SG</th></tr>
     `;
 
-    times.forEach(([nome, d], i) => {
-      const posicao = i + 1;
-      let statusTexto = "";
-      let statusClasse = "";
-
-      // Definição dinâmica do texto e das classes baseada na posição atual
-      if (posicao <= 2) {
-        statusTexto = "16 avos de final";
-        statusClasse = "status-classificado";   // Verde para 1º e 2º
-      } else if (posicao === 3) {
-        statusTexto = "16 avos de final";
-        statusClasse = "status-terceiro-azul";  // Azul claro para o 3º
-      } else if (posicao === 4) {
-        statusTexto = "Eliminado";
-        statusClasse = "status-eliminado";      // Vermelho para o 4º
+    times.forEach(([nome,d],i)=>{
+      const jogosTotal = d.v + d.e + d.d;
+      let classeCSS = "";
+      if(terceiraRodadaCompleta){
+        if(i === 0 || i === 1) classeCSS = "qualificado";
+        else if(i === 2) classeCSS = "terceiro";
       }
 
-      const jogosTotal = d.v + d.e + d.d;
-
       html += `
-        <tr class="${statusClasse}">
-          <td>${posicao}</td>
-          <td style="text-align:left; padding-left:10px;">${getBandeira(nome)} ${nome}</td>
+        <tr class="${classeCSS}">
+          <td>${i + 1}</td>
+          <td>${getBandeira(nome)} ${nome}</td>
           <td>${d.pts}</td>
           <td>${jogosTotal}</td>
           <td>${d.v}</td>
@@ -65,13 +57,9 @@ function renderTabela(){
           <td>${d.gp}</td>
           <td>${d.gc}</td>
           <td>${d.gp - d.gc}</td>
-          <td style="font-size: 11px; font-weight: bold; text-transform: uppercase;">
-            ${statusTexto}
-          </td>
         </tr>
       `;
     });
-    
     html += `</table></div>`;
     div.innerHTML += html;
   }
