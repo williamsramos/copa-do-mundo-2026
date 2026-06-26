@@ -1,3 +1,4 @@
+
 /* ================= BANDEIRAS ================= */
 const bandeiras = {
   "Brasil":"br","Argentina":"ar","França":"fr","Alemanha":"de",
@@ -118,8 +119,8 @@ const jogosPadrao = [
   { casa:"Tunísia", fora:"Japão", estadio:"Cidade do México", data:"21/06" , hora:"01:00", placarCasa:"0", placarFora:"4" }
 ]},
 { grupo:"Grupo F", rodada:"3ª Rodada", data:"26/06", jogos:[
-  { casa:"Tunísia", fora:"Holanda", estadio:"Kansas City", hora:"20:00", placarCasa:"", placarFora:"" },
-  { casa:"Japão", fora:"Suécia", estadio:"Dallas", hora:"20:00", placarCasa:"", placarFora:"" }
+  { casa:"Tunísia", fora:"Holanda", estadio:"Kansas City", hora:"20:00", placarCasa:"1", placarFora:"3" },
+  { casa:"Japão", fora:"Suécia", estadio:"Dallas", hora:"20:00", placarCasa:"1", placarFora:"1" }
 ]},
 // Grupo G
 { grupo:"Grupo G", rodada:"1ª Rodada", data:"15/06", jogos:[

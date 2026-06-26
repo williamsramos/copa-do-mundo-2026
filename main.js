@@ -175,8 +175,8 @@ document.querySelector("#cards").innerHTML =
 createCard('25/06', 'quinta',
   // createGame("Equador", "x", "Alemanha") +
   // createGame("Curaçau", "x", "Costa do Marfim") +
-  createGame("Japão", "x", "Suécia") +
-  createGame("Tunísia", "x", "Holanda") +
+  // createGame("Japão", "x", "Suécia") +
+  // createGame("Tunísia", "x", "Holanda") +
   createGame("Turquia", "x", "EUA") +
   createGame("Paraguai", "x", "Austrália") 
 ) +
@@ -197,20 +197,20 @@ createCard('27/06', 'sábado',
   createGame("Congo", "x", "Uzbeq.") +
   createGame("Jordânia", "x", "Argentina") +
   createGame("Argélia", "x", "Áustria")    
-)  /*+
+)  +
 
 // 👑 DIVISOR: 16 AVOS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
 
 createCard('28/06 a 29/06', 'domingo e segunda', 
   createGame("África do Sul", "x", "canadá") +
-  createGame("Brasil", "x", "2º Grupo F") +
-  createGame("Alemanha", "x", "3º A/B/C/D/F") +
-  createGame("1º Grupo F", "x", "Marrocos")   
-) +
+  createGame("Brasil", "x", "Japão") +
+  // createGame("Alemanha", "x", "3º A/B/C/D/F") +
+  createGame("Holanda", "x", "Marrocos")   
+) /*+
 
 createCard('30/06 a 01/07', 'terça e quarta',
-  createGame("2º Grupo E", "x", "2º Grupo I(França ou Noruega)") +
+  createGame("Costa do Marfim", "x", "2º Grupo I(França ou Noruega)") +
   createGame("1º Grupo I(França ou Noruega)", "x", "3º C/D/F/G/H") +
   createGame("México", "x", "3º C/E/F/H/I") +
   createGame("1º Grupo L", "x", "3º E/H/I/J/K") +  
@@ -221,7 +221,7 @@ createCard('30/06 a 01/07', 'terça e quarta',
 createCard('02/07 a 03/07', 'quinta e sexta',
   createGame("1º Grupo H", "x", "2º Grupo J") +
   createGame("2º Grupo K", "x", "2º Grupo L") +
-  createGame("1º Grupo B", "x", "3º E/F/G/I/J") +
+  createGame("Suiça", "x", "3º E/F/G/I/J") +
   createGame("2º Grupo D", "x", "2º Grupo G") +  
   createGame("1º Grupo G", "x", "3º A/E/H/I/J") + 
   createGame("Argentina", "x", "2º Grupo H") +
