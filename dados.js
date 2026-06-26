@@ -240,9 +240,11 @@ const jogosPadrao = [
   { id: 101, casa:"Jogo 97", fora:"Jogo 98", estadio:"Dallas", data:"14/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 102, casa:"Jogo 99", fora:"Jogo 100", estadio:"Atlanta", data:"15/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
-{ grupo:"Mata-mata", rodada:"Finais", data:"18/07 e 19/07", jogos:[
-  { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", data:"18/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", data:"19/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+{ grupo:"Mata-mata", rodada:"Terceiro lugar", data:"18/07", jogos:[
+  { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", data:"18/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+]},
+{grupo:"Mata-mata", rodada:"Final", data:"19/07", jogos: [
+  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", data:"19/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"",penaisFora:"" }
 ]}
 ];
 
