@@ -93,8 +93,8 @@ const jogosPadrao = [
   { casa:"Turquia", fora:"Paraguai", estadio:"Santa Clara", data:"20/06" , hora:"00:00", placarCasa:"0", placarFora:"1" }
 ]},
 { grupo:"Grupo D", rodada:"3ª Rodada", data:"25/06", jogos:[
-  { casa:"Turquia", fora:"EUA", estadio:"Los Angeles", hora:"23:00", placarCasa:"", placarFora:"" },
-  { casa:"Paraguai", fora:"Austrália", estadio:"Santa Clara", hora:"23:00", placarCasa:"", placarFora:"" }
+  { casa:"Turquia", fora:"EUA", estadio:"Los Angeles", hora:"23:00", placarCasa:"3", placarFora:"2" },
+  { casa:"Paraguai", fora:"Austrália", estadio:"Santa Clara", hora:"23:00", placarCasa:"0", placarFora:"0" }
 ]},
 // Grupo E
 { grupo:"Grupo E", rodada:"1ª Rodada", data:"14/06", jogos:[
