@@ -172,14 +172,14 @@ document.querySelector("#cards").innerHTML =
 //   createGame("África do Sul", "x", "Coreia do Sul") 
 // ) +
 
-createCard('25/06', 'quinta',
-  // createGame("Equador", "x", "Alemanha") +
-  // createGame("Curaçau", "x", "Costa do Marfim") +
-  // createGame("Japão", "x", "Suécia") +
-  // createGame("Tunísia", "x", "Holanda") +
-  createGame("Turquia", "x", "EUA") +
-  createGame("Paraguai", "x", "Austrália") 
-) +
+// createCard('25/06', 'quinta',
+//   createGame("Equador", "x", "Alemanha") +
+//   createGame("Curaçau", "x", "Costa do Marfim") +
+//   createGame("Japão", "x", "Suécia") +
+//   createGame("Tunísia", "x", "Holanda") +
+//   createGame("Turquia", "x", "EUA") +
+//   createGame("Paraguai", "x", "Austrália") 
+// ) +
 
 createCard('26/06', 'sexta',
   createGame("Senegal", "x", "Iraque") +
@@ -207,7 +207,7 @@ createCard('28/06 a 29/06', 'domingo e segunda',
   createGame("Brasil", "x", "Japão") +
   // createGame("Alemanha", "x", "3º A/B/C/D/F") +
   createGame("Holanda", "x", "Marrocos")   
-) /*+
+)/* +
 
 createCard('30/06 a 01/07', 'terça e quarta',
   createGame("Costa do Marfim", "x", "2º Grupo I(França ou Noruega)") +
@@ -215,7 +215,7 @@ createCard('30/06 a 01/07', 'terça e quarta',
   createGame("México", "x", "3º C/E/F/H/I") +
   createGame("1º Grupo L", "x", "3º E/H/I/J/K") +  
   createGame("1º Grupo G", "x", "3º A/E/H/I/J") + 
-  createGame("EUA", "x", "3º B/E/F/I/J") 
+  createGame("EUA", "x", "Bósnia e Herz.") 
 ) + 
 
 createCard('02/07 a 03/07', 'quinta e sexta',
@@ -232,14 +232,14 @@ createCard('02/07 a 03/07', 'quinta e sexta',
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
 
 createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
-  createGame("Vencedor 74", "x", "Vencedor 75") +
-  createGame("Vencedor 73", "x", "Vencedor 76") +
-  createGame("Vencedor 78", "x", "Vencedor 77") +
-  createGame("Vencedor 79", "x", "Vencedor 80") +
-  createGame("Vencedor 82", "x", "Vencedor 81") +
-  createGame("Vencedor 84", "x", "Vencedor 83") +
-  createGame("Vencedor 85", "x", "Vencedor 88") +
-  createGame("Vencedor 86", "x", "Vencedor 87")
+  createGame("Jogo 73(RSAxCAN)", "x", "Jogo 75(NEDxMAR)" )+
+  createGame("Vencedor 74(Alex3ABCDF)", "x", "Vencedor 77(França ou Noruegax3CDFGH)") +
+  createGame("Vencedor 76(BRAxJPN)", "x", "Vencedor 78(CIVxFrança ou Noruega)") +
+  createGame("Vencedor 79(MEXx3CEFHI)", "x", "Vencedor 80(1Lx3EHIJK)") +
+  createGame("Vencedor 81(USAxBIH)", "x", "Vencedor 82(1Gx3AEHIJ)") +
+  createGame("Vencedor 83(2Kx2L)", "x", "Vencedor 84(1Hx2J)") +
+  createGame("Vencedor 86(ARGx2H)", "x", "Vencedor 88(AUSx2G)") +
+  createGame("Vencedor 85(SUIx3EFGIJ)", "x", "Vencedor 87(1Kx3DEOJL)")
 ) +
 
 // 👑 DIVISOR: QUARTAS DE FINAL
