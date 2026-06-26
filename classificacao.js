@@ -43,7 +43,9 @@ function renderTabela(){
       if(terceiraRodadaCompleta){
         if(i === 0 || i === 1) classeCSS = "qualificado";
         else if(i === 2) classeCSS = "terceiro";
+        else if(i === 3) classeCSS = "quarto";
       }
+
 
       html += `
         <tr class="${classeCSS}">
