@@ -120,10 +120,7 @@ th {
   font-weight: bold;
 }
 
-/* Linha do 4º colocado (Vermelho) */
-tr.status-eliminado {
-  background-color: #fce8e6 !important;
-}
+
 
 
 /* INPUT */
