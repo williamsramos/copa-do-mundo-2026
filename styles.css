@@ -115,11 +115,16 @@ th {
 }
 
 .terceiro {
-  background: #92400e;
+  background: #87CEEB;
   color: white;
   font-weight: bold;
 }
 
+.quarto {
+  background: #fce8e6 !important;
+  color: white;
+  font-weight: bold:
+}
 
 
 
