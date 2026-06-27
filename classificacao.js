@@ -20,7 +20,7 @@ function renderTabela(){
       }
       
       if (b[1].gp !== a[1].gp) {
-        return b[1].gp - a[1].gp; // 3º Critério: Gols Pró / Marcados (O que faltava!)
+        return b[1].gp - a[1].gp; // 3º Critério: Gols Pró / Marcados
       }
       
       return a[1].pos - b[1].pos; // 4º Critério: Posição original de sorteio
@@ -67,6 +67,11 @@ function renderTabela(){
 
   // CHAMA A RENDERIZAÇÃO DOS MELHORES TERCEIROS LOGO APÓS OS GRUPOS
   renderMelhoresTerceiros();
+
+  // CONEXÃO AUTOMÁTICA: Dispara o preenchimento do mata-mata se a função existir
+  if (typeof injetar8TerceirosNoMataMata === "function") {
+    injetar8TerceirosNoMataMata();
+  }
 }
 
 /* ================= LÓGICA DOS MELHORES TERCEIROS COLOCADOS ================= */
@@ -169,4 +174,58 @@ function renderMelhoresTerceiros() {
 
   html += `</table></div>`;
   div.innerHTML = html;
+}
+
+/* ================= MOTOR: RETORNA OS 8 CLASSIFICADOS PARA O MATA-MATA ================= */
+function get8MelhoresTerceiros() {
+  // Trava de segurança: só retorna se todos os times do campeonato completarem os 3 jogos
+  let tudoTerminado = true;
+
+  for (let g in tabela) {
+    for (let nome in tabela[g]) {
+      let d = tabela[g][nome];
+      if ((d.v + d.e + d.d) < 3) {
+        tudoTerminado = false;
+        break;
+      }
+    }
+    if (!tudoTerminado) break;
+  }
+
+  // Se a rodada não acabou, retorna array vazio para o mata-mata não puxar dados provisórios
+  if (!tudoTerminado) return [];
+
+  let listaTerceiros = [];
+
+  for (let g in tabela) {
+    let timesGrupo = Object.entries(tabela[g]);
+    
+    timesGrupo.sort((a, b) => {
+      if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts;
+      const saldoA = a[1].gp - a[1].gc;
+      const saldoB = b[1].gp - b[1].gc;
+      if (saldoB !== saldoA) return saldoB - saldoA;
+      if (b[1].gp !== a[1].gp) return b[1].gp - a[1].gp;
+      return a[1].pos - b[1].pos;
+    });
+
+    if (timesGrupo[2]) {
+      const [nome, d] = timesGrupo[2];
+      listaTerceiros.push({
+        nome: nome,
+        pts: d.pts,
+        sg: d.gp - d.gc,
+        gp: d.gp
+      });
+    }
+  }
+
+  listaTerceiros.sort((a, b) => {
+    if (b.pts !== a.pts) return b.pts - a.pts; 
+    if (b.sg !== a.sg) return b.sg - a.sg;     
+    if (b.gp !== a.gp) return b.gp - a.gp;     
+    return 0;
+  });
+
+  return listaTerceiros.slice(0, 8);
 }
