@@ -209,7 +209,7 @@ const jogosPadrao = [
   { "id": 75, "casa": "1º Grupo F", "fora": "2º Grupo C", "estadio": "Monterrey", "data": "29/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 78, "casa": "2º Grupo E", "fora": "2º Grupo I", "estadio": "Dallas", "data": "30/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 77, "casa": "1º Grupo I", "fora": "3º Melhor 2", "estadio": "East Rutherford", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 79, "casa": "1º Grupo A", "fora": "3º Melhor 6, "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 79, "casa": "1º Grupo A", "fora": "3º Melhor 6", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 80, "casa": "1º Grupo L", "fora": "3º Melhor 4", "estadio": "Atlanta", "data": "01/07", "hora": "13:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 82, "casa": "1º Grupo G", "fora": "3º Melhor 5", "estadio": "Seattle", "data": "01/07", "hora": "17:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 81, "casa": "1º Grupo D", "fora": "3º Melhor 3", "estadio": "Santa Clara", "data": "01/07", "hora": "21:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
