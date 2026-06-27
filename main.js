@@ -181,12 +181,12 @@ document.querySelector("#cards").innerHTML =
 //   createGame("Paraguai", "x", "Austrália") 
 // ) +
 
-createCard('26/06', 'sexta',
+//createCard('26/06', 'sexta',
   // createGame("Senegal", "x", "Iraque") +
   // createGame("Noruega", "x", "França") +
-  createGame("Uruguai", "x", "Espanha") +
-  createGame("Cabo Verde", "x", "Arábia Saudita") 
-) +
+  //createGame("Uruguai", "x", "Espanha") +
+  //createGame("Cabo Verde", "x", "Arábia Saudita") 
+//) +
 
 createCard('27/06', 'sábado',
   createGame("Egito", "x", "Irã") +
@@ -219,11 +219,11 @@ createCard('30/06 a 01/07', 'terça e quarta',
 ) + 
 
 createCard('02/07 a 03/07', 'quinta e sexta',
-  createGame("1º Grupo H(Espanha ou Uruguai)", "x", "2º Grupo J(Argelia ou Austria)") +
+  createGame("Espanha", "x", "2º Grupo J(Argelia ou Austria)") +
   createGame("2º Grupo K(Colômbia ou Portugal)", "x", "2º Grupo L(Inglaterra ou Gana)") +
   createGame("Suiça", "x", "3º E/F/G/I/J") +
   createGame("Austrália", "x", "2º Grupo G(Egito ou Irã ou Bélgica)") +  
-  createGame("Argentina", "x", "2º Grupo H(Uruguai ou CBV ou Arabia)") +
+  createGame("Argentina", "x", "Cabo Verde") +
   createGame("1º Grupo K(Colômbia ou Portugal)", "x", "3º D/E/I/J/L")  
 ) /*+
 
@@ -232,8 +232,8 @@ createCard('02/07 a 03/07', 'quinta e sexta',
 
 createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
   createGame("Jogo 73(RSAxCAN)", "x", "Jogo 75(NEDxMAR)" )+
-  createGame("Vencedor 74(Alex3ABCDF)", "x", "Vencedor 77(França ou Noruegax3CDFGH)") +
-  createGame("Vencedor 76(BRAxJPN)", "x", "Vencedor 78(CIVxFrança ou Noruega)") +
+  createGame("Vencedor 74(Alex3ABCDF)", "x", "Vencedor 77(Françax3CDFGH)") +
+  createGame("Vencedor 76(BRAxJPN)", "x", "Vencedor 78(CIVxNoruega)") +
   createGame("Vencedor 79(MEXx3CEFHI)", "x", "Vencedor 80(1Lx3EHIJK)") +
   createGame("Vencedor 81(USAxBIH)", "x", "Vencedor 82(1Gx3AEHIJ)") +
   createGame("Vencedor 83(2Kx2L)", "x", "Vencedor 84(1Hx2J)") +
