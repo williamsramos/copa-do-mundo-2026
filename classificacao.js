@@ -7,23 +7,14 @@ function renderTabela(){
   for(let g in tabela){
     let times = Object.entries(tabela[g]);
     
-    // === ORDENAÇÃO CORRIGIDA: Pontos -> Saldo de Gols -> Gols Pró (GP) -> Posição Inicial ===
+    // === ORDENAÇÃO CORRIGIDA ===
     times.sort((a, b) => {
-      if (b[1].pts !== a[1].pts) {
-        return b[1].pts - a[1].pts; // 1º Critério: Pontos
-      }
-      
+      if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts;
       const saldoA = a[1].gp - a[1].gc;
       const saldoB = b[1].gp - b[1].gc;
-      if (saldoB !== saldoA) {
-        return saldoB - saldoA; // 2º Critério: Saldo de Gols
-      }
-      
-      if (b[1].gp !== a[1].gp) {
-        return b[1].gp - a[1].gp; // 3º Critério: Gols Pró / Marcados
-      }
-      
-      return a[1].pos - b[1].pos; // 4º Critério: Posição original de sorteio
+      if (saldoB !== saldoA) return saldoB - saldoA;
+      if (b[1].gp !== a[1].gp) return b[1].gp - a[1].gp;
+      return a[1].pos - b[1].pos;
     });
 
     const terceiraRodadaCompleta = times.every(([nome,d])=>{
@@ -65,13 +56,14 @@ function renderTabela(){
     div.innerHTML += html;
   }
 
-  // CHAMA A RENDERIZAÇÃO DOS MELHORES TERCEIROS LOGO APÓS OS GRUPOS
   renderMelhoresTerceiros();
 
-  // CONEXÃO AUTOMÁTICA: Dispara o preenchimento do mata-mata se a função existir
-  if (typeof injetar8TerceirosNoMataMata === "function") {
-    injetar8TerceirosNoMataMata();
-  }
+  // Executa com segurança após o carregamento completo da página
+  setTimeout(() => {
+    if (typeof injetar8TerceirosNoMataMata === "function") {
+      injetar8TerceirosNoMataMata();
+    }
+  }, 100);
 }
 
 /* ================= LÓGICA DOS MELHORES TERCEIROS COLOCADOS ================= */
@@ -82,11 +74,8 @@ function renderMelhoresTerceiros() {
 
   let listaTerceiros = [];
 
-  // 1. Varre todos os grupos para achar quem está em 3º lugar em cada um deles
   for (let g in tabela) {
     let timesGrupo = Object.entries(tabela[g]);
-    
-    // Ordena internamente com os mesmos critérios para pegar o 3º real do momento
     timesGrupo.sort((a, b) => {
       if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts;
       const saldoA = a[1].gp - a[1].gc;
@@ -96,7 +85,6 @@ function renderMelhoresTerceiros() {
       return a[1].pos - b[1].pos;
     });
 
-    // O terceiro colocado fica na posição de índice 2 do array
     if (timesGrupo[2]) {
       const [nome, d] = timesGrupo[2];
       listaTerceiros.push({
@@ -112,7 +100,6 @@ function renderMelhoresTerceiros() {
     }
   }
 
-  // 2. Ordena a lista geral das 12 seleções que ficaram em 3º lugar
   listaTerceiros.sort((a, b) => {
     if (b.pts !== a.pts) return b.pts - a.pts; 
     if (b.sg !== a.sg) return b.sg - a.sg;     
@@ -120,30 +107,19 @@ function renderMelhoresTerceiros() {
     return 0;
   });
 
-  // 3. Monta o topo da tabela
   let html = `
     <div class="card card-terceiros" style="margin-top: 20px;">
       <h3>🏆 Classificação das Melhores Terceiras Colocadas</h3>
       <table>
-        <tr>
-          <th>Pos</th>
-          <th style="text-align:left; padding-left:10px;">Time</th>
-          <th>Gr.</th>
-          <th>J</th>
-          <th>SG</th>
-          <th>PTS</th>
-        </tr>
+        <tr><th>Pos</th><th style="text-align:left; padding-left:10px;">Time</th><th>Gr.</th><th>J</th><th>SG</th><th>PTS</th></tr>
   `;
 
-  // 4. Varre as 12 linhas aplicando os destaques visuais do G8
   listaTerceiros.forEach((time, i) => {
     const posicao = i + 1;
     let classeCSS = "";
 
-    // Lógica de destaque baseada na imagem enviada
     if (posicao <= 8) {
       if (time.jogos === 3) {
-        // Garantidos matematicamente com 3 jogos completos (Ex: 4 pontos ou saldo seguro)
         if (time.pts >= 4 || (time.pts === 3 && time.sg >= 1)) {
           classeCSS = "terceiro-garantido";
         } else {
@@ -159,9 +135,7 @@ function renderMelhoresTerceiros() {
     html += `
       <tr class="${classeCSS}">
         <td class="col-posicao"><span>${posicao}</span></td>
-        <td style="text-align:left; padding-left:10px; font-weight: bold;">
-          ${getBandeira(time.nome)} ${time.nome}
-        </td>
+        <td style="text-align:left; padding-left:10px; font-weight: bold;">${getBandeira(time.nome)} ${time.nome}</td>
         <td style="color: #888; font-weight: bold;">${time.grupo}</td>
         <td>${time.jogos}</td>
         <td style="${time.sg >= 0 ? 'color: #28a745;' : 'color: #dc3545;'} font-weight: bold;">
@@ -178,9 +152,7 @@ function renderMelhoresTerceiros() {
 
 /* ================= MOTOR: RETORNA OS 8 CLASSIFICADOS PARA O MATA-MATA ================= */
 function get8MelhoresTerceiros() {
-  // Trava de segurança: só retorna se todos os times do campeonato completarem os 3 jogos
   let tudoTerminado = true;
-
   for (let g in tabela) {
     for (let nome in tabela[g]) {
       let d = tabela[g][nome];
@@ -192,14 +164,11 @@ function get8MelhoresTerceiros() {
     if (!tudoTerminado) break;
   }
 
-  // Se a rodada não acabou, retorna array vazio para o mata-mata não puxar dados provisórios
   if (!tudoTerminado) return [];
 
   let listaTerceiros = [];
-
   for (let g in tabela) {
     let timesGrupo = Object.entries(tabela[g]);
-    
     timesGrupo.sort((a, b) => {
       if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts;
       const saldoA = a[1].gp - a[1].gc;
@@ -211,12 +180,7 @@ function get8MelhoresTerceiros() {
 
     if (timesGrupo[2]) {
       const [nome, d] = timesGrupo[2];
-      listaTerceiros.push({
-        nome: nome,
-        pts: d.pts,
-        sg: d.gp - d.gc,
-        gp: d.gp
-      });
+      listaTerceiros.push({ nome: nome, pts: d.pts, sg: d.gp - d.gc, gp: d.gp });
     }
   }
 
