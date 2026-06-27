@@ -99,14 +99,18 @@ function injetar8TerceirosNoMataMata() {
   const terceiros = get8MelhoresTerceiros(); 
   if (terceiros.length < 8) return; 
 
+  // CORREÇÃO: Remove a Bósnia da lista automática para não gerar duplicatas na chave
+  const terceirosFiltrados = terceiros.filter(t => t.nome !== "Bósnia e Herz." && t.nome !== "Bósnia");
+
+  // IDs das 7 vagas dinâmicas restantes no mata-mata
   const idsParaPreencher = [74, 77, 79, 80, 82, 85, 87];
 
   jogosDetalhados.forEach(bloco => {
     if (bloco.rodada === "16 avos de Final") {
       idsParaPreencher.forEach((idJogo, idx) => {
         let jogo = bloco.jogos.find(j => j.id === idJogo);
-        if (jogo && terceiros[idx]) {
-          jogo.fora = terceiros[idx].nome;
+        if (jogo && terceirosFiltrados[idx]) {
+          jogo.fora = terceirosFiltrados[idx].nome;
         }
       });
     }
