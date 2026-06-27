@@ -191,8 +191,8 @@ document.querySelector("#cards").innerHTML =
 createCard('27/06', 'sábado',
  // createGame("Egito", "x", "Irã") +
   //createGame("Nova Zelândia", "x", "Bélgica") +
-  createGame("Panamá", "x", "Inglaterra") +
-  createGame("Croácia", "x", "Gana") +
+  //createGame("Panamá", "x", "Inglaterra") +
+  //createGame("Croácia", "x", "Gana") +
   createGame("Colômbia", "x", "Portugal") +
   createGame("Congo", "x", "Uzbeq.") +
   createGame("Jordânia", "x", "Argentina") +
@@ -213,14 +213,14 @@ createCard('30/06 a 01/07', 'terça e quarta',
   createGame("Costa do Marfim", "x", "Noruega") +
   createGame("França", "x", "3º C/D/F/G/H") +
   createGame("México", "x", "3º C/E/F/H/I") +
-  createGame("1º Grupo L(Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿 ou Gana 🇬🇭)", "x", "3º E/H/I/J/K") +  
+  createGame("Inglaterra", "x", "3º E/H/I/J/K") +  
    createGame("Bélgica", "x", "3º A/E/H/I/J") + 
   createGame("EUA", "x", "Bósnia e Herz.") 
 ) + 
 
 createCard('02/07 a 03/07', 'quinta e sexta',
   createGame("Espanha", "x", "2º Grupo J(Argélia🇩🇿 ou Austria🇦🇹)") +
-  createGame("2º Grupo K(Colômbia🇨🇴 ou Portugal🇵🇹)", "x", "2º Grupo L(Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿 ou Gana 🇬🇭)") +
+  createGame("2º Grupo K(Colômbia🇨🇴 ou Portugal🇵🇹)", "x", "Croácia") +
   createGame("Suiça", "x", "3º E/F/G/I/J") +
   createGame("Austrália", "x", "Egito") +  
   createGame("Argentina", "x", "Cabo Verde") +
