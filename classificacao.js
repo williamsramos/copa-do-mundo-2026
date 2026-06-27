@@ -46,7 +46,6 @@ function renderTabela(){
         else if(i === 3) classeCSS = "quarto";
       }
 
-
       html += `
         <tr class="${classeCSS}">
           <td>${i + 1}</td>
@@ -65,4 +64,109 @@ function renderTabela(){
     html += `</table></div>`;
     div.innerHTML += html;
   }
+
+  // CHAMA A RENDERIZAÇÃO DOS MELHORES TERCEIROS LOGO APÓS OS GRUPOS
+  renderMelhoresTerceiros();
+}
+
+/* ================= LÓGICA DOS MELHORES TERCEIROS COLOCADOS ================= */
+function renderMelhoresTerceiros() {
+  const div = document.getElementById("melhores-terceiros");
+  if (!div) return; 
+  div.innerHTML = "";
+
+  let listaTerceiros = [];
+
+  // 1. Varre todos os grupos para achar quem está em 3º lugar em cada um deles
+  for (let g in tabela) {
+    let timesGrupo = Object.entries(tabela[g]);
+    
+    // Ordena internamente com os mesmos critérios para pegar o 3º real do momento
+    timesGrupo.sort((a, b) => {
+      if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts;
+      const saldoA = a[1].gp - a[1].gc;
+      const saldoB = b[1].gp - b[1].gc;
+      if (saldoB !== saldoA) return saldoB - saldoA;
+      if (b[1].gp !== a[1].gp) return b[1].gp - a[1].gp;
+      return a[1].pos - b[1].pos;
+    });
+
+    // O terceiro colocado fica na posição de índice 2 do array
+    if (timesGrupo[2]) {
+      const [nome, d] = timesGrupo[2];
+      listaTerceiros.push({
+        nome: nome,
+        grupo: g.replace("Grupo ", ""), 
+        pts: d.pts,
+        v: d.v,
+        gp: d.gp,
+        gc: d.gc,
+        sg: d.gp - d.gc,
+        jogos: d.v + d.e + d.d
+      });
+    }
+  }
+
+  // 2. Ordena a lista geral das 12 seleções que ficaram em 3º lugar
+  listaTerceiros.sort((a, b) => {
+    if (b.pts !== a.pts) return b.pts - a.pts; 
+    if (b.sg !== a.sg) return b.sg - a.sg;     
+    if (b.gp !== a.gp) return b.gp - a.gp;     
+    return 0;
+  });
+
+  // 3. Monta o topo da tabela
+  let html = `
+    <div class="card card-terceiros" style="margin-top: 20px;">
+      <h3>🏆 Classificação das Melhores Terceiras Colocadas</h3>
+      <table>
+        <tr>
+          <th>Pos</th>
+          <th style="text-align:left; padding-left:10px;">Time</th>
+          <th>Gr.</th>
+          <th>J</th>
+          <th>SG</th>
+          <th>PTS</th>
+        </tr>
+  `;
+
+  // 4. Varre as 12 linhas aplicando os destaques visuais do G8
+  listaTerceiros.forEach((time, i) => {
+    const posicao = i + 1;
+    let classeCSS = "";
+
+    // Lógica de destaque baseada na imagem enviada
+    if (posicao <= 8) {
+      if (time.jogos === 3) {
+        // Garantidos matematicamente com 3 jogos completos (Ex: 4 pontos ou saldo seguro)
+        if (time.pts >= 4 || (time.pts === 3 && time.sg >= 1)) {
+          classeCSS = "terceiro-garantido";
+        } else {
+          classeCSS = "terceiro-g8"; 
+        }
+      } else {
+        classeCSS = "terceiro-g8"; 
+      }
+    } else {
+      classeCSS = "terceiro-fora"; 
+    }
+
+    html += `
+      <tr class="${classeCSS}">
+        <td class="col-posicao"><span>${posicao}</span></td>
+        <td style="text-align:left; padding-left:10px; font-weight: bold;">
+          ${getBandeira(time.nome)} ${time.nome}
+        </td>
+        <td style="color: #888; font-weight: bold;">${time.grupo}</td>
+        <td>${time.jogos}</td>
+        <td style="${time.sg >= 0 ? 'color: #28a745;' : 'color: #dc3545;'} font-weight: bold;">
+          ${time.sg > 0 ? '+' + time.sg : time.sg}
+        </td>
+        <td style="font-weight: bold;">${time.pts}</td>
+      </tr>
+    `;
+  });
+
+  html += `</table></div>`;
+  div.innerHTML = html;
 }
