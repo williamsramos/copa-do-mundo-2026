@@ -9,7 +9,7 @@ body {
   color: #fff;
   overflow-x: hidden;
   background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('fundo-copa.jpg');
-background-size: cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -54,7 +54,6 @@ input[type=number]::-webkit-inner-spin-button {
 /* Remove setinhas no Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-
 }
 
 /* BOTÕES */
@@ -107,7 +106,6 @@ th {
 }
 
 /* CORES CLASSIFICAÇÃO */
-
 .qualificado {
   background: #166534;
   color: white;
@@ -123,9 +121,8 @@ th {
 .quarto {
   background: #dc143c !important;
   color: white;
-  font-weight: bold:
+  font-weight: bold; /* Corrigido de : para ; */
 }
-
 
 
 /* INPUT */
@@ -232,8 +229,7 @@ input {
 }
 
 
-/* ================= PÁGINA DE ARTILHEIROS HISTRÓRICOS ================= */
-
+/* ================= PÁGINA DE ARTILHEIROS HISTÓRICOS ================= */
 /* Container que centraliza o card na página */
 .container-artilheiros {
   max-width: 650px;
@@ -324,6 +320,51 @@ input {
 }
 
 
+/* ================= ESTILOS DOS MELHORES TERCEIROS COLOCADOS ================= */
+.card-terceiros table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Centraliza a coluna que contém as numerações das posições */
+.col-posicao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* O círculo verde ao redor do número da posição para quem está no G8 */
+.terceiro-garantido .col-posicao span,
+.terceiro-g8 .col-posicao span {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 18px; /* Alinha o número no centro vertical do círculo */
+  border: 2px solid #28a745;
+  border-radius: 50%;
+  color: #28a745;
+  font-weight: bold;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Elemento sem círculo para as posições fora do G8 (9º ao 12º) */
+.terceiro-fora .col-posicao span {
+  color: #94a3b8;
+  font-weight: normal;
+}
+
+/* Linha com cor de fundo verde suave para os terceiros 100% garantidos matematicamente */
+tr.terceiro-garantido {
+  background-color: rgba(40, 167, 69, 0.15) !important;
+}
+
+/* Mantém as outras linhas limpas ou herda o padrão */
+tr.terceiro-g8, tr.terceiro-fora {
+  background-color: transparent;
+}
+
+
 /* MOBILE */
 @media (max-width: 768px) {
 
@@ -376,7 +417,7 @@ input {
     align-items: center;
   }
   
-  main-footer {
+  .main-footer {
     font-size: 12px;
     padding: 30px 12px;
   }
