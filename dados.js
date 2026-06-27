@@ -132,8 +132,8 @@ const jogosPadrao = [
   { casa:"Nova Zelândia", fora:"Egito", estadio:"Vancouver Place", hora:"22:00", placarCasa:"1", placarFora:"3" }
 ]},
 { grupo:"Grupo G", rodada:"3ª Rodada", data:"27/06", jogos:[
-  { casa:"Nova Zelândia", fora:"Bélgica", estadio:"Seattle Field", hora:"00:00", placarCasa:"", placarFora:"" },
-  { casa:"Egito", fora:"Irã", estadio:"Vancouver Place", hora:"00:00", placarCasa:"", placarFora:"" }
+  { casa:"Nova Zelândia", fora:"Bélgica", estadio:"Seattle Field", hora:"00:00", placarCasa:"1", placarFora:"5" },
+  { casa:"Egito", fora:"Irã", estadio:"Vancouver Place", hora:"00:00", placarCasa:"1", placarFora:"1" }
 ]},
 // Grupo H
 { grupo:"Grupo H", rodada:"1ª Rodada", data:"15/06", jogos:[
