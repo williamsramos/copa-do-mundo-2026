@@ -145,8 +145,8 @@ const jogosPadrao = [
   { casa:"Uruguai", fora:"Cabo Verde", estadio:"Miami", hora:"19:00", placarCasa:"2", placarFora:"2" }
 ]},
 { grupo:"Grupo H", rodada:"3ª Rodada", data:"26/06", jogos:[
-  { casa:"Uruguai", fora:"Espanha", estadio:"Houston", hora:"21:00", placarCasa:"", placarFora:"" },
-  { casa:"Cabo Verde", fora:"Arábia Saudita", estadio:"Akron", hora:"21:00", placarCasa:"", placarFora:"" }
+  { casa:"Cabo Verde", fora:"Arábia Saudita", estadio:"Houston", hora:"21:00", placarCasa:"", placarFora:"" },
+  { casa:"Uruguai", fora:"Espanha", estadio:"Guadalajara", hora:"21:00", placarCasa:"", placarFora:"" }
 ]},
 // Grupo I
 { grupo:"Grupo I", rodada:"1ª Rodada", data:"16/06", jogos:[
@@ -181,7 +181,7 @@ const jogosPadrao = [
 ]},
 { grupo:"Grupo K", rodada:"2ª Rodada", data:"23/06", jogos:[
   { casa:"Portugal", fora:"Uzbequistão", estadio:"Houston", hora:"14:00", placarCasa:"5", placarFora:"0" },
-  { casa:"Colômbia", fora:"Congo", estadio:"Akron", hora:"23:00", placarCasa:"1", placarFora:"0" }
+  { casa:"Colômbia", fora:"Congo", estadio:"Guadalajara", hora:"23:00", placarCasa:"1", placarFora:"0" }
 ]},
 { grupo:"Grupo K", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Colômbia", fora:"Portugal", estadio:"Miami", hora:"20:30", placarCasa:"", placarFora:"" },
