@@ -20,11 +20,9 @@
     </span>
   </h1>
 <div class="nav">
-  <!-- Seus botões existentes (Classificação, Agenda, Jogos...) -->
   <button onclick="showTab('classificacao')">Classificação</button>
   <button onclick="window.location.href='agenda.html'">Agenda</button>
   <button onclick="showTab('jogosTab')">Jogos</button>
-  <!-- O NOVO BOTÃO QUE DIRECIONA PARA A PÁGINA EXTERNA -->
   <button onclick="window.location.href='artilheiros.html'">⚽ Artilheiros</button>
 </div>
 </header>
@@ -32,6 +30,8 @@
 <main>
   <section id="classificacao" class="tab">
     <div id="grupos"></div>
+    
+    <div id="melhores-terceiros"></div>
   </section>
 
   <section id="jogosTab" class="tab" style="display:none;">
@@ -40,16 +40,12 @@
   </section>
 </main>
 
-<!-- ================= SCRIPTS MODULARIZADOS ================= -->
-<!-- 1. Dados estruturais e configurações globais -->
 <script src="dados.js"></script>
 
-<!-- 2. Lógicas específicas de renderização -->
 <script src="classificacao.js"></script>
 <script src="jogo-grupos.js"></script>
 <script src="matamata.js"></script>
 
-<!-- 3. Inicializador e controle central da página -->
 <script src="script.js"></script>
 
 <footer class="main-footer">
