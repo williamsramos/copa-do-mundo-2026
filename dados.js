@@ -145,8 +145,8 @@ const jogosPadrao = [
   { casa:"Uruguai", fora:"Cabo Verde", estadio:"Miami", hora:"19:00", placarCasa:"2", placarFora:"2" }
 ]},
 { grupo:"Grupo H", rodada:"3ª Rodada", data:"26/06", jogos:[
-  { casa:"Cabo Verde", fora:"Arábia Saudita", estadio:"Houston", hora:"21:00", placarCasa:"", placarFora:"" },
-  { casa:"Uruguai", fora:"Espanha", estadio:"Guadalajara", hora:"21:00", placarCasa:"", placarFora:"" }
+  { casa:"Cabo Verde", fora:"Arábia Saudita", estadio:"Houston", hora:"21:00", placarCasa:"0", placarFora:"0" },
+  { casa:"Uruguai", fora:"Espanha", estadio:"Guadalajara", hora:"21:00", placarCasa:"0", placarFora:"1" }
 ]},
 // Grupo I
 { grupo:"Grupo I", rodada:"1ª Rodada", data:"16/06", jogos:[
