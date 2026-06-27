@@ -197,8 +197,8 @@ const jogosPadrao = [
   { casa:"Panamá", fora:"Croácia", estadio:"Toronto Field", hora:"20:00", placarCasa:"0", placarFora:"1" }
 ]},
 { grupo:"Grupo L", rodada:"3ª Rodada", data:"27/06", jogos:[
-  { casa:"Panamá", fora:"Inglaterra", estadio:"Nova Jersey", hora:"18:00", placarCasa:"", placarFora:"" },
-  { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"", placarFora:"" }
+  { casa:"Panamá", fora:"Inglaterra", estadio:"Nova Jersey", hora:"18:00", placarCasa:"0", placarFora:"2" },
+  { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"2", placarFora:"1"}
 ]},
 
 // ================= MATA-MATA =================
