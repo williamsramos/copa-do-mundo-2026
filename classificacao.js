@@ -20,13 +20,13 @@ function renderTabela(){
       }
       
       if (b[1].gp !== a[1].gp) {
-        return b[1].gp - a[1].gp; // 3º Critério: Gols Pró / Marcados
+        return b[1].gp - a[1].gp; // 3º Critério: Gols Pró / Marcados (O que faltava!)
       }
       
       return a[1].pos - b[1].pos; // 4º Critério: Posição original de sorteio
     });
 
-    const तीसरीRodadaCompleta = times.every(([nome,d])=>{
+    const terceiraRodadaCompleta = times.every(([nome,d])=>{
       return (d.v + d.e + d.d) === 3;
     });
 
@@ -65,11 +65,11 @@ function renderTabela(){
     div.innerHTML += html;
   }
 
-  // Executa a renderização da tabela dos melhores terceiros colocados na tela
+  // CHAMA A RENDERIZAÇÃO DOS MELHORES TERCEIROS LOGO APÓS OS GRUPOS
   renderMelhoresTerceiros();
 }
 
-/* ================= LÓGICA VISUAL DOS MELHORES TERCEIROS COLOCADOS ================= */
+/* ================= LÓGICA DOS MELHORES TERCEIROS COLOCADOS ================= */
 function renderMelhoresTerceiros() {
   const div = document.getElementById("melhores-terceiros");
   if (!div) return; 
@@ -77,9 +77,11 @@ function renderMelhoresTerceiros() {
 
   let listaTerceiros = [];
 
+  // 1. Varre todos os grupos para achar quem está em 3º lugar em cada um deles
   for (let g in tabela) {
     let timesGrupo = Object.entries(tabela[g]);
     
+    // Ordena internamente com os mesmos critérios para pegar o 3º real do momento
     timesGrupo.sort((a, b) => {
       if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts;
       const saldoA = a[1].gp - a[1].gc;
@@ -89,6 +91,7 @@ function renderMelhoresTerceiros() {
       return a[1].pos - b[1].pos;
     });
 
+    // O terceiro colocado fica na posição de índice 2 do array
     if (timesGrupo[2]) {
       const [nome, d] = timesGrupo[2];
       listaTerceiros.push({
@@ -104,6 +107,7 @@ function renderMelhoresTerceiros() {
     }
   }
 
+  // 2. Ordena a lista geral das 12 seleções que ficaram em 3º lugar
   listaTerceiros.sort((a, b) => {
     if (b.pts !== a.pts) return b.pts - a.pts; 
     if (b.sg !== a.sg) return b.sg - a.sg;     
@@ -111,6 +115,7 @@ function renderMelhoresTerceiros() {
     return 0;
   });
 
+  // 3. Monta o topo da tabela
   let html = `
     <div class="card card-terceiros" style="margin-top: 20px;">
       <h3>🏆 Classificação das Melhores Terceiras Colocadas</h3>
@@ -125,12 +130,15 @@ function renderMelhoresTerceiros() {
         </tr>
   `;
 
+  // 4. Varre as 12 linhas aplicando os destaques visuais do G8
   listaTerceiros.forEach((time, i) => {
     const posicao = i + 1;
     let classeCSS = "";
 
+    // Lógica de destaque baseada na imagem enviada
     if (posicao <= 8) {
       if (time.jogos === 3) {
+        // Garantidos matematicamente com 3 jogos completos (Ex: 4 pontos ou saldo seguro)
         if (time.pts >= 4 || (time.pts === 3 && time.sg >= 1)) {
           classeCSS = "terceiro-garantido";
         } else {
@@ -161,43 +169,4 @@ function renderMelhoresTerceiros() {
 
   html += `</table></div>`;
   div.innerHTML = html;
-}
-
-/* ================= MOTOR: RETORNA OS 8 CLASSIFICADOS PARA O MATA-MATA ================= */
-function get8MelhoresTerceiros() {
-  let listaTerceiros = [];
-
-  for (let g in tabela) {
-    let timesGrupo = Object.entries(tabela[g]);
-    
-    timesGrupo.sort((a, b) => {
-      if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts;
-      const saldoA = a[1].gp - a[1].gc;
-      const saldoB = b[1].gp - b[1].gc;
-      if (saldoB !== saldoA) return saldoB - saldoA;
-      if (b[1].gp !== a[1].gp) return b[1].gp - a[1].gp;
-      return a[1].pos - b[1].pos;
-    });
-
-    if (timesGrupo[2]) {
-      const [nome, d] = timesGrupo[2];
-      listaTerceiros.push({
-        nome: nome,
-        grupo: g.replace("Grupo ", ""),
-        pts: d.pts,
-        sg: d.gp - d.gc,
-        gp: d.gp
-      });
-    }
-  }
-
-  listaTerceiros.sort((a, b) => {
-    if (b.pts !== a.pts) return b.pts - a.pts; 
-    if (b.sg !== a.sg) return b.sg - a.sg;     
-    if (b.gp !== a.gp) return b.gp - a.gp;     
-    return 0;
-  });
-
-  // Retorna o array contendo apenas os 8 primeiros objetos completos
-  return listaTerceiros.slice(0, 8);
 }
