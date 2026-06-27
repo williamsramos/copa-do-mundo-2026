@@ -1,19 +1,15 @@
 /* ================= LÓGICA ESPECÍFICA DO MATA-MATA ================= */
 
-// 1. Salva os pênaltis na sua estrutura e processa o avanço automático
 function salvarPenais(blocoIndex, jogoIndex, lado, valor) {
   if(lado === "casa"){
     jogosDetalhados[blocoIndex].jogos[jogoIndex].penaisCasa = valor;
   } else {
     jogosDetalhados[blocoIndex].jogos[jogoIndex].penaisFora = valor;
   }
-  
-  // Após salvar os penais, verifica quem avançou na árvore do mata-mata
   verificarAvancoMataMata(jogosDetalhados[blocoIndex].jogos[jogoIndex]);
   atualizar(true);
 }
 
-// 2. Salva os gols normais e dispara o avanço por ID
 function salvarGolsMataMata(blocoIndex, jogoIndex, lado, valor) {
   const jogo = jogosDetalhados[blocoIndex].jogos[jogoIndex];
   if (lado === "casa") {
@@ -22,14 +18,12 @@ function salvarGolsMataMata(blocoIndex, jogoIndex, lado, valor) {
     jogo.placarFora = valor;
   }
 
-  // Só calcula o avanço se ambos os placares (casa e fora) estiverem preenchidos
   if (jogo.placarCasa !== "" && jogo.placarFora !== "") {
     verificarAvancoMataMata(jogo);
   }
   atualizar(true);
 }
 
-// 3. Motor de herança automática por ID (Varre a árvore jogosDetalhados)
 function verificarAvancoMataMata(jogoAtual) {
   const id = parseInt(jogoAtual.id);
   const gCasa = parseInt(jogoAtual.placarCasa);
@@ -37,7 +31,6 @@ function verificarAvancoMataMata(jogoAtual) {
 
   if (isNaN(gCasa) || isNaN(gFora)) return;
 
-  // Define Vencedor e Perdedor (Tratando gols e depois pênaltis)
   let vencedor = "";
   let perdedor = "";
 
@@ -54,13 +47,11 @@ function verificarAvancoMataMata(jogoAtual) {
       vencedor = pCasa > pFora ? jogoAtual.casa : jogoAtual.fora;
       perdedor = pCasa > pFora ? jogoAtual.fora : jogoAtual.casa;
     } else {
-      return; // Empate nos pênaltis, aguarda você digitar o desempate
+      return; 
     }
   }
 
-  // MAPA DE CRUZA-ID OFICIAL (Para qual ID o vencedor/perdedor vai)
   const destinos = {
-    // 16 Avos -> Oitavas
     73: { prox: 90, lado: "casa" },  75: { prox: 90, lado: "fora" },
     74: { prox: 89, lado: "casa" },  77: { prox: 89, lado: "fora" },
     76: { prox: 91, lado: "casa" },  78: { prox: 91, lado: "fora" },
@@ -88,27 +79,26 @@ function verificarAvancoMataMata(jogoAtual) {
   const alvo = destinos[id];
   if (!alvo) return;
 
-  // Varre a lista dinâmica para injetar os nomes nos IDs correspondentes
-  jogosDetalhados.forEach(bloco => {
-    bloco.jogos.forEach(j => {
-      // Avança o vencedor
-      if (j.id === alvo.prox) {
-        j[alvo.lado] = vencedor;
-      }
-      // Se for semifinal, envia o perdedor para o ID 103 (3º Lugar)
-      if (alvo.perd && j.id === alvo.perd) {
-        j[alvo.ladoPerd] = perdedor;
-      }
+  if (typeof juegosDetalhados !== "undefined") {
+     window.jogosDetalhados = juegosDetalhados;
+  }
+
+  if (typeof jogosDetalhados !== "undefined") {
+    jogosDetalhados.forEach(bloco => {
+      bloco.jogos.forEach(j => {
+        if (j.id === alvo.prox) j[alvo.lado] = vencedor;
+        if (alvo.perd && j.id === alvo.perd) j[alvo.ladoPerd] = perdedor;
+      });
     });
-  });
+  }
 }
 
-// 4. Injeta os 8 terceiros colocados direto no estado estrutural
 function injetar8TerceirosNoMataMata() {
-  const terceiros = get8MelhoresTerceiros(); // Puxa da classificação
+  if (typeof get8MelhoresTerceiros !== "function" || typeof jogosDetalhados === "undefined") return;
+  
+  const terceiros = get8MelhoresTerceiros(); 
   if (terceiros.length < 8) return; 
 
-  // Mapeamento dos IDs do dados.js que estão esperando os terceiros
   const idsParaPreencher = [74, 77, 79, 80, 82, 85, 87];
 
   jogosDetalhados.forEach(bloco => {
@@ -121,6 +111,4 @@ function injetar8TerceirosNoMataMata() {
       });
     }
   });
-
-  atualizar(true);
 }
