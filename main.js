@@ -191,10 +191,10 @@ document.querySelector("#cards").innerHTML =
 createCard('27/06', 'sábado',
  // createGame("Egito", "x", "Irã") +
   //createGame("Nova Zelândia", "x", "Bélgica") +
-  //createGame("Panamá", "x", "Inglaterra") +
-  //createGame("Croácia", "x", "Gana") +
-  createGame("Colômbia", "x", "Portugal") +
-  createGame("Congo", "x", "Uzbeq.") +
+  // createGame("Panamá", "x", "Inglaterra") +
+  // createGame("Croácia", "x", "Gana") +
+  // createGame("Colômbia", "x", "Portugal") +
+  // createGame("Congo", "x", "Uzbeq.") +
   createGame("Jordânia", "x", "Argentina") +
   createGame("Argélia", "x", "Áustria")    
 )  +
@@ -205,26 +205,26 @@ createCard('27/06', 'sábado',
 createCard('28/06 a 29/06', 'domingo e segunda', 
   createGame("África do Sul", "x", "canadá") +
   createGame("Brasil", "x", "Japão") +
-  createGame("Alemanha", "x", "3º A/B/C/D/F") +
+  createGame("Alemanha", "x", "Paraguai") +
   createGame("Holanda", "x", "Marrocos")   
 ) +
 
 createCard('30/06 a 01/07', 'terça e quarta',
   createGame("Costa do Marfim", "x", "Noruega") +
-  createGame("França", "x", "3º C/D/F/G/H") +
-  createGame("México", "x", "3º C/E/F/H/I") +
-  createGame("Inglaterra", "x", "3º E/H/I/J/K") +  
-   createGame("Bélgica", "x", "3º A/E/H/I/J") + 
+  createGame("França", "x", "Suécia") +
+  createGame("México", "x", "Equador") +
+  createGame("Inglaterra", "x", "Congo") +  
+   createGame("Bélgica", "x", "Senegal") + 
   createGame("EUA", "x", "Bósnia e Herz.") 
 ) + 
 
 createCard('02/07 a 03/07', 'quinta e sexta',
   createGame("Espanha", "x", "2º Grupo J(Argélia🇩🇿 ou Austria🇦🇹)") +
-  createGame("2º Grupo K(Colômbia🇨🇴 ou Portugal🇵🇹)", "x", "Croácia") +
+  createGame("Portugal", "x", "Croácia") +
   createGame("Suiça", "x", "3º E/F/G/I/J") +
   createGame("Austrália", "x", "Egito") +  
   createGame("Argentina", "x", "Cabo Verde") +
-  createGame("1º Grupo K(Colômbia 🇨🇴 ou Portugal🇵🇹)", "x", "3º D/E/I/J/L")  
+  createGame("Colômbia", "x", "Gana")  
 ) /*+
 
 // 👑 DIVISOR: OITAVAS DE FINAL

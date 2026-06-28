@@ -8,14 +8,22 @@ function renderTabela(){
     let times = Object.entries(tabela[g]);
     
     // === ORDENAÇÃO CORRIGIDA ===
-    times.sort((a, b) => {
-      if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts;
-      const saldoA = a[1].gp - a[1].gc;
-      const saldoB = b[1].gp - b[1].gc;
-      if (saldoB !== saldoA) return saldoB - saldoA;
-      if (b[1].gp !== a[1].gp) return b[1].gp - a[1].gp;
-      return a[1].pos - b[1].pos;
-    });
+   times.sort((a, b) => {
+  if (b[1].pts !== a[1].pts) return b[1].pts - a[1].pts; // 1º Pontos
+  
+  const saldoA = a[1].gp - a[1].gc;
+  const saldoB = b[1].gp - b[1].gc;
+  if (saldoB !== saldoA) return saldoB - saldoA; // 2º Saldo de Gols
+  
+  if (b[1].gp !== a[1].gp) return b[1].gp - a[1].gp; // 3º Gols Pró
+
+  // === NOVO CRITÉRIO: Fair Play (Maior pontuação vence. Ex: -3 é maior que -5) ===
+  const fpA = a[1].fp || 0;
+  const fpB = b[1].fp || 0;
+  if (fpB !== fpA) return fpB - fpA; 
+  
+  return a[1].pos - b[1].pos; // 4º Posição original
+});
 
     const terceiraRodadaCompleta = times.every(([nome,d])=>{
       return (d.v + d.e + d.d) === 3;
@@ -100,10 +108,20 @@ function renderMelhoresTerceiros() {
     }
   }
 
+  // INJEÇÃO MANUAL DE FAIR PLAY: Define os pesos com base no site da FIFA
+  if (listaTerceiros.find(t => t.nome === "Gana")) listaTerceiros.find(t => t.nome === "Gana").fp = -3;
+  if (listaTerceiros.find(t => t.nome === "Equador")) listaTerceiros.find(t => t.nome === "Equador").fp = -5;
+
   listaTerceiros.sort((a, b) => {
     if (b.pts !== a.pts) return b.pts - a.pts; 
     if (b.sg !== a.sg) return b.sg - a.sg;     
     if (b.gp !== a.gp) return b.gp - a.gp;     
+    
+    // Critério Fair Play para os terceiros
+    const fpA = a.fp || 0;
+    const fpB = b.fp || 0;
+    if (fpB !== fpA) return fpB - fpA;
+
     return 0;
   });
 
@@ -184,10 +202,20 @@ function get8MelhoresTerceiros() {
     }
   }
 
+  // INJEÇÃO MANUAL DE FAIR PLAY: Também para o motor do mata-mata puxar ordenado
+  if (listaTerceiros.find(t => t.nome === "Gana")) listaTerceiros.find(t => t.nome === "Gana").fp = -3;
+  if (listaTerceiros.find(t => t.nome === "Equador")) listaTerceiros.find(t => t.nome === "Equador").fp = -5;
+
   listaTerceiros.sort((a, b) => {
     if (b.pts !== a.pts) return b.pts - a.pts; 
     if (b.sg !== a.sg) return b.sg - a.sg;     
     if (b.gp !== a.gp) return b.gp - a.gp;     
+    
+    // Critério Fair Play de desempate
+    const fpA = a.fp || 0;
+    const fpB = b.fp || 0;
+    if (fpB !== fpA) return fpB - fpA;
+
     return 0;
   });
 

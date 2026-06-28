@@ -184,8 +184,8 @@ const jogosPadrao = [
   { casa:"Colômbia", fora:"Congo", estadio:"Guadalajara", hora:"23:00", placarCasa:"1", placarFora:"0" }
 ]},
 { grupo:"Grupo K", rodada:"3ª Rodada", data:"27/06", jogos:[
-  { casa:"Colômbia", fora:"Portugal", estadio:"Miami", hora:"20:30", placarCasa:"", placarFora:"" },
-  { casa:"Congo", fora:"Uzbequistão", estadio:"Atlanta", hora:"20:30", placarCasa:"", placarFora:"" }
+  { casa:"Colômbia", fora:"Portugal", estadio:"Miami", hora:"20:30", placarCasa:"0", placarFora:"0" },
+  { casa:"Congo", fora:"Uzbequistão", estadio:"Atlanta", hora:"20:30", placarCasa:"3", placarFora:"1" }
 ]},
 // Grupo L
 { grupo:"Grupo L", rodada:"1ª Rodada", data:"17/06", jogos:[
@@ -198,7 +198,7 @@ const jogosPadrao = [
 ]},
 { grupo:"Grupo L", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Panamá", fora:"Inglaterra", estadio:"Nova Jersey", hora:"18:00", placarCasa:"0", placarFora:"2" },
-  { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"2", placarFora:"1"}
+  { casa:"Croácia", fora:"Gana", estadio:"Filadélfia", hora:"18:00", placarCasa:"2", placarFora:"1" }
 ]},
 
 // ================= MATA-MATA =================
