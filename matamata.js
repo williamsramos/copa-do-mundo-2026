@@ -79,8 +79,8 @@ function verificarAvancoMataMata(jogoAtual) {
   const alvo = destinos[id];
   if (!alvo) return;
 
-  if (typeof juegosDetalhados !== "undefined") {
-     window.jogosDetalhados = juegosDetalhados;
+  if (typeof jogosDetalhados !== "undefined") {
+     window.jogosDetalhados = jogosDetalhados;
   }
 
   if (typeof jogosDetalhados !== "undefined") {
@@ -99,12 +99,18 @@ function injetar8TerceirosNoMataMata() {
   const terceiros = get8MelhoresTerceiros(); 
   if (terceiros.length < 8) return; 
 
-  // Ordem correta mapeada:
-  // idx 0 -> Congo (Jogo 80) | idx 1 -> Suécia (Jogo 77) | idx 2 -> Gana (Jogo 87) | idx 3 -> Equador (Jogo 79)
-  // idx 4 -> Bósnia (Jogo 81) | idx 5 -> Argélia (Jogo 85) | idx 6 -> Paraguai (Jogo 74) | idx 7 -> Senegal (Jogo 82)
+  // MAPA DEFINITIVO CONFORME O SEU CHAVEAMENTO OFICIAL DA FIFA:
+  // idx 0 (1º: Congo)    -> Jogo 80 (Inglaterra x Congo)
+  // idx 1 (2º: Suécia)   -> Jogo 77 (França x Suécia)
+  // idx 2 (3º: Gana)     -> Jogo 87 (Colômbia x Gana)
+  // idx 3 (4º: Equador)  -> Jogo 79 (México x Equador)
+  // idx 4 (5º: Bósnia)   -> Jogo 81 (EUA x Bósnia)
+  // idx 5 (6º: Argélia)  -> Jogo 85 (Suíça x Argélia)
+  // idx 6 (7º: Paraguai) -> Jogo 74 (Alemanha x Paraguai)
+  // idx 7 (8º: Senegal)  -> Jogo 82 (Bélgica x Senegal)
   const idsParaPreencher = [80, 77, 87, 79, 81, 85, 74, 82];
 
-  // 1. Atualiza a estrutura de dados interna
+  // Injeta os nomes corretos na estrutura de dados do mata-mata antes de renderizar os cards
   jogosDetalhados.forEach(bloco => {
     if (bloco.rodada === "16 avos de Final") {
       idsParaPreencher.forEach((idJogo, idx) => {
@@ -115,32 +121,4 @@ function injetar8TerceirosNoMataMata() {
       });
     }
   });
-
-  // 2. Força a substituição visual no HTML da página se os cards já tiverem sido criados
-  const mapeamentoTexto = {
-    "3º melhor 1": terceiros[6] ? terceiros[6].nome : "", // Paraguai (Jogo 74)
-    "3º melhor 2": terceiros[1] ? terceiros[1].nome : "", // Suécia (Jogo 77)
-    "3º melhor 3": terceiros[3] ? terceiros[3].nome : "", // Equador (Jogo 79)
-    "3º melhor 4": terceiros[0] ? terceiros[0].nome : "", // Congo (Jogo 80)
-    "3º melhor 5": terceiros[7] ? terceiros[7].nome : "", // Senegal (Jogo 82)
-    "3º melhor 6": terceiros[5] ? terceiros[5].nome : "", // Argélia (Jogo 85)
-    "3º melhor 7": terceiros[2] ? terceiros[2].nome : ""  // Gana (Jogo 87)
-  };
-
-  // Varre a página procurando os elementos de texto e substitui
-  document.querySelectorAll("body, div, span, td, p").forEach(el => {
-    if (el.children.length === 0 && el.textContent) {
-      let texto = el.textContent.toLowerCase().trim();
-      for (let chave in mapeamentoTexto) {
-        if (texto === chave) {
-          el.textContent = mapeamentoTexto[chave];
-          // Se tiver uma função de buscar bandeira no seu projeto, pode aplicar aqui também
-          if (typeof getBandeira === "function") {
-            el.innerHTML = `${getBandeira(mapeamentoTexto[chave])} ${mapeamentoTexto[chave]}`;
-          }
-        }
-      }
-    }
-  });
 }
-
