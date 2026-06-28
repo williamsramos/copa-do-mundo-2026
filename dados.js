@@ -172,7 +172,7 @@ const jogosPadrao = [
 ]},
 { grupo:"Grupo J", rodada:"3ª Rodada", data:"27/06", jogos:[
   { casa:"Jordânia", fora:"Argentina", estadio:"Dallas", hora:"23:00", placarCasa:"1", placarFora:"2" },
-  { casa:"Argélia", fora:"Áustria", estadio:"Kansas City", data:"23/06" , hora:"23:00", placarCasa:"1", placarFora:"1" }
+  { casa:"Argélia", fora:"Áustria", estadio:"Kansas City", data:"23/06" , hora:"23:00", placarCasa:"1", placarFora:"2" }
 ]},
 // Grupo K
 { grupo:"Grupo K", rodada:"1ª Rodada", data:"17/06", jogos:[
