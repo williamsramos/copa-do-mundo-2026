@@ -26,26 +26,32 @@ function salvarGolsMataMata(blocoIndex, jogoIndex, lado, valor) {
 
 function verificarAvancoMataMata(jogoAtual) {
   const id = parseInt(jogoAtual.id);
+  
+  // IMPORTANTE: Busca os gols reais ou os gols da propriedade Real se houver
   const gCasa = parseInt(jogoAtual.placarCasa);
   const gFora = parseInt(jogoAtual.placarFora);
 
   if (isNaN(gCasa) || isNaN(gFora)) return;
 
+  // Descobre o nome textual exato dos times envolvidos que jogaram
+  const timeCasaNome = jogoAtual.casaReal ? jogoAtual.casaReal : jogoAtual.casa;
+  const timeForaNome = jogoAtual.foraReal ? jogoAtual.foraReal : jogoAtual.fora;
+
   let vencedor = "";
   let perdedor = "";
 
   if (gCasa > gFora) {
-    vencedor = jogoAtual.casa;
-    perdedor = jogoAtual.fora;
+    vencedor = timeCasaNome;
+    perdedor = timeForaNome;
   } else if (gFora > gCasa) {
-    vencedor = jogoAtual.fora;
-    perdedor = jogoAtual.casa;
+    vencedor = timeForaNome;
+    perdedor = timeCasaNome;
   } else {
     const pCasa = parseInt(jogoAtual.penaisCasa || 0);
     const pFora = parseInt(jogoAtual.penaisFora || 0);
     if (pCasa !== pFora) {
-      vencedor = pCasa > pFora ? jogoAtual.casa : jogoAtual.fora;
-      perdedor = pCasa > pFora ? jogoAtual.fora : jogoAtual.casa;
+      vencedor = pCasa > pFora ? timeCasaNome : timeForaNome;
+      perdedor = pCasa > pFora ? timeForaNome : timeCasaNome;
     } else {
       return; 
     }
@@ -80,18 +86,24 @@ function verificarAvancoMataMata(jogoAtual) {
   if (!alvo) return;
 
   if (typeof jogosDetalhados !== "undefined") {
-     window.jogosDetalhados = jogosDetalhados;
-  }
-
-  if (typeof jogosDetalhados !== "undefined") {
     jogosDetalhados.forEach(bloco => {
       bloco.jogos.forEach(j => {
-        if (j.id === alvo.prox) j[alvo.lado] = vencedor;
-        if (alvo.perd && j.id === alvo.perd) j[alvo.ladoPerd] = perdedor;
+        if (j.id === alvo.prox) {
+          // 🔥 ATUALIZAÇÃO DEFINITIVA: Altera tanto a propriedade base quanto a Real
+          j[alvo.lado] = vencedor;
+          if (alvo.lado === "casa") j.casaReal = vencedor;
+          if (alvo.lado === "fora") j.foraReal = vencedor;
+        }
+        if (alvo.perd && j.id === alvo.perd) {
+          j[alvo.ladoPerd] = perdedor;
+          if (alvo.ladoPerd === "casa") j.casaReal = perdedor;
+          if (alvo.ladoPerd === "fora") j.foraReal = perdedor;
+        }
       });
     });
   }
 }
+
 
 function injetar8TerceirosNoMataMata() {
   if (typeof get8MelhoresTerceiros !== "function" || typeof jogosDetalhados === "undefined") return;
