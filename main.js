@@ -214,7 +214,7 @@ createCard('30/06 a 01/07', 'terça e quarta',
   createGame("França", "x", "Suécia") + // Partida 77 (Recebe o 2º do Ranking)
   createGame("México", "x", "Equador") + // Partida 79 (Recebe o 3º do Ranking)
   createGame("Inglaterra", "x", "Congo") +  // Partida 80 (Recebe o 4º do Ranking)
-   createGame("Bélgica", "x", "3º A/E/H/I/J") + // Partida 82 (Recebe o 5º do Ranking)
+   createGame("Bélgica", "x", "Senegal") + // Partida 82 (Recebe o 5º do Ranking)
   createGame("EUA", "x", "Bósnia e Herz.") // Partida 81
 ) + 
 
