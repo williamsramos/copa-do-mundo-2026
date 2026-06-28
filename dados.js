@@ -171,8 +171,8 @@ const jogosPadrao = [
   { casa:"Jordânia", fora:"Argélia", estadio:"Santa Clara", data: "23/06", hora:"00:00", placarCasa:"1", placarFora:"2" }
 ]},
 { grupo:"Grupo J", rodada:"3ª Rodada", data:"27/06", jogos:[
-  { casa:"Jordânia", fora:"Argentina", estadio:"Dallas", hora:"23:00", placarCasa:"", placarFora:"" },
-  { casa:"Argélia", fora:"Áustria", estadio:"Kansas City", data:"23/06" , hora:"23:00", placarCasa:"", placarFora:"" }
+  { casa:"Jordânia", fora:"Argentina", estadio:"Dallas", hora:"23:00", placarCasa:"1", placarFora:"2" },
+  { casa:"Argélia", fora:"Áustria", estadio:"Kansas City", data:"23/06" , hora:"23:00", placarCasa:"1", placarFora:"1" }
 ]},
 // Grupo K
 { grupo:"Grupo K", rodada:"1ª Rodada", data:"17/06", jogos:[
@@ -211,8 +211,8 @@ const jogosPadrao = [
   { "id": 77, "casa": "1º Grupo I", "fora": "3º Melhor 2", "estadio": "East Rutherford", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 79, "casa": "1º Grupo A", "fora": "3º Melhor 6", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 80, "casa": "1º Grupo L", "fora": "3º Melhor 4", "estadio": "Atlanta", "data": "01/07", "hora": "13:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 82, "casa": "1º Grupo G", "fora": "3º Melhor 5", "estadio": "Seattle", "data": "01/07", "hora": "17:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 81, "casa": "1º Grupo D", "fora": "3º Melhor 3", "estadio": "Santa Clara", "data": "01/07", "hora": "21:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 82, "casa": "1º Grupo G", "fora": "3º Melhor 3", "estadio": "Seattle", "data": "01/07", "hora": "17:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 81, "casa": "1º Grupo D", "fora": "3º Melhor 5", "estadio": "Santa Clara", "data": "01/07", "hora": "21:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 84, "casa": "1º Grupo H", "fora": "2º Grupo J", "estadio": "Inglewood", "data": "02/07", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 83, "casa": "2º Grupo K", "fora": "2º Grupo L", "estadio": "Toronto", "data": "02/07", "hora": "20:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 85, "casa": "1º Grupo B", "fora": "3º Melhor 7", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
@@ -222,13 +222,13 @@ const jogosPadrao = [
 ]},
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
     { id: 90, casa:"Jogo 73(RSAxCAN)", fora:"Jogo 75(NEDxMAR)", estadio:"Houston", data:"04/07", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 89, casa:"Jogo 74(Alex3ABCDF)", fora:"Jogo 77(Françax3CDFGH)", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 89, casa:"Jogo 74(AlexParaguai)", fora:"Jogo 77(FrançaxSuécia)", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 91, casa:"Jogo 76(BRAxJPN)", fora:"Jogo 78(CIVxNoruega)", estadio:"East Rutherford", data:"05/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 92, casa:"Jogo 79(MEXx3CEFHI)", fora:"Jogo 80(1Lx3EHIJK)", estadio:"Cidade do México", data:"05/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-   { id: 94, casa:"Jogo 83(2Kx2L)", fora:"Jogo 84(1Hx2J)", estadio:"Dallas", data:"06/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 93, casa:"Jogo 81(USAxBIH)", fora:"Jogo 82(1Gx3AEHIJ)", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 95, casa:"Jogo 86(ARGx2H)", fora:"Jogo 88(AUSx2G)", estadio:"Atlanta", data:"07/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 96, casa:"Jogo 85(SUIx3EFGIJ)", fora:"Jogo 87(1Kx3DEOJL)", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 92, casa:"Jogo 79(MEXxEquador)", fora:"Jogo 80(InglaterraxCongo)", estadio:"Cidade do México", data:"05/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+   { id: 94, casa:"Jogo 83(PortugalxCroácia)", fora:"Jogo 84(Espanhax2J)", estadio:"Dallas", data:"06/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 93, casa:"Jogo 81(USAxBIH)", fora:"Jogo 82(BelgiacaxSenegal)", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 95, casa:"Jogo 86(ARGxCaboVerde)", fora:"Jogo 88(AUSxEgito)", estadio:"Atlanta", data:"07/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 96, casa:"Jogo 85(SUIx3EFGIJ)", fora:"Jogo 87(ColômbiaxGana)", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
   { id: 97, casa:"Jogo 89", fora:"Jogo 90", estadio:"Foxborough", data:"09/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },

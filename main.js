@@ -76,7 +76,7 @@ function createCard(date, day, games) {
 
 // 🔥 RENDERIZAR JOGOS NA TELA
 document.querySelector("#cards").innerHTML =
-`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #08ed49; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Fase de Grupos 🔥</div>` +
+// `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #08ed49; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Fase de Grupos 🔥</div>` +
 //  createCard('11/06', 'quinta',
 //     createGame("México", "x" , "África do Sul") +
 //     createGame("Coreia do Sul", "x", "República Tcheca")
@@ -188,43 +188,43 @@ document.querySelector("#cards").innerHTML =
   //createGame("Cabo Verde", "x", "Arábia Saudita") 
 //) +
 
-createCard('27/06', 'sábado',
- // createGame("Egito", "x", "Irã") +
-  //createGame("Nova Zelândia", "x", "Bélgica") +
-  // createGame("Panamá", "x", "Inglaterra") +
-  // createGame("Croácia", "x", "Gana") +
-  // createGame("Colômbia", "x", "Portugal") +
-  // createGame("Congo", "x", "Uzbeq.") +
-  createGame("Jordânia", "x", "Argentina") +
-  createGame("Argélia", "x", "Áustria")    
-)  +
+// createCard('27/06', 'sábado',
+//  // createGame("Egito", "x", "Irã") +
+//   //createGame("Nova Zelândia", "x", "Bélgica") +
+//   // createGame("Panamá", "x", "Inglaterra") +
+//   // createGame("Croácia", "x", "Gana") +
+//   // createGame("Colômbia", "x", "Portugal") +
+//   // createGame("Congo", "x", "Uzbeq.") +
+//   createGame("Jordânia", "x", "Argentina") +
+//   createGame("Argélia", "x", "Áustria")    
+// )  +
 
 // 👑 DIVISOR: 16 AVOS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
 
 createCard('28/06 a 29/06', 'domingo e segunda', 
-  createGame("África do Sul", "x", "canadá") +
-  createGame("Brasil", "x", "Japão") +
-  createGame("Alemanha", "x", "Paraguai") +
-  createGame("Holanda", "x", "Marrocos")   
+  createGame("África do Sul", "x", "canadá") + // Partida 73
+  createGame("Brasil", "x", "Japão") + // Partida 76
+  createGame("Alemanha", "x", "Paraguai") + // Partida 74 (Recebe o 1º do Ranking)
+  createGame("Holanda", "x", "Marrocos")   // Partida 75
 ) +
 
 createCard('30/06 a 01/07', 'terça e quarta',
-  createGame("Costa do Marfim", "x", "Noruega") +
-  createGame("França", "x", "Suécia") +
-  createGame("México", "x", "Equador") +
-  createGame("Inglaterra", "x", "Congo") +  
-   createGame("Bélgica", "x", "Senegal") + 
-  createGame("EUA", "x", "Bósnia e Herz.") 
+  createGame("Costa do Marfim", "x", "Noruega") + // Partida 78
+  createGame("França", "x", "Suécia") + // Partida 77 (Recebe o 2º do Ranking)
+  createGame("México", "x", "Equador") + // Partida 79 (Recebe o 3º do Ranking)
+  createGame("Inglaterra", "x", "Congo") +  // Partida 80 (Recebe o 4º do Ranking)
+   createGame("Bélgica", "x", "3º A/E/H/I/J") + // Partida 82 (Recebe o 5º do Ranking)
+  createGame("EUA", "x", "Bósnia e Herz.") // Partida 81
 ) + 
 
 createCard('02/07 a 03/07', 'quinta e sexta',
-  createGame("Espanha", "x", "2º Grupo J(Argélia🇩🇿 ou Austria🇦🇹)") +
-  createGame("Portugal", "x", "Croácia") +
-  createGame("Suiça", "x", "3º E/F/G/I/J") +
-  createGame("Austrália", "x", "Egito") +  
-  createGame("Argentina", "x", "Cabo Verde") +
-  createGame("Colômbia", "x", "Gana")  
+  createGame("Espanha", "x", "2º Grupo J(Argélia🇩🇿 ou Austria🇦🇹)") + // Partida 84
+  createGame("Portugal", "x", "Croácia") + // Partida 83
+  createGame("Suiça", "x", "3º E/F/G/I/J") + // Partida 85 (Recebe o 6º do Ranking)
+  createGame("Austrália", "x", "Egito") + // Partida 88
+  createGame("Argentina", "x", "Cabo Verde") + // Partida 86
+  createGame("Colômbia", "x", "Gana")  // Partida 87 (Recebe o 7º do Ranking)
 ) /*+
 
 // 👑 DIVISOR: OITAVAS DE FINAL
