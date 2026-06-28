@@ -21,39 +21,42 @@ function renderJogos(){
       const p2 = j.penaisFora || "";
       
       // Definição dinâmica do nome visível
-      const timeCasaExibido = j.casaReal ? j.casaReal : j.casa;
-      const timeForaExibido = j.foraReal ? j.foraReal : j.fora;
+      let timeCasaExibido = j.casaReal ? j.casaReal : j.casa;
+      let timeForaExibido = j.foraReal ? j.foraReal : j.fora;
 
-      // 🔥 TRATAMENTO BLINDADO DE BANDEIRAS
-      const ehProvisorioCasa = timeCasaExibido && timeCasaExibido.toLowerCase().includes("jogo");
+      // =========================================================================
+      // 🔥 FILTRO COMPLETO: Identifica e limpa qualquer padrão de "Jogo XX"
+      // =========================================================================
+      const ehProvisorioCasa = /jogo\s*\d+/i.test(timeCasaExibido);
       const bandeiraCasa = (timeCasaExibido && !ehProvisorioCasa && typeof getBandeira === "function") 
         ? getBandeira(timeCasaExibido) 
         : "";
 
-      const ehProvisorioFora = timeForaExibido && timeForaExibido.toLowerCase().includes("jogo");
+      const ehProvisorioFora = /jogo\s*\d+/i.test(timeForaExibido);
       const bandeiraFora = (timeForaExibido && !ehProvisorioFora && typeof getBandeira === "function") 
         ? getBandeira(timeForaExibido) 
         : "";
+      // =========================================================================
 
       const dataDoJogo = j.data ? j.data : bloco.data;
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${dataDoJogo}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
 
-      // Mudamos aqui para uma função interna temporária que garante a execução do fluxo
+      // Usa salvarPlacar por padrão, mas garante a checagem do mata-mata internamente
       blocoHtml += `
         <div style="margin-bottom:6px;">
           ${bandeiraCasa} <span class="time-texto">${timeCasaExibido}</span>
           
           <input type="number" min="0" value="${g1}" style="width:55px;" 
-            onchange="if(typeof salvarGolsMataMata === 'function' && ${ehMataMata}){ salvarGolsMataMata(${blocoIndex},${jogoIndex},'casa',this.value); } else { salvarPlacar(${blocoIndex},${jogoIndex},'casa',this.value); if(${ehMataMata} && typeof verificarAvancoMataMata === 'function') { verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); } }">
+            onchange="salvarPlacar(${blocoIndex},${jogoIndex},'casa',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">
           
-          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p1}" style="width:40px; background:#ffebeb; border:1px solid red; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'casa',this.value)">` : ""}
+          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p1}" style="width:40px; background:#ffebeb; border:1px solid red; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'casa',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">` : ""}
           
           <strong>x</strong>
           
-          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p2}" style="width:40px; background:#ffebeb; border:1px solid red; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'fora',this.value)">` : ""}
+          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p2}" style="width:40px; background:#ffebeb; border:1px solid red; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'fora',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">` : ""}
           
           <input type="number" min="0" value="${g2}" style="width:55px;" 
-            onchange="if(typeof salvarGolsMataMata === 'function' && ${ehMataMata}){ salvarGolsMataMata(${blocoIndex},${jogoIndex},'fora',this.value); } else { salvarPlacar(${blocoIndex},${jogoIndex},'fora',this.value); if(${ehMataMata} && typeof verificarAvancoMataMata === 'function') { verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); } }">
+            onchange="salvarPlacar(${blocoIndex},${jogoIndex},'fora',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">
           
           ${bandeiraFora} <span class="time-texto">${timeForaExibido}</span>
           <br>
