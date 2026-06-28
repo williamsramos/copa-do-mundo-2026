@@ -93,57 +93,29 @@ function verificarAvancoMataMata(jogoAtual) {
   }
 }
 
-// function injetar8TerceirosNoMataMata() {
-//   if (typeof get8MelhoresTerceiros !== "function" || typeof jogosDetalhados === "undefined") return;
-  
-//   const terceiros = get8MelhoresTerceiros(); 
-//   if (terceiros.length < 8) return; 
-
-//   // ORDENAÇÃO CORRIGIDA DOS IDS PARA BATER COM OS CONFRONTOS DA SUA IMAGEM:
-//   // 1º do Ranking (Congo) -> Jogo 74 (Alemanha x Congo)
-//   // 2º do Ranking (Suécia) -> Jogo 77 (França x Suécia)
-//   // 3º do Ranking (Gana) -> Jogo 79 (México x Gana)
-//   // 4º do Ranking (Equador) -> Jogo 80 (Inglaterra x Equador)
-//   // 5º do Ranking (Paraguai) -> Jogo 82 (Bélgica x Paraguai)
-//   // 6º do Ranking (Argélia) -> Jogo 85 (Suíça x Argélia)
-//   // 7º do Ranking (Senegal) -> Jogo 87 (Colômbia x Senegal)
-//   const idsParaPreencher = [74, 77, 79, 80, 81,82, 85, 87];
-
-//   jogosDetalhados.forEach(bloco => {
-//     if (bloco.rodada === "16 avos de Final") {
-//       idsParaPreencher.forEach((idJogo, idx) => {
-//         let jogo = bloco.jogos.find(j => j.id === idJogo);
-//         if (jogo && terceiros[idx]) {
-//           jogo.fora = terceiros[idx].nome; // Injeta o nome do terceiro correspondente
-//         }
-//       });
-//     }
-//   });
-// }
-
 function injetar8TerceirosNoMataMata() {
   if (typeof get8MelhoresTerceiros !== "function" || typeof jogosDetalhados === "undefined") return;
   
   const terceiros = get8MelhoresTerceiros(); 
-  if (terceiros.length < 8) return; // Aguarda os grupos estarem matematicamente fechados
+  if (terceiros.length < 8) return; 
 
-  // MAPEAMENTO DINÂMICO CONFORME O RANKING OFICIAL DA FIFA:
-  // idx 0 (1º do Ranking) -> Jogo 74 (Alemanha)
-  // idx 1 (2º do Ranking) -> Jogo 77 (França)
-  // idx 2 (3º do Ranking) -> Jogo 79 (México)
-  // idx 3 (4º do Ranking) -> Jogo 80 (Inglaterra)
-  // idx 4 (5º do Ranking) -> Jogo 81 (EUA - Vaga da Bósnia se ela mantiver o 5º lugar)
-  // idx 5 (6º do Ranking) -> Jogo 82 (Bélgica)
-  // idx 6 (7º do Ranking) -> Jogo 87 (Colômbia)
-  // idx 7 (8º do Ranking) -> Jogo 85 (Suíça)
-  const idsParaPreencher = [74, 77, 79, 80, 81, 82, 87, 85];
+  // MAPA CORRIGIDO PARA BATER COM A SUA LISTA OFICIAL DE CONFRONTOS:
+  // idx 0 (1º: Congo)    -> Jogo 80 (Inglaterra)
+  // idx 1 (2º: Suécia)   -> Jogo 77 (França)
+  // idx 2 (3º: Gana)     -> Jogo 87 (Colômbia)
+  // idx 3 (4º: Equador)  -> Jogo 79 (México)
+  // idx 4 (5º: Bósnia)   -> Jogo 81 (EUA)
+  // idx 5 (6º: Argélia)  -> Jogo 85 (Suíça)
+  // idx 6 (7º: Paraguai) -> Jogo 74 (Alemanha)
+  // idx 7 (8º: Senegal)  -> Jogo 82 (Bélgica)
+  const idsParaPreencher = [80, 77, 87, 79, 81, 85, 74, 82];
 
   jogosDetalhados.forEach(bloco => {
     if (bloco.rodada === "16 avos de Final") {
       idsParaPreencher.forEach((idJogo, idx) => {
         let jogo = bloco.jogos.find(j => j.id === idJogo);
         if (jogo && terceiros[idx]) {
-          jogo.fora = terceiros[idx].nome; // Preenche o visitante com o time do ranking correspondente
+          jogo.fora = terceiros[idx].nome; 
         }
       });
     }
