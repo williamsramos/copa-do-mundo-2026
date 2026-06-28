@@ -4,9 +4,9 @@ function salvarPalpitesDefinitivos() {
   alert("💾 Seus placares foram salvos como oficiais! Mesmo se você resetar a tela, o simulador voltará para este ponto.");
 }
 
-// 2. ADAPTADA: O resetar agora volta para o seu último salvamento oficial
+// 2. ADAPTADA: O resetar agora volta para o seu último salvamento oficial ou limpa tudo
 function limparSimulador() {
-  if (confirm("Deseja realmente retornar os jogos para o seu último palpite oficial salvo?")) {
+  if (confirm("Deseja realmente apagar todos os palpites salvos e retornar para o padrão?")) {
     const gabarito = localStorage.getItem("gabaritoSimulador");
     
     if (gabarito) {
@@ -15,6 +15,7 @@ function limparSimulador() {
     } else {
       // Se nunca salvou, ele limpa tudo e volta pro padrão original do código
       localStorage.removeItem("jogosSimulador");
+      localStorage.clear();
     }
     location.reload();
   }
@@ -58,6 +59,7 @@ function init(){
   renderJogos();
   renderTabela();
 }
+
 function criarAbas(){
   const div = document.getElementById("abasGrupos");
   if(!div) return;
@@ -154,7 +156,6 @@ function atualizar(deveRenderizar = true){
   for(let g in tabela){
     let times = Object.entries(tabela[g]);
     
-    // CORREÇÃO AQUI: Nova lógica expandida com todos os critérios de desempate
     times.sort((a, b) => {
       if (b[1].pts !== a[1].pts) {
         return b[1].pts - a[1].pts; // 1º Critério: Pontos (Maior primeiro)
@@ -173,7 +174,6 @@ function atualizar(deveRenderizar = true){
       return a[1].pos - b[1].pos; // 4º Critério: Posição original de sorteio
     });
     
-    // Daqui para baixo continua o resto do seu código original que pega os classificados:
     const time1 = times[0] ? times[0][0] : "";
     const time2 = times[1] ? times[1][0] : "";
     const time3 = times[2] ? times[2][0] : "";
@@ -217,6 +217,13 @@ function atualizar(deveRenderizar = true){
     });
   });
 
+  // =========================================================================
+  // 🔥 INJEÇÃO AUTOMÁTICA DOS MELHORES TERCEIROS NO CHAVEAMENTO DO MATA-MATA
+  // =========================================================================
+  if (typeof injetar8TerceirosNoMataMata === "function") {
+    injetar8TerceirosNoMataMata();
+  }
+
   // 5. Calcula o avanço das próximas fases do mata-mata (Oitavas, Quartas, etc.)
   if (typeof calcularAvancoMataMata === 'function') {
     calcularAvancoMataMata();
@@ -238,19 +245,7 @@ function showTab(tabId) {
   if(abaAtiva) abaAtiva.style.display = 'block';
 }
 
-
-
-function limparSimulador() {
-  if (confirm("Deseja realmente apagar todos os palpites salvos e recomeçar o simulador?")) {
-    localStorage.clear();
-    location.reload();
-  }
-}
-
 /* Event Listener de Inicialização segura da DOM */
 document.addEventListener("DOMContentLoaded", () => {
   init();
 });
-
-
-
