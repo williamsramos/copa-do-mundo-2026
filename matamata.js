@@ -18,7 +18,21 @@ function salvarGolsMataMata(blocoIndex, jogoIndex, lado, valor) {
     jogo.placarFora = valor;
   }
 
-  if (jogo.placarCasa !== "" && jogo.placarFora !== "") {
+  // 🔥 Força a verificação de avanço sempre que houver alteração
+  verificarAvancoMataMata(jogo);
+  atualizar(true);
+}
+
+function salvarPlacar(blocoIndex, jogoIndex, lado, valor) {
+  // Esta é a função da fase de grupos, mas por segurança, se for chamada no mata-mata, ela também avança!
+  const jogo = jogosDetalhados[blocoIndex].jogos[jogoIndex];
+  if (lado === "casa") {
+    jogo.placarCasa = valor;
+  } else {
+    jogo.placarFora = valor;
+  }
+  
+  if (jogo.grupo === "Mata-mata") {
     verificarAvancoMataMata(jogo);
   }
   atualizar(true);
