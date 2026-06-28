@@ -171,8 +171,8 @@ const jogosPadrao = [
   { casa:"Jordânia", fora:"Argélia", estadio:"Santa Clara", data: "23/06", hora:"00:00", placarCasa:"1", placarFora:"2" }
 ]},
 { grupo:"Grupo J", rodada:"3ª Rodada", data:"27/06", jogos:[
-  { casa:"Jordânia", fora:"Argentina", estadio:"Dallas", hora:"23:00", placarCasa:"1", placarFora:"2" },
-  { casa:"Argélia", fora:"Áustria", estadio:"Kansas City", data:"23/06" , hora:"23:00", placarCasa:"2", placarFora:"2" }
+  { casa:"Jordânia", fora:"Argentina", estadio:"Dallas", hora:"23:00", placarCasa:"1", placarFora:"3" },
+  { casa:"Argélia", fora:"Áustria", estadio:"Kansas City", data:"23/06" , hora:"23:00", placarCasa:"3", placarFora:"3" }
 ]},
 // Grupo K
 { grupo:"Grupo K", rodada:"1ª Rodada", data:"17/06", jogos:[
@@ -205,7 +205,7 @@ const jogosPadrao = [
 { grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
   { "id": 73, "casa": "2º Grupo A", "fora": "2º Grupo B", "estadio": "Inglewood", "data": "28/06", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 76, "casa": "1º Grupo C", "fora": "2º Grupo F", "estadio": "Houston", "data": "29/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 74, "casa": "1º Grupo E", "fora": "3º Melhor 1", "estadio": "Foxborough", "data": "29/06", "hora": "17:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 74, "casa": "1º Grupo E", "fora": "3º Melhor 6", "estadio": "Foxborough", "data": "29/06", "hora": "17:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 75, "casa": "1º Grupo F", "fora": "2º Grupo C", "estadio": "Monterrey", "data": "29/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 78, "casa": "2º Grupo E", "fora": "2º Grupo I", "estadio": "Dallas", "data": "30/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 77, "casa": "1º Grupo I", "fora": "3º Melhor 2", "estadio": "East Rutherford", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
@@ -218,7 +218,7 @@ const jogosPadrao = [
   { "id": 85, "casa": "1º Grupo B", "fora": "3º Melhor 7", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Dallas", "data": "03/07", "hora": "15:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 86, "casa": "1º Grupo J", "fora": "2º Grupo H", "estadio": "Miami", "data": "03/07", "hora": "19:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
-  { "id": 87, "casa": "1º Grupo K", "fora": "3º Melhor 8", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
+  { "id": 87, "casa": "1º Grupo K", "fora": "3º Melhor 4", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
 ]},
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
     { id: 90, casa:"Jogo 73(RSAxCAN)", fora:"Jogo 75(NEDxMAR)", estadio:"Houston", data:"04/07", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
@@ -253,7 +253,7 @@ let tabela = {};
 let grupoSelecionado = null;
 
 const artilheirosHistoricos = [
-  { nome: "Lionel Messi", gols: 18, selecao: "Argentina", flag: "ar" },
+  { nome: "Lionel Messi", gols: 19, selecao: "Argentina", flag: "ar" },
   { nome: "Kylian Mbappé", gols: 16, selecao: "França", flag: "fr" },
   { nome: "Miroslav Klose", gols: 16, selecao: "Alemanha", flag: "de" },
   { nome: "Ronaldo Nazário", gols: 15, selecao: "Brasil", flag: "br" },
