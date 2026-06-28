@@ -219,26 +219,26 @@ createCard('30/06 a 01/07', 'terça e quarta',
 ) + 
 
 createCard('02/07 a 03/07', 'quinta e sexta',
-  createGame("Espanha", "x", "2º Grupo J(Argélia🇩🇿 ou Austria🇦🇹)") + // Partida 84
+  createGame("Espanha", "x", "Austria") + // Partida 84
   createGame("Portugal", "x", "Croácia") + // Partida 83
-  createGame("Suiça", "x", "3º E/F/G/I/J") + // Partida 85 (Recebe o 6º do Ranking)
+  createGame("Suiça", "x", "Argélia") + // Partida 85 (Recebe o 6º do Ranking)
   createGame("Austrália", "x", "Egito") + // Partida 88
   createGame("Argentina", "x", "Cabo Verde") + // Partida 86
   createGame("Colômbia", "x", "Gana")  // Partida 87 (Recebe o 7º do Ranking)
-) /*+
+) /* +
 
 // 👑 DIVISOR: OITAVAS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
 
 createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
   createGame("Jogo 73(RSAxCAN)", "x", "Jogo 75(NEDxMAR)" )+
-  createGame("Vencedor 74(Alex3ABCDF)", "x", "Vencedor 77(Françax3CDFGH)") +
+  createGame("Vencedor 74(AlexParaguai)", "x", "Vencedor 77(FrançaxSuécia)") +
   createGame("Vencedor 76(BRAxJPN)", "x", "Vencedor 78(CIVxNoruega)") +
-  createGame("Vencedor 79(MEXx3CEFHI)", "x", "Vencedor 80(1Lx3EHIJK)") +
-  createGame("Vencedor 81(USAxBIH)", "x", "Vencedor 82(1Gx3AEHIJ)") +
-  createGame("Vencedor 83(2Kx2L)", "x", "Vencedor 84(1Hx2J)") +
-  createGame("Vencedor 86(ARGx2H)", "x", "Vencedor 88(AUSx2G)") +
-  createGame("Vencedor 85(SUIx3EFGIJ)", "x", "Vencedor 87(1Kx3DEOJL)")
+  createGame("Vencedor 79(MEXxEquador)", "x", "Vencedor 80(InglaterraxCongo)") +
+  createGame("Vencedor 81(USAxBIH)", "x", "Vencedor 82(BélgicaxSenegal)") +
+  createGame("Vencedor 83(PortugalxCroácia)", "x", "Vencedor 84(EspanhaxAustria)") +
+  createGame("Vencedor 86(ARGx2H)", "x", "Vencedor 88(AustráliaxEgito)") +
+  createGame("Vencedor 85(SUIxArgélia)", "x", "Vencedor 87(ColômbiaxGana)")
 ) +
 
 // 👑 DIVISOR: QUARTAS DE FINAL
