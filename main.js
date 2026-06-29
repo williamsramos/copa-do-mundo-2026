@@ -204,7 +204,7 @@ document.querySelector("#cards").innerHTML =
 
 createCard('28/06 a 29/06', 'domingo e segunda', 
   // createGame("África do Sul", "x", "canadá") + // Partida 73
-  createGame("Brasil", "x", "Japão") + // Partida 76
+  // createGame("Brasil", "x", "Japão") + // Partida 76
   createGame("Alemanha", "x", "Paraguai") + // Partida 74 (Recebe o 1º do Ranking)
   createGame("Holanda", "x", "Marrocos")   // Partida 75
 ) +
@@ -231,9 +231,9 @@ createCard('02/07 a 03/07', 'quinta e sexta',
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
 
 createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
-  createGame("Jogo 73(RSAxCAN)", "x", "Jogo 75(NEDxMAR)" )+
+  createGame("Canadá", "x", "Jogo 75(NEDxMAR)" )+
   createGame("Vencedor 74(AlexParaguai)", "x", "Vencedor 77(FrançaxSuécia)") +
-  createGame("Vencedor 76(BRAxJPN)", "x", "Vencedor 78(CIVxNoruega)") +
+  createGame("Brasil", "x", "Vencedor 78(CIVxNoruega)") +
   createGame("Vencedor 79(MEXxEquador)", "x", "Vencedor 80(InglaterraxCongo)") +
   createGame("Vencedor 81(USAxBIH)", "x", "Vencedor 82(BélgicaxSenegal)") +
   createGame("Vencedor 83(PortugalxCroácia)", "x", "Vencedor 84(EspanhaxAustria)") +
