@@ -49,11 +49,11 @@ function renderJogos(){
           <input type="number" min="0" value="${g1}" style="width:55px;" 
             onchange="salvarPlacar(${blocoIndex},${jogoIndex},'casa',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">
           
-          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p1}" style="width:40px; background:#ffebeb; border:1px solid red; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'casa',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">` : ""}
+          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p1}" style="width:40px; background:#333333; border:1px solid white; text-align:center;"  onchange="salvarPenais(${blocoIndex},${jogoIndex},'casa',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">` : ""}
           
           <strong>x</strong>
           
-          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p2}" style="width:40px; background:#ffebeb; border:1px solid red; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'fora',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">` : ""}
+          ${ehMataMata && deuEmpate ? `<input type="number" min="0" placeholder="PK" value="${p2}" style="width:40px; background:#333333; border:1px solid white; text-align:center;" onchange="salvarPenais(${blocoIndex},${jogoIndex},'fora',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">` : ""}
           
           <input type="number" min="0" value="${g2}" style="width:55px;" 
             onchange="salvarPlacar(${blocoIndex},${jogoIndex},'fora',this.value); if(typeof verificarAvancoMataMata === 'function') verificarAvancoMataMata(jogosDetalhados[${blocoIndex}].jogos[${jogoIndex}]); if(typeof atualizar === 'function') atualizar(true); renderJogos();">
