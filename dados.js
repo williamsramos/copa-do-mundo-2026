@@ -205,7 +205,7 @@ const jogosPadrao = [
 { grupo:"Mata-mata", rodada:"16 avos de Final", data:"28/06 a 03/07", jogos:[
   { "id": 73, "casa": "2º Grupo A", "fora": "2º Grupo B", "estadio": "Los Angeles ", "data": "28/06", "hora": "16:00", "placarCasa": "0", "placarFora": "1", "penaisCasa": "", "penaisFora": "" },
   { "id": 76, "casa": "1º Grupo C", "fora": "2º Grupo F", "estadio": "Houston", "data": "29/06", "hora": "14:00", "placarCasa": "2", "placarFora": "1", "penaisCasa": "", "penaisFora": "" },
-  { "id": 74, "casa": "1º Grupo E", "fora": "3º Melhor 7", "estadio": "Boston", "data": "29/06", "hora": "17:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 74, "casa": "1º Grupo E", "fora": "3º Melhor 7", "estadio": "Boston", "data": "29/06", "hora": "17:30", "placarCasa": "1", "placarFora": "1", "penaisCasa": "3", "penaisFora": "4" },
   { "id": 75, "casa": "1º Grupo F", "fora": "2º Grupo C", "estadio": "Monterrey", "data": "29/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 78, "casa": "2º Grupo E", "fora": "2º Grupo I", "estadio": "Dallas", "data": "30/06", "hora": "14:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 77, "casa": "1º Grupo I", "fora": "3º Melhor 2", "estadio": "New York/New Jersey", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
