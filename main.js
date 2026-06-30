@@ -210,7 +210,7 @@ document.querySelector("#cards").innerHTML =
 // ) +
 
 createCard('30/06 a 01/07', 'terça e quarta',
-  createGame("Costa do Marfim", "x", "Noruega") + // Partida 78
+  // createGame("Costa do Marfim", "x", "Noruega") + // Partida 78
   createGame("França", "x", "Suécia") + // Partida 77 (Recebe o 2º do Ranking)
   createGame("México", "x", "Equador") + // Partida 79 (Recebe o 3º do Ranking)
   createGame("Inglaterra", "x", "Congo") +  // Partida 80 (Recebe o 4º do Ranking)
