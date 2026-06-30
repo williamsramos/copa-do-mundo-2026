@@ -64,10 +64,11 @@ function criarAbas(){
   const div = document.getElementById("abasGrupos");
   if(!div) return;
   div.innerHTML = `<button onclick="selecionarGrupo('todos')" id="aba-todos">Todos</button>`;
+  div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
   for(let g in grupos){
     div.innerHTML += `<button onclick="selecionarGrupo('${g}')" id="aba-${g}">${g}</button>`;
   }
-  div.innerHTML += `<button onclick="selecionarGrupo('Mata-mata')" id="aba-Mata-mata">Mata-mata</button>`;
+  
   
   // BOTÃO DE RESET EM DESTAQUE
   div.innerHTML += `<button onclick="salvarPalpitesDefinitivos()" style="background-color: #28a745; color: white; margin-left: 15px; font-weight: bold; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: max-content; white-space: nowrap;">💾 Salvar Placar</button> <button onclick="limparSimulador()" style="background-color: #d9534f; color: white; margin-left: 15px; font-weight: bold;">🔄 Resetar</button>`;
