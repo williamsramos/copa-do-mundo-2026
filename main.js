@@ -202,12 +202,12 @@ document.querySelector("#cards").innerHTML =
 // 👑 DIVISOR: 16 AVOS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
 
-createCard('28/06 a 29/06', 'domingo e segunda', 
-  // createGame("África do Sul", "x", "canadá") + // Partida 73
-  // createGame("Brasil", "x", "Japão") + // Partida 76
-  createGame("Alemanha", "x", "Paraguai") + // Partida 74 (Recebe o 1º do Ranking)
-  createGame("Holanda", "x", "Marrocos")   // Partida 75
-) +
+// createCard('28/06 a 29/06', 'domingo e segunda', 
+//   // createGame("África do Sul", "x", "canadá") + // Partida 73
+//   // createGame("Brasil", "x", "Japão") + // Partida 76
+//   // createGame("Alemanha", "x", "Paraguai") + // Partida 74 (Recebe o 1º do Ranking)
+//   createGame("Holanda", "x", "Marrocos")   // Partida 75
+// ) +
 
 createCard('30/06 a 01/07', 'terça e quarta',
   createGame("Costa do Marfim", "x", "Noruega") + // Partida 78
