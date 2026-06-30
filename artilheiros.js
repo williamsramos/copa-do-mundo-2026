@@ -105,10 +105,10 @@ function renderizarPaginaArtilheiros() {
     </div>
   `;
 
-  /* ================= TÍTULO DA SUA LISTA ORIGINAL ================= */
+  //* ================= TÍTULO DA SUA LISTA ORIGINAL ================= */
   htmlCompleto += `<h3 style="color: #fff; margin: 15px 0 10px 0; font-size: 14px; text-transform: uppercase; font-family: sans-serif; font-weight: bold; letter-spacing: 0.5px;">⚽ Maiores Artilheiros das Copas</h3>`;
 
-  /* ================= 2. SUA LÓGICA ORIGINAL DE ARTILHEIROS ================= */
+  /* ================= 2. SUA LÓGICA ORIGINAL DE ARTILHEIROS (COM ESPAÇAMENTO CORRIGIDO) ================= */
   artilheirosHistoricos.forEach((artilheiro, index) => {
     let corGols = "#ccc";
     let prefixo = "⚽";
@@ -118,14 +118,15 @@ function renderizarPaginaArtilheiros() {
     else if (index === 1) { corGols = "#d1d1d1"; prefixo = "🥈"; classeDestaque = "artilheiro-destaque"; }
     else if (index === 2) { corGols = "#e5a93b"; prefixo = "🥉"; classeDestaque = "artilheiro-destaque"; }
 
+    // Adicionado display: flex e justify-content: space-between inline para forçar o afastamento perfeito
     htmlCompleto += `
-      <li class="item-artilheiro">
-        <div class="artilheiro-info-esquerda">
+      <li class="item-artilheiro" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        <div class="artilheiro-info-esquerda" style="display: flex; align-items: center; gap: 8px;">
           <span class="artilheiro-prefixo">${prefixo}</span>
           <img src="https://flagcdn.com/w20/${artilheiro.flag}.png" class="artilheiro-bandeira" alt="${artilheiro.selecao}">
           <span class="artilheiro-nome ${classeDestaque}">${artilheiro.nome}</span>
         </div>
-        <strong class="artilheiro-gols" style="color: ${corGols};">${artilheiro.gols} gols</strong>
+        <strong class="artilheiro-gols" style="color: ${corGols}; white-space: nowrap;">${artilheiro.gols} gols</strong>
       </li>
     `;
   });
