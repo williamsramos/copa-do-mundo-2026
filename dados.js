@@ -209,7 +209,7 @@ const jogosPadrao = [
   { "id": 74, "casa": "1º Grupo E", "fora": "3º Melhor 7", "estadio": "Boston", "data": "29/06", "hora": "17:30", "placarCasa": "1", "placarFora": "1", "penaisCasa": "3", "penaisFora": "4" },
   { "id": 75, "casa": "1º Grupo F", "fora": "2º Grupo C", "estadio": "Monterrey", "data": "29/06", "hora": "22:00", "placarCasa": "1", "placarFora": "1", "penaisCasa": "2", "penaisFora": "3" },
   { "id": 78, "casa": "2º Grupo E", "fora": "2º Grupo I", "estadio": "Dallas", "data": "30/06", "hora": "14:00", "placarCasa": "1", "placarFora": "2", "penaisCasa": "", "penaisFora": "" },
-  { "id": 77, "casa": "1º Grupo I", "fora": "3º Melhor 2", "estadio": "New York/New Jersey", "data": "30/06", "hora": "18:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 77, "casa": "1º Grupo I", "fora": "3º Melhor 2", "estadio": "New York/New Jersey", "data": "30/06", "hora": "18:00", "placarCasa": "3", "placarFora": "0", "penaisCasa": "", "penaisFora": "" },
   { "id": 79, "casa": "1º Grupo A", "fora": "3º Melhor 4", "estadio": "Cidade do México", "data": "30/06", "hora": "22:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 80, "casa": "1º Grupo L", "fora": "3º Melhor 1", "estadio": "Atlanta", "data": "01/07", "hora": "13:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 82, "casa": "1º Grupo G", "fora": "3º Melhor 8", "estadio": "Seattle", "data": "01/07", "hora": "17:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
@@ -257,7 +257,7 @@ let grupoSelecionado = null;
 
 const artilheirosHistoricos = [
   { nome: "Lionel Messi", gols: 19, selecao: "Argentina", flag: "ar" },
-  { nome: "Kylian Mbappé", gols: 16, selecao: "França", flag: "fr" },
+  { nome: "Kylian Mbappé", gols: 18, selecao: "França", flag: "fr" },
   { nome: "Miroslav Klose", gols: 16, selecao: "Alemanha", flag: "de" },
   { nome: "Ronaldo Nazário", gols: 15, selecao: "Brasil", flag: "br" },
   { nome: "Gerd Müller", gols: 14, selecao: "Alemanha", flag: "de" },
