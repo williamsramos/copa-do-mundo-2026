@@ -200,7 +200,7 @@ document.querySelector("#cards").innerHTML =
 // )  +
 
 // 👑 DIVISOR: 16 AVOS DE FINAL
-`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #000000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
 
 // createCard('28/06 a 29/06', 'domingo e segunda', 
 //   // createGame("África do Sul", "x", "canadá") + // Partida 73
@@ -225,24 +225,24 @@ createCard('02/07 a 03/07', 'quinta e sexta',
   createGame("Austrália", "x", "Egito") + // Partida 88
   createGame("Argentina", "x", "Cabo Verde") + // Partida 86
   createGame("Colômbia", "x", "Gana")  // Partida 87 (Recebe o 7º do Ranking)
-) /* +
+) /*+
 
 // 👑 DIVISOR: OITAVAS DE FINAL
-`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #1a02f3; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
 
 createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
-  createGame("Canadá", "x", "Jogo 75(NEDxMAR)" )+
-  createGame("Vencedor 74(AlexParaguai)", "x", "Vencedor 77(FrançaxSuécia)") +
-  createGame("Brasil", "x", "Vencedor 78(CIVxNoruega)") +
+  createGame("Canadá", "x", "Marrocos" )+
+  createGame("Paraguai", "x", "Vencedor 77(FrançaxSuécia)") +
+  createGame("Brasil", "x", "Noruega") +
   createGame("Vencedor 79(MEXxEquador)", "x", "Vencedor 80(InglaterraxCongo)") +
   createGame("Vencedor 81(USAxBIH)", "x", "Vencedor 82(BélgicaxSenegal)") +
   createGame("Vencedor 83(PortugalxCroácia)", "x", "Vencedor 84(EspanhaxAustria)") +
   createGame("Vencedor 86(ARGx2H)", "x", "Vencedor 88(AustráliaxEgito)") +
   createGame("Vencedor 85(SUIxArgélia)", "x", "Vencedor 87(ColômbiaxGana)")
-) +
+)  +
 
 // 👑 DIVISOR: QUARTAS DE FINAL
-`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">💪 Quartas de Final 💪</div>` +
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #00dc4d; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">💪 Quartas de Final 💪</div>` +
 
 createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
   createGame("Vencedor 90", "x", "Vencedor 89") +
@@ -252,7 +252,7 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
 ) +
 
 // 👑 DIVISOR: SEMIFINAIS
-`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🏁 Semifinais 🏁</div>` +
+`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #fd0000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🏁 Semifinais 🏁</div>` +
 
 createCard('14/07 a 15/07', 'SEMIFINAL',
   createGame("Vencedor 97", "x", "Vencedor 98") +
