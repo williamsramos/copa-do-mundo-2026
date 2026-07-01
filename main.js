@@ -235,7 +235,7 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
   createGame("Paraguai", "x", "França") +
   createGame("Brasil", "x", "Noruega") +
   createGame("México", "x", "Inglaterra") +
-  createGame("Vencedor 81(USAxBIH)", "x", "Vencedor 82(BélgicaxSenegal)") +
+  createGame("Vencedor 81(USAxBIH)", "x", "Bélgica") +
   createGame("Vencedor 83(PortugalxCroácia)", "x", "Vencedor 84(EspanhaxAustria)") +
   createGame("Vencedor 86(ARGx2H)", "x", "Vencedor 88(AustráliaxEgito)") +
   createGame("Vencedor 85(SUIxArgélia)", "x", "Vencedor 87(ColômbiaxGana)")
