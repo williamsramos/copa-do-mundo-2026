@@ -290,7 +290,7 @@ renderJogos = function() {
           
           // Renderiza a imagem.png da taça centralizada
           containerTaca.innerHTML = `
-            <img src="image.png" alt="Taça da Copa" style="width: 75px; height: auto; display: inline-block;">
+            <img src="worldcup_favicon.png" alt="Taça da Copa" style="width: 75px; height: auto; display: inline-block;">
           `;
           
           // Insere cirurgicamente a imagem logo ANTES do card da Final
