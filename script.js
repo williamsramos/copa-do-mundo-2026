@@ -69,7 +69,6 @@ function criarAbas(){
     div.innerHTML += `<button onclick="selecionarGrupo('${g}')" id="aba-${g}">${g}</button>`;
   }
   
-  
   // BOTÃO DE RESET EM DESTAQUE
   div.innerHTML += `<button onclick="salvarPalpitesDefinitivos()" style="background-color: #28a745; color: white; margin-left: 15px; font-weight: bold; border: none; padding: 6px 12px; cursor: pointer; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; width: auto; min-width: max-content; white-space: nowrap;">💾 Salvar Placar</button> <button onclick="limparSimulador()" style="background-color: #d9534f; color: white; margin-left: 15px; font-weight: bold;">🔄 Resetar</button>`;
 }
@@ -92,7 +91,6 @@ function destacarAba(){
     }
   });
 }
-
 
 /* ================= COMPUTAÇÃO DE PONTUAÇÕES E CHAVEAMENTO AUTOMÁTICO ================= */
 function atualizar(deveRenderizar = true){
@@ -250,3 +248,55 @@ function showTab(tabId) {
 document.addEventListener("DOMContentLoaded", () => {
   init();
 });
+
+
+/* =========================================================================
+   🔥 INTERCEPTOR PARA INJETAR A TAÇA ANTES DO CARD DA FINAL NO MATA-MATA
+   ========================================================================= */
+
+// Guardamos a definição padrão da função original para não quebrar o escopo interno
+const renderJogosOriginal = typeof renderJogos !== 'undefined' ? renderJogos : null;
+
+// Criamos/Sobrescrevemos a função renderJogos adicionando o comportamento visual da taça
+renderJogos = function() {
+  // 1. Executa primeiro a renderização padrão de listas e cards do seu simulador
+  if (typeof renderJogosOriginal === 'function') {
+    renderJogosOriginal();
+  }
+
+  // 2. Verifica se o usuário está filtrando para ver as finais ("Mata-mata" ou "Todos")
+  if (typeof grupoSelecionado !== 'undefined' && (grupoSelecionado === "Mata-mata" || grupoSelecionado === null)) {
+    
+    // Varre todos os subtítulos de seções gerados dinamicamente na página
+    const titulosFases = document.querySelectorAll("h3, h2, .titulo-rodada");
+    
+    titulosFases.forEach(titulo => {
+      // Procura especificamente o cabeçalho "Mata-mata - Final" da imagem_2.png
+      if (titulo.textContent.trim().includes("Final") && 
+          !titulo.textContent.includes("16 avos") && 
+          !titulo.textContent.includes("Oitavas") && 
+          !titulo.textContent.includes("Quartas") && 
+          !titulo.textContent.includes("Semifinal")) {
+        
+        // Evita duplicar a imagem caso o script rode múltiplas vezes em inputs de placar
+        if (!titulo.previousElementSibling || !titulo.previousElementSibling.classList.contains("container-taca-copa")) {
+          
+          // Cria dinamicamente a div da taça
+          const containerTaca = document.createElement("div");
+          containerTaca.className = "container-taca-copa";
+          containerTaca.style.textAlign = "center";
+          containerTaca.style.marginBottom = "15px";
+          containerTaca.style.width = "100%";
+          
+          // Renderiza a imagem.png da taça centralizada
+          containerTaca.innerHTML = `
+            <img src="image.png" alt="Taça da Copa" style="width: 75px; height: auto; display: inline-block;">
+          `;
+          
+          // Insere cirurgicamente a imagem logo ANTES do card da Final
+          titulo.parentNode.insertBefore(containerTaca, titulo);
+        }
+      }
+    });
+  }
+};
