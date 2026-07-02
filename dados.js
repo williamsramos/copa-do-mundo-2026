@@ -214,7 +214,7 @@ const jogosPadrao = [
   { "id": 80, "casa": "1º Grupo L", "fora": "3º Melhor 1", "estadio": "Atlanta", "data": "01/07", "hora": "13:00", "placarCasa": "2", "placarFora": "1", "penaisCasa": "", "penaisFora": "" },
   { "id": 82, "casa": "1º Grupo G", "fora": "3º Melhor 8", "estadio": "Seattle", "data": "01/07", "hora": "17:00", "placarCasa": "3", "placarFora": "2", "penaisCasa": "", "penaisFora": "" },
   { "id": 81, "casa": "1º Grupo D", "fora": "3º Melhor 5", "estadio": "San Francisco", "data": "01/07", "hora": "21:00", "placarCasa": "2", "placarFora": "0", "penaisCasa": "", "penaisFora": "" },
-  { "id": 84, "casa": "1º Grupo H", "fora": "2º Grupo J", "estadio": "Los Angeles", "data": "02/07", "hora": "16:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 84, "casa": "1º Grupo H", "fora": "2º Grupo J", "estadio": "Los Angeles", "data": "02/07", "hora": "16:00", "placarCasa": "3", "placarFora": "0", "penaisCasa": "", "penaisFora": "" },
   { "id": 83, "casa": "2º Grupo K", "fora": "2º Grupo L", "estadio": "Toronto", "data": "02/07", "hora": "20:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 85, "casa": "1º Grupo B", "fora": "3º Melhor 6", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Dallas", "data": "03/07", "hora": "15:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
