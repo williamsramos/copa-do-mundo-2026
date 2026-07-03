@@ -235,10 +235,10 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
   createGame("Paraguai", "x", "França") +
   createGame("Brasil", "x", "Noruega") +
   createGame("México", "x", "Inglaterra") +
-  createGame("EUA", "x", "Bélgica") 
-  // createGame("Vencedor 83(PortugalxCroácia)", "x", "Espanha") +
-  // createGame("Vencedor 86(ARGx2H)", "x", "Vencedor 88(AustráliaxEgito)") +
-  // createGame("Vencedor 85(SUIxArgélia)", "x", "Vencedor 87(ColômbiaxGana)")
+  createGame("EUA", "x", "Bélgica") +
+  createGame("Portugal", "x", "Espanha") +
+  createGame("Vencedor 86(ARG🇦🇷xCBV🇨🇻)", "x", "Vencedor 88(Austrália🇦🇺xEgito🇪🇬)") +
+  createGame("Vencedor 85(SUI🇨🇭xÁrgelia🇩🇿)", "x", "Vencedor 87(Colômbiax🇨🇴Gana🇬🇭)")
 )  /*+
 
 // 👑 DIVISOR: QUARTAS DE FINAL
