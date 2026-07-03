@@ -217,7 +217,7 @@ const jogosPadrao = [
   { "id": 84, "casa": "1º Grupo H", "fora": "2º Grupo J", "estadio": "Los Angeles", "data": "02/07", "hora": "16:00", "placarCasa": "3", "placarFora": "0", "penaisCasa": "", "penaisFora": "" },
   { "id": 83, "casa": "2º Grupo K", "fora": "2º Grupo L", "estadio": "Toronto", "data": "02/07", "hora": "20:00", "placarCasa": "2", "placarFora": "1", "penaisCasa": "", "penaisFora": "" },
   { "id": 85, "casa": "1º Grupo B", "fora": "3º Melhor 6", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "2", "placarFora": "0", "penaisCasa": "", "penaisFora": "" },
-  { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Dallas", "data": "03/07", "hora": "15:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Dallas", "data": "03/07", "hora": "15:00", "placarCasa": "1", "placarFora": "1", "penaisCasa": "2", "penaisFora": "4" },
   { "id": 86, "casa": "1º Grupo J", "fora": "2º Grupo H", "estadio": "Miami", "data": "03/07", "hora": "19:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
   { "id": 87, "casa": "1º Grupo K", "fora": "3º Melhor 3", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
 ]},
@@ -266,6 +266,6 @@ const artilheirosHistoricos = [
   { nome: "Pelé", gols: 12, selecao: "Brasil", flag: "br" },
   { nome: "Sándor Kocsis", gols: 11, selecao: "Hungria", flag: "hu" },
   { nome: "Jürgen Klinsmann", gols: 11, selecao: "Alemanha", flag: "de" },
-  { nome: "Cristiano  Ronaldo", gols: 10, selecao: "Portugal", flag: "pt" },
+  { nome: "Cristiano  Ronaldo", gols: 11, selecao: "Portugal", flag: "pt" },
   { nome: "Helmut Rahn", gols: 10, selecao: "Alemanha", flag: "de" },
 ];

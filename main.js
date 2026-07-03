@@ -222,8 +222,8 @@ createCard('02/07 a 03/07', 'quinta e sexta',
   // createGame("Espanha", "x", "Austria") + // Partida 84
   // createGame("Portugal", "x", "Croácia") + // Partida 83
   // createGame("Suiça", "x", "Argélia") + // Partida 85 (Recebe o 6º do Ranking)
- //createGame("Austrália", "x", "Egito") + // Partida 88
-  createGame("Argentina", "x", "Cabo Verde") + // Partida 86
+  // createGame("Austrália", "x", "Egito") + // Partida 88
+  // createGame("Argentina", "x", "Cabo Verde") + // Partida 86
   createGame("Colômbia", "x", "Gana")  // Partida 87 (Recebe o 7º do Ranking)
 ) +
 
@@ -237,7 +237,7 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
   createGame("México", "x", "Inglaterra") +
   createGame("EUA", "x", "Bélgica") 
   // createGame("Portugal", "x", "Espanha") +
-  // createGame("Vencedor 86(ARGxCBV)", "x", "Vencedor 88(AustráliaxEgito)") +
+  // createGame("Vencedor 86(ARGxCBV)", "x", "Egito") +
   // createGame("Suiça", "x", "Vencedor 87(ColômbiaxGana)")
 )  /*+
 
