@@ -222,7 +222,7 @@ createCard('02/07 a 03/07', 'quinta e sexta',
   // createGame("Espanha", "x", "Austria") + // Partida 84
   // createGame("Portugal", "x", "Croácia") + // Partida 83
   // createGame("Suiça", "x", "Argélia") + // Partida 85 (Recebe o 6º do Ranking)
-  // createGame("Austrália", "x", "Egito") + // Partida 88
+ createGame("Austrália", "x", "Egito") + // Partida 88
   createGame("Argentina", "x", "Cabo Verde") + // Partida 86
   createGame("Colômbia", "x", "Gana")  // Partida 87 (Recebe o 7º do Ranking)
 ) +
