@@ -266,6 +266,6 @@ const artilheirosHistoricos = [
   { nome: "Pelé", gols: 12, selecao: "Brasil", flag: "br" },
   { nome: "Sándor Kocsis", gols: 11, selecao: "Hungria", flag: "hu" },
   { nome: "Jürgen Klinsmann", gols: 11, selecao: "Alemanha", flag: "de" },
-  { nome: "Cristiano  Ronaldo", gols: 10, selecao: "Portugal", flag: "pt" },
+  { nome: "Cristiano  Ronaldo", gols: 11, selecao: "Portugal", flag: "pt" },
   { nome: "Helmut Rahn", gols: 10, selecao: "Alemanha", flag: "de" },
 ];
