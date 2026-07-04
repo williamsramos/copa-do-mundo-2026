@@ -265,7 +265,7 @@ createCard('14/07 a 15/07', 'SEMIFINAL',
 createCard('18/07 e 19/07', 'FINAIS',
   createGame("Perdedor 101", "3º LUGAR", "Perdedor 102") +
   createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102")
-) +
+) */+
 
   // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
   `
@@ -297,4 +297,4 @@ createCard('18/07 e 19/07', 'FINAIS',
       </ul>
     </div>
   `
-  */ ;
+   ;
