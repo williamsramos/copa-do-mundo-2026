@@ -13,7 +13,6 @@ const bandeiras = {
   "Haiti":"ht","Costa do Marfim":"ci","Curaçau":"cw","Arábia Saudita":"sa",
   "Uzbequistão":"uz","Jordânia":"jo","Escócia":"gb-sct",  "Turquia":"tr",
   "Bósnia e Herz.":"ba","República Tcheca":"cz", "Suécia":"se","Congo": "cd","Iraque":"iq"
-  ,"Itália": "it","Polônia": "pl","Hungria": "hu","Chile": "cl","Tchecoslováquia": "cz"
 };
 
 function getBandeira(time){
@@ -218,7 +217,7 @@ const jogosPadrao = [
   { "id": 83, "casa": "2º Grupo K", "fora": "2º Grupo L", "estadio": "Toronto", "data": "02/07", "hora": "20:00", "placarCasa": "2", "placarFora": "1", "penaisCasa": "", "penaisFora": "" },
   { "id": 85, "casa": "1º Grupo B", "fora": "3º Melhor 6", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "2", "placarFora": "0", "penaisCasa": "", "penaisFora": "" },
   { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Dallas", "data": "03/07", "hora": "15:00", "placarCasa": "1", "placarFora": "1", "penaisCasa": "2", "penaisFora": "4" },
-  { "id": 86, "casa": "1º Grupo J", "fora": "2º Grupo H", "estadio": "Miami", "data": "03/07", "hora": "19:00", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" },
+  { "id": 86, "casa": "1º Grupo J", "fora": "2º Grupo H", "estadio": "Miami", "data": "03/07", "hora": "19:00", "placarCasa": "3", "placarFora": "2", "penaisCasa": "", "penaisFora": "" },
   { "id": 87, "casa": "1º Grupo K", "fora": "3º Melhor 3", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
 ]},
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
@@ -256,7 +255,7 @@ let grupoSelecionado = null;
 
 
 const artilheirosHistoricos = [
-  { nome: "Lionel Messi", gols: 19, selecao: "Argentina", flag: "ar" },
+  { nome: "Lionel Messi", gols: 20, selecao: "Argentina", flag: "ar" },
   { nome: "Kylian Mbappé", gols: 18, selecao: "França", flag: "fr" },
   { nome: "Miroslav Klose", gols: 16, selecao: "Alemanha", flag: "de" },
   { nome: "Ronaldo Nazário", gols: 15, selecao: "Brasil", flag: "br" },
