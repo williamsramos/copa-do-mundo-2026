@@ -200,7 +200,7 @@ document.querySelector("#cards").innerHTML =
 // )  +
 
 // 👑 DIVISOR: 16 AVOS DE FINAL
-`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #000000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
+//`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #000000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">⚡ 16 Avos de Final ⚡</div>` +
 
 // createCard('28/06 a 29/06', 'domingo e segunda', 
 //   // createGame("África do Sul", "x", "canadá") + // Partida 73
@@ -218,14 +218,14 @@ document.querySelector("#cards").innerHTML =
 //   createGame("EUA", "x", "Bósnia e Herz.") // Partida 81
 // ) + 
 
-createCard('02/07 a 03/07', 'quinta e sexta',
+//createCard('02/07 a 03/07', 'quinta e sexta',
   // createGame("Espanha", "x", "Austria") + // Partida 84
   // createGame("Portugal", "x", "Croácia") + // Partida 83
   // createGame("Suiça", "x", "Argélia") + // Partida 85 (Recebe o 6º do Ranking)
   // createGame("Austrália", "x", "Egito") + // Partida 88
   // createGame("Argentina", "x", "Cabo Verde") + // Partida 86
-  createGame("Colômbia", "x", "Gana")  // Partida 87 (Recebe o 7º do Ranking)
-) +
+  //createGame("Colômbia", "x", "Gana")  // Partida 87 (Recebe o 7º do Ranking)
+//) +
 
 // 👑 DIVISOR: OITAVAS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #1a02f3; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
@@ -237,8 +237,8 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
   createGame("México", "x", "Inglaterra") +
   createGame("EUA", "x", "Bélgica") +
   createGame("Portugal", "x", "Espanha") +
-  createGame("Argentina", "x", "Egito") 
-  // createGame("Suiça", "x", "Vencedor 87(ColômbiaxGana)")
+  createGame("Argentina", "x", "Egito") +
+  createGame("Suiça", "x", "Colômbia")
 )  /* +
 
 // 👑 DIVISOR: QUARTAS DE FINAL
