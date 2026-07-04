@@ -272,7 +272,7 @@ createCard('18/07 e 19/07', 'FINAIS',
     <div class="card card-podio" style="animation-delay: 2.4s;">
       <h2>🏆 PÓDIO DA COPA</h2>
       
-      <div class="taca-container">
+      <div class="taca-container" style="width: 10px;">
         <img src="worldcup_favicon.png" alt="Taça da Copa">
         <h3>Campeão</h3>
       </div>
