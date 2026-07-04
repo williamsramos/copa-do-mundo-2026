@@ -267,7 +267,7 @@ createCard('18/07', 'Disputa do 3º Lugar',
 ) +
 
 createCard('19/07', 'Final',
-createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102"
+createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102")
 ) +
 
   // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
