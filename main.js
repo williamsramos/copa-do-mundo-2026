@@ -231,7 +231,7 @@ document.querySelector("#cards").innerHTML =
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #1a02f3; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
 
 createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
-  createGame("Canadá", "x", "Marrocos" )+
+ // createGame("Canadá", "x", "Marrocos" )+
   createGame("Paraguai", "x", "França") +
   createGame("Brasil", "x", "Noruega") +
   createGame("México", "x", "Inglaterra") +
@@ -245,7 +245,7 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #00dc4d; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">💪 Quartas de Final 💪</div>` +
 
 createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
-  createGame("Vencedor 90(CanxMar)", "x", "Vencedor 89(ParxFra)") +
+  createGame("Marrocos", "x", "Vencedor 89(ParxFra)") +
   createGame("Vencedor 91(BraxNor)", "x", "Vencedor 92(MéxXIng)") +
   createGame("Vencedor 93(EuaxBel)", "x", "Vencedor 94(PorxEsp)") +
   createGame("Vencedor 95(ArgxEgi)", "x", "Vencedor 96(SuixCol)")
