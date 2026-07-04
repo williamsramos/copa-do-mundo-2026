@@ -218,7 +218,7 @@ const jogosPadrao = [
   { "id": 85, "casa": "1º Grupo B", "fora": "3º Melhor 6", "estadio": "Vancouver", "data": "03/07", "hora": "00:00", "placarCasa": "2", "placarFora": "0", "penaisCasa": "", "penaisFora": "" },
   { "id": 88, "casa": "2º Grupo D", "fora": "2º Grupo G", "estadio": "Dallas", "data": "03/07", "hora": "15:00", "placarCasa": "1", "placarFora": "1", "penaisCasa": "2", "penaisFora": "4" },
   { "id": 86, "casa": "1º Grupo J", "fora": "2º Grupo H", "estadio": "Miami", "data": "03/07", "hora": "19:00", "placarCasa": "3", "placarFora": "2", "penaisCasa": "", "penaisFora": "" },
-  { "id": 87, "casa": "1º Grupo K", "fora": "3º Melhor 3", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "", "placarFora": "", "penaisCasa": "", "penaisFora": "" }
+  { "id": 87, "casa": "1º Grupo K", "fora": "3º Melhor 3", "estadio": "Kansas City", "data": "03/07", "hora": "22:30", "placarCasa": "1", "placarFora": "0", "penaisCasa": "", "penaisFora": "" }
 ]},
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
   { id: 90, casa:"Jogo 73", fora:"Jogo 75", estadio:"Houston", data:"04/07", hora:"14:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
