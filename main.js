@@ -239,7 +239,7 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
   createGame("Portugal", "x", "Espanha") +
   createGame("Argentina", "x", "Egito") +
   createGame("Suiça", "x", "Colômbia")
-)  /* +
+)   +
 
 // 👑 DIVISOR: QUARTAS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #00dc4d; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">💪 Quartas de Final 💪</div>` +
@@ -248,50 +248,53 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
   createGame("Vencedor 90(CanxMar)", "x", "Vencedor 89(ParxFra)") +
   createGame("Vencedor 91(BraxNor)", "x", "Vencedor 92(MéxXIng)") +
   createGame("Vencedor 93(EuaxBel)", "x", "Vencedor 94(PorxEsp)") +
-  createGame("Vencedor 95(ArgxEgi)", "x", "Vencedor 96(SuixColxGan)")
+  createGame("Vencedor 95(ArgxEgi)", "x", "Vencedor 96(SuixCol)")
 ) +
 
 // 👑 DIVISOR: SEMIFINAIS
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #fd0000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🏁 Semifinais 🏁</div>` +
 
 createCard('14/07 a 15/07', 'SEMIFINAL',
-  createGame("Vencedor 97", "x", "Vencedor 98") +
-  createGame("Vencedor 99", "x", "Vencedor 100")
+  createGame("Vencedor 97(canxMarXParxFra)", "x", "Vencedor 98(euaxbelXPorxEsp)") +
+  createGame("Vencedor 99(BraxNorXMexxIng)", "x", "Vencedor 100(ArgxEgXSuixCol)")
 ) +
 
 // 👑 DIVISOR: DECISÕES FINAIS
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">✨ Finais ✨</div>` +
 
-createCard('18/07 e 19/07', 'FINAIS',
-  createGame("Perdedor 101", "3º LUGAR", "Perdedor 102") +
-  createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102")
-) */+
+createCard('18/07', 'Disputa do 3º Lugar',
+  createGame("Perdedor 101", "3º LUGAR", "Perdedor 102") 
+) +
+
+createCard('19/07', 'Final',
+createGame("Vencedor 101", "GRANDE FINAL", "Vencedor 102"
+) +
 
   // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
   `
     <div class="card card-podio" style="animation-delay: 2.4s;">
       <h2>🏆 PÓDIO DA COPA</h2>
       
-      <div class="taca-container" style="width: 10px;">
+      <div class="taca-container" style="width: 15px;">
         <img src="worldcup_favicon.png" alt="Taça da Copa">
         <h3>Campeão</h3>
       </div>
 
       <ul class="podio-lista">
         <li>
-          <span style="color: #f7dd43;">🥇 1º lugar</span>
+          <span style="color: #f7dd43; font-size: 15px;">🥇 1º lugar</span>
           <strong>Vencedor 104</strong>
         </li>
         <li>
-          <span style="color: #d1d1d1;">🥈 2º lugar</span>
+          <span style="color: #d1d1d1; font-size: 15px;">🥈 2º lugar</span>
           <strong>Perdedor 104</strong>
         </li>
         <li>
-          <span style="color: #e5a93b;">🥉 3º lugar</span>
+          <span style="color: #e5a93b; font-size: 15px;">🥉 3º lugar</span>
           <strong>Vencedor 103</strong>
         </li>
         <li>
-          <span style="color: #a1a1a1;">🏅 4º lugar</span>
+          <span style="color: #a1a1a1; font-size: 15px;">🏅 4º lugar</span>
           <strong>Perdedor 103</strong>
         </li>
       </ul>
