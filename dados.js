@@ -223,8 +223,8 @@ const jogosPadrao = [
 { grupo:"Mata-mata", rodada:"Oitavas de Final", data:"04/07 a 07/07", jogos:[
   { id: 90, casa:"Jogo 73", fora:"Jogo 75", estadio:"Houston", data:"04/07", hora:"14:00", placarCasa:"0", placarFora:"3", penaisCasa:"", penaisFora:"" },
   { id: 89, casa:"Jogo 74", fora:"Jogo 77", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"0", placarFora:"1", penaisCasa:"", penaisFora:"" },
-  { id: 91, casa:"Jogo 76", fora:"Jogo 78", estadio:"New York/New Jersey", data:"05/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
-  { id: 92, casa:"Jogo 79", fora:"Jogo 80", estadio:"Cidade do México", data:"05/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 91, casa:"Jogo 76", fora:"Jogo 78", estadio:"New York/New Jersey", data:"05/07", hora:"17:00", placarCasa:"1", placarFora:"2", penaisCasa:"", penaisFora:"" },
+  { id: 92, casa:"Jogo 79", fora:"Jogo 80", estadio:"Cidade do México", data:"05/07", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 94, casa:"Jogo 83", fora:"Jogo 84", estadio:"Dallas", data:"06/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 93, casa:"Jogo 81", fora:"Jogo 82", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 95, casa:"Jogo 86", fora:"Jogo 88", estadio:"Atlanta", data:"07/07", hora:"13:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
