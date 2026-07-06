@@ -235,8 +235,8 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
  // createGame("Paraguai", "x", "França") +
  //createGame("Brasil", "x", "Noruega") +
  // createGame("México", "x", "Inglaterra") +
-  createGame("EUA", "x", "Bélgica") +
   createGame("Portugal", "x", "Espanha") +
+  createGame("EUA", "x", "Bélgica") +
   createGame("Argentina", "x", "Egito") +
   createGame("Suiça", "x", "Colômbia")
 ) /* +
@@ -246,8 +246,8 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
 
 createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
   createGame("Marrocos", "x", "França") +
-  createGame("Noruega", "x", "Inglaterra") +
   createGame("Vencedor 93(EuaxBel)", "x", "Vencedor 94(PorxEsp)") +
+  createGame("Noruega", "x", "Inglaterra") +
   createGame("Vencedor 95(ArgxEgi)", "x", "Vencedor 96(SuixCol)")
 ) +
 
