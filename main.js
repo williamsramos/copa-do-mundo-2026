@@ -228,18 +228,18 @@ document.querySelector("#cards").innerHTML =
 //) +
 
 // 👑 DIVISOR: OITAVAS DE FINAL
-`<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #1a02f3; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
+// `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #1a02f3; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🔥 Oitavas de Final 🔥</div>` +
 
-createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
-  // createGame("Canadá", "x", "Marrocos" )+
- // createGame("Paraguai", "x", "França") +
- //createGame("Brasil", "x", "Noruega") +
- // createGame("México", "x", "Inglaterra") +
- // createGame("Portugal", "x", "Espanha") +
- // createGame("EUA", "x", "Bélgica") +
-  //createGame("Argentina", "x", "Egito") +
-  createGame("Suiça", "x", "Colômbia")
-)  +
+// createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
+//   // createGame("Canadá", "x", "Marrocos" )+
+//  // createGame("Paraguai", "x", "França") +
+//  //createGame("Brasil", "x", "Noruega") +
+//  // createGame("México", "x", "Inglaterra") +
+//  // createGame("Portugal", "x", "Espanha") +
+//  // createGame("EUA", "x", "Bélgica") +
+//   //createGame("Argentina", "x", "Egito") +
+//   createGame("Suiça", "x", "Colômbia")
+// )  +
 
 // 👑 DIVISOR: QUARTAS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #00dc4d; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">💪 Quartas de Final 💪</div>` +
@@ -248,7 +248,7 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
   createGame("Marrocos", "x", "França") +
   createGame("Bélgica", "x", "Espanha") +
   createGame("Noruega", "x", "Inglaterra") +
-  createGame("Argentina", "x", "Vencedor 96(SuixCol)")
+  createGame("Argentina", "x", "Suiça")
 ) /* +
 
 // 👑 DIVISOR: SEMIFINAIS
@@ -256,7 +256,7 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
 
 createCard('14/07 a 15/07', 'SEMIFINAL',
   createGame("Vencedor 97(canxMarXParxFra)", "x", "Vencedor 98(belXEsp)") +
-  createGame("Vencedor 99(NorXIng)", "x", "Vencedor 100(ArgXSuixCol)")
+  createGame("Vencedor 99(NorXIng)", "x", "Vencedor 100(ArgXSui)")
 ) +
 
 // 👑 DIVISOR: DECISÕES FINAIS
