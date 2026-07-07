@@ -236,7 +236,7 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
  //createGame("Brasil", "x", "Noruega") +
  // createGame("México", "x", "Inglaterra") +
  // createGame("Portugal", "x", "Espanha") +
-  createGame("EUA", "x", "Bélgica") +
+ // createGame("EUA", "x", "Bélgica") +
   createGame("Argentina", "x", "Egito") +
   createGame("Suiça", "x", "Colômbia")
 ) /* +
