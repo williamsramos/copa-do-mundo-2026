@@ -228,7 +228,7 @@ const jogosPadrao = [
   { id: 94, casa:"Jogo 83", fora:"Jogo 84", estadio:"Dallas", data:"06/07", hora:"16:00", placarCasa:"0", placarFora:"1", penaisCasa:"", penaisFora:"" },
   { id: 93, casa:"Jogo 81", fora:"Jogo 82", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"1", placarFora:"4", penaisCasa:"", penaisFora:"" },
   { id: 95, casa:"Jogo 86", fora:"Jogo 88", estadio:"Atlanta", data:"07/07", hora:"13:00", placarCasa:"3", placarFora:"2", penaisCasa:"", penaisFora:"" },
-  { id: 96, casa:"Jogo 85", fora:"Jogo 87", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 96, casa:"Jogo 85", fora:"Jogo 87", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"0", placarFora:"0", penaisCasa:"4", penaisFora:"3" }
 ]},
 { grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
   { id: 97, casa:"Jogo 89", fora:"Jogo 90", estadio:"Boston", data:"09/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
