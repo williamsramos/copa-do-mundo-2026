@@ -251,50 +251,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* =========================================================================
-   🔥 INTERCEPTOR PARA INJETAR A TAÇA ANTES DO CARD DA FINAL NO MATA-MATA
+   🔥 INTERCEPTOR PARA INJETAR A TAÇA ANTES E O PÓDIO DEPOIS DA FINAL
    ========================================================================= */
 
 // Guardamos a definição padrão da função original para não quebrar o escopo interno
 const renderJogosOriginal = typeof renderJogos !== 'undefined' ? renderJogos : null;
 
-// Criamos/Sobrescrevemos a função renderJogos adicionando o comportamento visual da taça
+// Criamos/Sobrescrevemos a função renderJogos adicionando o comportamento visual
 renderJogos = function() {
   // 1. Executa primeiro a renderização padrão de listas e cards do seu simulador
   if (typeof renderJogosOriginal === 'function') {
     renderJogosOriginal();
   }
 
-  // 2. Verifica se o usuário está filtrando para ver as finais ("Mata-mata" ou "Todos")
+  // 2. Verifica se o usuário está filtrando para ver as finais ("Mata-mata" or "Todos")
   if (typeof grupoSelecionado !== 'undefined' && (grupoSelecionado === "Mata-mata" || grupoSelecionado === null)) {
     
     // Varre todos os subtítulos de seções gerados dinamicamente na página
     const titulosFases = document.querySelectorAll("h3, h2, .titulo-rodada");
     
     titulosFases.forEach(titulo => {
-      // Procura especificamente o cabeçalho "Mata-mata - Final" da imagem_2.png
+      // Procura especificamente o cabeçalho "Mata-mata - Final"
       if (titulo.textContent.trim().includes("Final") && 
           !titulo.textContent.includes("16 avos") && 
           !titulo.textContent.includes("Oitavas") && 
           !titulo.textContent.includes("Quartas") && 
           !titulo.textContent.includes("Semifinal")) {
         
-        // Evita duplicar a imagem caso o script rode múltiplas vezes em inputs de placar
+        // --- PARTE 1: ADICIONAR A TAÇA ANTES DO CARD DA FINAL ---
         if (!titulo.previousElementSibling || !titulo.previousElementSibling.classList.contains("container-taca-copa")) {
-          
-          // Cria dinamicamente a div da taça
           const containerTaca = document.createElement("div");
           containerTaca.className = "container-taca-copa";
           containerTaca.style.textAlign = "center";
           containerTaca.style.marginBottom = "15px";
           containerTaca.style.width = "100%";
           
-          // Renderiza a imagem.png da taça centralizada
-          containerTaca.innerHTML = `
-            <img src="worldcup_favicon.png" alt="Taça da Copa" style="width: 75px; height: auto; display: inline-block;">
-          `;
-          
-          // Insere cirurgicamente a imagem logo ANTES do card da Final
           titulo.parentNode.insertBefore(containerTaca, titulo);
+        }
+
+        // --- PARTE 2: ADICIONAR O BLOCO DO PÓDIO DEPOIS DO CARD DA FINAL ---
+        // O card da final geralmente é o elemento irmão que vem logo após o título, ou o próprio container dele.
+        // Vamos encontrar o container do card (geralmente o elemento pai ou o próximo irmãozão) para colar o pódio embaixo.
+        const cardFinalContainer = titulo.closest('.bloco-rodada') || titulo.parentElement;
+
+        if (cardFinalContainer && !cardFinalContainer.nextElementSibling?.classList.contains("container-resultado-podio")) {
+          const containerPodio = document.createElement("div");
+          containerPodio.className = "container-resultado-podio";
+          containerPodio.style.width = "100%";
+          containerPodio.style.marginTop = "20px";
+
+          // Aqui entra exatamente o seu código estruturado com as classes CSS
+          containerPodio.innerHTML = `
+            <!-- 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS! -->
+            <div class="card card-podio" style="animation-delay: 2.4s;">
+              <h2>🏆 PÓDIO DA COPA</h2>
+              
+              <div class="taca-container">
+                <img src="worldcup_favicon.png" alt="Taça da Copa" style="width: 95px; height: auto; display: inline-block;">
+                <h3>Campeão</h3><div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #f7dd43; font-weight: bold;">🥇 </span></div>
+              </div>
+        <!-- 2026 -->
+        <div style="display: flex; justify-content: space-between; align-items: center; background: #0f172a; padding: 8px 12px; border-radius: 6px; border: 1px solid #1e293b;">
+            <strong style="color: #94a3b8; width: 40px;">2026</strong>
+            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #d1d1d1;">🥈 </span></div>
+            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #e5a93b;">🥉 </span></div>
+        </div>
+          `;
+
+          // Insere o bloco do Pódio logo após o término do card da final
+          cardFinalContainer.parentNode.insertBefore(containerPodio, cardFinalContainer.nextSibling);
         }
       }
     });
