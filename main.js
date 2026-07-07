@@ -237,7 +237,7 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
  // createGame("México", "x", "Inglaterra") +
  // createGame("Portugal", "x", "Espanha") +
  // createGame("EUA", "x", "Bélgica") +
-  createGame("Argentina", "x", "Egito") +
+  //createGame("Argentina", "x", "Egito") +
   createGame("Suiça", "x", "Colômbia")
 )  +
 
@@ -248,7 +248,7 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
   createGame("Marrocos", "x", "França") +
   createGame("Bélgica", "x", "Espanha") +
   createGame("Noruega", "x", "Inglaterra") +
-  createGame("Vencedor 95(ArgxEgi)", "x", "Vencedor 96(SuixCol)")
+  createGame("Argentina", "x", "Vencedor 96(SuixCol)")
 ) /* +
 
 // 👑 DIVISOR: SEMIFINAIS
@@ -256,7 +256,7 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
 
 createCard('14/07 a 15/07', 'SEMIFINAL',
   createGame("Vencedor 97(canxMarXParxFra)", "x", "Vencedor 98(belXEsp)") +
-  createGame("Vencedor 99(NorXIng)", "x", "Vencedor 100(ArgxEgXSuixCol)")
+  createGame("Vencedor 99(NorXIng)", "x", "Vencedor 100(ArgXSuixCol)")
 ) +
 
 // 👑 DIVISOR: DECISÕES FINAIS
