@@ -239,7 +239,7 @@ createCard('04/07 a 07/07', 'OITAVAS DE FINAL',
  // createGame("EUA", "x", "Bélgica") +
   createGame("Argentina", "x", "Egito") +
   createGame("Suiça", "x", "Colômbia")
-) /* +
+)  +
 
 // 👑 DIVISOR: QUARTAS DE FINAL
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #00dc4d; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">💪 Quartas de Final 💪</div>` +
@@ -249,7 +249,7 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
   createGame("Bélgica", "x", "Espanha") +
   createGame("Noruega", "x", "Inglaterra") +
   createGame("Vencedor 95(ArgxEgi)", "x", "Vencedor 96(SuixCol)")
-) +
+) /* +
 
 // 👑 DIVISOR: SEMIFINAIS
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #fd0000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🏁 Semifinais 🏁</div>` +
