@@ -255,7 +255,7 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #fd0000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🏁 Semifinais 🏁</div>` +
 
 createCard('14/07 a 15/07', 'SEMIFINAL',
-  createGame("Vencedor 97(FraXMar)", "x", "Vencedor 98(EspXBél)") +
+  createGame("França", "x", "Vencedor 98(EspXBél)") +
   createGame("Vencedor 99(NorXIng)", "x", "Vencedor 100(ArgXSui)")
 ) +
 
@@ -263,11 +263,11 @@ createCard('14/07 a 15/07', 'SEMIFINAL',
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">✨ Finais ✨</div>` +
 
 createCard('18/07', 'Disputa do 3º Lugar',
-  createGame("Perdedor 101", "x", "Perdedor 102") 
+  createGame("Perdedor 101(FraXESpxBél)", "x", "Perdedor 102") 
 ) +
 
 createCard('19/07', 'Grande Final',
-createGame("Vencedor 101", "x", "Vencedor 102")
+createGame("Vencedor 101(FraXESpxBél)", "x", "Vencedor 102")
 ) +
 
   // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
