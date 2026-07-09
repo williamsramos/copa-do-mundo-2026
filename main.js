@@ -246,7 +246,7 @@ document.querySelector("#cards").innerHTML =
 
 createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
   //createGame("França", "x", "Marrocos") +
-  createGame("Bélgica", "x", "Espanha") +
+  createGame("Espanha", "x", "Bélgica") +
   createGame("Noruega", "x", "Inglaterra") +
   createGame("Argentina", "x", "Suiça")
 ) /* +
@@ -255,7 +255,7 @@ createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #fd0000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🏁 Semifinais 🏁</div>` +
 
 createCard('14/07 a 15/07', 'SEMIFINAL',
-  createGame("Vencedor 97(MarXFra)", "x", "Vencedor 98(belXEsp)") +
+  createGame("Vencedor 97(FraXMar)", "x", "Vencedor 98(EspXBél)") +
   createGame("Vencedor 99(NorXIng)", "x", "Vencedor 100(ArgXSui)")
 ) +
 
