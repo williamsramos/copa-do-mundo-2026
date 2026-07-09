@@ -231,7 +231,7 @@ const jogosPadrao = [
   { id: 96, casa:"Jogo 85", fora:"Jogo 87", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"0", placarFora:"0", penaisCasa:"4", penaisFora:"3" }
 ]},
 { grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
-  { id: 97, casa:"Jogo 89", fora:"Jogo 90", estadio:"Boston", data:"09/07", hora:"17:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 97, casa:"Jogo 89", fora:"Jogo 90", estadio:"Boston", data:"09/07", hora:"17:00", placarCasa:"2", placarFora:"0", penaisCasa:"", penaisFora:"" },
   { id: 98, casa:"Jogo 93", fora:"Jogo 94", estadio:"Los Angeles", data:"10/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 99, casa:"Jogo 91", fora:"Jogo 92", estadio:"Miami", data:"11/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 100, casa:"Jogo 95", fora:"Jogo 96", estadio:"Vancouver", data:"11/07", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
@@ -256,7 +256,7 @@ let grupoSelecionado = null;
 
 const artilheirosHistoricos = [
   { nome: "Lionel Messi", gols: 21, selecao: "Argentina", flag: "ar" },
-  { nome: "Kylian Mbappé", gols: 19, selecao: "França", flag: "fr" },
+  { nome: "Kylian Mbappé", gols: 20, selecao: "França", flag: "fr" },
   { nome: "Miroslav Klose", gols: 16, selecao: "Alemanha", flag: "de" },
   { nome: "Ronaldo Nazário", gols: 15, selecao: "Brasil", flag: "br" },
   { nome: "Gerd Müller", gols: 14, selecao: "Alemanha", flag: "de" },
