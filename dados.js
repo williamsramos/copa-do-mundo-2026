@@ -225,14 +225,14 @@ const jogosPadrao = [
   { id: 89, casa:"Jogo 74", fora:"Jogo 77", estadio:"Filadélfia", data:"04/07", hora:"18:00", placarCasa:"0", placarFora:"1", penaisCasa:"", penaisFora:"" },
   { id: 91, casa:"Jogo 76", fora:"Jogo 78", estadio:"New York/New Jersey", data:"05/07", hora:"17:00", placarCasa:"1", placarFora:"2", penaisCasa:"", penaisFora:"" },
   { id: 92, casa:"Jogo 79", fora:"Jogo 80", estadio:"Cidade do México", data:"05/07", hora:"22:00", placarCasa:"2", placarFora:"3", penaisCasa:"", penaisFora:"" },
-  { id: 93, casa:"Jogo 83", fora:"Jogo 84", estadio:"Dallas", data:"06/07", hora:"16:00", placarCasa:"0", placarFora:"1", penaisCasa:"", penaisFora:"" },
-  { id: 94, casa:"Jogo 81", fora:"Jogo 82", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"1", placarFora:"4", penaisCasa:"", penaisFora:"" },
+  { id: 94, casa:"Jogo 83", fora:"Jogo 84", estadio:"Dallas", data:"06/07", hora:"16:00", placarCasa:"0", placarFora:"1", penaisCasa:"", penaisFora:"" },
+  { id: 93, casa:"Jogo 81", fora:"Jogo 82", estadio:"Seattle", data:"06/07", hora:"21:00", placarCasa:"1", placarFora:"4", penaisCasa:"", penaisFora:"" },
   { id: 95, casa:"Jogo 86", fora:"Jogo 88", estadio:"Atlanta", data:"07/07", hora:"13:00", placarCasa:"3", placarFora:"2", penaisCasa:"", penaisFora:"" },
   { id: 96, casa:"Jogo 85", fora:"Jogo 87", estadio:"Vancouver", data:"07/07", hora:"17:00", placarCasa:"0", placarFora:"0", penaisCasa:"4", penaisFora:"3" }
 ]},
 { grupo:"Mata-mata", rodada:"Quartas de Final", data:"09/07 a 11/07", jogos:[
   { id: 97, casa:"Jogo 89", fora:"Jogo 90", estadio:"Boston", data:"09/07", hora:"17:00", placarCasa:"2", placarFora:"0", penaisCasa:"", penaisFora:"" },
-  { id: 98, casa:"Jogo 93", fora:"Jogo 94", estadio:"Los Angeles", data:"10/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
+  { id: 98, casa:"Jogo 94", fora:"Jogo 93", estadio:"Los Angeles", data:"10/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 99, casa:"Jogo 91", fora:"Jogo 92", estadio:"Miami", data:"11/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
   { id: 100, casa:"Jogo 95", fora:"Jogo 96", estadio:"Vancouver", data:"11/07", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
