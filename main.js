@@ -246,28 +246,28 @@ document.querySelector("#cards").innerHTML =
 
 createCard('09/07 a 11/07', 'QUARTAS DE FINAL',
   //createGame("França", "x", "Marrocos") +
-  createGame("Espanha", "x", "Bélgica") +
+  //createGame("Espanha", "x", "Bélgica") +
   createGame("Noruega", "x", "Inglaterra") +
   createGame("Argentina", "x", "Suiça")
-) /* +
+)  +
 
 // 👑 DIVISOR: SEMIFINAIS
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #fd0000; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">🏁 Semifinais 🏁</div>` +
 
 createCard('14/07 a 15/07', 'SEMIFINAL',
-  createGame("França", "x", "Vencedor 98(EspXBél)") +
+  createGame("França", "x", "Espanha") +
   createGame("Vencedor 99(NorXIng)", "x", "Vencedor 100(ArgXSui)")
-) +
+) /*+
 
 // 👑 DIVISOR: DECISÕES FINAIS
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">✨ Finais ✨</div>` +
 
 createCard('18/07', 'Disputa do 3º Lugar',
-  createGame("Perdedor 101(FraXESpxBél)", "x", "Perdedor 102") 
+  createGame("Perdedor 101(FraXESp)", "x", "Perdedor 102") 
 ) +
 
 createCard('19/07', 'Grande Final',
-createGame("Vencedor 101(FraXESpxBél)", "x", "Vencedor 102")
+createGame("Vencedor 101(FraXESp)", "x", "Vencedor 102")
 ) +
 
   // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
