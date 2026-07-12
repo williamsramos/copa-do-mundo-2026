@@ -234,7 +234,7 @@ const jogosPadrao = [
   { id: 97, casa:"Jogo 89", fora:"Jogo 90", estadio:"Boston", data:"09/07", hora:"17:00", placarCasa:"2", placarFora:"0", penaisCasa:"", penaisFora:"" },
   { id: 98, casa:"Jogo 93", fora:"Jogo 94", estadio:"Los Angeles", data:"10/07", hora:"16:00", placarCasa:"1", placarFora:"2", penaisCasa:"", penaisFora:"" },
   { id: 99, casa:"Jogo 91", fora:"Jogo 92", estadio:"Miami", data:"11/07", hora:"18:00", placarCasa:"1", placarFora:"2", penaisCasa:"", penaisFora:"" },
-  { id: 100, casa: "Jogo 95", fora: "Jogo 96", estadio: "Kansas City", data: "11/07", hora: "22:00", placarCasa: "", placarFora: "", penaisCasa: "", penaisFora: "" }
+  { id: 100, casa:"Jogo 95", fora:"Jogo 96", estadio:"Kansas City", data:"11/07", hora:"22:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Semifinal", data:"14/07 a 15/07", jogos:[
   { id: 101, casa:"Jogo 97", fora:"Jogo 98", estadio:"Dallas", data:"14/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" },
