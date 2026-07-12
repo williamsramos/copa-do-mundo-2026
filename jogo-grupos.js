@@ -1,4 +1,3 @@
-
 /* ================= LÓGICA DE EXIBIÇÃO DE JOGOS ATUALIZADA ================= */
 function renderJogos(){
   const div = document.getElementById("jogos");
@@ -39,13 +38,12 @@ function renderJogos(){
       // =========================================================================
 
       const dataDoJogo = j.data ? j.data : bloco.data;
+      // 🌟 AGORA A VARIÁVEL ESTÁ LENDO O J.ESTADIO DO SEU DADOS.JS PERFEITAMENTE
       const infoEstadio = `🏟️ ${j.estadio} | 📅 ${dataDoJogo}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
-       
-
 
       // Usa salvarPlacar por padrão, mas garante a checagem do mata-mata internamente
       blocoHtml += `
-        <div style="margin-bottom:6px;">
+        <div style="margin-bottom:6px; text-align: center;">
           ${bandeiraCasa} <span class="time-texto">${timeCasaExibido}</span>
           
           <input type="number" min="0" value="${g1}" style="width:55px;" 
@@ -62,7 +60,7 @@ function renderJogos(){
           
           ${bandeiraFora} <span class="time-texto">${timeForaExibido}</span>
           <br>
-          <small>${infoEstadio}</small>
+          <small class="info-estadio-texto">${infoEstadio}</small>
         </div>
         <hr>
       `;
@@ -71,14 +69,4 @@ function renderJogos(){
     blocoHtml += `</div>`;
     div.innerHTML += blocoHtml;
   });
-}
-
-
-function salvarPlacar(blocoIndex, jogoIndex, lado, valor){
-  if(lado === "casa"){
-    jogosDetalhados[blocoIndex].jogos[jogoIndex].placarCasa = valor;
-  } else {
-    jogosDetalhados[blocoIndex].jogos[jogoIndex].placarFora = valor;
-  }
-  atualizar(true);
 }
