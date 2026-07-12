@@ -39,7 +39,10 @@ function renderJogos(){
       // =========================================================================
 
       const dataDoJogo = j.data ? j.data : bloco.data;
-      const infoEstadio = `🏟️ ${j.estadio} | 📅 ${dataDoJogo}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
+      //const infoEstadio = `🏟️ ${j.estadio} | 📅 ${dataDoJogo}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
+       // Altere para puxar o dado dinâmico do objeto:
+       const infoEstadio = `🏟️ ${jogo.estadio} | 📅 ${jogo.data} | ⏰ ${jogo.hora} | 🔢 Partida ${jogo.id}`
+
 
       // Usa salvarPlacar por padrão, mas garante a checagem do mata-mata internamente
       blocoHtml += `
