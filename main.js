@@ -1,5 +1,3 @@
-
-
 // 🌍 DICIONÁRIO DE BANDEIRAS INTEGRADO DIRETO NO MAIN.JS
 const bandeirasCopa = {
   "México": "mx", "África do Sul": "za", "Coreia do Sul": "kr", "República Tcheca": "cz",
@@ -272,33 +270,20 @@ createGame("Vencedor 101(FraXESp)", "x", "Vencedor 102(ArgxSuiXIng)")
 
 // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
   `
-    <div class="card card-podio" style="animation-delay: 2.4s;">
-      <h2>🏆 PÓDIO DA COPA</h2>
-      
-      <div class="taca-container">
-        <img src="worldcup_favicon.png" alt="Taça da Copa">
-        <h3>Campeão</h3>
-      </div>
-
-      <ul class="podio-lista">
-        <li>
-          <span style="color: #f7dd43;">🥇 1º lugar</span>
-          <strong>Vencedor 104<img src="https://flagcdn.com/w20/" alt=""> <span style="color: #f7dd43; font-weight: bold;"></span></strong>
-        </li>
-        <li>
-          <span style="color: #d1d1d1;">🥈 2º lugar</span>
-          <strong>Perdedor 104<img src="https://flagcdn.com/w20/" alt=""> <span style="color: #d1d1d1;"></span></strong>
-        </li>
-        <li>
-          <span style="color: #e5a93b;">🥉 3º lugar</span>
-          <strong>Vencedor 103<img src="https://flagcdn.com/w20/" alt=""> <span style="color: #e5a93b;"></span></strong>
-        </li>
-        <li>
-          <span style="color: #a1a1a1;">🏅 4º lugar</span>
-          <strong>Perdedor 103<img src="https://flagcdn.com/w20/" alt=""> <span style="color: #e5a93b;"></span></strong>
-        </li>
-      </ul>
-    </div>
+    <!-- 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS! -->
+            <div class="card card-podio" style="animation-delay: 2.4s;">
+              <h2>🏆 PÓDIO DA COPA</h2>
+              
+              <div class="taca-container">
+                <img src="worldcup_favicon.png" alt="Taça da Copa" style="width: 95px; height: auto; display: inline-block;">
+                <h3>Campeão</h3><div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #f7dd43; font-weight: bold;">🥇 </span></div>
+              </div>
+        <!-- 2026 -->
+        <div style="display: flex; justify-content: space-between; align-items: center; background: #0f172a; padding: 8px 12px; border-radius: 6px; border: 1px solid #1e293b;">
+            <strong style="color: #94a3b8; width: 40px;">2026</strong>
+            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #d1d1d1;">🥈 </span></div>
+            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #e5a93b;">🥉 </span></div>
+        </div>
   `
    ;
 
