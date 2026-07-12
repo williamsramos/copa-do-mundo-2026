@@ -270,33 +270,5 @@ createCard('19/07', 'Grande Final',
 createGame("Vencedor 101(FraXESp)", "x", "Vencedor 102(ArgxSuiXIng)")
 ) 
 
-if (cardFinalContainer && !cardFinalContainer.nextElementSibling?.classList.contains("container-resultado-podio")) {
-          const containerPodio = document.createElement("div");
-          containerPodio.className = "container-resultado-podio";
-          containerPodio.style.width = "100%";
-          containerPodio.style.marginTop = "20px";
-
-          // Aqui entra exatamente o seu código estruturado com as classes CSS
-          containerPodio.innerHTML = `
-            <!-- 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS! -->
-            <div class="card card-podio" style="animation-delay: 2.4s;">
-              <h2>🏆 PÓDIO DA COPA</h2>
-              
-              <div class="taca-container">
-                <img src="worldcup_favicon.png" alt="Taça da Copa" style="width: 95px; height: auto; display: inline-block;">
-                <h3>Campeão</h3><div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #f7dd43; font-weight: bold;">🥇 </span></div>
-              </div>
-        <!-- 2026 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; background: #0f172a; padding: 8px 12px; border-radius: 6px; border: 1px solid #1e293b;">
-            <strong style="color: #94a3b8; width: 40px;">2026</strong>
-            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #d1d1d1;">🥈 </span></div>
-            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #e5a93b;">🥉 </span></div>
-        </div>
-          `;
-
-          // Insere o bloco do Pódio logo após o término do card da final
-          cardFinalContainer.parentNode.insertBefore(containerPodio, cardFinalContainer.nextSibling);
-        }
-
 
 
