@@ -268,7 +268,7 @@ createCard('18/07', 'Disputa do 3º Lugar',
 
 createCard('19/07', 'Grande Final',
 createGame("Vencedor 101(FraXESp)", "x", "Vencedor 102(ArgxSuiXIng)")
-) +
+) 
 
 
 
