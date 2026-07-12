@@ -270,7 +270,7 @@ createCard('19/07', 'Grande Final',
 createGame("Vencedor 101(FraXESp)", "x", "Vencedor 102(ArgxSuiXIng)")
 ) +
 
-  // 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
+// 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
   `
     <div class="card card-podio" style="animation-delay: 2.4s;">
       <h2>🏆 PÓDIO DA COPA</h2>
@@ -301,5 +301,4 @@ createGame("Vencedor 101(FraXESp)", "x", "Vencedor 102(ArgxSuiXIng)")
     </div>
   `
    ;
-
 
