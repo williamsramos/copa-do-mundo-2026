@@ -38,8 +38,10 @@ function renderJogos(){
       // =========================================================================
 
       const dataDoJogo = j.data ? j.data : bloco.data;
-      // 🌟 AGORA A VARIÁVEL ESTÁ LENDO O J.ESTADIO DO SEU DADOS.JS PERFEITAMENTE
-      const infoEstadio = `🏟️ ${j.estadio} | 📅 ${dataDoJogo}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
+      
+      // 🔥 ALTERAÇÃO AQUI: Força o estádio correto para a Partida 100
+      const estadioNome = (String(j.id) === "100") ? "Kansas City" : (j.estadio || "Estádio Não Definido");
+      const infoEstadio = `🏟️ ${estadioNome} | 📅 ${dataDoJogo}${j.hora ? " ⏰ " + j.hora : ""}${j.id ? " | 🔢 Partida " + j.id : ""}`;
 
       // Usa salvarPlacar por padrão, mas garante a checagem do mata-mata internamente
       blocoHtml += `
