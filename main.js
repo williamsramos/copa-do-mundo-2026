@@ -268,7 +268,39 @@ createCard('18/07', 'Disputa do 3º Lugar',
 
 createCard('19/07', 'Grande Final',
 createGame("Vencedor 101(FraXESp)", "x", "Vencedor 102(ArgxSuiXIng)")
-) 
+) +
+
+// 🥇 BLOCO DO PÓDIO: Agora limpo, usando as classes do CSS!
+  `
+    <div class="card card-podio" style="animation-delay: 2.4s;">
+      <h2>🏆 PÓDIO DA COPA</h2>
+      
+      <div class="taca-container">
+        <img src="worldcup_favicon.png" alt="Taça da Copa">
+        <h3>Campeão</h3>
+      </div>
+
+      <ul class="podio-lista">
+        <li>
+          <span style="color: #f7dd43;">🥇 1º lugar</span>
+          <strong>Vencedor 104<img src="https://flagcdn.com/w20/" alt=""> <span style="color: #f7dd43; font-weight: bold;"></span></strong>
+        </li>
+        <li>
+          <span style="color: #d1d1d1;">🥈 2º lugar</span>
+          <strong>Perdedor 104<img src="https://flagcdn.com/w20/" alt=""> <span style="color: #d1d1d1;"></span></strong>
+        </li>
+        <li>
+          <span style="color: #e5a93b;">🥉 3º lugar</span>
+          <strong>Vencedor 103<img src="https://flagcdn.com/w20/" alt=""> <span style="color: #e5a93b;"></span></strong>
+        </li>
+        <li>
+          <span style="color: #a1a1a1;">🏅 4º lugar</span>
+          <strong>Perdedor 103<img src="https://flagcdn.com/w20/" alt=""> <span style="color: #e5a93b;"></span></strong>
+        </li>
+      </ul>
+    </div>
+  `
+   ;
 
 
 
