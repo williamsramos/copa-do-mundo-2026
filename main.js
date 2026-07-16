@@ -260,11 +260,11 @@ document.querySelector("#cards").innerHTML =
 // 👑 DIVISOR: DECISÕES FINAIS
 `<div class="fase-divisor" style="width: 100%; text-align: center; margin: 40px 0 20px; color: #f7dd43; font-family: sans-serif; font-size: 1.5rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">✨ Finais ✨</div>` +
 
-createCard('18/07', 'Disputa do 3º Lugar',
+createCard('18/07', 'Disputa do 3º Lugar', '18 HORAS',
   createGame("França", "x", "Inglaterra") 
 ) +
 
-createCard('19/07', 'Grande Final',
+createCard('19/07', 'Grande Final',  '16 HORAS',
 createGame("Espanha", "x", "Argentina")
 ) +
 
