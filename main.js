@@ -57,14 +57,14 @@ function createGame(player1, hour, player2) {
 
 // 🔥 ANIMAÇÃO E CONTAGEM DOS CARDS
 let delay = -0.4;
-function createCard(date, day, games) {
+function createCard(date, day, time, games) {
   delay = delay + 0.4;
   const jogosCount = (games.match(/<li>/g) || []).length;
   const classeCard = jogosCount >= 2 ? "card multiplo" : "card";
 
   return `
     <div class="${classeCard}" style="animation-delay: ${delay}s">
-      <h2>${date} <span>${day}</span></h2>
+      <h2>${date} <span>${day}</span><span>${time}</span></h2>
       <ul>
         ${games}
       </ul>
