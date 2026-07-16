@@ -64,7 +64,7 @@ function createCard(date, day, time, games) {
 
   return `
     <div class="${classeCard}" style="animation-delay: ${delay}s">
-      <h2>${date} <span>${day}</span><span>${time}</span></h2>
+      <h2>${date} <span>${day}</span>${time}</h2>
       <ul>
         ${games}
       </ul>
