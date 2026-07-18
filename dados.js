@@ -241,7 +241,7 @@ const jogosPadrao = [
   { id: 102, casa:"Jogo 99", fora:"Jogo 100", estadio:"Atlanta", data:"15/07", hora:"16:00", placarCasa:"1", placarFora:"2", penaisCasa:"", penaisFora:"" }
 ]},
 { grupo:"Mata-mata", rodada:"Terceiro lugar", data:"18/07", jogos:[
-  { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", data:"18/07", hora:"18:00", placarCasa:"", placarFora:"", penaisCasa:"", penaisFora:"" }
+  { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", data:"18/07", hora:"18:00", placarCasa:"4", placarFora:"6", penaisCasa:"", penaisFora:"" }
 ]},
 {grupo:"Mata-mata", rodada:"Final", data:"19/07", jogos: [
   { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", data:"19/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"",penaisFora:"" }
@@ -255,8 +255,8 @@ let grupoSelecionado = null;
 
 
 const artilheirosHistoricos = [
+  { nome: "Kylian Mbappé", gols: 22, selecao: "França", flag: "fr" },
   { nome: "Lionel Messi", gols: 21, selecao: "Argentina", flag: "ar" },
-  { nome: "Kylian Mbappé", gols: 20, selecao: "França", flag: "fr" },
   { nome: "Miroslav Klose", gols: 16, selecao: "Alemanha", flag: "de" },
   { nome: "Ronaldo Nazário", gols: 15, selecao: "Brasil", flag: "br" },
   { nome: "Gerd Müller", gols: 14, selecao: "Alemanha", flag: "de" },
