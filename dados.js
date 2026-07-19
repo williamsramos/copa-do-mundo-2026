@@ -244,7 +244,7 @@ const jogosPadrao = [
   { id: 103, casa:"Perdedor 101", fora:"Perdedor 102", estadio:"Miami Gardens, Flórida", data:"18/07", hora:"18:00", placarCasa:"4", placarFora:"6", penaisCasa:"", penaisFora:"" }
 ]},
 {grupo:"Mata-mata", rodada:"Final", data:"19/07", jogos: [
-  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", data:"19/07", hora:"16:00", placarCasa:"", placarFora:"", penaisCasa:"",penaisFora:"" }
+  { id: 104, casa:"Vencedor 101", fora:"Vencedor 102", estadio:"East Rutherford, New Jersey", data:"19/07", hora:"16:00", placarCasa:"1", placarFora:"0", penaisCasa:"",penaisFora:"" }
 ]}
 ];
 
