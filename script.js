@@ -314,7 +314,7 @@ renderJogos = function() {
         <div style="display: flex; justify-content: space-between; align-items: center; background: #0f172a; padding: 8px 12px; border-radius: 6px; border: 1px solid #1e293b;">
             <strong style="color: #94a3b8; width: 40px;">2026</strong>
             <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #d1d1d1;">🥈 </span></div>
-            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #e5a93b;">🥉 </span></div>
+            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/gb-eng.png" alt="england"> <span style="color: #e5a93b;">🥉 Inglaterra </span></div>
         </div>
           `;
 
