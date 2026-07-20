@@ -308,12 +308,12 @@ renderJogos = function() {
               
               <div class="taca-container">
                 <img src="worldcup_favicon.png" alt="Taça da Copa" style="width: 95px; height: auto; display: inline-block;">
-                <h3>Campeão</h3><div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #f7dd43; font-weight: bold;">🥇 </span></div>
+                <h3>Campeão</h3><div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/es.png" alt=""> <span style="color: #f7dd43; font-weight: bold;">🥇 España </span></div>
               </div>
         <!-- 2026 -->
         <div style="display: flex; justify-content: space-between; align-items: center; background: #0f172a; padding: 8px 12px; border-radius: 6px; border: 1px solid #1e293b;">
             <strong style="color: #94a3b8; width: 40px;">2026</strong>
-            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/" alt=""> <span style="color: #d1d1d1;">🥈 </span></div>
+            <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/ar.png" alt=""> <span style="color: #d1d1d1;">🥈Argentina </span></div>
             <div style="display: flex; align-items: center; gap: 4px; width: 85px;"><img src="https://flagcdn.com/w20/gb-eng.png" alt="england"> <span style="color: #e5a93b;">🥉 Inglaterra </span></div>
         </div>
           `;
